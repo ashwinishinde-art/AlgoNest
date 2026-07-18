@@ -1,0 +1,65 @@
+AlgoNest
+
+1. Introduction
+1.1 Purpose
+This document specifies the software requirements for a minimal, beautiful, and secure Hybrid Online Judge platform optimized for C++ developers. The core innovation of this system is its decentralized evaluation model: code compilation and execution occur locally on the user's machine, while authentication, problem management, analytics, and global leaderboards are managed centrally.
+1.2 System Overview
+Traditional online judges face massive infrastructure costs and security liabilities due to running untrusted user code in cloud environments. This platform shifts the heavy computational lift (and sandbox risk) to the client side via a local daemon, transforming the central server into a lightweight orchestration and reporting engine.
+
+2. Scope
+In-Scope Functionality
+•	Decentralized Code Execution: A local Python runner that interfaces with the user's native g++ compiler to run code against test cases securely.
+•	Central Data Orchestration: A backend REST API serving problem banks, storing historical logs, verifying payload signatures, and managing user ranks.
+•	Dynamic Client Dashboard: An elegant front-end UI incorporating a rich web code editor, dynamic test-case execution, and real-time grading reports.
+
+3. System Features
+3.1 Local Compilation & Execution Path
+•	Dynamic Test-Case Retrieval: The frontend fetches the standard inputs/outputs for a selected problem from the backend API and routes them to the local runner alongside the source code.
+•	Local Execution Security: Code compiles and runs natively using the host machine’s resources, isolating the central infrastructure from malicious script vulnerabilities (e.g., infinite loops, fork bombs).
+•	Verdict Compilation: The local runner parses execution times, memory limits, and output deltas to assign standard verdicts.
+3.2 Problem Management Engine
+•	Categorization: Storage and rendering of problems with attributes including description, difficulty, time constraints, memory constraints, and hidden test-case arrays.
+•	Admin Control Panel: Dedicated workspace allowing administrators to seamlessly create, update, or deprecate problems and test suites.
+3.3 Integrity Log & Leaderboard
+•	Result Persistence: Once local execution concludes, the metadata verdict package is pushed to the central backend.
+•	Dynamic Rankings: An automated global leaderboard computed based on successfully passed problems, execution metrics, and timestamp data.
+
+
+
+
+
+
+4. User and User Roles
+Role	Responsibilities	System Permissions
+Anonymous Visitor	Browses basic landing interfaces.	Read-only access to the login/signup screens.
+Developer (User)	Solves coding challenges, manages local runner connectivity, and tracks progress.	View problems, request test cases via front-end routing, execute local runs, submit results to the database, and view the global leaderboard.
+System Administrator	Oversees content management and maintains platform metrics.	Complete CRUD permissions across the Problem Library, User databases, and Global Submission log histories.
+
+
+5. Requirements
+5.1 System & Functional Requirements
+•	System Integrity: The platform must authenticate API requests via secure JSON Web Tokens (JWT) embedded within HTTP headers.
+•	Local Connection Stability: The frontend application must gracefully handle connection timeouts if the local Python script (localhost:8000) is unreachable, providing intuitive troubleshooting steps to the developer.
+
+
+
+5.2 Non-Functional Requirements
+•	Performance: The backend REST API must process structural endpoints (like fetching problem lists) in under 200ms.
+•	Security: Central infrastructure must never execute unvetted code payloads. All submitted result payloads should feature validation properties to deter structural spoofing.
+•	Usability: Minimalist UI layout featuring instant text adjustments, automated syntax highlighting, and fluid state tracking via responsive layout components.
+
+6. Technology Stack
+6.1 Frontend Architecture
+•	Structure & Styling: HTML5 & Tailwind CSS (for modern utility-first layouts).
+•	Development Editor: Monaco Editor (powering the IDE experience directly inside the browser window).
+•	State & Reactivity: Alpine.js / Vanilla ECMAScript (providing a lightweight, low-overhead reactive state machine).
+6.2 Backend Core
+•	Application Server: PHP 8.3 (Structured object-oriented design handling API routing, Controller logic, and JWT authentication).
+•	Database Management: MySQL 8 (Relational engine storing user metadata, hashed credentials, core problems, and historical logs).
+6.3 Local Runner Client
+•	Runtime Environment: Python 3 (Lightweight HTTP daemon listening on local port 8000).
+•	System Tooling: Native GNU Compiler Collection (g++) installed on the client machine's shell path.
+
+7. Future Enhancements
+•	Anti-Cheat Engine: Developing a structural similarity analyser (using Abstract Syntax Tree comparisons) that runs on the backend to detect if a developer simply copied another user's solution, preventing leaderboard manipulation.
+•	Cross-Language Runtime Support: Expanding the local runner's daemon architecture to automatically detect, configure, and isolate other toolchains (such as python3, javac, or cargo), allowing the platform to support Python, Java, and Rust without changing the central backend infrastructure.
