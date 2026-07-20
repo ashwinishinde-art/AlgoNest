@@ -57,7 +57,7 @@ class ProblemController {
             if (!(int)$problemData['approved']) {
                 try {
                     $user = AuthMiddleware::authenticate();
-                    if ($user['role'] !== 'admin' && (int)$problemData['author_id'] !== (int)$user['id']) {
+                    if (!in_array($user['role'], ['admin', 'faculty']) && (int)$problemData['author_id'] !== (int)$user['id']) {
                         http_response_code(403);
                         echo json_encode(["message" => "Unauthorized to view this pending problem."]);
                         return;
@@ -87,7 +87,7 @@ class ProblemController {
         if (!(int)$problemData['approved']) {
             try {
                 $user = AuthMiddleware::authenticate();
-                if ($user['role'] !== 'admin' && (int)$problemData['author_id'] !== (int)$user['id']) {
+                if (!in_array($user['role'], ['admin', 'faculty']) && (int)$problemData['author_id'] !== (int)$user['id']) {
                     http_response_code(403);
                     echo json_encode(["message" => "Unauthorized to view this pending problem's samples."]);
                     return;

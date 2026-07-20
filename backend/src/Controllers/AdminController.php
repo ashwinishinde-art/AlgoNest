@@ -147,10 +147,10 @@ class AdminController {
             if ($problemData) {
                 $this->notification->create(
                     $problemData['author_id'],
-                    $id,
                     'problem_approved',
                     'Your Problem Was Approved! 🎉',
-                    'Your problem "' . $problemData['title'] . '" has been approved and is now live on the platform!'
+                    'Your problem "' . $problemData['title'] . '" has been approved and is now live on the platform!',
+                    $id
                 );
             }
             http_response_code(200);
@@ -169,10 +169,10 @@ class AdminController {
             if ($problemData) {
                 $this->notification->create(
                     $problemData['author_id'],
-                    $id,
                     'problem_rejected',
                     'Your Problem Was Rejected',
-                    'Your problem "' . $problemData['title'] . '" was rejected. Reason: ' . $reason
+                    'Your problem "' . $problemData['title'] . '" was rejected. Reason: ' . $reason,
+                    $id
                 );
             }
             http_response_code(200);
@@ -235,14 +235,154 @@ class AdminController {
         // Notify user
         $this->notification->create(
             $request['user_id'],
-            1, // placeholder problem_id (notification system requires it)
-            'problem_approved', // reuse type
+            'faculty_approved',
             'Faculty Access Granted! 🎓',
             'Congratulations! Your faculty registration request has been approved. You now have faculty access on AlgoNest.'
+            // no problem_id — faculty notification
         );
 
         http_response_code(200);
         echo json_encode(["message" => "Faculty request approved. User upgraded to faculty."]);
+    }
+
+    // ── User Management ───────────────────────────────────────────────────────
+
+    public function listUsers($params = []) {
+        $role   = !empty($params['role'])   ? $params['role']   : null;
+        $search = !empty($params['search']) ? '%' . $params['search'] . '%' : null;
+
+        $where = [];
+        $bindings = [];
+
+        if ($role) {
+            $where[] = 'role = :role';
+            $bindings[':role'] = $role;
+        }
+        if ($search) {
+            $where[] = '(username LIKE :search OR email LIKE :search2)';
+            $bindings[':search']  = $search;
+            $bindings[':search2'] = $search;
+        }
+
+        $sql = "SELECT id, username, email, role, avatar_url, streak_count, created_at
+                FROM users";
+        if ($where) {
+            $sql .= ' WHERE ' . implode(' AND ', $where);
+        }
+        $sql .= ' ORDER BY created_at DESC';
+
+        $stmt = $this->db->prepare($sql);
+        foreach ($bindings as $key => $val) {
+            $stmt->bindValue($key, $val);
+        }
+        $stmt->execute();
+
+        http_response_code(200);
+        echo json_encode($stmt->fetchAll());
+    }
+
+    public function deleteUser($userId, $adminId) {
+        // Prevent admin from deleting themselves
+        if ((int)$userId === (int)$adminId) {
+            http_response_code(400);
+            echo json_encode(["message" => "You cannot delete your own account."]);
+            return;
+        }
+
+        // Fetch user first so we know their role
+        $stmt = $this->db->prepare("SELECT id, role FROM users WHERE id = :id");
+        $stmt->bindParam(':id', $userId);
+        $stmt->execute();
+        $target = $stmt->fetch();
+
+        if (!$target) {
+            http_response_code(404);
+            echo json_encode(["message" => "User not found."]);
+            return;
+        }
+
+        if ($target['role'] === 'admin') {
+            http_response_code(403);
+            echo json_encode(["message" => "Cannot delete another admin account."]);
+            return;
+        }
+
+        $stmt = $this->db->prepare("DELETE FROM users WHERE id = :id");
+        $stmt->bindParam(':id', $userId);
+
+        if ($stmt->execute()) {
+            http_response_code(200);
+            echo json_encode(["message" => "User deleted successfully."]);
+        } else {
+            http_response_code(500);
+            echo json_encode(["message" => "Failed to delete user."]);
+        }
+    }
+
+    public function changeUserRole($userId, $adminId, $data) {
+        $allowed = ['user', 'faculty', 'pending_faculty', 'declined_faculty'];
+
+        if (empty($data['role']) || !in_array($data['role'], $allowed)) {
+            http_response_code(400);
+            echo json_encode(["message" => "Invalid role. Allowed: " . implode(', ', $allowed)]);
+            return;
+        }
+
+        if ((int)$userId === (int)$adminId) {
+            http_response_code(400);
+            echo json_encode(["message" => "You cannot change your own role."]);
+            return;
+        }
+
+        $stmt = $this->db->prepare("SELECT id, role FROM users WHERE id = :id");
+        $stmt->bindParam(':id', $userId);
+        $stmt->execute();
+        $target = $stmt->fetch();
+
+        if (!$target) {
+            http_response_code(404);
+            echo json_encode(["message" => "User not found."]);
+            return;
+        }
+
+        if ($target['role'] === 'admin') {
+            http_response_code(403);
+            echo json_encode(["message" => "Cannot change the role of another admin."]);
+            return;
+        }
+
+        $newRole = $data['role'];
+        $stmt = $this->db->prepare("UPDATE users SET role = :role WHERE id = :id");
+        $stmt->bindParam(':role', $newRole);
+        $stmt->bindParam(':id', $userId);
+
+        if ($stmt->execute()) {
+            // Notify the user about their role change
+            $roleLabels = [
+                'user'              => 'User',
+                'faculty'           => 'Faculty',
+                'pending_faculty'   => 'Pending Faculty',
+                'declined_faculty'  => 'Declined Faculty',
+            ];
+            $roleMessages = [
+                'user'             => 'Your account role has been changed to User by an administrator.',
+                'faculty'          => 'Congratulations! You have been granted Faculty access on AlgoNest.',
+                'pending_faculty'  => 'Your account has been set to Pending Faculty status by an administrator.',
+                'declined_faculty' => 'Your account role has been changed to Declined Faculty by an administrator. Please contact support for more information.',
+            ];
+            $this->notification->create(
+                $userId,
+                'role_changed',
+                'Your Role Has Been Updated',
+                $roleMessages[$newRole] ?? "Your role has been updated to {$newRole}."
+            );
+
+            http_response_code(200);
+            echo json_encode(["message" => "Role updated to '$newRole'."]);
+        } else {
+            http_response_code(500);
+            echo json_encode(["message" => "Failed to update role."]);
+        }
     }
 
     public function rejectFacultyRequest($requestId, $adminId, $data) {
@@ -269,20 +409,20 @@ class AdminController {
         $stmt->bindParam(':id', $requestId);
         $stmt->execute();
 
-        // Revert user role back to user
+        // Mark user as declined_faculty so they cannot log in
         $db2 = new Database();
         $conn = $db2->getConnection();
-        $upd = $conn->prepare("UPDATE users SET role='user' WHERE id=:uid AND role='pending_faculty'");
+        $upd = $conn->prepare("UPDATE users SET role='declined_faculty' WHERE id=:uid AND role='pending_faculty'");
         $upd->bindParam(':uid', $request['user_id']);
         $upd->execute();
 
         // Notify user
         $this->notification->create(
             $request['user_id'],
-            1,
-            'problem_rejected',
+            'faculty_declined',
             'Faculty Request Declined',
             'Your faculty registration request was reviewed and declined. Reason: ' . $note
+            // no problem_id — faculty notification
         );
 
         http_response_code(200);

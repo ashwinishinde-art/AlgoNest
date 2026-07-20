@@ -54,10 +54,10 @@ class FacultyController {
             if ($problemData) {
                 $this->notification->create(
                     $problemData['author_id'],
-                    $id,
                     'problem_approved',
                     'Your Problem Was Approved! 🎉',
-                    'Your problem "' . $problemData['title'] . '" has been approved by a faculty member and is now live!'
+                    'Your problem "' . $problemData['title'] . '" has been approved by a faculty member and is now live!',
+                    $id
                 );
             }
             http_response_code(200);
@@ -76,10 +76,10 @@ class FacultyController {
             if ($problemData) {
                 $this->notification->create(
                     $problemData['author_id'],
-                    $id,
                     'problem_rejected',
                     'Your Problem Was Rejected',
-                    'Your problem "' . $problemData['title'] . '" was reviewed by a faculty member and rejected. Reason: ' . $reason
+                    'Your problem "' . $problemData['title'] . '" was reviewed by a faculty member and rejected. Reason: ' . $reason,
+                    $id
                 );
             }
             http_response_code(200);

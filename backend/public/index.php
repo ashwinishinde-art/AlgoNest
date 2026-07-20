@@ -157,7 +157,19 @@ switch ($resource) {
         $adminController = new AdminController();
         $user = AuthMiddleware::requireAdmin();
 
-        if ($method === 'GET' && $resourceId === 'faculty-requests') {
+        if ($method === 'GET' && $resourceId === 'users') {
+            $adminController->listUsers($params);
+        } elseif ($method === 'DELETE' && $resourceId === 'users' && $subResource !== null) {
+            $adminController->deleteUser($subResource, $user['id']);
+        } elseif ($method === 'PUT' && $resourceId === 'users' && $subResource !== null) {
+            $action = isset($uriSegments[4]) ? $uriSegments[4] : null;
+            if ($action === 'role') {
+                $adminController->changeUserRole($subResource, $user['id'], $body);
+            } else {
+                http_response_code(404);
+                echo json_encode(["message" => "Admin user action not found"]);
+            }
+        } elseif ($method === 'GET' && $resourceId === 'faculty-requests') {
             $adminController->listFacultyRequests($params);
         } elseif ($method === 'POST' && $resourceId === 'faculty-requests' && $subResource !== null) {
             $action = isset($uriSegments[4]) ? $uriSegments[4] : null;
