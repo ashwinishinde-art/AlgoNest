@@ -41,6 +41,13 @@ class AuthController {
         $userData = $this->user->findByEmail($data['email']);
 
         if ($userData && password_verify($data['password'], $userData['password_hash'])) {
+            // Block pending faculty from logging in
+            if ($userData['role'] === 'pending_faculty') {
+                http_response_code(403);
+                echo json_encode(["message" => "Your faculty request is pending admin approval. You'll be notified once reviewed."]);
+                return;
+            }
+
             // Generate token payload
             $token_payload = [
                 "iss" => "algonest",
@@ -174,6 +181,58 @@ class AuthController {
         } else {
             http_response_code(404);
             echo json_encode(["message" => "User not found."]);
+        }
+    }
+
+    public function registerFaculty($userId, $data) {
+        $required = ['full_name', 'institution', 'department', 'designation', 'reason'];
+        foreach ($required as $field) {
+            if (empty($data[$field])) {
+                http_response_code(400);
+                echo json_encode(["message" => "Missing required field: $field"]);
+                return;
+            }
+        }
+
+        // Check user exists and is not already faculty/pending
+        $user = $this->user->findById($userId);
+        if (!$user) {
+            http_response_code(404);
+            echo json_encode(["message" => "User not found."]);
+            return;
+        }
+        if (in_array($user['role'], ['faculty', 'admin'])) {
+            http_response_code(400);
+            echo json_encode(["message" => "You already have faculty or admin access."]);
+            return;
+        }
+        if ($user['role'] === 'pending_faculty') {
+            http_response_code(400);
+            echo json_encode(["message" => "You already have a pending faculty request."]);
+            return;
+        }
+
+        // Insert faculty request
+        $query = "INSERT INTO faculty_requests (user_id, full_name, institution, department, designation, reason)
+                  VALUES (:user_id, :full_name, :institution, :department, :designation, :reason)";
+        $db = (new Database())->getConnection();
+        $stmt = $db->prepare($query);
+        $stmt->bindParam(':user_id', $userId);
+        $stmt->bindParam(':full_name', $data['full_name']);
+        $stmt->bindParam(':institution', $data['institution']);
+        $stmt->bindParam(':department', $data['department']);
+        $stmt->bindParam(':designation', $data['designation']);
+        $stmt->bindParam(':reason', $data['reason']);
+
+        try {
+            $stmt->execute();
+            // Mark user as pending_faculty
+            $this->user->setRole($userId, 'pending_faculty');
+            http_response_code(201);
+            echo json_encode(["message" => "Faculty request submitted. You will be notified once reviewed by an admin."]);
+        } catch (PDOException $e) {
+            http_response_code(500);
+            echo json_encode(["message" => "Failed to submit faculty request."]);
         }
     }
 

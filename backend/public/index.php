@@ -21,6 +21,7 @@ require_once __DIR__ . '/../src/Controllers/AdminController.php';
 require_once __DIR__ . '/../src/Controllers/CommentController.php';
 require_once __DIR__ . '/../src/Controllers/NotificationController.php';
 require_once __DIR__ . '/../src/Controllers/RunnerController.php';
+require_once __DIR__ . '/../src/Controllers/FacultyController.php';
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uriSegments = explode('/', trim($uri, '/'));
@@ -56,6 +57,9 @@ switch ($resource) {
         } elseif ($method === 'PUT' && $resourceId === 'profile' && $subResource === 'username') {
             $user = AuthMiddleware::authenticate();
             $authController->updateUsername($user['id'], $body);
+        } elseif ($method === 'POST' && $resourceId === 'faculty-register') {
+            $user = AuthMiddleware::authenticate();
+            $authController->registerFaculty($user['id'], $body);
         } else {
             http_response_code(404);
             echo json_encode(["message" => "Auth Endpoint Not Found"]);
@@ -121,11 +125,51 @@ switch ($resource) {
         }
         break;
 
+    case 'faculty':
+        $facultyController = new FacultyController();
+        $user = AuthMiddleware::requireFacultyOrAdmin();
+
+        if ($method === 'GET' && $resourceId === 'problems') {
+            if ($subResource === 'all') {
+                $facultyController->listAllProblems($params);
+            } else {
+                $facultyController->listPendingProblems();
+            }
+        } elseif ($method === 'POST' && $resourceId === 'problems' && $subResource !== null) {
+            $action = isset($uriSegments[4]) ? $uriSegments[4] : null;
+            if ($action === 'approve') {
+                $facultyController->approveProblem($subResource, $body);
+            } elseif ($action === 'reject') {
+                $facultyController->rejectProblem($subResource, $body);
+            } else {
+                http_response_code(404);
+                echo json_encode(["message" => "Faculty action not found"]);
+            }
+        } elseif ($method === 'GET' && $resourceId === 'stats') {
+            $facultyController->getStats();
+        } else {
+            http_response_code(404);
+            echo json_encode(["message" => "Faculty endpoint not found"]);
+        }
+        break;
+
     case 'admin':
         $adminController = new AdminController();
         $user = AuthMiddleware::requireAdmin();
 
-        if ($method === 'POST' && $resourceId === 'problems') {
+        if ($method === 'GET' && $resourceId === 'faculty-requests') {
+            $adminController->listFacultyRequests($params);
+        } elseif ($method === 'POST' && $resourceId === 'faculty-requests' && $subResource !== null) {
+            $action = isset($uriSegments[4]) ? $uriSegments[4] : null;
+            if ($action === 'approve') {
+                $adminController->approveFacultyRequest($subResource, $user['id'], $body);
+            } elseif ($action === 'reject') {
+                $adminController->rejectFacultyRequest($subResource, $user['id'], $body);
+            } else {
+                http_response_code(404);
+                echo json_encode(["message" => "Admin faculty action not found"]);
+            }
+        } elseif ($method === 'POST' && $resourceId === 'problems') {
             if ($subResource !== null && isset($uriSegments[4]) && $uriSegments[4] === 'approve') {
                 $adminController->approveProblem($subResource, $body);
             } elseif ($subResource !== null && isset($uriSegments[4]) && $uriSegments[4] === 'reject') {

@@ -98,7 +98,7 @@ class User {
         $query = "SELECT u.id, u.username, u.role, u.streak_count, COUNT(DISTINCT s.problem_id) as solved_count 
                   FROM " . $this->table_name . " u
                   LEFT JOIN submissions s ON u.id = s.user_id AND s.status = 'Accepted'
-                  WHERE u.role != 'admin'
+                  WHERE u.role NOT IN ('admin', 'faculty')
                   GROUP BY u.id
                   ORDER BY solved_count DESC, u.streak_count DESC
                   LIMIT 50";
@@ -136,6 +136,14 @@ class User {
         $query = "UPDATE " . $this->table_name . " SET username = :username WHERE id = :id";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
+
+    public function setRole($id, $role) {
+        $query = "UPDATE " . $this->table_name . " SET role = :role WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":role", $role);
         $stmt->bindParam(":id", $id);
         return $stmt->execute();
     }

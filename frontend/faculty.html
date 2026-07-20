@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard - AlgoNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" crossorigin>
+    <link rel="stylesheet" href="assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=2">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-200"
+      x-data="facultyDashboard()" x-init="init()">
+
+    <!-- Navbar -->
+    <nav class="border-b border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-extrabold text-blue-700 dark:text-blue-400">AlgoNest</a>
+                    <div class="hidden md:block ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Dashboard</a>
+                        <a href="problems.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Problems</a>
+                        <a href="leaderboard.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Leaderboard</a>
+                        <a href="faculty.html" class="bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-3 py-2 rounded-md text-sm font-medium">Faculty</a>
+                        <template x-if="user && user.role === 'admin'">
+                            <a href="admin.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 py-2 rounded-md text-sm font-medium transition-colors">Admin</a>
+                        </template>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button @click="toggleTheme()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    <div class="flex items-center space-x-3 pl-4 border-l border-slate-200 dark:border-slate-700">
+                        <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold text-sm" x-text="user ? user.username.charAt(0).toUpperCase() : '?'"></div>
+                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-300" x-text="user ? user.username : ''"></span>
+                        <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded font-semibold">Faculty</span>
+                    </div>
+                    <button @click="Auth.logout()" class="text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg font-semibold transition-colors">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-2xl font-extrabold text-slate-800 dark:text-slate-100">Faculty Dashboard</h1>
+            <p class="text-slate-500 dark:text-slate-400 mt-1">Review and manage problem submissions from students.</p>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="glass-panel rounded-xl p-5">
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Pending Review</p>
+                <p class="text-3xl font-extrabold text-amber-500 mt-1" x-text="stats.pending_review ?? '—'"></p>
+            </div>
+            <div class="glass-panel rounded-xl p-5">
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Approved</p>
+                <p class="text-3xl font-extrabold text-green-500 mt-1" x-text="stats.approved_problems ?? '—'"></p>
+            </div>
+            <div class="glass-panel rounded-xl p-5">
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total Students</p>
+                <p class="text-3xl font-extrabold text-blue-500 mt-1" x-text="stats.total_students ?? '—'"></p>
+            </div>
+            <div class="glass-panel rounded-xl p-5">
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Submissions</p>
+                <p class="text-3xl font-extrabold text-slate-700 dark:text-slate-200 mt-1" x-text="stats.total_submissions ?? '—'"></p>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex space-x-1 bg-slate-200 dark:bg-slate-800 rounded-xl p-1 mb-6 w-fit">
+            <button @click="activeTab = 'pending'"
+                    :class="activeTab === 'pending' ? 'bg-white dark:bg-slate-700 shadow text-slate-800 dark:text-white' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'"
+                    class="px-4 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2">
+                Pending Review
+                <span x-show="stats.pending_review > 0"
+                      class="bg-amber-500 text-white text-xs rounded-full px-1.5 py-0.5 font-bold"
+                      x-text="stats.pending_review"></span>
+            </button>
+            <button @click="activeTab = 'all'; loadAllProblems()"
+                    :class="activeTab === 'all' ? 'bg-white dark:bg-slate-700 shadow text-slate-800 dark:text-white' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'"
+                    class="px-4 py-2 rounded-lg text-sm font-semibold transition-all">
+                All Problems
+            </button>
+        </div>
+
+        <!-- Pending Review Tab -->
+        <div x-show="activeTab === 'pending'">
+            <template x-if="loadingProblems">
+                <div class="text-center py-16 text-slate-400">Loading pending problems...</div>
+            </template>
+            <template x-if="!loadingProblems && pendingProblems.length === 0">
+                <div class="glass-panel rounded-xl p-12 text-center">
+                    <div class="text-5xl mb-4">🎉</div>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium">All caught up! No problems pending review.</p>
+                </div>
+            </template>
+            <div class="space-y-4">
+                <template x-for="problem in pendingProblems" :key="problem.id">
+                    <div class="glass-panel rounded-xl p-6">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center gap-3 flex-wrap">
+                                    <h3 class="font-bold text-slate-800 dark:text-slate-100 text-lg" x-text="problem.title"></h3>
+                                    <span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-600 px-2 py-0.5 rounded font-semibold">Pending Review</span>
+                                </div>
+                                <p class="text-sm text-slate-500 mt-1">
+                                    Submitted by <span class="font-semibold text-blue-600 dark:text-blue-400" x-text="problem.author_username"></span>
+                                    · <span x-text="formatDate(problem.created_at)"></span>
+                                </p>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2" x-text="problem.description"></p>
+                                <div class="flex flex-wrap gap-2 mt-3">
+                                    <template x-for="tag in problem.topic_tags.split(',')" :key="tag">
+                                        <span class="text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded" x-text="tag.trim()"></span>
+                                    </template>
+                                </div>
+                            </div>
+                            <div class="flex gap-2 shrink-0">
+                                <button @click="openProblem(problem.id)" class="text-sm bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 px-3 py-2 rounded-lg font-medium transition-colors">
+                                    Preview
+                                </button>
+                                <button @click="openApproveModal(problem)" class="text-sm bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-lg font-medium transition-colors">
+                                    Approve
+                                </button>
+                                <button @click="openRejectModal(problem)" class="text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-lg font-medium transition-colors">
+                                    Reject
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <!-- All Problems Tab -->
+        <div x-show="activeTab === 'all'">
+            <template x-if="loadingAll">
+                <div class="text-center py-16 text-slate-400">Loading all problems...</div>
+            </template>
+            <div class="space-y-3">
+                <template x-for="problem in allProblems" :key="problem.id">
+                    <div class="glass-panel rounded-xl p-5 flex items-center justify-between gap-4">
+                        <div>
+                            <div class="flex items-center gap-3 flex-wrap">
+                                <span class="font-semibold text-slate-800 dark:text-slate-100" x-text="problem.title"></span>
+                                <span :class="{
+                                    'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300': problem.approved == 1 && !problem.rejection_reason,
+                                    'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300': problem.rejection_reason,
+                                    'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300': problem.approved == 0 && !problem.rejection_reason
+                                }" class="text-xs px-2 py-0.5 rounded font-semibold"
+                                x-text="problem.approved == 1 ? 'Approved' : problem.rejection_reason ? 'Rejected' : 'Pending'">
+                                </span>
+                                <span x-show="problem.difficulty" :class="{
+                                    'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300': problem.difficulty === 'Easy',
+                                    'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300': problem.difficulty === 'Medium',
+                                    'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300': problem.difficulty === 'Hard'
+                                }" class="text-xs px-2 py-0.5 rounded font-semibold" x-text="problem.difficulty"></span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1" x-text="formatDate(problem.created_at)"></p>
+                        </div>
+                        <a :href="'problem.html?id=' + problem.id" class="text-sm text-blue-600 dark:text-blue-400 hover:underline font-medium">View →</a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <!-- Approve Modal -->
+    <div x-show="approveModal.show" x-transition class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl p-6 w-full max-w-md shadow-2xl">
+            <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100 mb-4">Approve Problem</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Set the difficulty for <strong x-text="approveModal.problem?.title"></strong>.</p>
+            <div class="mb-4">
+                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Difficulty</label>
+                <select x-model="approveModal.difficulty"
+                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2.5 px-4 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <option value="">Select difficulty...</option>
+                    <option>Easy</option>
+                    <option>Medium</option>
+                    <option>Hard</option>
+                </select>
+            </div>
+            <div class="mb-5">
+                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Comment (optional)</label>
+                <textarea x-model="approveModal.comment" rows="3"
+                          placeholder="Optional feedback to the author..."
+                          class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2.5 px-4 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-green-500 resize-none"></textarea>
+            </div>
+            <div class="flex gap-3">
+                <button @click="approveModal.show = false" class="flex-1 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 py-2.5 rounded-lg font-semibold hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">Cancel</button>
+                <button @click="submitApprove()" :disabled="!approveModal.difficulty || approveModal.loading"
+                        class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2.5 rounded-lg font-semibold transition-colors disabled:opacity-50">
+                    <span x-show="!approveModal.loading">Approve ✓</span>
+                    <span x-show="approveModal.loading">Approving...</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reject Modal -->
+    <div x-show="rejectModal.show" x-transition class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl p-6 w-full max-w-md shadow-2xl">
+            <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100 mb-4">Reject Problem</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Rejecting <strong x-text="rejectModal.problem?.title"></strong>. The author will be notified.</p>
+            <div class="mb-5">
+                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Reason</label>
+                <textarea x-model="rejectModal.reason" rows="4"
+                          placeholder="Explain why this problem is being rejected..."
+                          class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2.5 px-4 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-red-500 resize-none"></textarea>
+            </div>
+            <div class="flex gap-3">
+                <button @click="rejectModal.show = false" class="flex-1 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 py-2.5 rounded-lg font-semibold hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">Cancel</button>
+                <button @click="submitReject()" :disabled="rejectModal.loading"
+                        class="flex-1 bg-red-600 hover:bg-red-700 text-white py-2.5 rounded-lg font-semibold transition-colors disabled:opacity-50">
+                    <span x-show="!rejectModal.loading">Reject</span>
+                    <span x-show="rejectModal.loading">Rejecting...</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script>
+    function facultyDashboard() {
+        return {
+            user: null,
+            stats: {},
+            activeTab: 'pending',
+            pendingProblems: [],
+            allProblems: [],
+            loadingProblems: true,
+            loadingAll: false,
+            approveModal: { show: false, problem: null, difficulty: '', comment: '', loading: false },
+            rejectModal: { show: false, problem: null, reason: '', loading: false },
+
+            async init() {
+                const u = Auth.getUser();
+                if (!u || !['faculty', 'admin'].includes(u.role)) {
+                    window.location.href = 'login.html';
+                    return;
+                }
+                this.user = u;
+                await Promise.all([this.loadStats(), this.loadPendingProblems()]);
+            },
+
+            async loadStats() {
+                try {
+                    const res = await fetch(`${API_BASE_URL}/faculty/stats`, { headers: Auth.getAuthHeader() });
+                    this.stats = await res.json();
+                } catch (e) { console.error(e); }
+            },
+
+            async loadPendingProblems() {
+                this.loadingProblems = true;
+                try {
+                    const res = await fetch(`${API_BASE_URL}/faculty/problems`, { headers: Auth.getAuthHeader() });
+                    this.pendingProblems = await res.json();
+                } catch (e) { console.error(e); } finally {
+                    this.loadingProblems = false;
+                }
+            },
+
+            async loadAllProblems() {
+                if (this.allProblems.length) return;
+                this.loadingAll = true;
+                try {
+                    const res = await fetch(`${API_BASE_URL}/faculty/problems/all`, { headers: Auth.getAuthHeader() });
+                    this.allProblems = await res.json();
+                } catch (e) { console.error(e); } finally {
+                    this.loadingAll = false;
+                }
+            },
+
+            openProblem(id) { window.open('problem.html?id=' + id, '_blank'); },
+            openApproveModal(p) { this.approveModal = { show: true, problem: p, difficulty: '', comment: '', loading: false }; },
+            openRejectModal(p)  { this.rejectModal  = { show: true, problem: p, reason: '', loading: false }; },
+
+            async submitApprove() {
+                if (!this.approveModal.difficulty) return;
+                this.approveModal.loading = true;
+                try {
+                    const res = await fetch(`${API_BASE_URL}/faculty/problems/${this.approveModal.problem.id}/approve`, {
+                        method: 'POST',
+                        headers: { ...Auth.getAuthHeader(), 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ difficulty: this.approveModal.difficulty, comment: this.approveModal.comment })
+                    });
+                    if (res.ok) {
+                        this.pendingProblems = this.pendingProblems.filter(p => p.id !== this.approveModal.problem.id);
+                        this.approveModal.show = false;
+                        this.allProblems = [];
+                        await this.loadStats();
+                    }
+                } finally { this.approveModal.loading = false; }
+            },
+
+            async submitReject() {
+                this.rejectModal.loading = true;
+                try {
+                    const res = await fetch(`${API_BASE_URL}/faculty/problems/${this.rejectModal.problem.id}/reject`, {
+                        method: 'POST',
+                        headers: { ...Auth.getAuthHeader(), 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ reason: this.rejectModal.reason || 'No reason provided.' })
+                    });
+                    if (res.ok) {
+                        this.pendingProblems = this.pendingProblems.filter(p => p.id !== this.rejectModal.problem.id);
+                        this.rejectModal.show = false;
+                        this.allProblems = [];
+                        await this.loadStats();
+                    }
+                } finally { this.rejectModal.loading = false; }
+            },
+
+            formatDate(d) {
+                if (!d) return '';
+                return new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+            }
+        }
+    }
+    </script>
+</body>
+</html>

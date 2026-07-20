@@ -55,4 +55,14 @@ class AuthMiddleware {
         }
         return $user;
     }
+
+    public static function requireFacultyOrAdmin() {
+        $user = self::authenticate();
+        if (!in_array($user['role'], ['admin', 'faculty'])) {
+            http_response_code(403);
+            echo json_encode(["message" => "Access denied. Faculty or Admin role required."]);
+            exit;
+        }
+        return $user;
+    }
 }

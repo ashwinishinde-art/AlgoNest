@@ -183,5 +183,110 @@ class AdminController {
         }
     }
 
+    // ── Faculty Request Management ────────────────────────────────────────────
+
+    public function listFacultyRequests($filters = []) {
+        $status = !empty($filters['status']) ? $filters['status'] : 'pending';
+        $query = "SELECT fr.*, u.username, u.email
+                  FROM faculty_requests fr
+                  JOIN users u ON fr.user_id = u.id
+                  WHERE fr.status = :status
+                  ORDER BY fr.created_at ASC";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':status', $status);
+        $stmt->execute();
+        http_response_code(200);
+        echo json_encode($stmt->fetchAll());
+    }
+
+    public function approveFacultyRequest($requestId, $adminId, $data) {
+        $note = !empty($data['note']) ? $data['note'] : null;
+        $now = date('Y-m-d H:i:s');
+
+        // Get request
+        $stmt = $this->db->prepare("SELECT * FROM faculty_requests WHERE id = :id");
+        $stmt->bindParam(':id', $requestId);
+        $stmt->execute();
+        $request = $stmt->fetch();
+
+        if (!$request) {
+            http_response_code(404);
+            echo json_encode(["message" => "Faculty request not found."]);
+            return;
+        }
+
+        // Update request status
+        $stmt = $this->db->prepare(
+            "UPDATE faculty_requests SET status='approved', admin_note=:note, reviewed_by=:admin, reviewed_at=:now WHERE id=:id"
+        );
+        $stmt->bindParam(':note', $note);
+        $stmt->bindParam(':admin', $adminId);
+        $stmt->bindParam(':now', $now);
+        $stmt->bindParam(':id', $requestId);
+        $stmt->execute();
+
+        // Upgrade user role to faculty
+        $db2 = new Database();
+        $conn2 = $db2->getConnection();
+        $upd = $conn2->prepare("UPDATE users SET role='faculty' WHERE id=:uid");
+        $upd->bindParam(':uid', $request['user_id']);
+        $upd->execute();
+
+        // Notify user
+        $this->notification->create(
+            $request['user_id'],
+            1, // placeholder problem_id (notification system requires it)
+            'problem_approved', // reuse type
+            'Faculty Access Granted! 🎓',
+            'Congratulations! Your faculty registration request has been approved. You now have faculty access on AlgoNest.'
+        );
+
+        http_response_code(200);
+        echo json_encode(["message" => "Faculty request approved. User upgraded to faculty."]);
+    }
+
+    public function rejectFacultyRequest($requestId, $adminId, $data) {
+        $note = !empty($data['note']) ? $data['note'] : 'No reason provided.';
+        $now = date('Y-m-d H:i:s');
+
+        $stmt = $this->db->prepare("SELECT * FROM faculty_requests WHERE id = :id");
+        $stmt->bindParam(':id', $requestId);
+        $stmt->execute();
+        $request = $stmt->fetch();
+
+        if (!$request) {
+            http_response_code(404);
+            echo json_encode(["message" => "Faculty request not found."]);
+            return;
+        }
+
+        $stmt = $this->db->prepare(
+            "UPDATE faculty_requests SET status='rejected', admin_note=:note, reviewed_by=:admin, reviewed_at=:now WHERE id=:id"
+        );
+        $stmt->bindParam(':note', $note);
+        $stmt->bindParam(':admin', $adminId);
+        $stmt->bindParam(':now', $now);
+        $stmt->bindParam(':id', $requestId);
+        $stmt->execute();
+
+        // Revert user role back to user
+        $db2 = new Database();
+        $conn = $db2->getConnection();
+        $upd = $conn->prepare("UPDATE users SET role='user' WHERE id=:uid AND role='pending_faculty'");
+        $upd->bindParam(':uid', $request['user_id']);
+        $upd->execute();
+
+        // Notify user
+        $this->notification->create(
+            $request['user_id'],
+            1,
+            'problem_rejected',
+            'Faculty Request Declined',
+            'Your faculty registration request was reviewed and declined. Reason: ' . $note
+        );
+
+        http_response_code(200);
+        echo json_encode(["message" => "Faculty request rejected."]);
+    }
+
 }
-?>
