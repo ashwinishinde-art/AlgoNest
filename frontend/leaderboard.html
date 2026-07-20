@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - DSA Online Judge</title>
+    <!-- Tailwind CSS CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" crossorigin>
+    <link rel="stylesheet" href="assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=2">
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-200" x-data="leaderboardApp()">
+    
+    <!-- Navbar -->
+    <nav class="border-b border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-extrabold text-blue-700 dark:text-blue-400">
+                        DSA Judge
+                    </a>
+                    <div class="hidden md:block ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Dashboard</a>
+                        <a href="problems.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Problems</a>
+                        <a href="leaderboard.html" class="bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white px-3 py-2 rounded-md text-sm font-medium">Leaderboard</a>
+                        <template x-if="user && user.role === 'admin'">
+                            <a href="admin.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Admin</a>
+                        </template>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button @click="toggleTheme()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    <div class="flex items-center space-x-3 pl-4 border-l border-slate-200 dark:border-slate-700">
+                        <template x-if="profile && profile.avatar_url">
+                            <img :src="API_BASE_URL.replace('/api', '') + profile.avatar_url" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+                        </template>
+                        <template x-if="!profile || !profile.avatar_url">
+                            <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm" x-text="user ? user.username.charAt(0).toUpperCase() : '?'"></div>
+                        </template>
+                        <a href="profile.html" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+                            <span x-text="user ? user.username : ''"></span>
+                        </a>
+                    </div>
+                    <button @click="Auth.logout()" class="text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg font-semibold transition-colors">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <div class="mb-8">
+            <h1 class="text-3xl font-extrabold tracking-tight">Global Leaderboard</h1>
+            <p class="text-slate-500 dark:text-slate-400 mt-2">See who is at the top of the ranks and keep coding to rise.</p>
+        </div>
+
+        <!-- Leaderboard Table -->
+        <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-hidden">
+            <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
+                <thead class="bg-slate-50 dark:bg-slate-800">
+                    <tr>
+                        <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider w-20">Rank</th>
+                        <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Username</th>
+                        <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Role</th>
+                        <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Streak</th>
+                        <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Problems Solved</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                    <template x-for="(row, idx) in leaderboard" :key="row.id">
+                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                            :class="user && user.id === row.id ? 'bg-blue-50 dark:bg-blue-900/10' : ''">
+                            <td class="px-6 py-4 text-sm font-bold text-slate-800 dark:text-slate-100 whitespace-nowrap">
+                                <span x-show="idx === 0" x-cloak class="text-yellow-500 text-lg">👑 1</span>
+                                <span x-show="idx === 1" x-cloak class="text-slate-500 text-lg font-bold">🥈 2</span>
+                                <span x-show="idx === 2" x-cloak class="text-amber-600 text-lg font-bold">🥉 3</span>
+                                <span x-show="idx > 2" x-cloak x-text="idx + 1"></span>
+                            </td>
+                            <td class="px-6 py-4 text-sm font-bold text-slate-800 dark:text-slate-100">
+                                <a :href="'public-profile.html?id=' + row.id" class="text-blue-600 dark:text-blue-400 hover:underline" x-text="row.username"></a>
+                            </td>
+                            <td class="px-6 py-4 text-sm font-semibold">
+                                <span class="px-2.5 py-0.5 rounded text-xs font-bold"
+                                      :class="row.role === 'admin' ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400' : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400'"
+                                      x-text="row.role"></span>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-slate-700 dark:text-slate-300 font-bold">
+                                <span class="text-orange-600 dark:text-orange-500">🔥 <span x-text="row.streak_count"></span> days</span>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">
+                                <span class="bg-blue-100 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 font-bold px-3 py-1 rounded text-xs" x-text="row.solved_count"></span>
+                            </td>
+                        </tr>
+                    </template>
+                    <template x-if="leaderboard.length === 0">
+                        <tr>
+                            <td colspan="5" class="px-6 py-10 text-center text-slate-400 text-sm">No coders on the leaderboard yet.</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script>
+        function leaderboardApp() {
+            return {
+                user: null,
+                profile: null,
+                leaderboard: [],
+
+                init() {
+                    Auth.checkAuthGuard();
+                    this.user = Auth.getUser();
+                    this.fetchProfile();
+                    this.fetchLeaderboard();
+                },
+
+                async fetchProfile() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/auth/profile`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.profile = await response.json();
+                            // Update user object with latest profile data
+                            if (this.user) {
+                                this.user.username = this.profile.username;
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Error fetching profile', e);
+                    }
+                },
+
+                async fetchLeaderboard() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/leaderboard`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.leaderboard = await response.json();
+                        }
+                    } catch (e) {
+                        console.error('Error fetching leaderboard', e);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

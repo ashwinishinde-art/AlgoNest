@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - DSA Online Judge</title>
+    <!-- Tailwind CSS CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" crossorigin>
+    <link rel="stylesheet" href="assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=2">
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-200" x-data="adminApp()">
+    
+    <!-- Navbar -->
+    <nav class="border-b border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-extrabold text-blue-700 dark:text-blue-400">
+                        DSA Judge
+                    </a>
+                    <div class="hidden md:block ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Dashboard</a>
+                        <a href="problems.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Problems</a>
+                        <a href="leaderboard.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Leaderboard</a>
+                        <a href="admin.html" class="bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white px-3 py-2 rounded-md text-sm font-medium">Admin</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button @click="toggleTheme()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    <div class="flex items-center space-x-3 pl-4 border-l border-slate-200 dark:border-slate-700">
+                        <template x-if="profile && profile.avatar_url">
+                            <img :src="API_BASE_URL.replace('/api', '') + profile.avatar_url" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+                        </template>
+                        <template x-if="!profile || !profile.avatar_url">
+                            <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm" x-text="user ? user.username.charAt(0).toUpperCase() : '?'"></div>
+                        </template>
+                        <a href="profile.html" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+                            <span x-text="user ? user.username : ''"></span>
+                        </a>
+                    </div>
+                    <button @click="Auth.logout()" class="text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg font-semibold transition-colors">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+            <div>
+                <h1 class="text-3xl font-extrabold tracking-tight">Admin Console</h1>
+                <p class="text-slate-500 dark:text-slate-400 mt-2">Create, modify, and delete problems or manage testing parameters.</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <button @click="openAddModal()" 
+                        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg transition-all text-sm flex items-center">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    Add Problem
+                </button>
+            </div>
+        </div>
+
+        <!-- Problems list -->
+        <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-hidden">
+            <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
+                <thead class="bg-slate-50 dark:bg-slate-800">
+                    <tr>
+                        <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider w-16">#</th>
+                        <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Title</th>
+                        <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Difficulty</th>
+                        <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Topic Tags</th>
+                        <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Status</th>
+                        <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                    <template x-for="(prob, idx) in problems" :key="prob.id">
+                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            <td class="px-6 py-4 text-sm font-semibold text-slate-500" x-text="idx + 1"></td>
+                            <td class="px-6 py-4 text-sm font-bold text-slate-800 dark:text-slate-100" x-text="prob.title"></td>
+                            <td class="px-6 py-4 text-sm font-semibold">
+                                <template x-if="prob.approved == 1">
+                                    <span class="px-2.5 py-0.5 rounded text-xs font-bold"
+                                          :class="prob.difficulty === 'Easy' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 
+                                                  prob.difficulty === 'Medium' ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400' : 
+                                                  'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'"
+                                          x-text="prob.difficulty"></span>
+                                </template>
+                                <template x-if="prob.approved != 1">
+                                    <span class="text-slate-400 text-xs">TBD</span>
+                                </template>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300" x-text="prob.topic_tags"></td>
+                            <td class="px-6 py-4 text-sm">
+                                <template x-if="prob.approved == 1">
+                                    <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">Approved</span>
+                                </template>
+                                <template x-if="prob.approved == 2">
+                                    <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400">Rejected</span>
+                                </template>
+                                <template x-if="prob.approved == 0">
+                                    <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-500">Pending</span>
+                                </template>
+                            </td>
+                            <td class="px-6 py-4 text-sm flex space-x-2">
+                                <template x-if="prob.approved == 0">
+                                    <button @click="viewProblem(prob.id)" 
+                                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-3 py-1 rounded text-xs transition-all">
+                                        View
+                                    </button>
+                                </template>
+                                <template x-if="prob.approved == 0">
+                                    <button @click="openApproveModal(prob.id)" 
+                                            class="bg-green-600 hover:bg-green-700 text-white font-semibold px-3 py-1 rounded text-xs transition-all">
+                                        Approve
+                                    </button>
+                                </template>
+                                <template x-if="prob.approved == 0">
+                                    <button @click="openRejectModal(prob.id)" 
+                                            class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-3 py-1 rounded text-xs transition-all">
+                                        Reject
+                                    </button>
+                                </template>
+                                <button @click="deleteProblem(prob.id)" 
+                                        class="bg-red-600 hover:bg-red-700 text-white font-semibold px-3 py-1 rounded text-xs transition-all">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </template>
+                    <template x-if="problems.length === 0">
+                        <tr>
+                            <td colspan="6" class="px-6 py-10 text-center text-slate-400 text-sm">No problems exist. Create one using the button above.</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- View Problem Modal -->
+        <div x-show="showViewModal" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 overflow-y-auto" x-transition>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl max-w-3xl w-full p-8 shadow-xl">
+                <h2 class="text-2xl font-bold mb-4 text-slate-800 dark:text-slate-100" x-text="viewingProblem.title"></h2>
+                
+                <!-- Topic tags -->
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <template x-for="tag in (viewingProblem.topic_tags ? viewingProblem.topic_tags.split(',') : [])" :key="tag">
+                        <span class="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-0.5 rounded font-medium" x-text="tag.trim()"></span>
+                    </template>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-6">
+                    <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-2">Description</h3>
+                    <div class="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg text-sm text-slate-700 dark:text-slate-300 whitespace-pre-wrap font-sans" x-text="viewingProblem.description"></div>
+                </div>
+
+                <!-- Constraints -->
+                <div class="mb-6">
+                    <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-2">Constraints</h3>
+                    <div class="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg text-sm text-slate-700 dark:text-slate-300 whitespace-pre-wrap font-mono" x-text="viewingProblem.constraints"></div>
+                </div>
+
+                <!-- Sample Test Cases -->
+                <div class="mb-6">
+                    <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-3">Sample Test Cases</h3>
+                    <template x-for="(sample, idx) in viewingSamples" :key="sample.id">
+                        <div class="border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden mb-3">
+                            <div class="bg-slate-100 dark:bg-slate-700 px-4 py-2 text-xs font-bold text-slate-500">
+                                <span x-text="`Example ${idx + 1}`"></span>
+                            </div>
+                            <div class="p-4 grid grid-cols-2 gap-4">
+                                <div>
+                                    <span class="text-xs text-slate-500 font-semibold block mb-2">Input</span>
+                                    <pre class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-2 rounded text-xs text-slate-700 dark:text-slate-300 overflow-x-auto" x-text="sample.input"></pre>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-500 font-semibold block mb-2">Expected Output</span>
+                                    <pre class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-2 rounded text-xs text-slate-700 dark:text-slate-300 overflow-x-auto" x-text="sample.expected"></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Author Info -->
+                <div class="mb-6 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+                    <p class="text-sm text-slate-600 dark:text-slate-400">
+                        <span class="font-semibold">Submitted by:</span>
+                        <span x-text="viewingProblem.author"></span>
+                    </p>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex justify-end space-x-3">
+                    <button @click="showViewModal = false" class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-semibold py-2 px-4 rounded-lg text-sm">Close</button>
+                    <button @click="showViewModal = false; openApproveModal(viewingProblem.id)" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg text-sm">Approve</button>
+                    <button @click="showViewModal = false; openRejectModal(viewingProblem.id)" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg text-sm">Reject</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Approve Modal -->
+        <div x-show="showApproveModal" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/40" x-transition>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl w-96 p-6 shadow-xl">
+                <h3 class="text-lg font-bold mb-1 text-slate-800 dark:text-slate-100">Approve Problem</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Set the difficulty and optionally leave a comment for the submitter.</p>
+                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Difficulty</label>
+                <select x-model="approveForm.difficulty"
+                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4">
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Comment for Submitter <span class="normal-case font-normal text-slate-400">(optional)</span></label>
+                <textarea x-model="approveForm.comment" rows="3" placeholder="e.g. Great problem! Minor edits were made to the constraints..."
+                          class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"></textarea>
+                <div class="flex justify-end space-x-3">
+                    <button @click="showApproveModal = false" class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-semibold py-2 px-4 rounded-lg text-sm">Cancel</button>
+                    <button @click="confirmApprove()" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg text-sm">Approve</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reject Modal -->
+        <div x-show="showRejectModal" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/40" x-transition>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl w-96 p-6 shadow-xl">
+                <h3 class="text-lg font-bold mb-4 text-slate-800 dark:text-slate-100">Reason for Rejection</h3>
+                <textarea x-model="rejectForm.reason" rows="4" placeholder="Explain why this problem is being rejected..."
+                          class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-red-500 mb-4"></textarea>
+                <div class="flex justify-end space-x-3">
+                    <button @click="showRejectModal = false" class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-semibold py-2 px-4 rounded-lg text-sm">Cancel</button>
+                    <button @click="confirmReject()" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg text-sm">Reject</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Problem Modal -->
+        <div x-show="showModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 overflow-y-auto" x-transition x-cloak>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl max-w-2xl w-full p-8 relative shadow-xl overflow-y-auto max-h-[90vh]">
+                <h2 class="text-2xl font-bold mb-6 text-slate-800 dark:text-slate-100">Add New DSA Problem</h2>
+                
+                <form @submit.prevent="submitProblem">
+                    <!-- Title -->
+                    <div class="mb-4">
+                        <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Problem Title</label>
+                        <input type="text" x-model="form.title" required
+                               class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+
+                    <!-- Grid for Difficulty & Tags -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Difficulty</label>
+                            <select x-model="form.difficulty" required
+                                    class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="Easy">Easy</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Hard">Hard</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Topic Tags (Comma Separated)</label>
+                            <input type="text" x-model="form.topic_tags" placeholder="e.g. Arrays, Sorting, Hash Map" required
+                                   class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-4">
+                        <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Problem Description (Markdown supported)</label>
+                        <textarea x-model="form.description" rows="5" required
+                                  class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"></textarea>
+                    </div>
+
+                    <!-- Constraints -->
+                    <div class="mb-4">
+                        <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Constraints</label>
+                        <textarea x-model="form.constraints" rows="3" required
+                                  class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono" placeholder="e.g. - 1 <= nums.length <= 10^5"></textarea>
+                    </div>
+
+                    <!-- Test Case Setup (Dynamic) -->
+                    <div class="mb-6 border-t border-slate-200 dark:border-slate-700 pt-4">
+                        <h3 class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-4 flex items-center justify-between">
+                            <span>Test Case Configuration</span>
+                        </h3>
+                        
+                        <!-- Sample Test Cases Section -->
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Sample (Shown) Test Cases</h4>
+                                <button type="button" @click="addSampleTC()" class="text-xs bg-blue-600 hover:bg-blue-700 text-white px-2.5 py-1 rounded font-semibold flex items-center transition-all">
+                                    <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                                    Add Sample
+                                </button>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <template x-for="(tc, index) in sampleTCs" :key="index">
+                                    <div class="p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg relative">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-xs font-semibold text-slate-500" x-text="`Sample #${index + 1}`"></span>
+                                            <button type="button" @click="removeSampleTC(index)" x-show="sampleTCs.length > 1" class="text-red-500 hover:text-red-700 transition-colors">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                            </button>
+                                        </div>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="block text-[10px] font-semibold text-slate-500 mb-1">Input</label>
+                                                <textarea x-model="tc.input" rows="2" required class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded p-2 text-xs font-mono text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
+                                            </div>
+                                            <div>
+                                                <label class="block text-[10px] font-semibold text-slate-500 mb-1">Expected Output</label>
+                                                <textarea x-model="tc.expected" rows="2" required class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded p-2 text-xs font-mono text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+
+                        <!-- Hidden Test Cases Section -->
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Hidden Test Cases</h4>
+                                <button type="button" @click="addHiddenTC()" class="text-xs bg-slate-600 hover:bg-slate-700 text-white px-2.5 py-1 rounded font-semibold flex items-center transition-all">
+                                    <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                                    Add Hidden
+                                </button>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <template x-for="(tc, index) in hiddenTCs" :key="index">
+                                    <div class="p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg relative">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-xs font-semibold text-slate-500" x-text="`Hidden #${index + 1}`"></span>
+                                            <button type="button" @click="removeHiddenTC(index)" x-show="hiddenTCs.length > 1" class="text-red-500 hover:text-red-700 transition-colors">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                            </button>
+                                        </div>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="block text-[10px] font-semibold text-slate-500 mb-1">Input</label>
+                                                <textarea x-model="tc.input" rows="2" required class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded p-2 text-xs font-mono text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
+                                            </div>
+                                            <div>
+                                                <label class="block text-[10px] font-semibold text-slate-500 mb-1">Expected Output</label>
+                                                <textarea x-model="tc.expected" rows="2" required class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded p-2 text-xs font-mono text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex justify-end space-x-3 border-t border-slate-200 dark:border-slate-700 pt-4">
+                        <button type="button" @click="showModal = false"
+                                class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-semibold py-2 px-4 rounded-lg text-sm transition-all">
+                            Cancel
+                        </button>
+                        <button type="submit" 
+                                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg text-sm transition-all">
+                            Create Problem
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="assets/js/app.js?v=2"></script>
+    <script src="assets/js/auth.js"></script>
+    <script>
+        function adminApp() {
+            return {
+                user: null,
+                profile: null,
+                problems: [],
+                showModal: false,
+                showApproveModal: false,
+                showRejectModal: false,
+                showViewModal: false,
+                viewingProblem: {},
+                viewingSamples: [],
+                approveForm: { problemId: null, difficulty: 'Medium', comment: '' },
+                rejectForm: { problemId: null, reason: '' },
+                form: {
+                    title: '',
+                    difficulty: 'Easy',
+                    topic_tags: '',
+                    description: '',
+                    constraints: ''
+                },
+                sampleTCs: [{ input: '', expected: '' }],
+                hiddenTCs: [{ input: '', expected: '' }],
+
+                init() {
+                    Auth.checkAuthGuard();
+                    this.user = Auth.getUser();
+                    
+                    if (this.user.role !== 'admin') {
+                        window.location.href = 'index.html';
+                        return;
+                    }
+
+                    this.fetchProfile();
+                    this.fetchProblems();
+                },
+
+                async fetchProfile() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/auth/profile`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.profile = await response.json();
+                            // Update user object with latest profile data
+                            if (this.user) {
+                                this.user.username = this.profile.username;
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Error fetching profile', e);
+                    }
+                },
+
+                async fetchProblems() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/admin/problems`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.problems = await response.json();
+                        }
+                    } catch (e) {
+                        console.error('Error fetching problems list', e);
+                    }
+                },
+
+                openAddModal() {
+                    this.form = { title: '', difficulty: 'Easy', topic_tags: '', description: '', constraints: '' };
+                    this.sampleTCs = [{ input: '', expected: '' }];
+                    this.hiddenTCs = [{ input: '', expected: '' }];
+                    this.showModal = true;
+                },
+
+                addSampleTC() {
+                    this.sampleTCs.push({ input: '', expected: '' });
+                },
+                
+                removeSampleTC(index) {
+                    this.sampleTCs.splice(index, 1);
+                },
+
+                addHiddenTC() {
+                    this.hiddenTCs.push({ input: '', expected: '' });
+                },
+
+                removeHiddenTC(index) {
+                    this.hiddenTCs.splice(index, 1);
+                },
+
+                async submitProblem() {
+                    const tcs = [];
+                    this.sampleTCs.forEach(tc => {
+                        tcs.push({ input: tc.input, expected: tc.expected, is_sample: 1 });
+                    });
+                    this.hiddenTCs.forEach(tc => {
+                        tcs.push({ input: tc.input, expected: tc.expected, is_sample: 0 });
+                    });
+
+                    const payload = {
+                        ...this.form,
+                        test_cases: tcs
+                    };
+
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/admin/problems`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                ...Auth.getAuthHeader()
+                            },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (response.ok) {
+                            this.showModal = false;
+                            this.fetchProblems();
+                        } else {
+                            const errData = await response.json();
+                            alert(errData.message || 'Failed to create problem.');
+                        }
+                    } catch (e) {
+                        console.error(e);
+                    }
+                },
+
+                openApproveModal(id) {
+                    this.approveForm = { problemId: id, difficulty: 'Medium', comment: '' };
+                    this.showApproveModal = true;
+                },
+
+                async viewProblem(problemId) {
+                    try {
+                        // Fetch problem details
+                        const probResponse = await fetch(`${API_BASE_URL}/problems/${problemId}`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (!probResponse.ok) {
+                            alert('Failed to load problem details');
+                            return;
+                        }
+                        this.viewingProblem = await probResponse.json();
+
+                        // Fetch sample test cases
+                        const samplesResponse = await fetch(`${API_BASE_URL}/problems/${problemId}/samples`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (samplesResponse.ok) {
+                            this.viewingSamples = await samplesResponse.json();
+                        }
+
+                        this.showViewModal = true;
+                    } catch (e) {
+                        console.error('Error viewing problem:', e);
+                        alert('Error loading problem: ' + e.message);
+                    }
+                },
+
+                async confirmApprove() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/admin/problems/${this.approveForm.problemId}/approve`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json', ...Auth.getAuthHeader() },
+                            body: JSON.stringify({ difficulty: this.approveForm.difficulty, comment: this.approveForm.comment })
+                        });
+                        if (response.ok) {
+                            this.showApproveModal = false;
+                            this.fetchProblems();
+                        } else {
+                            const e = await response.json();
+                            alert(e.message || 'Failed to approve.');
+                        }
+                    } catch (e) { alert('Error: ' + e.message); }
+                },
+
+                openRejectModal(id) {
+                    this.rejectForm = { problemId: id, reason: '' };
+                    this.showRejectModal = true;
+                },
+
+                async confirmReject() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/admin/problems/${this.rejectForm.problemId}/reject`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json', ...Auth.getAuthHeader() },
+                            body: JSON.stringify({ reason: this.rejectForm.reason })
+                        });
+                        if (response.ok) {
+                            this.showRejectModal = false;
+                            this.fetchProblems();
+                        } else {
+                            const e = await response.json();
+                            alert(e.message || 'Failed to reject.');
+                        }
+                    } catch (e) { alert('Error: ' + e.message); }
+                },
+
+                async deleteProblem(id) {
+                    if (!confirm('Are you sure you want to delete this problem?')) return;
+
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/admin/problems/${id}`, {
+                            method: 'DELETE',
+                            headers: Auth.getAuthHeader()
+                        });
+
+                        if (response.ok) {
+                            this.fetchProblems();
+                        } else {
+                            const errData = await response.json();
+                            alert(errData.message || 'Failed to delete problem.');
+                        }
+                    } catch (e) {
+                        console.error(e);
+                        alert('An error occurred during deletion: ' + e.message);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

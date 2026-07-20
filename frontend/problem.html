@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Workspace - DSA Online Judge</title>
+    <!-- Tailwind CSS CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" crossorigin>
+    <link rel="stylesheet" href="assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=2">
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Monaco Editor AMD Loader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+</head>
+<body class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200" x-data="workspaceApp()">
+    
+    <!-- Navbar -->
+    <nav class="border-b border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 h-14 flex items-center justify-between px-6 z-50">
+        <div class="flex items-center space-x-4">
+            <a href="problems.html" class="text-slate-500 hover:text-slate-800 dark:hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            </a>
+            <span class="text-sm font-semibold text-slate-700 dark:text-slate-300" x-text="problem.title"></span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold"
+                  :class="problem.difficulty === 'Easy' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 
+                          problem.difficulty === 'Medium' ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400' : 
+                          'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'"
+                  x-text="problem.difficulty"></span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <!-- Font Size -->
+            <div class="flex items-center space-x-2">
+                <span class="text-xs text-slate-500">Font</span>
+                <select x-model="fontSize" @change="updateFontSize()"
+                        class="bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 text-xs rounded px-2 py-1 text-slate-700 dark:text-slate-200 focus:outline-none">
+                    <option value="12">12px</option>
+                    <option value="14">14px</option>
+                    <option value="16">16px</option>
+                    <option value="18">18px</option>
+                </select>
+            </div>
+            
+            <button @click="toggleTheme()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+            <div class="flex items-center space-x-3 pl-4 border-l border-slate-200 dark:border-slate-700">
+                <template x-if="profile && profile.avatar_url">
+                    <img :src="API_BASE_URL.replace('/api', '') + profile.avatar_url" alt="Profile" class="w-7 h-7 rounded-full object-cover">
+                </template>
+                <template x-if="!profile || !profile.avatar_url">
+                    <div class="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs" x-text="user ? user.username.charAt(0).toUpperCase() : '?'"></div>
+                </template>
+                <a href="profile.html" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+                    <span x-text="user ? user.username : ''"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Workspace Split Container -->
+    <div class="flex-1 flex overflow-hidden">
+        
+        <!-- Left Pane: Tabbed Content -->
+        <div class="w-1/2 border-r border-slate-200 dark:border-slate-700 flex flex-col bg-white dark:bg-slate-900 overflow-hidden">
+            
+            <!-- Tab Headers -->
+            <div class="border-b border-slate-200 dark:border-slate-700 px-6 pt-4">
+                <div class="flex space-x-1">
+                    <button 
+                        @click="activeTab = 'problem'" 
+                        :class="activeTab === 'problem' ? 'border-blue-600 text-blue-700 dark:text-blue-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'"
+                        class="border-b-2 py-2 px-3 text-sm font-semibold transition-colors">
+                        Problem
+                    </button>
+                    <button 
+                        @click="activeTab = 'discussion'" 
+                        :class="activeTab === 'discussion' ? 'border-blue-600 text-blue-700 dark:text-blue-400' : 'border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'"
+                        class="border-b-2 py-2 px-3 text-sm font-semibold transition-colors">
+                        Discussion
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="flex-1 overflow-y-auto">
+                
+                <!-- Problem Tab -->
+                <div x-show="activeTab === 'problem'" class="p-6 space-y-6">
+                    <div>
+                        <h1 class="text-2xl font-bold tracking-tight" x-text="problem.title"></h1>
+                        
+                        <!-- Topic tags -->
+                        <div class="flex flex-wrap gap-2 mt-3">
+                            <template x-for="tag in (problem.topic_tags ? problem.topic_tags.split(',') : [])" :key="tag">
+                                <span class="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-0.5 rounded font-medium" x-text="tag.trim()"></span>
+                            </template>
+                        </div>
+
+                        <!-- Difficulty Badge -->
+                        <div class="flex items-center space-x-2 mt-3">
+                            <span class="px-2.5 py-0.5 rounded text-xs font-bold"
+                                  :class="problem.difficulty === 'Easy' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 
+                                          problem.difficulty === 'Medium' ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400' : 
+                                          'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'"
+                                  x-text="problem.difficulty"></span>
+                        </div>
+                    </div>
+
+                    <!-- Problem Description -->
+                    <div class="max-w-none text-slate-600 dark:text-slate-300 space-y-4">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500">Description</h3>
+                        <div class="text-sm leading-relaxed whitespace-pre-wrap font-sans" x-text="problem.description"></div>
+                    </div>
+
+                    <!-- Constraints -->
+                    <div class="space-y-2">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500">Constraints</h3>
+                        <div class="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-mono text-slate-600 dark:text-slate-300 leading-relaxed whitespace-pre-wrap" x-text="problem.constraints"></div>
+                    </div>
+
+                    <!-- Examples -->
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500">Sample Test Cases</h3>
+                        <template x-for="(sample, idx) in sampleCases" :key="sample.id">
+                            <div class="border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden bg-slate-50 dark:bg-slate-800">
+                                <div class="bg-slate-100 dark:bg-slate-700 px-4 py-2 text-xs font-bold text-slate-500 border-b border-slate-200 dark:border-slate-700 flex justify-between">
+                                    <span x-text="`Example ${idx + 1}`"></span>
+                                </div>
+                                <div class="p-4 grid grid-cols-2 gap-4 text-xs font-mono">
+                                    <div>
+                                        <span class="text-slate-500 font-semibold block mb-1">Input</span>
+                                        <pre class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-2 rounded text-slate-700 dark:text-slate-300 overflow-x-auto" x-text="sample.input"></pre>
+                                    </div>
+                                    <div>
+                                        <span class="text-slate-500 font-semibold block mb-1">Expected Output</span>
+                                        <pre class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-2 rounded text-slate-700 dark:text-slate-300 overflow-x-auto" x-text="sample.expected"></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Discussion Tab -->
+                <div x-show="activeTab === 'discussion'" class="p-6">
+                    <div class="mb-6">
+                        <h2 class="text-xl font-bold text-slate-800 dark:text-slate-100 mb-2">Discussion</h2>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm">Share your thoughts, ask questions, and discuss solutions with the community.</p>
+                    </div>
+
+                    <!-- Comment Form -->
+                    <div class="mb-8 bg-slate-50 dark:bg-slate-800 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-semibold" x-text="user ? user.username.charAt(0).toUpperCase() : '?'"></div>
+                            <div class="flex-1">
+                                <textarea 
+                                    x-model="newComment" 
+                                    placeholder="Share your thoughts or ask a question..."
+                                    class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg p-3 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    rows="3"></textarea>
+                                <div class="flex items-center justify-between mt-3">
+                                    <span class="text-xs text-slate-500" x-text="`${newComment.length}/2000 characters`"></span>
+                                    <button 
+                                        @click="postComment()" 
+                                        :disabled="!newComment.trim() || newComment.length > 2000 || postingComment"
+                                        class="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-400 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
+                                        <span x-show="!postingComment">Post Comment</span>
+                                        <span x-show="postingComment">Posting...</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comments List -->
+                    <div class="space-y-4">
+                        <template x-for="comment in comments" :key="comment.id">
+                            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-4">
+                                <!-- Main Comment -->
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-8 h-8 bg-slate-600 rounded-full flex items-center justify-center text-white text-sm font-semibold" x-text="comment.username.charAt(0).toUpperCase()"></div>
+                                    <div class="flex-1 min-w-0">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <a :href="'public-profile.html?id=' + comment.user_id" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline" x-text="comment.username"></a>
+                                            <span class="text-xs text-slate-500" x-text="formatDate(comment.created_at)"></span>
+                                            <template x-if="comment.updated_at !== comment.created_at">
+                                                <span class="text-xs text-slate-400">(edited)</span>
+                                            </template>
+                                        </div>
+                                        
+                                        <!-- Comment Content -->
+                                        <div x-show="editingComment !== comment.id">
+                                            <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed whitespace-pre-wrap" x-text="comment.content"></p>
+                                        </div>
+                                        
+                                        <!-- Edit Form -->
+                                        <div x-show="editingComment === comment.id">
+                                            <textarea 
+                                                x-model="editContent" 
+                                                class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded p-2 text-sm"
+                                                rows="3"></textarea>
+                                            <div class="flex space-x-2 mt-2">
+                                                <button @click="saveEdit(comment.id)" class="bg-blue-600 text-white px-3 py-1 rounded text-xs">Save</button>
+                                                <button @click="cancelEdit()" class="bg-slate-500 text-white px-3 py-1 rounded text-xs">Cancel</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Comment Actions -->
+                                        <div class="flex items-center space-x-4 mt-3">
+                                            <!-- Voting -->
+                                            <div class="flex items-center space-x-1">
+                                                <button 
+                                                    @click="voteComment(comment.id, 'upvote')"
+                                                    :class="comment.user_vote === 'upvote' ? 'text-green-600' : 'text-slate-400 hover:text-green-600'"
+                                                    class="p-1 transition-colors">
+                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L10 4.414 4.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                                    </svg>
+                                                </button>
+                                                <span class="text-sm font-medium text-slate-600 dark:text-slate-400" x-text="comment.vote_score"></span>
+                                                <button 
+                                                    @click="voteComment(comment.id, 'downvote')"
+                                                    :class="comment.user_vote === 'downvote' ? 'text-red-600' : 'text-slate-400 hover:text-red-600'"
+                                                    class="p-1 transition-colors">
+                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fill-rule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L10 15.586l5.293-5.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+
+                                            <!-- Reply Button -->
+                                            <button 
+                                                @click="toggleReply(comment.id)"
+                                                class="text-slate-500 hover:text-blue-600 text-sm font-medium transition-colors">
+                                                Reply
+                                            </button>
+
+                                            <!-- Edit/Delete (for comment author) -->
+                                            <template x-if="user && comment.user_id === user.id">
+                                                <div class="flex space-x-2">
+                                                    <button 
+                                                        @click="startEdit(comment.id, comment.content)"
+                                                        class="text-slate-500 hover:text-blue-600 text-sm font-medium transition-colors">
+                                                        Edit
+                                                    </button>
+                                                    <button 
+                                                        @click="deleteComment(comment.id)"
+                                                        class="text-slate-500 hover:text-red-600 text-sm font-medium transition-colors">
+                                                        Delete
+                                                    </button>
+                                                </div>
+                                            </template>
+                                        </div>
+
+                                        <!-- Reply Form -->
+                                        <div x-show="replyingTo === comment.id" class="mt-4 ml-4 border-l-2 border-slate-200 dark:border-slate-700 pl-4">
+                                            <div class="flex items-start space-x-3">
+                                                <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-white text-xs font-semibold" x-text="user ? user.username.charAt(0).toUpperCase() : '?'"></div>
+                                                <div class="flex-1">
+                                                    <textarea 
+                                                        x-model="replyContent" 
+                                                        placeholder="Write a reply..."
+                                                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded p-2 text-sm resize-none"
+                                                        rows="2"></textarea>
+                                                    <div class="flex space-x-2 mt-2">
+                                                        <button 
+                                                            @click="postReply(comment.id)" 
+                                                            :disabled="!replyContent.trim()"
+                                                            class="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-400 text-white px-3 py-1 rounded text-xs">
+                                                            Reply
+                                                        </button>
+                                                        <button 
+                                                            @click="cancelReply()"
+                                                            class="bg-slate-500 text-white px-3 py-1 rounded text-xs">
+                                                            Cancel
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Replies -->
+                                        <template x-if="comment.replies && comment.replies.length > 0">
+                                            <div class="mt-4 ml-4 border-l-2 border-slate-200 dark:border-slate-700 pl-4 space-y-4">
+                                                <template x-for="reply in comment.replies" :key="reply.id">
+                                                    <div class="flex items-start space-x-3">
+                                                        <div class="w-6 h-6 bg-slate-500 rounded-full flex items-center justify-center text-white text-xs font-semibold" x-text="reply.username.charAt(0).toUpperCase()"></div>
+                                                        <div class="flex-1 min-w-0">
+                                                            <div class="flex items-center space-x-2 mb-1">
+                                                                <a :href="'public-profile.html?id=' + reply.user_id" class="font-medium text-blue-600 dark:text-blue-400 hover:underline text-sm" x-text="reply.username"></a>
+                                                                <span class="text-xs text-slate-500" x-text="formatDate(reply.created_at)"></span>
+                                                            </div>
+                                                            <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed whitespace-pre-wrap" x-text="reply.content"></p>
+                                                            
+                                                            <div class="flex items-center space-x-4 mt-2">
+                                                                <!-- Reply Voting -->
+                                                                <div class="flex items-center space-x-1">
+                                                                    <button 
+                                                                        @click="voteComment(reply.id, 'upvote')"
+                                                                        :class="reply.user_vote === 'upvote' ? 'text-green-600' : 'text-slate-400 hover:text-green-600'"
+                                                                        class="p-0.5 transition-colors">
+                                                                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                                                            <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L10 4.414 4.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                                                        </svg>
+                                                                    </button>
+                                                                    <span class="text-xs font-medium text-slate-600 dark:text-slate-400" x-text="reply.vote_score"></span>
+                                                                    <button 
+                                                                        @click="voteComment(reply.id, 'downvote')"
+                                                                        :class="reply.user_vote === 'downvote' ? 'text-red-600' : 'text-slate-400 hover:text-red-600'"
+                                                                        class="p-0.5 transition-colors">
+                                                                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                                                            <path fill-rule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L10 15.586l5.293-5.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+
+                                                                <!-- Reply Edit/Delete (for reply author) -->
+                                                                <template x-if="user && reply.user_id === user.id">
+                                                                    <button 
+                                                                        @click="deleteComment(reply.id)"
+                                                                        class="text-slate-500 hover:text-red-600 text-xs font-medium transition-colors">
+                                                                        Delete
+                                                                    </button>
+                                                                </template>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+
+                        <!-- Empty State -->
+                        <div x-show="comments.length === 0" class="text-center py-8">
+                            <div class="text-slate-400 dark:text-slate-500 mb-2">
+                                <svg class="w-12 h-12 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                                </svg>
+                            </div>
+                            <p class="text-slate-500 dark:text-slate-400">No comments yet. Be the first to start the discussion!</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Pane: Code Editor & Console -->
+        <div class="w-1/2 flex flex-col overflow-hidden bg-slate-50 dark:bg-slate-800">
+            <!-- Code Editor Container -->
+            <div class="flex-1 relative border-b border-slate-200 dark:border-slate-700">
+                <div id="monaco-container" class="absolute inset-0"></div>
+            </div>
+
+            <!-- Console and Run Actions Panel -->
+            <div class="h-64 flex flex-col bg-white dark:bg-slate-900">
+                <!-- Tabs and Action buttons -->
+                <div class="border-b border-slate-200 dark:border-slate-700 px-6 py-2 flex items-center justify-between">
+                    <div class="flex space-x-4">
+                        <button class="text-sm font-bold border-b-2 border-blue-600 pb-1 text-slate-800 dark:text-slate-100">Console Output</button>
+                    </div>
+                    <div class="flex space-x-3">
+                        <button @click="runCode()" 
+                                class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-semibold px-4 py-1.5 rounded-lg text-sm transition-colors"
+                                :disabled="running">
+                            Run Samples
+                        </button>
+                        <button @click="submitCode()" 
+                                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-1.5 rounded-lg text-sm transition-colors"
+                                :disabled="running">
+                            Submit Solution
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Console Display -->
+                <div class="flex-1 p-4 overflow-y-auto font-mono text-xs text-slate-600 dark:text-slate-300">
+                    <div x-show="running" class="text-blue-600 dark:text-blue-400 font-semibold flex items-center space-x-2">
+                        <svg class="animate-spin h-4 w-4 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                        <span>Compiling and running…</span>
+                    </div>
+
+                    <div x-show="!running && consoleText" class="whitespace-pre-wrap leading-relaxed" x-html="consoleText"></div>
+                    <div x-show="!running && !consoleText" class="text-slate-400 italic">No output. Click "Run Samples" to test against example inputs.</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/editor.js"></script>
+    <script src="assets/js/runner-client.js"></script>
+    <script>
+        function workspaceApp() {
+            return {
+                user: null,
+                profile: null,
+                problemId: null,
+                problem: {},
+                sampleCases: [],
+                fontSize: '14',
+                running: false,
+                consoleText: '',
+                activeTab: 'problem',
+                
+                // Comments functionality
+                comments: [],
+                newComment: '',
+                postingComment: false,
+                replyingTo: null,
+                replyContent: '',
+                editingComment: null,
+                editContent: '',
+
+                async init() {
+                    Auth.checkAuthGuard();
+                    this.user = Auth.getUser();
+                    
+                    // Parse query parameters
+                    const urlParams = new URLSearchParams(window.location.search);
+                    this.problemId = urlParams.get('id');
+                    
+                    if (!this.problemId) {
+                        window.location.href = 'problems.html';
+                        return;
+                    }
+
+                    await this.fetchProfile();
+                    await this.fetchProblemDetails();
+                    await this.fetchSampleCases();
+                    await this.fetchComments();
+                    
+                    // Load Monaco Code Editor
+                    await initMonacoEditor('monaco-container', this.problem.default_template);
+                },
+
+                async fetchProfile() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/auth/profile`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.profile = await response.json();
+                            // Update user object with latest profile data
+                            if (this.user) {
+                                this.user.username = this.profile.username;
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Error fetching profile', e);
+                    }
+                },
+
+                async fetchProblemDetails() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/problems/${this.problemId}`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.problem = await response.json();
+                        }
+                    } catch (e) {
+                        console.error('Error fetching problem details', e);
+                    }
+                },
+
+                async fetchSampleCases() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/problems/${this.problemId}/samples`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.sampleCases = await response.json();
+                        }
+                    } catch (e) {
+                        console.error('Error fetching samples', e);
+                    }
+                },
+
+                updateFontSize() {
+                    updateEditorFontSize(parseInt(this.fontSize));
+                },
+
+                async runCode() {
+                    this.running = true;
+                    this.consoleText = '';
+                    const code = getEditorCode();
+
+                    // Convert sampleCases format to match compiler runner
+                    const tests = this.sampleCases.map(tc => ({
+                        input: tc.input,
+                        expected: tc.expected
+                    }));
+
+                    const res = await RunnerClient.executeLocally(code, tests, parseFloat(this.problem.time_limit_sec || 2.0));
+                    this.running = false;
+
+                    if (!res.success) {
+                        this.renderError(res);
+                        return;
+                    }
+
+                    this.renderRunnerOutput(res.test_cases, false);
+                },
+
+                async submitCode() {
+                    this.running = true;
+                    this.consoleText = '';
+                    const code = getEditorCode();
+
+                    // 1. Fetch ALL test cases (both sample and hidden) from backend
+                    let allTestCases = [];
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/problems/${this.problemId}/testcases`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            allTestCases = await response.json();
+                        } else {
+                            throw new Error('Unauthorized or failed to fetch test cases.');
+                        }
+                    } catch (e) {
+                        this.running = false;
+                        this.consoleText = `<span class="text-red-500">Error: Could not retrieve tests from the remote database backend.</span>`;
+                        return;
+                    }
+
+                    // 2. Execute compilation and testing locally on the user's host
+                    const res = await RunnerClient.executeLocally(code, allTestCases, parseFloat(this.problem.time_limit_sec || 2.0));
+                    
+                    if (!res.success) {
+                        this.running = false;
+                        this.renderError(res);
+                        return;
+                    }
+
+                    // Calculate metrics
+                    const totalCount = res.test_cases.length;
+                    const passedCount = res.test_cases.filter(tc => tc.passed).length;
+                    const allPassed = res.all_passed;
+                    
+                    let overallStatus = "Accepted";
+                    let maxRuntime = 0;
+                    
+                    for (const tc of res.test_cases) {
+                        if (!tc.passed) {
+                            overallStatus = tc.status; // First failing status (Wrong Answer, Time Limit, Runtime Error)
+                            break;
+                        }
+                        if (tc.runtime_ms > maxRuntime) {
+                            maxRuntime = tc.runtime_ms;
+                        }
+                    }
+
+                    // 3. Send ONLY the final aggregated stats back to backend
+                    const report = await RunnerClient.submitResultToBackend(
+                        this.problemId,
+                        overallStatus,
+                        passedCount,
+                        totalCount,
+                        maxRuntime,
+                        code
+                    );
+
+                    this.running = false;
+
+                    if (report.message) {
+                        this.consoleText += `<span class="text-blue-600 dark:text-blue-400 font-bold">[Backend Status]: ${report.message}</span>\n\n`;
+                    }
+
+                    this.renderRunnerOutput(res.test_cases, true);
+                },
+
+                renderError(res) {
+                    if (res.error === "Compilation Error") {
+                        this.consoleText = `<span class="text-red-600 dark:text-red-400 font-bold">Compilation Error:</span>\n<pre class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 text-red-700 dark:text-red-400 p-4 rounded mt-2 overflow-x-auto">${res.compile_stderr}</pre>`;
+                    } else {
+                        this.consoleText = `<span class="text-red-600 dark:text-red-400 font-bold">Runner Error:</span>\n<p class="text-slate-500 dark:text-slate-400 mt-2 whitespace-pre-wrap">${res.error}</p>`;
+                    }
+                },
+
+                renderRunnerOutput(testCases, isSubmission) {
+                    let html = '';
+                    const title = isSubmission ? "Submission Evaluation Summary" : "Sample Run Evaluation Summary";
+                    html += `<span class="text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider text-xs">${title}</span>\n\n`;
+
+                    const allPassed = testCases.every(tc => tc.passed);
+                    if (allPassed) {
+                        html += `<span class="text-green-600 dark:text-green-400 font-bold text-lg">✔ All Test Cases Passed!</span>\n\n`;
+                    } else {
+                        html += `<span class="text-red-600 dark:text-red-400 font-bold text-lg">✘ Some Test Cases Failed</span>\n\n`;
+                    }
+
+                    testCases.forEach((tc) => {
+                        const icon = tc.passed ? '✔' : '✘';
+                        const color = tc.passed ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400';
+                        const badgeColor = tc.status === 'Accepted'
+                            ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
+                            : 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400';
+
+                        html += `<div class="mb-4 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 rounded-lg p-3">`;
+                        html += `  <div class="flex items-center justify-between mb-2">`;
+                        html += `    <span class="font-bold ${color}">${icon} Case #${tc.id}</span>`;
+                        html += `    <span class="px-2 py-0.5 rounded text-[10px] font-bold ${badgeColor}">${tc.status} (${tc.runtime_ms} ms)</span>`;
+                        html += `  </div>`;
+
+                        if (!tc.passed) {
+                            html += `  <div class="grid grid-cols-2 gap-4 mt-2 text-xs text-slate-500 dark:text-slate-400 font-mono">`;
+                            html += `    <div>`;
+                            html += `      <span class="text-slate-400 dark:text-slate-500 block mb-1">Expected Output</span>`;
+                            html += `      <pre class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-2 rounded text-slate-700 dark:text-slate-300 overflow-x-auto">${tc.expected}</pre>`;
+                            html += `    </div>`;
+                            html += `    <div>`;
+                            html += `      <span class="text-slate-400 dark:text-slate-500 block mb-1">Actual Output</span>`;
+                            html += `      <pre class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-2 rounded text-slate-700 dark:text-slate-300 overflow-x-auto">${tc.actual || '[Empty/Crash]'}</pre>`;
+                            html += `    </div>`;
+                            html += `  </div>`;
+                            if (tc.stderr) {
+                                html += `  <div class="mt-2 text-xs font-mono">`;
+                                html += `    <span class="text-slate-400 dark:text-slate-500 block mb-1">Stderr / Crash Logs</span>`;
+                                html += `    <pre class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 text-red-600 dark:text-red-400 p-2 rounded overflow-x-auto">${tc.stderr}</pre>`;
+                                html += `  </div>`;
+                            }
+                        }
+                        html += `</div>`;
+                    });
+
+                    this.consoleText += html;
+                },
+
+                // Comments functionality
+                async fetchComments() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/comments/problem/${this.problemId}`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.comments = await response.json();
+                        }
+                    } catch (e) {
+                        console.error('Error fetching comments:', e);
+                    }
+                },
+
+                async postComment() {
+                    if (!this.newComment.trim() || this.postingComment) return;
+                    
+                    this.postingComment = true;
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/comments`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                ...Auth.getAuthHeader()
+                            },
+                            body: JSON.stringify({
+                                problem_id: this.problemId,
+                                content: this.newComment.trim()
+                            })
+                        });
+
+                        if (response.ok) {
+                            this.newComment = '';
+                            await this.fetchComments();
+                        } else {
+                            const error = await response.json();
+                            alert(error.message || 'Failed to post comment');
+                        }
+                    } catch (e) {
+                        console.error('Error posting comment:', e);
+                        alert('Failed to post comment');
+                    } finally {
+                        this.postingComment = false;
+                    }
+                },
+
+                async postReply(parentId) {
+                    if (!this.replyContent.trim()) return;
+                    
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/comments`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                ...Auth.getAuthHeader()
+                            },
+                            body: JSON.stringify({
+                                problem_id: this.problemId,
+                                content: this.replyContent.trim(),
+                                parent_comment_id: parentId
+                            })
+                        });
+
+                        if (response.ok) {
+                            this.replyContent = '';
+                            this.replyingTo = null;
+                            await this.fetchComments();
+                        } else {
+                            const error = await response.json();
+                            alert(error.message || 'Failed to post reply');
+                        }
+                    } catch (e) {
+                        console.error('Error posting reply:', e);
+                        alert('Failed to post reply');
+                    }
+                },
+
+                async voteComment(commentId, voteType) {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/comments/${commentId}/vote`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                ...Auth.getAuthHeader()
+                            },
+                            body: JSON.stringify({ vote_type: voteType })
+                        });
+
+                        if (response.ok) {
+                            await this.fetchComments();
+                        } else {
+                            const error = await response.json();
+                            alert(error.message || 'Failed to vote');
+                        }
+                    } catch (e) {
+                        console.error('Error voting:', e);
+                        alert('Failed to vote');
+                    }
+                },
+
+                async deleteComment(commentId) {
+                    if (!confirm('Are you sure you want to delete this comment?')) return;
+                    
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/comments/${commentId}`, {
+                            method: 'DELETE',
+                            headers: Auth.getAuthHeader()
+                        });
+
+                        if (response.ok) {
+                            await this.fetchComments();
+                        } else {
+                            const error = await response.json();
+                            alert(error.message || 'Failed to delete comment');
+                        }
+                    } catch (e) {
+                        console.error('Error deleting comment:', e);
+                        alert('Failed to delete comment');
+                    }
+                },
+
+                startEdit(commentId, content) {
+                    this.editingComment = commentId;
+                    this.editContent = content;
+                },
+
+                async saveEdit(commentId) {
+                    if (!this.editContent.trim()) return;
+                    
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/comments/${commentId}`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                ...Auth.getAuthHeader()
+                            },
+                            body: JSON.stringify({
+                                content: this.editContent.trim()
+                            })
+                        });
+
+                        if (response.ok) {
+                            this.cancelEdit();
+                            await this.fetchComments();
+                        } else {
+                            const error = await response.json();
+                            alert(error.message || 'Failed to update comment');
+                        }
+                    } catch (e) {
+                        console.error('Error updating comment:', e);
+                        alert('Failed to update comment');
+                    }
+                },
+
+                cancelEdit() {
+                    this.editingComment = null;
+                    this.editContent = '';
+                },
+
+                toggleReply(commentId) {
+                    if (this.replyingTo === commentId) {
+                        this.cancelReply();
+                    } else {
+                        this.replyingTo = commentId;
+                        this.replyContent = '';
+                    }
+                },
+
+                cancelReply() {
+                    this.replyingTo = null;
+                    this.replyContent = '';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

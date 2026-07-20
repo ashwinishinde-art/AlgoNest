@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DSA Online Judge</title>
+    <!-- Tailwind CSS CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" crossorigin>
+    <link rel="stylesheet" href="assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=2">
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 min-h-screen flex items-center justify-center transition-colors duration-200">
+
+
+    <div x-data="loginForm()" class="w-full max-w-md p-8 rounded-xl shadow-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 relative z-10">
+        <!-- Logo/Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-extrabold tracking-tight text-blue-700 dark:text-blue-400">
+                DSA Judge
+            </h1>
+            <p class="text-slate-500 dark:text-slate-400 mt-2" x-text="isRegister ? 'Create an account to start coding' : 'Welcome back, coder!'"></p>
+        </div>
+
+        <!-- Alert Notification -->
+        <div x-show="alert.show" x-transition class="mb-4 p-3 rounded-lg text-sm font-medium"
+             :class="alert.type === 'error' ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 border border-red-300 dark:border-red-700' : 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 border border-green-300 dark:border-green-700'">
+            <span x-text="alert.message"></span>
+        </div>
+
+        <!-- Form -->
+        <form @submit.prevent="submitForm">
+            <!-- Username (Registration only) -->
+            <div class="mb-4" x-show="isRegister">
+                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Username</label>
+                <input type="text" x-model="formData.username" 
+                       class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-3 px-4 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+            </div>
+
+            <!-- Email -->
+            <div class="mb-4">
+                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Email Address</label>
+                <input type="email" x-model="formData.email" required
+                       class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-3 px-4 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+            </div>
+
+            <!-- Password -->
+            <div class="mb-6">
+                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Password</label>
+                <input type="password" x-model="formData.password" required
+                       class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-3 px-4 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" 
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    :disabled="loading">
+                <span x-show="!loading" x-text="isRegister ? 'Sign Up' : 'Sign In'"></span>
+                <span x-show="loading">Processing...</span>
+            </button>
+        </form>
+
+        <!-- Toggle Auth mode -->
+        <div class="text-center mt-6">
+            <button @click="toggleMode" class="text-sm text-slate-500 hover:text-slate-800 dark:hover:text-white transition-colors">
+                <span x-text="isRegister ? 'Already have an account? Sign In' : 'New here? Create an account'"></span>
+            </button>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script>
+        function loginForm() {
+            return {
+                isRegister: false,
+                loading: false,
+                formData: {
+                    username: '',
+                    email: '',
+                    password: ''
+                },
+                alert: {
+                    show: false,
+                    type: 'error',
+                    message: ''
+                },
+                toggleMode() {
+                    this.isRegister = !this.isRegister;
+                    this.alert.show = false;
+                },
+                async submitForm() {
+                    // Prevent double submission
+                    if (this.loading) return;
+                    
+                    this.loading = true;
+                    this.alert.show = false;
+
+                    const endpoint = this.isRegister ? '/auth/register' : '/auth/login';
+                    const payload = this.isRegister 
+                        ? this.formData 
+                        : { email: this.formData.email, password: this.formData.password };
+
+                    try {
+                        const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(payload)
+                        });
+
+                        const resData = await response.json();
+
+                        if (!response.ok) {
+                            throw new Error(resData.message || 'Authentication failed');
+                        }
+
+                        if (this.isRegister) {
+                            this.alert.show = true;
+                            this.alert.type = 'success';
+                            this.alert.message = 'Registration successful! You can now login.';
+                            this.isRegister = false;
+                            this.formData.username = '';
+                            this.formData.password = '';
+                        } else {
+                            Auth.setToken(resData.token);
+                            window.location.href = 'index.html';
+                        }
+                    } catch (err) {
+                        this.alert.show = true;
+                        this.alert.type = 'error';
+                        this.alert.message = err.message;
+                        console.error('Authentication error:', err);
+                    } finally {
+                        this.loading = false;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

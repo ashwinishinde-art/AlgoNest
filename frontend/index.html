@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - DSA Online Judge</title>
+    <!-- Tailwind CSS CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" crossorigin>
+    <link rel="stylesheet" href="assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=2">
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-200" x-data="dashboardApp()">
+    
+    <!-- Navbar -->
+    <nav class="border-b border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-extrabold text-blue-700 dark:text-blue-400">
+                        DSA Judge
+                    </a>
+                    <div class="hidden md:block ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                        <a href="problems.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Problems</a>
+                        <a href="leaderboard.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Leaderboard</a>
+                        <template x-if="user && user.role === 'admin'">
+                            <a href="admin.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Admin</a>
+                        </template>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button @click="toggleTheme()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    <div class="relative">
+                        <button @click="showNotifications = !showNotifications" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none relative">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                            <template x-if="unreadNotificationCount > 0">
+                                <span class="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold" x-text="unreadNotificationCount"></span>
+                            </template>
+                        </button>
+                        <!-- Notifications Dropdown -->
+                        <div x-show="showNotifications" @click.outside="showNotifications = false" class="absolute right-0 mt-2 w-96 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
+                            <div class="sticky top-0 bg-slate-50 dark:bg-slate-800 px-4 py-3 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                                <h3 class="font-bold text-slate-800 dark:text-slate-100">Notifications</h3>
+                                <template x-if="notifications.length > 0">
+                                    <button @click="markAllNotificationsAsRead()" class="text-xs text-blue-600 dark:text-blue-400 hover:underline">Mark all as read</button>
+                                </template>
+                            </div>
+                            <template x-if="notifications.length === 0">
+                                <div class="p-6 text-center text-slate-500 dark:text-slate-400">
+                                    <p class="text-sm">No notifications yet</p>
+                                </div>
+                            </template>
+                            <template x-for="notification in notifications" :key="notification.id">
+                                <div :class="notification.is_read ? 'bg-white dark:bg-slate-900' : 'bg-blue-50 dark:bg-blue-900/20'" class="p-4 border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                    <div class="flex items-start space-x-3">
+                                        <div :class="notification.type === 'problem_approved' ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' : notification.type === 'problem_rejected' ? 'bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400' : 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'" class="p-2 rounded-lg shrink-0">
+                                            <template x-if="notification.type === 'problem_approved'">
+                                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                            </template>
+                                            <template x-if="notification.type === 'problem_rejected'">
+                                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
+                                            </template>
+                                            <template x-if="notification.type === 'reply'">
+                                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 5a2 2 0 012-2h9a2 2 0 012 2v1h2a2 2 0 012 2v9a2 2 0 01-2 2h-1v2a2 2 0 11-4 0v-2H5a2 2 0 01-2-2V5zm7 7V9m0 4v-2m5-6h2v10h-2V8z"></path></svg>
+                                            </template>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <p class="font-semibold text-slate-800 dark:text-slate-100 text-sm" x-text="notification.title"></p>
+                                            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" x-text="notification.message"></p>
+                                            <p class="text-xs text-slate-500 dark:text-slate-500 mt-2" x-text="formatDate(notification.created_at)"></p>
+                                            <template x-if="notification.type === 'problem_rejected'">
+                                                <button @click="editRejectedProblem(notification.problem_id)" class="mt-2 text-xs bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded">Edit & Resubmit</button>
+                                            </template>
+                                            <template x-if="notification.type === 'reply'">
+                                                <a :href="'problem.html?id=' + notification.problem_id" class="mt-2 inline-block text-xs bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded">View Problem</a>
+                                            </template>
+                                        </div>
+                                        <button @click="markNotificationAsRead(notification.id)" :class="notification.is_read ? 'text-slate-300' : 'text-blue-600'" class="shrink-0 p-1">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3 pl-4 border-l border-slate-200 dark:border-slate-700">
+                        <template x-if="profile && profile.avatar_url">
+                            <img :src="API_BASE_URL.replace('/api', '') + profile.avatar_url" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+                        </template>
+                        <template x-if="!profile || !profile.avatar_url">
+                            <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm" x-text="user ? user.username.charAt(0).toUpperCase() : '?'"></div>
+                        </template>
+                        <a href="profile.html" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+                            <span x-text="user ? user.username : ''"></span>
+                        </a>
+                    </div>
+                    <button @click="Auth.logout()" class="text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg font-semibold transition-colors">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <!-- Welcome Card & Streak -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div class="md:col-span-2 p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">Welcome Back, <span class="text-blue-700 dark:text-blue-400" x-text="user ? user.username : 'Coder'"></span>!</h2>
+                    <p class="text-slate-500 dark:text-slate-400">Evaluate code locally, keep your stats synchronized, and crush your goals.</p>
+                </div>
+                <div class="mt-6 flex space-x-4">
+                    <a href="problems.html" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg transition-all">Solve Problems</a>
+                    <button @click="openSubmitModal()" class="bg-slate-700 hover:bg-slate-600 text-white font-semibold px-4 py-2 rounded-lg transition-all flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        Submit a Problem
+                    </button>
+                </div>
+            </div>
+            
+            <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 flex items-center justify-between">
+                <div>
+                    <h3 class="text-lg font-bold text-slate-500 dark:text-slate-400">Current Streak</h3>
+                    <div class="flex items-baseline space-x-2 mt-2">
+                        <span class="text-5xl font-extrabold text-orange-600 dark:text-orange-500" x-text="profile.streak_count || 0"></span>
+                        <span class="text-xl font-medium text-slate-500 dark:text-slate-400">days</span>
+                    </div>
+                </div>
+                <div class="text-orange-600 dark:text-orange-500">
+                    <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Problem Solving Stats & Quick Details -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <!-- Stats -->
+            <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 col-span-1">
+                <h3 class="text-lg font-bold mb-6">Difficulty Breakdown</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-green-700 dark:text-green-400 font-semibold">Easy</span>
+                            <span class="text-slate-500 dark:text-slate-400"><span x-text="stats.easy"></span> solved</span>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full">
+                            <div class="bg-green-600 h-2.5 rounded-full" :style="`width: ${stats.easy_pct}%`"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-yellow-700 dark:text-yellow-400 font-semibold">Medium</span>
+                            <span class="text-slate-500 dark:text-slate-400"><span x-text="stats.medium"></span> solved</span>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full">
+                            <div class="bg-yellow-500 h-2.5 rounded-full" :style="`width: ${stats.medium_pct}%`"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-red-700 dark:text-red-400 font-semibold">Hard</span>
+                            <span class="text-slate-500 dark:text-slate-400"><span x-text="stats.hard"></span> solved</span>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full">
+                            <div class="bg-red-600 h-2.5 rounded-full" :style="`width: ${stats.hard_pct}%`"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Submissions -->
+            <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 md:col-span-2">
+                <h3 class="text-lg font-bold mb-6">My Recent Submissions</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
+                        <thead>
+                            <tr>
+                                <th class="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase">Problem</th>
+                                <th class="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase">Status</th>
+                                <th class="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase">Runtime</th>
+                                <th class="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase">Submitted</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                            <template x-for="sub in submissions" :key="sub.id">
+                                <tr>
+                                    <td class="px-4 py-3 text-sm font-semibold">
+                                        <a :href="`problem.html?id=${sub.problem_id}`" class="text-blue-700 dark:text-blue-400 hover:underline" x-text="sub.problem_title"></a>
+                                    </td>
+                                    <td class="px-4 py-3 text-sm">
+                                        <span class="px-2.5 py-0.5 rounded text-xs font-bold"
+                                              :class="sub.status === 'Accepted' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'"
+                                              x-text="sub.status"></span>
+                                    </td>
+                                    <td class="px-4 py-3 text-sm text-slate-600 dark:text-slate-300" x-text="`${sub.runtime_ms} ms`"></td>
+                                    <td class="px-4 py-3 text-sm text-slate-500 dark:text-slate-400" x-text="formatDate(sub.created_at)"></td>
+                                </tr>
+                            </template>
+                            <template x-if="submissions.length === 0">
+                                <tr>
+                                    <td colspan="4" class="px-4 py-8 text-center text-slate-400 text-sm">No submissions recorded yet. Ready to submit?</td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Contributed Problems -->
+        <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 mb-10">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-lg font-bold">My Contributed Problems</h3>
+                <span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-600 px-2.5 py-1 rounded font-semibold">Requires Admin Approval</span>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
+                    <thead>
+                        <tr>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase">#</th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase">Title</th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase">Difficulty</th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase">Topic Tags</th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                        <template x-for="(prob, idx) in contributedProblems" :key="prob.id">
+                            <tr>
+                                <td class="px-4 py-3 text-sm text-slate-500 font-semibold" x-text="idx + 1"></td>
+                                <td class="px-4 py-3 text-sm font-semibold">
+                                    <template x-if="prob.approved == 1">
+                                        <a :href="`problem.html?id=${prob.id}`" class="text-blue-700 dark:text-blue-400 hover:underline font-bold" x-text="prob.title"></a>
+                                    </template>
+                                    <template x-if="prob.approved != 1">
+                                        <span class="text-slate-500 font-medium" x-text="prob.title"></span>
+                                    </template>
+                                </td>
+                                <td class="px-4 py-3 text-sm">
+                                    <template x-if="prob.approved == 1">
+                                        <span class="px-2.5 py-0.5 rounded text-xs font-bold"
+                                              :class="prob.difficulty === 'Easy' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 
+                                                      prob.difficulty === 'Medium' ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400' : 
+                                                      'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'"
+                                              x-text="prob.difficulty"></span>
+                                    </template>
+                                    <template x-if="prob.approved != 1">
+                                        <span class="text-slate-400 text-xs">TBD</span>
+                                    </template>
+                                </td>
+                                <td class="px-4 py-3 text-sm text-slate-600 dark:text-slate-300" x-text="prob.topic_tags"></td>
+                                <td class="px-4 py-3 text-sm">
+                                    <template x-if="prob.approved == 1">
+                                        <div>
+                                            <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">Approved</span>
+                                            <template x-if="prob.approval_comment">
+                                                <p class="text-xs text-slate-500 mt-1 italic" x-text="`Admin: ${prob.approval_comment}`"></p>
+                                            </template>
+                                        </div>
+                                    </template>
+                                    <template x-if="prob.approved == 2">
+                                        <div>
+                                            <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400">Rejected</span>
+                                            <template x-if="prob.rejection_reason">
+                                                <p class="text-xs text-slate-500 mt-1 italic" x-text="`Reason: ${prob.rejection_reason}`"></p>
+                                            </template>
+                                        </div>
+                                    </template>
+                                    <template x-if="prob.approved == 0">
+                                        <span class="px-2.5 py-0.5 rounded text-xs font-bold bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-500">Pending Approval</span>
+                                    </template>
+                                </td>
+                            </tr>
+                        </template>
+                        <template x-if="contributedProblems.length === 0">
+                            <tr>
+                                <td colspan="5" class="px-4 py-8 text-center text-slate-400 text-sm">You haven't contributed any problems yet. Click "Submit a Problem" to get started!</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Submit Problem Modal -->
+    <div x-show="showSubmitModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 overflow-y-auto" x-transition x-cloak>
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl max-w-2xl w-full p-8 relative shadow-xl overflow-y-auto max-h-[90vh]">
+            <h2 class="text-2xl font-bold mb-6 text-slate-800 dark:text-slate-100 flex items-center">
+                <svg class="w-6 h-6 text-slate-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                <span x-show="!resubmittingProblemId">Suggest a New Problem</span>
+                <span x-show="resubmittingProblemId">Resubmit Problem</span>
+            </h2>
+            
+            <form @submit.prevent="submitProblem">
+                <!-- Title -->
+                <div class="mb-4">
+                    <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Problem Title</label>
+                    <input type="text" x-model="submitForm.title" required placeholder="e.g. FizzBuzz or Find Duplicate"
+                           class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <!-- Grid for Tags only (difficulty set by admin) -->
+                <div class="mb-4">
+                    <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Topic Tags <span class="normal-case font-normal">(Comma Separated)</span></label>
+                    <input type="text" x-model="submitForm.topic_tags" placeholder="e.g. Arrays, Sorting, Hash Map" required
+                           class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <!-- Difficulty notice -->
+                <div class="mb-4 flex items-start space-x-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg px-3 py-2.5">
+                    <svg class="w-4 h-4 text-blue-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <p class="text-xs text-blue-700 dark:text-blue-300">Difficulty will be determined by an admin when your problem is reviewed. You don't need to set it.</p>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-4">
+                    <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Problem Description (Markdown supported)</label>
+                    <textarea x-model="submitForm.description" rows="5" required placeholder="Describe the problem, input format, and output format..."
+                              class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"></textarea>
+                </div>
+
+                <!-- Constraints -->
+                <div class="mb-4">
+                    <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Constraints</label>
+                    <textarea x-model="submitForm.constraints" rows="3" required placeholder="e.g. - 1 <= nums.length <= 10^5"
+                              class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"></textarea>
+                </div>
+
+                <!-- Test Case Setup -->
+                <div class="mb-6 border-t border-slate-200 dark:border-slate-700 pt-4">
+                    <h3 class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-3 flex items-center">
+                        <svg class="w-4 h-4 mr-1 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                        Test Case Configuration
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 mb-1">Sample Input</label>
+                            <textarea x-model="submitSampleTC.input" rows="2" placeholder="e.g. 4 9\n2 7 11 15" required class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg p-2 text-xs font-mono text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 mb-1">Sample Expected Output</label>
+                            <textarea x-model="submitSampleTC.expected" rows="2" placeholder="e.g. 0 1" required class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg p-2 text-xs font-mono text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 mb-1">Hidden Input (For Verification)</label>
+                            <textarea x-model="submitHiddenTC.input" rows="2" placeholder="e.g. 3 6\n3 3" required class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg p-2 text-xs font-mono text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 mb-1">Hidden Expected Output</label>
+                            <textarea x-model="submitHiddenTC.expected" rows="2" placeholder="e.g. 0 1" required class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg p-2 text-xs font-mono text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex justify-end space-x-3 border-t border-slate-200 dark:border-slate-700 pt-4">
+                    <button type="button" @click="showSubmitModal = false"
+                            class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-semibold py-2 px-4 rounded-lg text-sm transition-all">
+                        Cancel
+                    </button>
+                    <button type="submit" 
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg text-sm transition-all">
+                        <span x-show="!resubmittingProblemId">Submit Question</span>
+                        <span x-show="resubmittingProblemId">Resubmit Problem</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script>
+        function dashboardApp() {
+            return {
+                user: null,
+                profile: {},
+                submissions: [],
+                stats: { easy: 0, medium: 0, hard: 0, easy_pct: 0, medium_pct: 0, hard_pct: 0 },
+                
+                showSubmitModal: false,
+                submitForm: { title: '', topic_tags: '', description: '', constraints: '' },
+                submitSampleTC: { input: '', expected: '' },
+                submitHiddenTC: { input: '', expected: '' },
+                contributedProblems: [],
+                resubmittingProblemId: null,
+                
+                // Notifications
+                showNotifications: false,
+                notifications: [],
+                unreadNotificationCount: 0,
+
+                init() {
+                    Auth.checkAuthGuard();
+                    this.user = Auth.getUser();
+                    this.fetchProfile();
+                    this.fetchSubmissions();
+                    this.fetchContributedProblems();
+                    this.fetchNotifications();
+                    // Refresh notifications every 30 seconds
+                    setInterval(() => this.fetchNotifications(), 30000);
+                    // Refresh contributed problems every 30 seconds to show newly approved problems
+                    setInterval(() => this.fetchContributedProblems(), 30000);
+                },
+
+                async fetchProfile() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/auth/profile`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.profile = await response.json();
+                            // Update user object with latest profile data
+                            if (this.user) {
+                                this.user.username = this.profile.username;
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Error fetching profile', e);
+                    }
+                },
+
+                async fetchSubmissions() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/submissions/history`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.submissions = await response.json();
+                            this.calculateStats();
+                        }
+                    } catch (e) {
+                        console.error('Error fetching submissions', e);
+                    }
+                },
+
+                async fetchContributedProblems() {
+                    if (!this.user) return;
+                    try {
+                        const [approvedRes, pendingRes, rejectedRes] = await Promise.all([
+                            fetch(`${API_BASE_URL}/problems?author_id=${this.user.id}&approved=1`, { headers: Auth.getAuthHeader() }),
+                            fetch(`${API_BASE_URL}/problems?author_id=${this.user.id}&approved=0`, { headers: Auth.getAuthHeader() }),
+                            fetch(`${API_BASE_URL}/problems?author_id=${this.user.id}&approved=2`, { headers: Auth.getAuthHeader() })
+                        ]);
+                        let lists = [];
+                        if (approvedRes.ok) lists.push(...await approvedRes.json());
+                        if (pendingRes.ok) lists.push(...await pendingRes.json());
+                        if (rejectedRes.ok) lists.push(...await rejectedRes.json());
+                        this.contributedProblems = lists.sort((a, b) => b.id - a.id);
+                    } catch (e) {
+                        console.error('Error fetching contributed problems', e);
+                    }
+                },
+
+                async fetchNotifications() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/notifications`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.notifications = await response.json();
+                            this.fetchUnreadCount();
+                        }
+                    } catch (e) {
+                        console.error('Error fetching notifications', e);
+                    }
+                },
+
+                async fetchUnreadCount() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/notifications/count`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            const data = await response.json();
+                            this.unreadNotificationCount = data.count;
+                        }
+                    } catch (e) {
+                        console.error('Error fetching unread count', e);
+                    }
+                },
+
+                async markNotificationAsRead(notificationId) {
+                    try {
+                        await fetch(`${API_BASE_URL}/notifications/${notificationId}/read`, {
+                            method: 'PUT',
+                            headers: Auth.getAuthHeader()
+                        });
+                        this.fetchNotifications();
+                    } catch (e) {
+                        console.error('Error marking notification as read', e);
+                    }
+                },
+
+                async markAllNotificationsAsRead() {
+                    try {
+                        await fetch(`${API_BASE_URL}/notifications`, {
+                            method: 'PUT',
+                            headers: Auth.getAuthHeader()
+                        });
+                        this.fetchNotifications();
+                    } catch (e) {
+                        console.error('Error marking all as read', e);
+                    }
+                },
+
+                editRejectedProblem(problemId) {
+                    // Try local cache first
+                    const problem = this.contributedProblems.find(p => parseInt(p.id) === parseInt(problemId));
+                    console.log('editRejectedProblem - problemId:', problemId, 'found in cache:', !!problem, 'total problems:', this.contributedProblems.length);
+                    if (problem) {
+                        this.resubmittingProblemId = problemId;
+                        this.submitForm = {
+                            title: problem.title,
+                            topic_tags: problem.topic_tags,
+                            description: problem.description,
+                            constraints: problem.constraints
+                        };
+                        this.fetchTestCasesForEdit(problemId);
+                        this.showSubmitModal = true;
+                        this.showNotifications = false;
+                    } else {
+                        // Problem not in cache, fetch from API
+                        console.log('Problem not in cache, fetching from API');
+                        this.fetchProblemAndEdit(problemId);
+                    }
+                },
+
+                async fetchProblemAndEdit(problemId) {
+                    try {
+                        const authHeader = Auth.getAuthHeader();
+                        console.log('Fetching problem', problemId, 'with auth header');
+                        
+                        const response = await fetch(`${API_BASE_URL}/problems/${problemId}`, {
+                            headers: authHeader
+                        });
+                        
+                        console.log('Response status:', response.status);
+                        let data;
+                        try {
+                            data = await response.json();
+                        } catch (parseError) {
+                            console.error('Failed to parse JSON:', parseError);
+                            alert('Server error: Invalid response format');
+                            return;
+                        }
+                        
+                        console.log('Response data:', data);
+                        
+                        if (response.ok) {
+                            const problem = data;
+                            this.resubmittingProblemId = problemId;
+                            this.submitForm = {
+                                title: problem.title,
+                                topic_tags: problem.topic_tags,
+                                description: problem.description,
+                                constraints: problem.constraints
+                            };
+                            this.fetchTestCasesForEdit(problemId);
+                            this.showSubmitModal = true;
+                            this.showNotifications = false;
+                        } else {
+                            console.error('API error response:', data);
+                            alert('Could not load problem: ' + (data.message || 'Server error (Status ' + response.status + ')'));
+                        }
+                    } catch (e) {
+                        console.error('Error fetching problem:', e);
+                        alert('Error loading problem: ' + e.message);
+                    }
+                },
+
+                async fetchTestCasesForEdit(problemId) {
+                    try {
+                        console.log('Fetching test cases for problem', problemId);
+                        // Try to get all test cases (both sample and hidden)
+                        const response = await fetch(`${API_BASE_URL}/problems/${problemId}/testcases`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        console.log('Test cases response status:', response.status);
+                        if (response.ok) {
+                            const testCases = await response.json();
+                            console.log('Loaded test cases:', testCases);
+                            // Reset to empty first
+                            this.submitSampleTC = { input: '', expected: '' };
+                            this.submitHiddenTC = { input: '', expected: '' };
+                            
+                            // Find sample test case
+                            const sampleTC = testCases.find(tc => tc.is_sample === 1 || tc.is_sample === true);
+                            if (sampleTC) {
+                                this.submitSampleTC = {
+                                    input: sampleTC.input,
+                                    expected: sampleTC.expected
+                                };
+                                console.log('Loaded sample test case');
+                            }
+                            
+                            // Find hidden test case
+                            const hiddenTC = testCases.find(tc => tc.is_sample === 0 || tc.is_sample === false);
+                            if (hiddenTC) {
+                                this.submitHiddenTC = {
+                                    input: hiddenTC.input,
+                                    expected: hiddenTC.expected
+                                };
+                                console.log('Loaded hidden test case');
+                            }
+                        } else {
+                            console.warn('Could not load test cases, will use empty ones. Status:', response.status);
+                            this.submitSampleTC = { input: '', expected: '' };
+                            this.submitHiddenTC = { input: '', expected: '' };
+                        }
+                    } catch (e) {
+                        console.error('Error fetching test cases', e);
+                        // Continue with empty test cases
+                        this.submitSampleTC = { input: '', expected: '' };
+                        this.submitHiddenTC = { input: '', expected: '' };
+                    }
+                },
+
+                openSubmitModal() {
+                    this.resubmittingProblemId = null;
+                    this.submitForm = { title: '', topic_tags: '', description: '', constraints: '' };
+                    this.submitSampleTC = { input: '', expected: '' };
+                    this.submitHiddenTC = { input: '', expected: '' };
+                    this.showSubmitModal = true;
+                },
+
+                async submitProblem() {
+                    const payload = {
+                        ...this.submitForm,
+                        test_cases: [
+                            { input: this.submitSampleTC.input, expected: this.submitSampleTC.expected, is_sample: 1 },
+                            { input: this.submitHiddenTC.input, expected: this.submitHiddenTC.expected, is_sample: 0 }
+                        ]
+                    };
+
+                    // If resubmitting a rejected problem, include the problem_id
+                    if (this.resubmittingProblemId) {
+                        payload.problem_id = this.resubmittingProblemId;
+                    }
+
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/problems`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                ...Auth.getAuthHeader()
+                            },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (response.ok) {
+                            this.showSubmitModal = false;
+                            this.resubmittingProblemId = null;
+                            const message = this.resubmittingProblemId 
+                                ? 'Problem resubmitted successfully! It will be reviewed by admins again.'
+                                : 'Problem submitted successfully! It will appear on the website after admin approval.';
+                            alert('Problem submitted successfully! It will be reviewed by admins again.');
+                            this.fetchContributedProblems();
+                            this.fetchNotifications();
+                        } else {
+                            const errData = await response.json();
+                            alert(errData.message || 'Failed to submit problem.');
+                        }
+                    } catch (e) {
+                        console.error(e);
+                        alert('An error occurred during submission.');
+                    }
+                },
+
+                calculateStats() {
+                    // Extract unique solved problems by difficulty
+                    const solved = {};
+                    this.submissions.forEach(sub => {
+                        if (sub.status === 'Accepted' && !solved[sub.problem_id]) {
+                            solved[sub.problem_id] = sub;
+                        }
+                    });
+
+                    let easy = 0, medium = 0, hard = 0;
+                    
+                    fetch(`${API_BASE_URL}/problems`, { headers: Auth.getAuthHeader() })
+                        .then(r => r.json())
+                        .then(problems => {
+                            const problemMap = {};
+                            problems.forEach(p => problemMap[p.id] = p.difficulty);
+                            
+                            Object.keys(solved).forEach(probId => {
+                                const diff = problemMap[probId];
+                                if (diff === 'Easy') easy++;
+                                else if (diff === 'Medium') medium++;
+                                else if (diff === 'Hard') hard++;
+                            });
+
+                            const total = easy + medium + hard || 1;
+                            this.stats = {
+                                easy, medium, hard,
+                                easy_pct: Math.round((easy / total) * 100),
+                                medium_pct: Math.round((medium / total) * 100),
+                                hard_pct: Math.round((hard / total) * 100)
+                            };
+                        });
+                }
+            }
+        }
+    </script>
+</body>
+</html>

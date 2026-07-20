@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - DSA Online Judge</title>
+    <!-- Tailwind CSS CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" crossorigin>
+    <link rel="stylesheet" href="assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=2">
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-200" x-data="profileApp()">
+    
+    <!-- Navbar -->
+    <nav class="border-b border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-extrabold text-blue-700 dark:text-blue-400">
+                        DSA Judge
+                    </a>
+                    <div class="hidden md:block ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Dashboard</a>
+                        <a href="problems.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Problems</a>
+                        <a href="leaderboard.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Leaderboard</a>
+                        <template x-if="user && user.role === 'admin'">
+                            <a href="admin.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Admin</a>
+                        </template>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button @click="toggleTheme()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0112 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    <div class="flex items-center space-x-3 pl-4 border-l border-slate-200 dark:border-slate-700">
+                        <template x-if="profile && profile.avatar_url">
+                            <img :src="API_BASE_URL.replace('/api', '') + profile.avatar_url" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+                        </template>
+                        <template x-if="!profile || !profile.avatar_url">
+                            <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm shrink-0" x-text="user ? user.username.charAt(0).toUpperCase() : '?'"></div>
+                        </template>
+                        <button @click="$dispatch('navigate', 'profile')" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white">
+                            <span x-text="user ? user.username : ''"></span>
+                        </button>
+                    </div>
+                    <button @click="Auth.logout()" class="text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg font-semibold transition-colors">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <!-- Profile Header -->
+        <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 p-8 mb-8">
+            <div class="flex items-center space-x-6 mb-6">
+                <!-- Profile Picture -->
+                <div class="relative">
+                    <template x-if="profile.avatar_url">
+                        <img :src="API_BASE_URL.replace('/api', '') + profile.avatar_url" alt="Profile" class="w-24 h-24 rounded-full object-cover border-4 border-blue-600">
+                    </template>
+                    <template x-if="!profile.avatar_url">
+                        <div class="w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-4xl font-bold" x-text="user ? user.username.charAt(0).toUpperCase() : '?'"></div>
+                    </template>
+                    <button @click="openImageUploadModal()" class="absolute bottom-0 right-0 bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full border-2 border-white dark:border-slate-900 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    </button>
+                </div>
+
+                <!-- User Info -->
+                <div class="flex-1">
+                    <div class="flex items-center space-x-3">
+                        <h1 class="text-3xl font-bold text-slate-800 dark:text-slate-100" x-text="user ? user.username : 'User'"></h1>
+                        <button @click="editingUsername = true; editUsernameValue = user.username" class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none transition-colors" title="Edit username">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                        </button>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 mt-1" x-text="user ? user.email : ''"></p>
+                    <div class="flex items-center space-x-4 mt-4">
+                        <div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Member Since</p>
+                            <p class="text-sm font-semibold text-slate-700 dark:text-slate-300" x-text="profile ? formatDate(profile.created_at) : 'N/A'"></p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Current Streak</p>
+                            <p class="text-sm font-semibold text-slate-700 dark:text-slate-300" x-text="profile.streak_count + ' days'"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 p-6">
+                <div class="text-center">
+                    <p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Total Problems Solved</p>
+                    <p class="text-3xl font-bold text-blue-600 dark:text-blue-400 mt-2" x-text="stats.total_solved"></p>
+                </div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 p-6">
+                <div class="text-center">
+                    <p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Acceptance Rate</p>
+                    <p class="text-3xl font-bold text-green-600 dark:text-green-400 mt-2" x-text="stats.acceptance_rate + '%'"></p>
+                </div>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 p-6">
+                <div class="text-center">
+                    <p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">Total Submissions</p>
+                    <p class="text-3xl font-bold text-orange-600 dark:text-orange-400 mt-2" x-text="stats.total_submissions"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Difficulty Breakdown -->
+        <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 p-6 mb-8">
+            <h2 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-6">Problems by Difficulty</h2>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between text-sm mb-1">
+                        <span class="text-green-700 dark:text-green-400 font-semibold">Easy</span>
+                        <span class="text-slate-500 dark:text-slate-400" x-text="stats.easy_solved + ' / ' + stats.easy_total"></span>
+                    </div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                        <div class="bg-green-600 h-2.5 rounded-full" :style="`width: ${stats.easy_total > 0 ? (stats.easy_solved / stats.easy_total * 100) : 0}%`"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-sm mb-1">
+                        <span class="text-yellow-700 dark:text-yellow-400 font-semibold">Medium</span>
+                        <span class="text-slate-500 dark:text-slate-400" x-text="stats.medium_solved + ' / ' + stats.medium_total"></span>
+                    </div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                        <div class="bg-yellow-500 h-2.5 rounded-full" :style="`width: ${stats.medium_total > 0 ? (stats.medium_solved / stats.medium_total * 100) : 0}%`"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-sm mb-1">
+                        <span class="text-red-700 dark:text-red-400 font-semibold">Hard</span>
+                        <span class="text-slate-500 dark:text-slate-400" x-text="stats.hard_solved + ' / ' + stats.hard_total"></span>
+                    </div>
+                    <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+                        <div class="bg-red-600 h-2.5 rounded-full" :style="`width: ${stats.hard_total > 0 ? (stats.hard_solved / stats.hard_total * 100) : 0}%`"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Submissions -->
+        <div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+            <div class="p-6 border-b border-slate-200 dark:border-slate-700">
+                <h2 class="text-lg font-bold text-slate-800 dark:text-slate-100">Recent Submissions</h2>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
+                    <thead class="bg-slate-50 dark:bg-slate-800">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase">Problem</th>
+                            <th class="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase">Status</th>
+                            <th class="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase">Runtime</th>
+                            <th class="px-6 py-3 text-left text-xs font-semibold text-slate-500 uppercase">Submitted</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                        <template x-for="sub in recentSubmissions" :key="sub.id">
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                <td class="px-6 py-4 text-sm font-semibold text-slate-700 dark:text-slate-300" x-text="sub.problem_title"></td>
+                                <td class="px-6 py-4 text-sm">
+                                    <span class="px-2.5 py-0.5 rounded text-xs font-bold"
+                                          :class="sub.status === 'Accepted' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'"
+                                          x-text="sub.status"></span>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400" x-text="sub.runtime_ms + ' ms'"></td>
+                                <td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400" x-text="formatDate(sub.created_at)"></td>
+                            </tr>
+                        </template>
+                        <template x-if="recentSubmissions.length === 0">
+                            <tr>
+                                <td colspan="4" class="px-6 py-10 text-center text-slate-400 text-sm">No submissions yet.</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Image Upload Modal -->
+    <div x-show="showImageUploadModal" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" x-transition>
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl w-96 p-6 shadow-xl">
+            <h3 class="text-lg font-bold mb-4 text-slate-800 dark:text-slate-100">Upload Profile Picture</h3>
+            
+            <!-- File specifications - IMPORTANT -->
+            <div class="mb-4 p-4 bg-amber-50 dark:bg-amber-900/20 border-2 border-amber-300 dark:border-amber-700 rounded-lg">
+                <p class="text-sm font-bold text-amber-900 dark:text-amber-200 mb-3">⚠️ Important Requirements:</p>
+                
+                <div class="mb-3">
+                    <p class="text-xs font-semibold text-amber-900 dark:text-amber-200">Supported Formats:</p>
+                    <p class="text-xs text-amber-800 dark:text-amber-300">JPG, PNG, GIF, WebP</p>
+                </div>
+                
+                <div class="mb-0">
+                    <p class="text-xs font-semibold text-amber-900 dark:text-amber-200">Maximum File Size:</p>
+                    <p class="text-sm font-bold text-amber-900 dark:text-amber-200">2 MB (2,097,152 bytes)</p>
+                    <p class="text-xs text-amber-700 dark:text-amber-400 mt-1">Files larger than 2 MB will be rejected</p>
+                </div>
+            </div>
+            
+            <input type="file" @change="handleImageUpload($event)" accept=".jpg,.jpeg,.png,.gif,.webp,image/jpeg,image/png,image/gif,image/webp" 
+                   class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-800 dark:text-slate-100 mb-4">
+            
+            <!-- Selected file info -->
+            <template x-if="selectedImage">
+                <div class="mb-4 p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mb-1">Selected file:</p>
+                    <p class="text-sm font-semibold text-slate-700 dark:text-slate-300" x-text="selectedImage.name"></p>
+                    <p class="text-xs text-slate-500 dark:text-slate-400" x-text="`${(selectedImage.size / (1024 * 1024)).toFixed(2)} MB`"></p>
+                </div>
+            </template>
+            
+            <div class="flex justify-end space-x-3">
+                <button @click="showImageUploadModal = false" class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-semibold py-2 px-4 rounded-lg text-sm">Cancel</button>
+                <button @click="uploadImage()" :disabled="!selectedImage" class="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-400 text-white font-semibold py-2 px-4 rounded-lg text-sm transition-colors">Upload</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Username Modal -->
+    <div x-show="editingUsername" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" x-transition>
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl w-96 p-6 shadow-xl">
+            <h3 class="text-lg font-bold mb-4 text-slate-800 dark:text-slate-100">Edit Username</h3>
+            
+            <div class="mb-4">
+                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">New Username</label>
+                <input 
+                    x-model="editUsernameValue"
+                    type="text"
+                    placeholder="Enter new username"
+                    class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    @keyup.enter="saveUsername()"
+                    @keyup.escape="editingUsername = false"
+                >
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">
+                    Username must be 3-50 characters long
+                </p>
+            </div>
+
+            <div class="flex justify-end space-x-3">
+                <button @click="editingUsername = false" class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-semibold py-2 px-4 rounded-lg text-sm">Cancel</button>
+                <button @click="saveUsername()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg text-sm transition-colors">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script>
+        function formatDate(dateString) {
+            if (!dateString) return 'N/A';
+            try {
+                const date = new Date(dateString);
+                if (isNaN(date.getTime())) {
+                    return 'N/A';
+                }
+                const options = { year: 'numeric', month: 'short', day: 'numeric' };
+                return date.toLocaleDateString(undefined, options);
+            } catch (e) {
+                console.error('Error formatting date:', dateString, e);
+                return 'N/A';
+            }
+        }
+
+        function profileApp() {
+            return {
+                user: null,
+                profile: {},
+                stats: { 
+                    total_solved: 0, 
+                    total_submissions: 0, 
+                    acceptance_rate: 0,
+                    easy_solved: 0,
+                    easy_total: 0,
+                    medium_solved: 0,
+                    medium_total: 0,
+                    hard_solved: 0,
+                    hard_total: 0
+                },
+                recentSubmissions: [],
+                showImageUploadModal: false,
+                selectedImage: null,
+                editingUsername: false,
+                editUsernameValue: '',
+
+                init() {
+                    Auth.checkAuthGuard();
+                    this.user = Auth.getUser();
+                    this.fetchProfile();
+                    this.fetchSubmissions();
+                },
+
+                async fetchProfile() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/auth/profile`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.profile = await response.json();
+                            // Update user object with latest profile data
+                            if (this.user) {
+                                this.user.username = this.profile.username;
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Error fetching profile', e);
+                    }
+                },
+
+                async fetchSubmissions() {
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/submissions/history`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            const submissions = await response.json();
+                            this.recentSubmissions = submissions.slice(0, 5);
+                            this.calculateStats(submissions);
+                        }
+                    } catch (e) {
+                        console.error('Error fetching submissions', e);
+                    }
+                },
+
+                calculateStats(submissions) {
+                    const solved = {};
+                    let acceptedCount = 0;
+                    
+                    submissions.forEach(sub => {
+                        if (sub.status === 'Accepted' && !solved[sub.problem_id]) {
+                            solved[sub.problem_id] = sub;
+                            acceptedCount++;
+                        }
+                    });
+
+                    this.stats.total_solved = Object.keys(solved).length;
+                    this.stats.total_submissions = submissions.length;
+                    this.stats.acceptance_rate = submissions.length > 0 ? Math.round((acceptedCount / submissions.length) * 100) : 0;
+
+                    // Fetch problem difficulties
+                    fetch(`${API_BASE_URL}/problems`, { headers: Auth.getAuthHeader() })
+                        .then(r => r.json())
+                        .then(problems => {
+                            let easyTotal = 0, mediumTotal = 0, hardTotal = 0;
+                            let easySolved = 0, mediumSolved = 0, hardSolved = 0;
+
+                            problems.forEach(p => {
+                                if (p.difficulty === 'Easy') easyTotal++;
+                                else if (p.difficulty === 'Medium') mediumTotal++;
+                                else if (p.difficulty === 'Hard') hardTotal++;
+
+                                if (solved[p.id]) {
+                                    if (p.difficulty === 'Easy') easySolved++;
+                                    else if (p.difficulty === 'Medium') mediumSolved++;
+                                    else if (p.difficulty === 'Hard') hardSolved++;
+                                }
+                            });
+
+                            this.stats.easy_total = easyTotal;
+                            this.stats.easy_solved = easySolved;
+                            this.stats.medium_total = mediumTotal;
+                            this.stats.medium_solved = mediumSolved;
+                            this.stats.hard_total = hardTotal;
+                            this.stats.hard_solved = hardSolved;
+                        });
+                },
+
+                openImageUploadModal() {
+                    this.showImageUploadModal = true;
+                },
+
+                handleImageUpload(event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        this.selectedImage = file;
+                    }
+                },
+
+                async uploadImage() {
+                    if (!this.selectedImage) {
+                        alert('Please select an image');
+                        return;
+                    }
+                    
+                    const formData = new FormData();
+                    formData.append('avatar', this.selectedImage);
+
+                    try {
+                        const authHeader = Auth.getAuthHeader();
+                        // Get only the Authorization header, don't set Content-Type (FormData will do it)
+                        const headers = {
+                            'Authorization': authHeader.Authorization
+                        };
+
+                        const response = await fetch(`${API_BASE_URL}/auth/profile/avatar`, {
+                            method: 'POST',
+                            headers: headers,
+                            body: formData
+                        });
+
+                        if (response.ok) {
+                            const data = await response.json();
+                            console.log('Upload response:', data);
+                            alert('Profile picture uploaded successfully!');
+                            this.showImageUploadModal = false;
+                            this.selectedImage = null;
+                            
+                            // Fetch fresh profile data
+                            console.log('Fetching profile after upload...');
+                            await this.fetchProfile();
+                            console.log('Updated profile:', this.profile);
+                        } else {
+                            const error = await response.json();
+                            alert('Error: ' + (error.message || 'Failed to upload image'));
+                        }
+                    } catch (e) {
+                        console.error('Error uploading image:', e);
+                        alert('Error uploading image: ' + e.message);
+                    }
+                },
+
+                async saveUsername() {
+                    if (!this.editUsernameValue || this.editUsernameValue.length < 3) {
+                        alert('Username must be at least 3 characters long');
+                        return;
+                    }
+
+                    if (this.editUsernameValue.length > 50) {
+                        alert('Username must be less than 50 characters');
+                        return;
+                    }
+
+                    if (this.editUsernameValue === this.user.username) {
+                        alert('New username is the same as the current one');
+                        return;
+                    }
+
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/auth/profile/username`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                ...Auth.getAuthHeader()
+                            },
+                            body: JSON.stringify({ username: this.editUsernameValue })
+                        });
+
+                        if (response.ok) {
+                            alert('Username updated successfully!');
+                            this.editingUsername = false;
+                            // Update user object
+                            this.user.username = this.editUsernameValue;
+                            // Refresh profile to get updated user info
+                            await this.fetchProfile();
+                        } else {
+                            const error = await response.json();
+                            alert('Error: ' + (error.message || 'Failed to update username'));
+                        }
+                    } catch (e) {
+                        console.error('Error updating username:', e);
+                        alert('Error updating username: ' + e.message);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
