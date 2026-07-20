@@ -1,6 +1,16 @@
 /* Hide Alpine x-cloak elements until Alpine initializes */
 [x-cloak] { display: none !important; }
 
+/* ── Light theme: darker text ───────────────────────────────────────────── */
+:root:not(.dark) .text-gray-400 { color: #4b5563 !important; }  /* → gray-600 */
+:root:not(.dark) .text-gray-500 { color: #374151 !important; }  /* → gray-700 */
+:root:not(.dark) .text-gray-600 { color: #1f2937 !important; }  /* → gray-800 */
+:root:not(.dark) .text-slate-400 { color: #475569 !important; } /* → slate-600 */
+:root:not(.dark) .text-slate-500 { color: #334155 !important; } /* → slate-700 */
+:root:not(.dark) .text-slate-600 { color: #1e293b !important; } /* → slate-800 */
+:root:not(.dark) .text-zinc-400 { color: #52525b !important; }  /* → zinc-600 */
+:root:not(.dark) .text-zinc-500 { color: #3f3f46 !important; }  /* → zinc-700 */
+
 
 
 :root {
