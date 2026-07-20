@@ -1,116 +1,176 @@
 # AlgoNest
 
-A minimal, beautiful, and secure Online Judge system for C++ developers. This platform evaluates solutions directly on the user's computer via a local runner and submits only the results back to the server, solving performance, sandbox security, and infrastructure constraints.
+A minimal, beautiful, and secure Online Judge system for C++ developers. Code is compiled and executed locally on the user's machine via a lightweight Python runner — only the results are sent back to the server. This eliminates cloud sandbox complexity, infrastructure cost, and execution security risks.
 
 ## Architecture
 
-1. **Frontend**: HTML5, CSS3 (Tailwind CSS), Monaco Editor, Alpine.js / Vanilla JS.
-2. **Backend**: PHP 8.3 REST API (routing, database authentication, submissions log, problem library).
+1. **Frontend**: HTML5, Tailwind CSS, Monaco Editor, Alpine.js / Vanilla JS.
+2. **Backend**: PHP 8.3 REST API — routing, JWT authentication, problem library, submission log, admin controls.
 3. **Database**: MySQL 8.
-4. **Local Runner**: Lightweight Python 3 runner script running on user's machine on port 8000. It compiles `.cpp` files with local `g++` and runs test cases locally.
+4. **Local Runner**: Python 3 HTTP daemon on port 8000. Compiles `.cpp` source with the user's local `g++` and runs test cases natively.
+
+---
 
 ## Setup Instructions
 
 ### Quick Start (Multi-Device Local Server)
-A helper script is provided to start both the Frontend and Backend servers simultaneously, bound to all network interfaces (`0.0.0.0`) so that other devices on your local network (Wi-Fi/LAN) can access the project.
 
-1. Ensure MySQL is running and set up (see *Database Setup* below).
-2. Execute the start script:
+A helper script starts both servers simultaneously, bound to all interfaces (`0.0.0.0`) so other devices on the same network can reach them.
+
+1. Ensure MySQL is running and initialised (see *Database Setup* below).
+2. Run the start script:
    ```bash
    ./start.sh
    ```
-3. The script will output the network URLs for your host machine (e.g., `http://<your-local-ip>:8081` for the Frontend, and `http://<your-local-ip>:8080` for the Backend REST API).
+3. The script prints the network URLs — e.g. `http://<your-local-ip>:8081` (Frontend) and `http://<your-local-ip>:8080` (Backend API).
 
 ---
 
 ### Manual Setup
 
 #### 1. Database Setup
-1. Import the database schema from `backend/src/Database/schema.sql` into MySQL.
-2. Run the initial seeds from `backend/src/Database/seed.sql`.
-3. Update database credentials in `backend/config/database.php`.
+1. Import the schema: `backend/src/Database/schema.sql`
+2. Run the seeds: `backend/src/Database/seed.sql`
+3. Update credentials in `backend/config/database.php`.
 
-#### 2. Start PHP Backend REST API
-Run the PHP built-in server bound to `0.0.0.0` so other devices can access it:
+#### 2. Start PHP Backend
 ```bash
 cd backend/public
 php -S 0.0.0.0:8080
 ```
 
-#### 3. Start Frontend Web Server
-Serve the frontend directory via PHP or another static web server (like Python `http.server`) bound to `0.0.0.0`:
+#### 3. Start Frontend Server
 ```bash
 cd frontend
 php -S 0.0.0.0:8081
 ```
 
-#### 4. Local Compiler Runner (Must run on the coding machine)
-The platform evaluates code using a local runner script. On the machine where you are writing/compiling code, start the local runner:
+#### 4. Local Compiler Runner
+Run this on whichever machine will be writing and compiling code:
 ```bash
 python3 local-runner/runner.py
 ```
-This starts an HTTP server at `http://localhost:8000`. The frontend in the browser connects to `localhost:8000` to execute the C++ files locally.
+This starts an HTTP server at `http://localhost:8000`. The frontend's browser tab connects to this to execute C++ locally.
 
 ---
 
-## Multi-Device Access Guidelines
+## Multi-Device Access
 
-To access the platform from other devices (e.g., phones, tablets, or other laptops) on the same local network:
+To use AlgoNest from other devices on the same Wi-Fi/LAN:
 
-1. **Connect to the same network**: Make sure the host machine running the backend/database and the accessing devices are connected to the same Wi-Fi network or mobile hotspot.
-2. **Find the Host IP Address**:
-   - On Linux/macOS: Run `hostname -I` or `ip a` to find the private IPv4 address (e.g., `192.168.x.x` or `172.16.x.x`).
-   - On Windows: Run `ipconfig` in CMD to find the `IPv4 Address`.
-3. **Access via browser**:
-   - Open a browser on the other device and enter the frontend URL: `http://<HOST-IP>:8081` (e.g., `http://172.16.83.96:8081`).
-4. **Compile code on other devices**:
-   - If you want to write and run code on another computer (client computer) accessing this host, that client computer must run the local compilation runner (`python3 local-runner/runner.py`) so the browser can send compilation requests to `localhost:8000` on that device.
-   - If you are just viewing the leaderboard, problems, or submissions on a phone, no local runner is needed.
+1. **Same network** — host machine and all client devices must be on the same Wi-Fi or hotspot.
+2. **Find host IP**:
+   - Linux/macOS: `hostname -I` or `ip a`
+   - Windows: `ipconfig` → IPv4 Address
+3. **Open in browser**: `http://<HOST-IP>:8081`
+4. **Compiling on a client device**: that device must run `python3 local-runner/runner.py` locally so its browser can reach `localhost:8000`. Devices that only browse problems, the leaderboard, or submissions do not need the runner.
 
 ---
 
 ## Directory Structure
 
 ```text
-DSA-website/
-├── backend/                  # PHP REST API Backend
-│   ├── config/               # Configuration files
-│   │   ├── database.php      # DB configuration
-│   │   └── jwt.php           # JWT encryption helpers
-│   ├── public/               # Public entry points
-│   │   └── index.php         # Front Controller & Routing
-│   └── src/                  # Source files
-│       ├── Controllers/      # Business logic handlers
+AlgoNest/
+├── backend/                        # PHP REST API
+│   ├── config/
+│   │   ├── database.php            # DB connection settings
+│   │   └── jwt.php                 # JWT signing helpers
+│   ├── public/
+│   │   ├── index.php               # Front controller & router
+│   │   ├── router.php              # Dev router for PHP built-in server
+│   │   ├── avatars/                # Uploaded user profile pictures
+│   │   └── .user.ini               # PHP runtime config
+│   └── src/
+│       ├── Controllers/
 │       │   ├── AdminController.php
 │       │   ├── AuthController.php
+│       │   ├── CommentController.php
 │       │   ├── LeaderboardController.php
+│       │   ├── NotificationController.php
 │       │   ├── ProblemController.php
+│       │   ├── RunnerController.php
 │       │   └── SubmissionController.php
-│       ├── Database/         # DB SQL Schema and Seeds
+│       ├── Database/
 │       │   ├── schema.sql
-│       │   └── seed.sql
-│       ├── Middleware/       # Route guards (Authentication)
+│       │   ├── seed.sql
+│       │   └── notifications_migration.sql
+│       ├── Middleware/
 │       │   └── AuthMiddleware.php
-│       └── Models/           # Database schema representations
+│       └── Models/
+│           ├── Comment.php
+│           ├── Notification.php
 │           ├── Problem.php
 │           ├── Submission.php
 │           └── User.php
-├── frontend/                 # Client UI (HTML, CSS, JS)
-│   ├── assets/               # CSS and JS resources
+├── frontend/                       # Client UI
+│   ├── assets/
 │   │   ├── css/
-│   │   │   └── styles.css
+│   │   │   ├── styles.css
+│   │   │   └── tailwind.min.css
 │   │   └── js/
-│   │       ├── app.js
-│   │       ├── auth.js
-│   │       ├── editor.js
-│   │       └── runner-client.js
-│   ├── admin.html            # Admin management pages
-│   ├── index.html            # Main User Dashboard
-│   ├── leaderboard.html      # Rank listing
-│   ├── login.html            # Signup/Signin form
-│   ├── problem.html          # Individual problem coding page
-│   └── problems.html         # Problem bank
-└── local-runner/             # Compiles & executes code locally
-    ├── runner.py             # Python HTTP execution daemon
-    └── requirements.txt      # Dependencies configuration
+│   │       ├── app.js              # Global state, API base URL, theme
+│   │       ├── auth.js             # JWT helpers & auth guard
+│   │       ├── compile-client.js   # Compilation pipeline client
+│   │       ├── editor.js           # Monaco editor setup
+│   │       └── runner-client.js    # Local runner & backend submission
+│   ├── admin.html                  # Admin console (problems + approvals)
+│   ├── index.html                  # User dashboard
+│   ├── leaderboard.html            # Global rankings
+│   ├── login.html                  # Sign in / Sign up
+│   ├── problem.html                # Problem workspace (editor + runner)
+│   ├── problems.html               # Problem bank
+│   ├── profile.html                # User profile & settings
+│   ├── public-profile.html         # Public view of another user's profile
+│   ├── router.php                  # Dev router for PHP built-in server
+│   └── tailwind.config.js
+├── local-runner/
+│   ├── runner.py                   # Python HTTP compilation daemon
+│   └── requirements.txt
+├── start.sh                        # Linux/macOS server starter
+├── start.bat                       # Windows server starter
+├── WINDOWS_SETUP.txt               # Windows setup guide
+└── MVP.md                          # Feature milestone tracker
 ```
+
+---
+
+## API Overview
+
+All endpoints are prefixed with `/api`. Protected routes require `Authorization: Bearer <token>`.
+
+| Method | Endpoint | Auth | Description |
+|--------|----------|------|-------------|
+| POST | `/api/auth/register` | — | Register a new user |
+| POST | `/api/auth/login` | — | Login, returns JWT |
+| GET | `/api/auth/profile` | ✓ | Get own profile |
+| PUT | `/api/auth/profile/username` | ✓ | Update username |
+| POST | `/api/auth/profile/avatar` | ✓ | Upload avatar |
+| GET | `/api/problems` | — | List problems |
+| GET | `/api/problems/:id` | — | Problem detail |
+| GET | `/api/problems/:id/samples` | — | Sample test cases |
+| GET | `/api/problems/:id/testcases` | ✓ | All test cases (for runner) |
+| POST | `/api/problems` | ✓ | Submit a problem for approval |
+| POST | `/api/submissions` | ✓ | Log a submission result |
+| GET | `/api/submissions/history` | ✓ | Own submission history |
+| GET | `/api/submissions/problem/:id` | ✓ | Submissions for a problem |
+| GET | `/api/leaderboard` | — | Global leaderboard |
+| POST | `/api/run` | ✓ | Execute code via backend runner |
+| GET | `/api/admin/problems` | admin | List all problems |
+| POST | `/api/admin/problems` | admin | Create a problem |
+| PUT | `/api/admin/problems/:id` | admin | Update a problem |
+| DELETE | `/api/admin/problems/:id` | admin | Delete a problem |
+| POST | `/api/admin/problems/:id/approve` | admin | Approve a problem |
+| POST | `/api/admin/problems/:id/reject` | admin | Reject a problem |
+| GET | `/api/notifications` | ✓ | Get notifications |
+| GET | `/api/notifications/count` | ✓ | Unread count |
+| PUT | `/api/notifications/:id/read` | ✓ | Mark one as read |
+| PUT | `/api/notifications` | ✓ | Mark all as read |
+| GET | `/api/users/:id/profile` | — | Public user profile |
+| GET | `/api/users/:id/submissions` | — | User's accepted submissions |
+| GET | `/api/users/:id/stats` | — | User stats |
+| GET | `/api/comments/problem/:id` | — | Comments on a problem |
+| POST | `/api/comments` | ✓ | Post a comment |
+| PUT | `/api/comments/:id` | ✓ | Edit a comment |
+| DELETE | `/api/comments/:id` | ✓ | Delete a comment |
+| POST | `/api/comments/:id/vote` | ✓ | Vote on a comment |
+| DELETE | `/api/comments/:id/vote` | ✓ | Remove vote |

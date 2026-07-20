@@ -1,65 +1,184 @@
-AlgoNest
+AlgoNest — Software Requirements Specification (SRS)
 
-1. Introduction
+================================================================================
+
+1. INTRODUCTION
+
 1.1 Purpose
-This document specifies the software requirements for a minimal, beautiful, and secure Hybrid Online Judge platform optimized for C++ developers. The core innovation of this system is its decentralized evaluation model: code compilation and execution occur locally on the user's machine, while authentication, problem management, analytics, and global leaderboards are managed centrally.
+This document specifies the software requirements for AlgoNest, a minimal,
+beautiful, and secure hybrid Online Judge platform built for C++ developers.
+The system's core innovation is its decentralised evaluation model: code
+compilation and execution happen locally on the user's machine, while
+authentication, problem management, community features, and global leaderboards
+are managed centrally by the server.
+
 1.2 System Overview
-Traditional online judges face massive infrastructure costs and security liabilities due to running untrusted user code in cloud environments. This platform shifts the heavy computational lift (and sandbox risk) to the client side via a local daemon, transforming the central server into a lightweight orchestration and reporting engine.
+Traditional online judges carry massive infrastructure costs and security
+liabilities because they execute untrusted user code in cloud sandboxes.
+AlgoNest shifts compilation and execution to the client via a local Python
+daemon, turning the central server into a lightweight orchestration and
+reporting engine that never touches raw user code.
 
-2. Scope
+1.3 Intended Audience
+- Developers who use AlgoNest to practice DSA problems
+- Administrators who manage the problem library and user approvals
+- Contributors referencing this document for development or extension
+
+================================================================================
+
+2. SCOPE
+
 In-Scope Functionality
-•	Decentralized Code Execution: A local Python runner that interfaces with the user's native g++ compiler to run code against test cases securely.
-•	Central Data Orchestration: A backend REST API serving problem banks, storing historical logs, verifying payload signatures, and managing user ranks.
-•	Dynamic Client Dashboard: An elegant front-end UI incorporating a rich web code editor, dynamic test-case execution, and real-time grading reports.
+- Decentralised Code Execution: a local Python runner that interfaces with the
+  user's native g++ compiler, compiling and running test cases on their own
+  machine.
+- Central Data Orchestration: a PHP REST API serving the problem bank, storing
+  submission history, issuing JWTs, and managing user rankings.
+- Dynamic Client Dashboard: a browser-based UI with Monaco Editor, live test
+  execution, grading reports, a problem submission workflow, comments, and
+  notifications.
+- Community Features: problem submission by users (pending admin approval),
+  threaded comments with upvote/downvote, user profiles with avatars and
+  submission streaks.
+- Admin Console: full problem CRUD, approval/rejection workflow with
+  notifications to submitters, and visibility into who submitted each problem.
 
-3. System Features
-3.1 Local Compilation & Execution Path
-•	Dynamic Test-Case Retrieval: The frontend fetches the standard inputs/outputs for a selected problem from the backend API and routes them to the local runner alongside the source code.
-•	Local Execution Security: Code compiles and runs natively using the host machine’s resources, isolating the central infrastructure from malicious script vulnerabilities (e.g., infinite loops, fork bombs).
-•	Verdict Compilation: The local runner parses execution times, memory limits, and output deltas to assign standard verdicts.
-3.2 Problem Management Engine
-•	Categorization: Storage and rendering of problems with attributes including description, difficulty, time constraints, memory constraints, and hidden test-case arrays.
-•	Admin Control Panel: Dedicated workspace allowing administrators to seamlessly create, update, or deprecate problems and test suites.
-3.3 Integrity Log & Leaderboard
-•	Result Persistence: Once local execution concludes, the metadata verdict package is pushed to the central backend.
-•	Dynamic Rankings: An automated global leaderboard computed based on successfully passed problems, execution metrics, and timestamp data.
+Out of Scope
+- Mobile-native applications
+- Cloud-based code execution
+- Payment or subscription management
 
+================================================================================
 
+3. SYSTEM FEATURES
 
+3.1 Local Compilation & Execution
+- The frontend fetches test cases for the selected problem from the backend and
+  routes them alongside the C++ source to the local runner (localhost:8000).
+- Code compiles and runs natively using the host machine's g++, fully isolating
+  the central server from malicious payloads (infinite loops, fork bombs, etc.).
+- The runner collects per-test verdicts, runtimes, and output deltas, then
+  returns an aggregated result to the frontend.
+- The frontend submits only the metadata verdict package to the backend for
+  persistence.
 
+3.2 Problem Management
+- Problems carry: title, difficulty (Easy / Medium / Hard), topic tags,
+  description, constraints, time limit, memory limit, sample test cases
+  (visible), and hidden test cases (used for judging only).
+- Users can submit problems for approval from the problem bank page.
+- Admins can create, edit, approve (setting difficulty), reject (with reason),
+  or delete problems from the Admin Console.
+- The Admin Console displays the username of the user who submitted each
+  problem alongside its approval status.
+- Approval and rejection trigger in-app notifications to the submitting user.
 
+3.3 Submission Log & Leaderboard
+- Every run result is persisted as a submission record containing: user, problem,
+  status, passed/total count, runtime in ms, code content, and timestamp.
+- The global leaderboard ranks users by number of distinct accepted problems,
+  with ties broken by total runtime and submission timestamp.
 
-4. User and User Roles
-Role	Responsibilities	System Permissions
-Anonymous Visitor	Browses basic landing interfaces.	Read-only access to the login/signup screens.
-Developer (User)	Solves coding challenges, manages local runner connectivity, and tracks progress.	View problems, request test cases via front-end routing, execute local runs, submit results to the database, and view the global leaderboard.
-System Administrator	Oversees content management and maintains platform metrics.	Complete CRUD permissions across the Problem Library, User databases, and Global Submission log histories.
+3.4 User Profiles & Social Features
+- Each user has a public profile showing their username, avatar, submission
+  streak, solve count, and accepted problem history.
+- Users can update their username and upload a profile picture (JPEG/PNG).
+- Problems have a comment section supporting threaded discussion, editing,
+  deletion, and upvote/downvote voting.
 
+3.5 Notifications
+- Users receive in-app notifications when their submitted problem is approved
+  or rejected, including any admin comment or rejection reason.
+- Unread notification count is shown in the navbar badge.
 
-5. Requirements
-5.1 System & Functional Requirements
-•	System Integrity: The platform must authenticate API requests via secure JSON Web Tokens (JWT) embedded within HTTP headers.
-•	Local Connection Stability: The frontend application must gracefully handle connection timeouts if the local Python script (localhost:8000) is unreachable, providing intuitive troubleshooting steps to the developer.
+================================================================================
 
+4. USER ROLES
 
+Role                Responsibilities                          Permissions
+--------------------------------------------------------------------------------
+Anonymous Visitor   Browse login/signup screens.              Read-only access
+                                                              to public pages.
+
+Developer (User)    Solve problems, track progress, submit    View problems,
+                    new problems for approval, comment,       run code locally,
+                    vote, manage profile.                     log submissions,
+                                                              post comments,
+                                                              submit problems.
+
+Administrator       Manage problem library, approve/reject    Full CRUD on
+                    user-submitted problems, monitor all      problems and test
+                    submissions and users.                    cases; approve /
+                                                              reject workflow;
+                                                              delete any comment.
+
+================================================================================
+
+5. REQUIREMENTS
+
+5.1 Functional Requirements
+- FR-01: The system must register users with a unique username and email, storing
+  bcrypt-hashed passwords.
+- FR-02: Authenticated sessions must use JWTs issued on login and validated on
+  every protected request via the Authorization header.
+- FR-03: The frontend must dynamically resolve the backend API URL from
+  window.location.hostname so the system works across devices without hardcoded
+  IPs.
+- FR-04: The local runner must be reachable at localhost:8000 on the coding
+  machine; the frontend must show a clear error if the runner is unreachable.
+- FR-05: Admins must be able to approve a pending problem (setting its difficulty)
+  or reject it (providing a reason); both actions must trigger a notification to
+  the submitting user.
+- FR-06: The Admin Console problems table must display the username of the user
+  who submitted each problem.
+- FR-07: The leaderboard must be publicly accessible without authentication.
+- FR-08: Comments must support create, edit, delete, and vote operations;
+  admins can delete any comment.
 
 5.2 Non-Functional Requirements
-•	Performance: The backend REST API must process structural endpoints (like fetching problem lists) in under 200ms.
-•	Security: Central infrastructure must never execute unvetted code payloads. All submitted result payloads should feature validation properties to deter structural spoofing.
-•	Usability: Minimalist UI layout featuring instant text adjustments, automated syntax highlighting, and fluid state tracking via responsive layout components.
+- NFR-01 Performance: The backend must process list endpoints (problem bank,
+  leaderboard) in under 200 ms under normal load.
+- NFR-02 Security: The central server must never execute raw user code. All
+  submission payloads must be validated server-side before persistence.
+- NFR-03 Usability: The UI must support both light and dark themes with
+  persistent preference storage, and render correctly on desktop browsers.
+- NFR-04 Portability: The system must run on Linux, macOS, and Windows using
+  only PHP 8.3, MySQL 8, Python 3, and a standard g++ installation.
 
-6. Technology Stack
-6.1 Frontend Architecture
-•	Structure & Styling: HTML5 & Tailwind CSS (for modern utility-first layouts).
-•	Development Editor: Monaco Editor (powering the IDE experience directly inside the browser window).
-•	State & Reactivity: Alpine.js / Vanilla ECMAScript (providing a lightweight, low-overhead reactive state machine).
-6.2 Backend Core
-•	Application Server: PHP 8.3 (Structured object-oriented design handling API routing, Controller logic, and JWT authentication).
-•	Database Management: MySQL 8 (Relational engine storing user metadata, hashed credentials, core problems, and historical logs).
-6.3 Local Runner Client
-•	Runtime Environment: Python 3 (Lightweight HTTP daemon listening on local port 8000).
-•	System Tooling: Native GNU Compiler Collection (g++) installed on the client machine's shell path.
+================================================================================
 
-7. Future Enhancements
-•	Anti-Cheat Engine: Developing a structural similarity analyser (using Abstract Syntax Tree comparisons) that runs on the backend to detect if a developer simply copied another user's solution, preventing leaderboard manipulation.
-•	Cross-Language Runtime Support: Expanding the local runner's daemon architecture to automatically detect, configure, and isolate other toolchains (such as python3, javac, or cargo), allowing the platform to support Python, Java, and Rust without changing the central backend infrastructure.
+6. TECHNOLOGY STACK
+
+6.1 Frontend
+- Structure & Styling: HTML5 + Tailwind CSS (utility-first, dark-mode support)
+- Editor: Monaco Editor (browser-based IDE with C++ syntax highlighting)
+- Reactivity: Alpine.js for component state; Vanilla JS for global utilities
+- Pages: login, dashboard, problems, problem workspace, leaderboard, profile,
+  public profile, admin console
+
+6.2 Backend
+- Runtime: PHP 8.3 (OOP, front-controller pattern, manual routing)
+- Auth: JWT (HS256) issued and validated in PHP
+- Database: MySQL 8 (users, problems, test_cases, submissions, notifications,
+  comments, comment_votes)
+- File uploads: avatar images stored under backend/public/avatars/
+
+6.3 Local Runner
+- Runtime: Python 3 (Flask-free HTTP server using http.server)
+- Toolchain: GNU g++ on the client machine's PATH
+- Port: 8000 (localhost only — never exposed to the network)
+
+================================================================================
+
+7. FUTURE ENHANCEMENTS
+
+- Anti-Cheat Engine: AST-based structural similarity analyser on the backend to
+  detect copied solutions and flag leaderboard manipulation.
+- Cross-Language Support: Extend the local runner to detect and invoke other
+  toolchains (python3, javac, cargo) without changes to the central backend,
+  enabling Python, Java, and Rust support.
+- Editorial System: Allow admins and problem setters to attach written editorials
+  and solution hints to problems, unlocked after a user's first accepted
+  submission.
+- Contest Mode: Time-boxed competitive sessions with a live scoreboard,
+  restricted problem visibility, and a post-contest replay view.
