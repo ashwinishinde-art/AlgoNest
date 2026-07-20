@@ -1,14 +1,14 @@
 @echo off
 setlocal enabledelayedexpansion
-title DSA Online Judge - Server Starter
+title AlgoNest - Server Starter
 
 :: ============================================================
-::          DSA Online Judge - Windows Server Starter
+::          AlgoNest - Windows Server Starter
 :: ============================================================
 
 echo.
 echo =====================================================
-echo        DSA Online Judge - Server Starter
+echo        AlgoNest - Server Starter
 echo =====================================================
 echo.
 

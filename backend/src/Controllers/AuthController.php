@@ -43,7 +43,7 @@ class AuthController {
         if ($userData && password_verify($data['password'], $userData['password_hash'])) {
             // Generate token payload
             $token_payload = [
-                "iss" => "dsa_oj",
+                "iss" => "algonest",
                 "iat" => time(),
                 "exp" => time() + (3600 * 24), // 24 hours
                 "user" => [

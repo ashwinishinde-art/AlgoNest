@@ -1,8 +1,8 @@
 =====================================================
-   DSA Online Judge - Windows Setup Guide
+   AlgoNest - Windows Setup Guide
 =====================================================
 
-This guide sets up the DSA Online Judge from scratch on Windows.
+This guide sets up the AlgoNest from scratch on Windows.
 Estimated time: 15-20 minutes.
 
 

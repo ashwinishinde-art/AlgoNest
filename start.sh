@@ -10,7 +10,7 @@ BOLD='\033[1m'
 NC='\033[0m' # No Color
 
 echo -e "${BOLD}${CYAN}=====================================================${NC}"
-echo -e "${BOLD}${CYAN}         DSA Online Judge - Server Starter            ${NC}"
+echo -e "${BOLD}${CYAN}         AlgoNest - Server Starter            ${NC}"
 echo -e "${BOLD}${CYAN}=====================================================${NC}"
 
 # Detect Host IP (Local Network IPv4)
