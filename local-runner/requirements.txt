@@ -1,2 +1,0 @@
-# No external python packages required. 
-# Runs using python built-in http.server.
