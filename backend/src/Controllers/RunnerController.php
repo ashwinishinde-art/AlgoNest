@@ -36,25 +36,33 @@ class RunnerController {
         $tests   = array_slice($tests, 0, self::MAX_TESTS);
 
         // ── Check g++ ─────────────────────────────────────────────────────────
-        $gpp = trim(shell_exec('which g++ 2>/dev/null') ?? '');
+        $isWindows = strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
+        if ($isWindows) {
+            $gpp = trim(shell_exec('where g++ 2>nul') ?? '');
+        } else {
+            $gpp = trim(shell_exec('which g++ 2>/dev/null') ?? '');
+        }
         if (empty($gpp)) {
             http_response_code(500);
             echo json_encode(['success' => false, 'error' => 'g++ not found on server.']);
             return;
         }
+        // Use first line only (where.exe may return multiple paths)
+        $gppBin = strtok($gpp, "\n");
 
         // ── Write source to temp file ─────────────────────────────────────────
-        $tmpDir  = sys_get_temp_dir() . '/cpp_run_' . uniqid('', true);
-        mkdir($tmpDir, 0700);
+        $sep     = DIRECTORY_SEPARATOR;
+        $tmpDir  = sys_get_temp_dir() . $sep . 'cpp_run_' . uniqid('', true);
+        mkdir($tmpDir, 0700, true);
 
-        $srcPath = $tmpDir . '/solution.cpp';
-        $binPath = $tmpDir . '/solution.bin';
+        $srcPath = $tmpDir . $sep . 'solution.cpp';
+        $binPath = $tmpDir . $sep . 'solution' . ($isWindows ? '.exe' : '.bin');
 
         file_put_contents($srcPath, $code);
 
         // ── Compile ───────────────────────────────────────────────────────────
         $compileResult = $this->execWithTimeout(
-            ['/usr/bin/g++', '-O2', '-o', $binPath, $srcPath],
+            [$gppBin, '-O2', '-o', $binPath, $srcPath],
             '',
             self::COMPILE_TIMEOUT
         );
@@ -205,7 +213,8 @@ class RunnerController {
 
     private function cleanup(string $dir): void {
         if (is_dir($dir)) {
-            array_map('unlink', glob($dir . '/*'));
+            $files = glob($dir . DIRECTORY_SEPARATOR . '*');
+            if ($files) array_map('unlink', $files);
             rmdir($dir);
         }
     }
