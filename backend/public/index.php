@@ -133,6 +133,8 @@ switch ($resource) {
             } else {
                 $adminController->createProblem($user['id'], $body);
             }
+        } elseif ($method === 'GET' && $resourceId === 'submissions') {
+            $adminController->getAllSubmissions();
         } elseif ($method === 'GET' && $resourceId === 'problems') {
             $adminController->listProblems($params);
         } elseif ($method === 'PUT' && $resourceId === 'problems' && $subResource !== null) {

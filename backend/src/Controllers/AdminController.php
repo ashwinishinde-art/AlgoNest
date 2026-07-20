@@ -182,5 +182,29 @@ class AdminController {
             echo json_encode(["message" => "Failed to reject problem."]);
         }
     }
+
+    public function getAllSubmissions() {
+        $query = "
+            SELECT
+                s.id,
+                s.status,
+                s.passed_count,
+                s.total_count,
+                s.runtime_ms,
+                s.created_at,
+                u.username,
+                p.title AS problem_title,
+                p.difficulty
+            FROM submissions s
+            JOIN users u ON u.id = s.user_id
+            JOIN problems p ON p.id = s.problem_id
+            ORDER BY s.created_at DESC
+        ";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $submissions = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        http_response_code(200);
+        echo json_encode($submissions);
+    }
 }
 ?>

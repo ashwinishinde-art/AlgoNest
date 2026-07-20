@@ -145,6 +145,99 @@
             </table>
         </div>
 
+        <!-- Submissions Section -->
+        <div class="mt-10">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div>
+                    <h2 class="text-2xl font-extrabold tracking-tight">Submissions</h2>
+                    <p class="text-slate-500 dark:text-slate-400 mt-1 text-sm">All code submissions from users across every problem.</p>
+                </div>
+                <div class="mt-3 md:mt-0 flex items-center space-x-3">
+                    <!-- Filter by status -->
+                    <select x-model="submissionFilter"
+                            class="bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-1.5 px-3 text-sm text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">All Statuses</option>
+                        <option value="Accepted">Accepted</option>
+                        <option value="Wrong Answer">Wrong Answer</option>
+                        <option value="Runtime Error">Runtime Error</option>
+                        <option value="Compilation Error">Compilation Error</option>
+                    </select>
+                    <button @click="fetchSubmissions()"
+                            class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-semibold px-3 py-1.5 rounded-lg text-sm transition-colors flex items-center">
+                        <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                        Refresh
+                    </button>
+                </div>
+            </div>
+
+            <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-hidden">
+                <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
+                    <thead class="bg-slate-50 dark:bg-slate-800">
+                        <tr>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider w-16">#</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">User</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Problem</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Difficulty</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Status</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Score</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Runtime</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Submitted</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                        <template x-if="submissionsLoading">
+                            <tr>
+                                <td colspan="8" class="px-6 py-10 text-center text-slate-400 text-sm">
+                                    <svg class="animate-spin h-5 w-5 mx-auto text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
+                                </td>
+                            </tr>
+                        </template>
+                        <template x-if="!submissionsLoading">
+                            <template x-for="(sub, idx) in filteredSubmissions" :key="sub.id">
+                                <tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                    <td class="px-6 py-4 text-sm font-semibold text-slate-500" x-text="idx + 1"></td>
+                                    <td class="px-6 py-4 text-sm font-bold text-slate-800 dark:text-slate-100">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs flex-shrink-0"
+                                                 x-text="sub.username.charAt(0).toUpperCase()"></div>
+                                            <span x-text="sub.username"></span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-700 dark:text-slate-300 font-medium" x-text="sub.problem_title"></td>
+                                    <td class="px-6 py-4 text-sm">
+                                        <span class="px-2.5 py-0.5 rounded text-xs font-bold"
+                                              :class="sub.difficulty === 'Easy' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' :
+                                                      sub.difficulty === 'Medium' ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400' :
+                                                      'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'"
+                                              x-text="sub.difficulty"></span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm">
+                                        <span class="px-2.5 py-0.5 rounded text-xs font-bold"
+                                              :class="sub.status === 'Accepted' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' :
+                                                      sub.status === 'Wrong Answer' ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400' :
+                                                      'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400'"
+                                              x-text="sub.status"></span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">
+                                        <span x-text="sub.passed_count + '/' + sub.total_count"></span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300 font-mono">
+                                        <span x-text="sub.runtime_ms + ' ms'"></span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-slate-500" x-text="formatDate(sub.created_at)"></td>
+                                </tr>
+                            </template>
+                        </template>
+                        <template x-if="!submissionsLoading && filteredSubmissions.length === 0">
+                            <tr>
+                                <td colspan="8" class="px-6 py-10 text-center text-slate-400 text-sm">No submissions found.</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         <!-- View Problem Modal -->
         <div x-show="showViewModal" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 overflow-y-auto" x-transition>
             <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl max-w-3xl w-full p-8 shadow-xl">
@@ -388,6 +481,9 @@
                 user: null,
                 profile: null,
                 problems: [],
+                submissions: [],
+                submissionsLoading: false,
+                submissionFilter: '',
                 showModal: false,
                 showApproveModal: false,
                 showRejectModal: false,
@@ -406,6 +502,11 @@
                 sampleTCs: [{ input: '', expected: '' }],
                 hiddenTCs: [{ input: '', expected: '' }],
 
+                get filteredSubmissions() {
+                    if (!this.submissionFilter) return this.submissions;
+                    return this.submissions.filter(s => s.status === this.submissionFilter);
+                },
+
                 init() {
                     Auth.checkAuthGuard();
                     this.user = Auth.getUser();
@@ -417,6 +518,7 @@
 
                     this.fetchProfile();
                     this.fetchProblems();
+                    this.fetchSubmissions();
                 },
 
                 async fetchProfile() {
@@ -446,6 +548,22 @@
                         }
                     } catch (e) {
                         console.error('Error fetching problems list', e);
+                    }
+                },
+
+                async fetchSubmissions() {
+                    this.submissionsLoading = true;
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/admin/submissions`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (response.ok) {
+                            this.submissions = await response.json();
+                        }
+                    } catch (e) {
+                        console.error('Error fetching submissions', e);
+                    } finally {
+                        this.submissionsLoading = false;
                     }
                 },
 
