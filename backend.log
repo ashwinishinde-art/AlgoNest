@@ -2843,3 +2843,1066 @@ Stack trace:
 [Mon Jul 20 11:44:13 2026] 10.179.101.227:59624 Closing
 [Mon Jul 20 11:44:14 2026] 10.179.101.227:59402 Accepted
 [Mon Jul 20 11:44:14 2026] 10.179.101.227:59402 Closing
+[Mon Jul 20 11:44:28 2026] 10.179.101.227:50589 Accepted
+[Mon Jul 20 11:44:28 2026] 10.179.101.227:53059 Accepted
+[Mon Jul 20 11:44:28 2026] 10.179.101.227:53103 Accepted
+[Mon Jul 20 11:44:28 2026] 10.179.101.227:63978 Accepted
+[Mon Jul 20 11:44:28 2026] 10.179.101.227:63978 Closing
+[Mon Jul 20 11:44:28 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Mon Jul 20 11:44:28 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:44:28 2026] Problems found: 0
+[Mon Jul 20 11:44:28 2026] Problems: []
+[Mon Jul 20 11:44:28 2026] 10.179.101.227:50589 Closing
+[Mon Jul 20 11:44:28 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Mon Jul 20 11:44:28 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:44:28 2026] Problems found: 0
+[Mon Jul 20 11:44:28 2026] Problems: []
+[Mon Jul 20 11:44:28 2026] 10.179.101.227:53103 Closing
+[Mon Jul 20 11:44:28 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Mon Jul 20 11:44:28 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:44:28 2026] Problems found: 0
+[Mon Jul 20 11:44:28 2026] Problems: []
+[Mon Jul 20 11:44:28 2026] 10.179.101.227:53059 Closing
+[Mon Jul 20 11:44:28 2026] 10.179.101.227:58819 Accepted
+[Mon Jul 20 11:44:28 2026] 10.179.101.227:58819 Closing
+[Mon Jul 20 11:44:51 2026] 10.179.101.177:52504 Accepted
+[Mon Jul 20 11:44:51 2026] 10.179.101.177:52518 Accepted
+[Mon Jul 20 11:44:51 2026] 10.179.101.177:52474 Accepted
+[Mon Jul 20 11:44:51 2026] 10.179.101.177:52510 Accepted
+[Mon Jul 20 11:44:51 2026] 10.179.101.177:52488 Accepted
+[Mon Jul 20 11:44:51 2026] 10.179.101.177:52504 Closing
+[Mon Jul 20 11:44:51 2026] ProblemController::list called with filters: {"author_id":"3","approved":"1"}
+[Mon Jul 20 11:44:51 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:44:51 2026] Problems found: 0
+[Mon Jul 20 11:44:51 2026] Problems: []
+[Mon Jul 20 11:44:51 2026] 10.179.101.177:52518 Closing
+[Mon Jul 20 11:44:51 2026] ProblemController::list called with filters: {"author_id":"3","approved":"0"}
+[Mon Jul 20 11:44:51 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:44:51 2026] Problems found: 0
+[Mon Jul 20 11:44:51 2026] Problems: []
+[Mon Jul 20 11:44:51 2026] 10.179.101.177:52474 Closing
+[Mon Jul 20 11:44:51 2026] ProblemController::list called with filters: {"author_id":"3","approved":"2"}
+[Mon Jul 20 11:44:51 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:44:51 2026] Problems found: 0
+[Mon Jul 20 11:44:51 2026] Problems: []
+[Mon Jul 20 11:44:51 2026] 10.179.101.177:52510 Closing
+[Mon Jul 20 11:44:51 2026] 10.179.101.177:52488 Closing
+[Mon Jul 20 11:44:57 2026] 10.179.101.227:57021 Accepted
+[Mon Jul 20 11:44:57 2026] 10.179.101.227:57386 Accepted
+[Mon Jul 20 11:44:57 2026] 10.179.101.227:54247 Accepted
+[Mon Jul 20 11:44:57 2026] 10.179.101.227:57386 Closing
+[Mon Jul 20 11:44:57 2026] 10.179.101.227:62873 Accepted
+[Mon Jul 20 11:44:57 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Mon Jul 20 11:44:57 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:44:57 2026] Problems found: 0
+[Mon Jul 20 11:44:57 2026] Problems: []
+[Mon Jul 20 11:44:57 2026] 10.179.101.227:57021 Closing
+[Mon Jul 20 11:44:57 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Mon Jul 20 11:44:57 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:44:57 2026] Problems found: 0
+[Mon Jul 20 11:44:57 2026] Problems: []
+[Mon Jul 20 11:44:57 2026] 10.179.101.227:54247 Closing
+[Mon Jul 20 11:44:57 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Mon Jul 20 11:44:57 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:44:57 2026] Problems found: 0
+[Mon Jul 20 11:44:57 2026] Problems: []
+[Mon Jul 20 11:44:57 2026] 10.179.101.227:62873 Closing
+[Mon Jul 20 11:44:57 2026] 10.179.101.227:63066 Accepted
+[Mon Jul 20 11:44:57 2026] 10.179.101.227:63066 Closing
+[Mon Jul 20 11:45:27 2026] 10.179.101.227:55258 Accepted
+[Mon Jul 20 11:45:27 2026] 10.179.101.227:50136 Accepted
+[Mon Jul 20 11:45:27 2026] 10.179.101.227:61546 Accepted
+[Mon Jul 20 11:45:27 2026] 10.179.101.227:52972 Accepted
+[Mon Jul 20 11:45:27 2026] 10.179.101.227:61546 Closing
+[Mon Jul 20 11:45:28 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Mon Jul 20 11:45:28 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:45:28 2026] Problems found: 0
+[Mon Jul 20 11:45:28 2026] Problems: []
+[Mon Jul 20 11:45:28 2026] 10.179.101.227:52972 Closing
+[Mon Jul 20 11:45:28 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Mon Jul 20 11:45:28 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:45:28 2026] Problems found: 0
+[Mon Jul 20 11:45:28 2026] Problems: []
+[Mon Jul 20 11:45:28 2026] 10.179.101.227:55258 Closing
+[Mon Jul 20 11:45:28 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Mon Jul 20 11:45:28 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:45:28 2026] Problems found: 0
+[Mon Jul 20 11:45:28 2026] Problems: []
+[Mon Jul 20 11:45:28 2026] 10.179.101.227:50136 Closing
+[Mon Jul 20 11:45:28 2026] 10.179.101.227:59170 Accepted
+[Mon Jul 20 11:45:28 2026] 10.179.101.227:59170 Closing
+[Mon Jul 20 11:45:50 2026] 10.179.101.177:50890 Accepted
+[Mon Jul 20 11:45:50 2026] 10.179.101.177:50872 Accepted
+[Mon Jul 20 11:45:50 2026] 10.179.101.177:50882 Accepted
+[Mon Jul 20 11:45:50 2026] 10.179.101.177:50858 Accepted
+[Mon Jul 20 11:45:50 2026] 10.179.101.177:50890 Closing
+[Mon Jul 20 11:45:50 2026] ProblemController::list called with filters: {"author_id":"3","approved":"1"}
+[Mon Jul 20 11:45:50 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:45:50 2026] Problems found: 0
+[Mon Jul 20 11:45:50 2026] Problems: []
+[Mon Jul 20 11:45:50 2026] 10.179.101.177:50872 Closing
+[Mon Jul 20 11:45:50 2026] ProblemController::list called with filters: {"author_id":"3","approved":"0"}
+[Mon Jul 20 11:45:50 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:45:50 2026] Problems found: 0
+[Mon Jul 20 11:45:50 2026] Problems: []
+[Mon Jul 20 11:45:50 2026] 10.179.101.177:50882 Closing
+[Mon Jul 20 11:45:50 2026] ProblemController::list called with filters: {"author_id":"3","approved":"2"}
+[Mon Jul 20 11:45:50 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:45:50 2026] Problems found: 0
+[Mon Jul 20 11:45:50 2026] Problems: []
+[Mon Jul 20 11:45:50 2026] 10.179.101.177:50858 Closing
+[Mon Jul 20 11:45:51 2026] 10.179.101.177:50904 Accepted
+[Mon Jul 20 11:45:51 2026] 10.179.101.177:50898 Accepted
+[Mon Jul 20 11:45:51 2026] 10.179.101.177:50904 Closing
+[Mon Jul 20 11:45:56 2026] 10.179.101.177:50898 Closing
+[Mon Jul 20 11:45:57 2026] 10.179.101.177:43738 Accepted
+[Mon Jul 20 11:45:57 2026] 10.179.101.177:43738 Closing
+[Mon Jul 20 11:45:58 2026] 10.179.101.227:60180 Accepted
+[Mon Jul 20 11:45:58 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Mon Jul 20 11:45:58 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:45:58 2026] Problems found: 0
+[Mon Jul 20 11:45:58 2026] Problems: []
+[Mon Jul 20 11:45:58 2026] 10.179.101.227:60180 Closing
+[Mon Jul 20 11:45:58 2026] 10.179.101.227:63845 Accepted
+[Mon Jul 20 11:45:58 2026] 10.179.101.227:58281 Accepted
+[Mon Jul 20 11:45:58 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Mon Jul 20 11:45:58 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:45:58 2026] Problems found: 0
+[Mon Jul 20 11:45:58 2026] Problems: []
+[Mon Jul 20 11:45:58 2026] 10.179.101.227:63845 Closing
+[Mon Jul 20 11:45:58 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Mon Jul 20 11:45:58 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:45:58 2026] Problems found: 0
+[Mon Jul 20 11:45:58 2026] Problems: []
+[Mon Jul 20 11:45:58 2026] 10.179.101.227:58281 Closing
+[Mon Jul 20 11:45:58 2026] 10.179.101.227:56632 Accepted
+[Mon Jul 20 11:45:58 2026] 10.179.101.227:56632 Closing
+[Mon Jul 20 11:45:58 2026] 10.179.101.227:50796 Accepted
+[Mon Jul 20 11:45:58 2026] 10.179.101.227:50796 Closing
+[Mon Jul 20 11:46:19 2026] 127.0.0.1:57507 Accepted
+[Mon Jul 20 11:46:19 2026] 127.0.0.1:57150 Accepted
+[Mon Jul 20 11:46:19 2026] 127.0.0.1:63767 Accepted
+[Mon Jul 20 11:46:19 2026] 127.0.0.1:60777 Accepted
+[Mon Jul 20 11:46:19 2026] 127.0.0.1:56905 Accepted
+[Mon Jul 20 11:46:19 2026] 127.0.0.1:50430 Accepted
+[Mon Jul 20 11:46:19 2026] 127.0.0.1:57507 Closing
+[Mon Jul 20 11:46:19 2026] 127.0.0.1:57150 Closing
+[Mon Jul 20 11:46:19 2026] ProblemController::list called with filters: {"author_id":"7","approved":"1"}
+[Mon Jul 20 11:46:19 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:46:19 2026] Problems found: 0
+[Mon Jul 20 11:46:19 2026] Problems: []
+[Mon Jul 20 11:46:19 2026] 127.0.0.1:63767 Closing
+[Mon Jul 20 11:46:19 2026] ProblemController::list called with filters: {"author_id":"7","approved":"0"}
+[Mon Jul 20 11:46:19 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:46:19 2026] Problems found: 1
+[Mon Jul 20 11:46:19 2026] Problems: [{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":0,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:46:19 2026] 127.0.0.1:60777 Closing
+[Mon Jul 20 11:46:19 2026] ProblemController::list called with filters: {"author_id":"7","approved":"2"}
+[Mon Jul 20 11:46:19 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:46:19 2026] Problems found: 0
+[Mon Jul 20 11:46:19 2026] Problems: []
+[Mon Jul 20 11:46:19 2026] 127.0.0.1:56905 Closing
+[Mon Jul 20 11:46:19 2026] 127.0.0.1:50430 Closing
+[Mon Jul 20 11:46:19 2026] 127.0.0.1:53041 Accepted
+[Mon Jul 20 11:46:20 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:46:20 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:46:20 2026] Problems found: 2
+[Mon Jul 20 11:46:20 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"}]
+[Mon Jul 20 11:46:20 2026] 127.0.0.1:53041 Closing
+[Mon Jul 20 11:46:20 2026] 127.0.0.1:65031 Accepted
+[Mon Jul 20 11:46:20 2026] 127.0.0.1:65031 Closing
+[Mon Jul 20 11:46:20 2026] 10.179.101.177:35746 Accepted
+[Mon Jul 20 11:46:20 2026] 10.179.101.177:35746 Closing
+[Mon Jul 20 11:46:20 2026] 10.179.101.177:35756 Accepted
+[Mon Jul 20 11:46:20 2026] 10.179.101.177:35756 Closing
+[Mon Jul 20 11:46:21 2026] 10.179.101.177:35772 Accepted
+[Mon Jul 20 11:46:21 2026] 10.179.101.177:35772 Closing
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:57387 Accepted
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:53452 Accepted
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:55985 Accepted
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:59592 Accepted
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:50295 Accepted
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:55921 Accepted
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:57387 Closing
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:53452 Closing
+[Mon Jul 20 11:46:24 2026] ProblemController::list called with filters: {"author_id":"7","approved":"1"}
+[Mon Jul 20 11:46:24 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:46:24 2026] Problems found: 1
+[Mon Jul 20 11:46:24 2026] Problems: [{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:55985 Closing
+[Mon Jul 20 11:46:24 2026] ProblemController::list called with filters: {"author_id":"7","approved":"0"}
+[Mon Jul 20 11:46:24 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:46:24 2026] Problems found: 0
+[Mon Jul 20 11:46:24 2026] Problems: []
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:59592 Closing
+[Mon Jul 20 11:46:24 2026] ProblemController::list called with filters: {"author_id":"7","approved":"2"}
+[Mon Jul 20 11:46:24 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:46:24 2026] Problems found: 0
+[Mon Jul 20 11:46:24 2026] Problems: []
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:50295 Closing
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:55921 Closing
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:62591 Accepted
+[Mon Jul 20 11:46:24 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:46:24 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:46:24 2026] Problems found: 3
+[Mon Jul 20 11:46:24 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:62591 Closing
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:53814 Accepted
+[Mon Jul 20 11:46:24 2026] 127.0.0.1:53814 Closing
+[Mon Jul 20 11:46:28 2026] 10.179.101.227:51626 Accepted
+[Mon Jul 20 11:46:28 2026] 10.179.101.227:51344 Accepted
+[Mon Jul 20 11:46:28 2026] 10.179.101.227:54346 Accepted
+[Mon Jul 20 11:46:28 2026] 10.179.101.227:51626 Closing
+[Mon Jul 20 11:46:28 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Mon Jul 20 11:46:28 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:46:28 2026] Problems found: 0
+[Mon Jul 20 11:46:28 2026] Problems: []
+[Mon Jul 20 11:46:28 2026] 10.179.101.227:51344 Closing
+[Mon Jul 20 11:46:28 2026] 10.179.101.227:56069 Accepted
+[Mon Jul 20 11:46:28 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Mon Jul 20 11:46:28 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:46:28 2026] Problems found: 0
+[Mon Jul 20 11:46:28 2026] Problems: []
+[Mon Jul 20 11:46:28 2026] 10.179.101.227:54346 Closing
+[Mon Jul 20 11:46:28 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Mon Jul 20 11:46:28 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:46:28 2026] Problems found: 0
+[Mon Jul 20 11:46:28 2026] Problems: []
+[Mon Jul 20 11:46:28 2026] 10.179.101.227:56069 Closing
+[Mon Jul 20 11:46:28 2026] 10.179.101.227:55595 Accepted
+[Mon Jul 20 11:46:28 2026] 10.179.101.227:55595 Closing
+[Mon Jul 20 11:46:30 2026] 127.0.0.1:62244 Accepted
+[Mon Jul 20 11:46:30 2026] 127.0.0.1:62244 Closing
+[Mon Jul 20 11:46:30 2026] 127.0.0.1:58278 Accepted
+[Mon Jul 20 11:46:30 2026] 127.0.0.1:58278 Closing
+[Mon Jul 20 11:46:30 2026] 127.0.0.1:61062 Accepted
+[Mon Jul 20 11:46:30 2026] 127.0.0.1:61062 Closing
+[Mon Jul 20 11:46:31 2026] 127.0.0.1:62311 Accepted
+[Mon Jul 20 11:46:31 2026] 127.0.0.1:62311 Closing
+[Mon Jul 20 11:46:31 2026] 127.0.0.1:63812 Accepted
+[Mon Jul 20 11:46:36 2026] 127.0.0.1:63812 Closing
+[Mon Jul 20 11:46:36 2026] 127.0.0.1:60493 Accepted
+[Mon Jul 20 11:46:36 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:46:36 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:46:36 2026] Problems found: 3
+[Mon Jul 20 11:46:36 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:46:36 2026] 127.0.0.1:60493 Closing
+[Mon Jul 20 11:46:37 2026] 127.0.0.1:54258 Accepted
+[Mon Jul 20 11:46:37 2026] 127.0.0.1:54258 Closing
+[Mon Jul 20 11:46:37 2026] 127.0.0.1:49169 Accepted
+[Mon Jul 20 11:46:47 2026] 127.0.0.1:49169 Closing
+[Mon Jul 20 11:46:47 2026] 127.0.0.1:52519 Accepted
+[Mon Jul 20 11:46:47 2026] 127.0.0.1:52519 Closing
+[Mon Jul 20 11:46:48 2026] 127.0.0.1:64760 Accepted
+[Mon Jul 20 11:46:48 2026] 127.0.0.1:64760 Closing
+[Mon Jul 20 11:46:48 2026] 127.0.0.1:62825 Accepted
+[Mon Jul 20 11:46:48 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.parent_comment_id' in 'field list' in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php:23
+Stack trace:
+#0 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php(23): PDOStatement->execute()
+#1 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Controllers\CommentController.php(21): Comment->getByProblemId('1')
+#2 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\index.php(162): CommentController->getCommentsByProblem('1')
+#3 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\router.php(47): require_once('C:\\Users\\suvar....')
+#4 {main}
+  thrown in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php on line 23
+[Mon Jul 20 11:46:48 2026] 127.0.0.1:62825 Closing
+[Mon Jul 20 11:46:48 2026] 127.0.0.1:52209 Accepted
+[Mon Jul 20 11:46:50 2026] 10.179.101.177:54252 Accepted
+[Mon Jul 20 11:46:50 2026] 10.179.101.177:54252 Closing
+[Mon Jul 20 11:46:50 2026] 10.179.101.177:54250 Accepted
+[Mon Jul 20 11:46:50 2026] ProblemController::list called with filters: {"author_id":"3","approved":"1"}
+[Mon Jul 20 11:46:50 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:46:50 2026] Problems found: 0
+[Mon Jul 20 11:46:50 2026] Problems: []
+[Mon Jul 20 11:46:50 2026] 10.179.101.177:54250 Closing
+[Mon Jul 20 11:46:50 2026] 10.179.101.177:54256 Accepted
+[Mon Jul 20 11:46:50 2026] 10.179.101.177:54272 Accepted
+[Mon Jul 20 11:46:50 2026] ProblemController::list called with filters: {"author_id":"3","approved":"0"}
+[Mon Jul 20 11:46:50 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:46:50 2026] Problems found: 0
+[Mon Jul 20 11:46:50 2026] Problems: []
+[Mon Jul 20 11:46:50 2026] 10.179.101.177:54256 Closing
+[Mon Jul 20 11:46:50 2026] ProblemController::list called with filters: {"author_id":"3","approved":"2"}
+[Mon Jul 20 11:46:50 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:46:50 2026] Problems found: 0
+[Mon Jul 20 11:46:50 2026] Problems: []
+[Mon Jul 20 11:46:50 2026] 10.179.101.177:54272 Closing
+[Mon Jul 20 11:46:50 2026] 10.179.101.177:54282 Accepted
+[Mon Jul 20 11:46:50 2026] 10.179.101.177:54294 Accepted
+[Mon Jul 20 11:46:50 2026] 10.179.101.177:54282 Closing
+[Mon Jul 20 11:46:54 2026] 10.179.101.177:54294 Closing
+[Mon Jul 20 11:46:54 2026] 10.179.101.177:33088 Accepted
+[Mon Jul 20 11:46:54 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:46:54 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:46:54 2026] Problems found: 3
+[Mon Jul 20 11:46:54 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:46:54 2026] 10.179.101.177:33088 Closing
+[Mon Jul 20 11:46:54 2026] 10.179.101.177:33092 Accepted
+[Mon Jul 20 11:46:54 2026] 10.179.101.177:33092 Closing
+[Mon Jul 20 11:47:01 2026] 10.179.101.177:33100 Accepted
+[Mon Jul 20 11:47:01 2026] 10.179.101.177:33100 Closing
+[Mon Jul 20 11:47:01 2026] 10.179.101.177:33110 Accepted
+[Mon Jul 20 11:47:01 2026] 10.179.101.177:33110 Closing
+[Mon Jul 20 11:47:02 2026] 10.179.101.177:33112 Accepted
+[Mon Jul 20 11:47:02 2026] 10.179.101.177:33112 Closing
+[Mon Jul 20 11:47:02 2026] 10.179.101.177:33124 Accepted
+[Mon Jul 20 11:47:02 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.parent_comment_id' in 'field list' in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php:23
+Stack trace:
+#0 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php(23): PDOStatement->execute()
+#1 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Controllers\CommentController.php(21): Comment->getByProblemId('1')
+#2 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\index.php(162): CommentController->getCommentsByProblem('1')
+#3 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\router.php(47): require_once('C:\\Users\\suvar....')
+#4 {main}
+  thrown in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php on line 23
+[Mon Jul 20 11:47:02 2026] 10.179.101.177:33124 Closing
+[Mon Jul 20 11:47:02 2026] 10.179.101.42:65068 Accepted
+[Mon Jul 20 11:47:02 2026] 10.179.101.42:64422 Accepted
+[Mon Jul 20 11:47:02 2026] 10.179.101.42:51455 Accepted
+[Mon Jul 20 11:47:02 2026] 10.179.101.42:60871 Accepted
+[Mon Jul 20 11:47:02 2026] 10.179.101.42:55410 Accepted
+[Mon Jul 20 11:47:02 2026] ProblemController::list called with filters: {"author_id":"6","approved":"0"}
+[Mon Jul 20 11:47:02 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:47:02 2026] Problems found: 0
+[Mon Jul 20 11:47:02 2026] Problems: []
+[Mon Jul 20 11:47:02 2026] 10.179.101.42:60871 Closing
+[Mon Jul 20 11:47:02 2026] 10.179.101.42:55410 Closing
+[Mon Jul 20 11:47:02 2026] 10.179.101.42:56581 Accepted
+[Mon Jul 20 11:47:02 2026] 10.179.101.42:65068 Closing
+[Mon Jul 20 11:47:02 2026] ProblemController::list called with filters: {"author_id":"6","approved":"1"}
+[Mon Jul 20 11:47:02 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:47:02 2026] Problems found: 0
+[Mon Jul 20 11:47:02 2026] Problems: []
+[Mon Jul 20 11:47:02 2026] 10.179.101.42:64422 Closing
+[Mon Jul 20 11:47:02 2026] 10.179.101.42:51455 Closing
+[Mon Jul 20 11:47:02 2026] ProblemController::list called with filters: {"author_id":"6","approved":"2"}
+[Mon Jul 20 11:47:02 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:47:02 2026] Problems found: 0
+[Mon Jul 20 11:47:02 2026] Problems: []
+[Mon Jul 20 11:47:02 2026] 10.179.101.42:56581 Closing
+[Mon Jul 20 11:47:02 2026] 10.179.101.42:61579 Accepted
+[Mon Jul 20 11:47:02 2026] 10.179.101.42:61579 Closing
+[Mon Jul 20 11:47:02 2026] 10.179.101.42:63558 Accepted
+[Mon Jul 20 11:47:03 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:47:03 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:47:03 2026] Problems found: 3
+[Mon Jul 20 11:47:03 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:47:03 2026] 10.179.101.42:63558 Closing
+[Mon Jul 20 11:47:09 2026] 10.179.101.42:56558 Accepted
+[Mon Jul 20 11:47:09 2026] 10.179.101.42:65440 Accepted
+[Mon Jul 20 11:47:09 2026] 10.179.101.42:56558 Closing
+[Mon Jul 20 11:47:09 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:47:09 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:47:09 2026] Problems found: 3
+[Mon Jul 20 11:47:09 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:47:09 2026] 10.179.101.42:65440 Closing
+[Mon Jul 20 11:47:10 2026] 10.179.101.42:64409 Accepted
+[Mon Jul 20 11:47:10 2026] 10.179.101.42:60658 Accepted
+[Mon Jul 20 11:47:10 2026] 10.179.101.42:64409 Closing
+[Mon Jul 20 11:47:29 2026] 10.179.101.227:49671 Accepted
+[Mon Jul 20 11:47:29 2026] 10.179.101.227:56498 Accepted
+[Mon Jul 20 11:47:29 2026] 10.179.101.227:61563 Accepted
+[Mon Jul 20 11:47:29 2026] 10.179.101.227:49885 Accepted
+[Mon Jul 20 11:47:29 2026] 10.179.101.227:49671 Closing
+[Mon Jul 20 11:47:29 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Mon Jul 20 11:47:29 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:47:29 2026] Problems found: 0
+[Mon Jul 20 11:47:29 2026] Problems: []
+[Mon Jul 20 11:47:29 2026] 10.179.101.227:56498 Closing
+[Mon Jul 20 11:47:29 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Mon Jul 20 11:47:29 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:47:29 2026] Problems found: 0
+[Mon Jul 20 11:47:29 2026] Problems: []
+[Mon Jul 20 11:47:29 2026] 10.179.101.227:61563 Closing
+[Mon Jul 20 11:47:29 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Mon Jul 20 11:47:29 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:47:29 2026] Problems found: 0
+[Mon Jul 20 11:47:29 2026] Problems: []
+[Mon Jul 20 11:47:29 2026] 10.179.101.227:49885 Closing
+[Mon Jul 20 11:47:29 2026] 10.179.101.227:61337 Accepted
+[Mon Jul 20 11:47:29 2026] 10.179.101.227:61337 Closing
+[Mon Jul 20 11:48:19 2026] 127.0.0.1:52209 Closed without sending a request; it was probably just an unused speculative preconnection
+[Mon Jul 20 11:48:19 2026] 127.0.0.1:52209 Closing
+[Mon Jul 20 11:48:23 2026] 10.179.101.42:60658 Closed without sending a request; it was probably just an unused speculative preconnection
+[Mon Jul 20 11:48:23 2026] 10.179.101.42:60658 Closing
+[Mon Jul 20 11:48:24 2026] 10.179.101.42:51135 Accepted
+[Mon Jul 20 11:48:24 2026] 10.179.101.42:64080 Accepted
+[Mon Jul 20 11:48:24 2026] 10.179.101.42:51135 Closing
+[Mon Jul 20 11:48:24 2026] 10.179.101.42:64080 Closing
+[Mon Jul 20 11:48:30 2026] 10.179.101.227:62504 Accepted
+[Mon Jul 20 11:48:30 2026] 10.179.101.227:61685 Accepted
+[Mon Jul 20 11:48:30 2026] 10.179.101.227:52846 Accepted
+[Mon Jul 20 11:48:30 2026] 10.179.101.227:62984 Accepted
+[Mon Jul 20 11:48:30 2026] 10.179.101.227:62504 Closing
+[Mon Jul 20 11:48:30 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Mon Jul 20 11:48:30 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:48:30 2026] Problems found: 0
+[Mon Jul 20 11:48:30 2026] Problems: []
+[Mon Jul 20 11:48:30 2026] 10.179.101.227:61685 Closing
+[Mon Jul 20 11:48:30 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Mon Jul 20 11:48:30 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:48:30 2026] Problems found: 0
+[Mon Jul 20 11:48:30 2026] Problems: []
+[Mon Jul 20 11:48:30 2026] 10.179.101.227:52846 Closing
+[Mon Jul 20 11:48:30 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Mon Jul 20 11:48:30 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:48:30 2026] Problems found: 0
+[Mon Jul 20 11:48:30 2026] Problems: []
+[Mon Jul 20 11:48:30 2026] 10.179.101.227:62984 Closing
+[Mon Jul 20 11:48:30 2026] 10.179.101.227:61526 Accepted
+[Mon Jul 20 11:48:30 2026] 10.179.101.227:61526 Closing
+[Mon Jul 20 11:49:05 2026] 10.179.101.177:33028 Accepted
+[Mon Jul 20 11:49:05 2026] 10.179.101.177:33028 Closing
+[Mon Jul 20 11:49:05 2026] 10.179.101.177:33034 Accepted
+[Mon Jul 20 11:49:19 2026] 10.179.101.177:33034 Closing
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43134 Accepted
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43134 Closing
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43118 Accepted
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43112 Accepted
+[Mon Jul 20 11:49:20 2026] ProblemController::list called with filters: {"author_id":"3","approved":"1"}
+[Mon Jul 20 11:49:20 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:49:20 2026] Problems found: 0
+[Mon Jul 20 11:49:20 2026] Problems: []
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43118 Closing
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43112 Closing
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43136 Accepted
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43166 Accepted
+[Mon Jul 20 11:49:20 2026] ProblemController::list called with filters: {"author_id":"3","approved":"0"}
+[Mon Jul 20 11:49:20 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:49:20 2026] Problems found: 0
+[Mon Jul 20 11:49:20 2026] Problems: []
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43136 Closing
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43152 Accepted
+[Mon Jul 20 11:49:20 2026] ProblemController::list called with filters: {"author_id":"3","approved":"2"}
+[Mon Jul 20 11:49:20 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:49:20 2026] Problems found: 0
+[Mon Jul 20 11:49:20 2026] Problems: []
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43166 Closing
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43152 Closing
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43174 Accepted
+[Mon Jul 20 11:49:20 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:49:20 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:49:20 2026] Problems found: 3
+[Mon Jul 20 11:49:20 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43174 Closing
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43188 Accepted
+[Mon Jul 20 11:49:20 2026] 10.179.101.177:43188 Closing
+[Mon Jul 20 11:49:23 2026] 10.179.101.177:36736 Accepted
+[Mon Jul 20 11:49:23 2026] 10.179.101.177:36724 Accepted
+[Mon Jul 20 11:49:23 2026] 10.179.101.177:36736 Closing
+[Mon Jul 20 11:49:23 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:49:23 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:49:23 2026] Problems found: 3
+[Mon Jul 20 11:49:23 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:49:23 2026] 10.179.101.177:36724 Closing
+[Mon Jul 20 11:49:23 2026] 10.179.101.177:36744 Accepted
+[Mon Jul 20 11:49:23 2026] 10.179.101.177:36744 Closing
+[Mon Jul 20 11:49:26 2026] 10.179.101.177:36756 Accepted
+[Mon Jul 20 11:49:26 2026] 10.179.101.177:36756 Closing
+[Mon Jul 20 11:49:26 2026] 10.179.101.177:36766 Accepted
+[Mon Jul 20 11:49:26 2026] 10.179.101.177:36766 Closing
+[Mon Jul 20 11:49:26 2026] 10.179.101.177:36776 Accepted
+[Mon Jul 20 11:49:26 2026] 10.179.101.177:36776 Closing
+[Mon Jul 20 11:49:26 2026] 10.179.101.177:36780 Accepted
+[Mon Jul 20 11:49:26 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.parent_comment_id' in 'field list' in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php:23
+Stack trace:
+#0 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php(23): PDOStatement->execute()
+#1 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Controllers\CommentController.php(21): Comment->getByProblemId('1')
+#2 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\index.php(162): CommentController->getCommentsByProblem('1')
+#3 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\router.php(47): require_once('C:\\Users\\suvar....')
+#4 {main}
+  thrown in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php on line 23
+[Mon Jul 20 11:49:26 2026] 10.179.101.177:36780 Closing
+[Mon Jul 20 11:49:31 2026] 10.179.101.227:51369 Accepted
+[Mon Jul 20 11:49:31 2026] 10.179.101.227:58093 Accepted
+[Mon Jul 20 11:49:31 2026] 10.179.101.227:51369 Closing
+[Mon Jul 20 11:49:31 2026] 10.179.101.227:59917 Accepted
+[Mon Jul 20 11:49:31 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Mon Jul 20 11:49:31 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:49:31 2026] Problems found: 0
+[Mon Jul 20 11:49:31 2026] Problems: []
+[Mon Jul 20 11:49:31 2026] 10.179.101.227:58093 Closing
+[Mon Jul 20 11:49:31 2026] 10.179.101.227:58070 Accepted
+[Mon Jul 20 11:49:31 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Mon Jul 20 11:49:31 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:49:31 2026] Problems found: 0
+[Mon Jul 20 11:49:31 2026] Problems: []
+[Mon Jul 20 11:49:31 2026] 10.179.101.227:59917 Closing
+[Mon Jul 20 11:49:31 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Mon Jul 20 11:49:31 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:49:31 2026] Problems found: 0
+[Mon Jul 20 11:49:31 2026] Problems: []
+[Mon Jul 20 11:49:31 2026] 10.179.101.227:58070 Closing
+[Mon Jul 20 11:49:31 2026] 10.179.101.227:49823 Accepted
+[Mon Jul 20 11:49:31 2026] 10.179.101.227:49823 Closing
+[Mon Jul 20 11:49:35 2026] 10.179.101.177:59510 Accepted
+[Mon Jul 20 11:49:37 2026] 10.179.101.177:59510 Closing
+[Mon Jul 20 11:50:07 2026] 10.179.101.42:49170 Accepted
+[Mon Jul 20 11:50:07 2026] 10.179.101.42:57884 Accepted
+[Mon Jul 20 11:50:07 2026] 10.179.101.42:49170 Closing
+[Mon Jul 20 11:50:07 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:50:07 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:50:07 2026] Problems found: 3
+[Mon Jul 20 11:50:07 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:50:07 2026] 10.179.101.42:57884 Closing
+[Mon Jul 20 11:50:07 2026] 10.179.101.42:54277 Accepted
+[Mon Jul 20 11:50:07 2026] 10.179.101.42:54277 Closing
+[Mon Jul 20 11:50:08 2026] 10.179.101.42:54550 Accepted
+[Mon Jul 20 11:50:08 2026] 10.179.101.42:60857 Accepted
+[Mon Jul 20 11:50:08 2026] 10.179.101.42:54550 Closing
+[Mon Jul 20 11:50:08 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:50:08 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:50:08 2026] Problems found: 3
+[Mon Jul 20 11:50:08 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:50:08 2026] 10.179.101.42:60857 Closing
+[Mon Jul 20 11:50:08 2026] 10.179.101.42:53495 Accepted
+[Mon Jul 20 11:50:08 2026] 10.179.101.42:53495 Closing
+[Mon Jul 20 11:50:11 2026] 10.179.101.42:64455 Accepted
+[Mon Jul 20 11:50:11 2026] 10.179.101.42:58357 Accepted
+[Mon Jul 20 11:50:11 2026] 10.179.101.42:64455 Closing
+[Mon Jul 20 11:50:11 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:50:11 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:50:11 2026] Problems found: 3
+[Mon Jul 20 11:50:11 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:50:11 2026] 10.179.101.42:58357 Closing
+[Mon Jul 20 11:50:11 2026] 10.179.101.42:62286 Accepted
+[Mon Jul 20 11:50:11 2026] 10.179.101.42:62286 Closing
+[Mon Jul 20 11:50:25 2026] 10.179.101.110:55832 Accepted
+[Mon Jul 20 11:50:25 2026] 10.179.101.110:55832 Closing
+[Mon Jul 20 11:50:25 2026] 10.179.101.110:52184 Accepted
+[Mon Jul 20 11:50:25 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:50:25 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:50:25 2026] Problems found: 3
+[Mon Jul 20 11:50:25 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:50:25 2026] 10.179.101.110:52184 Closing
+[Mon Jul 20 11:50:25 2026] 10.179.101.110:53221 Accepted
+[Mon Jul 20 11:50:25 2026] 10.179.101.110:53221 Closing
+[Mon Jul 20 11:50:32 2026] 10.179.101.227:52226 Accepted
+[Mon Jul 20 11:50:32 2026] 10.179.101.227:55848 Accepted
+[Mon Jul 20 11:50:32 2026] 10.179.101.227:60083 Accepted
+[Mon Jul 20 11:50:32 2026] 10.179.101.227:51908 Accepted
+[Mon Jul 20 11:50:32 2026] 10.179.101.227:52226 Closing
+[Mon Jul 20 11:50:32 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Mon Jul 20 11:50:32 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:50:32 2026] Problems found: 0
+[Mon Jul 20 11:50:32 2026] Problems: []
+[Mon Jul 20 11:50:32 2026] 10.179.101.227:60083 Closing
+[Mon Jul 20 11:50:32 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Mon Jul 20 11:50:32 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:50:32 2026] Problems found: 0
+[Mon Jul 20 11:50:32 2026] Problems: []
+[Mon Jul 20 11:50:32 2026] 10.179.101.227:51908 Closing
+[Mon Jul 20 11:50:32 2026] 10.179.101.227:49183 Accepted
+[Mon Jul 20 11:50:32 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Mon Jul 20 11:50:32 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:50:32 2026] Problems found: 0
+[Mon Jul 20 11:50:32 2026] Problems: []
+[Mon Jul 20 11:50:32 2026] 10.179.101.227:55848 Closing
+[Mon Jul 20 11:50:32 2026] 10.179.101.227:49183 Closing
+[Mon Jul 20 11:50:53 2026] 10.179.101.110:54342 Accepted
+[Mon Jul 20 11:50:53 2026] 10.179.101.110:64391 Accepted
+[Mon Jul 20 11:50:53 2026] 10.179.101.110:57401 Accepted
+[Mon Jul 20 11:50:53 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:50:53 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:50:53 2026] Problems found: 3
+[Mon Jul 20 11:50:53 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:50:53 2026] 10.179.101.110:57401 Closing
+[Mon Jul 20 11:50:53 2026] 10.179.101.110:54342 Closing
+[Mon Jul 20 11:50:53 2026] 10.179.101.110:64391 Closing
+[Mon Jul 20 11:50:56 2026] 10.179.101.110:59778 Accepted
+[Mon Jul 20 11:50:56 2026] 10.179.101.110:59791 Accepted
+[Mon Jul 20 11:50:56 2026] 10.179.101.110:59778 Closing
+[Mon Jul 20 11:50:56 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:50:56 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:50:56 2026] Problems found: 3
+[Mon Jul 20 11:50:56 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:50:56 2026] 10.179.101.110:59791 Closing
+[Mon Jul 20 11:50:57 2026] 10.179.101.110:52184 Accepted
+[Mon Jul 20 11:50:57 2026] 10.179.101.110:52184 Closing
+[Mon Jul 20 11:51:10 2026] 10.179.101.110:60920 Accepted
+[Mon Jul 20 11:51:10 2026] 10.179.101.110:57306 Accepted
+[Mon Jul 20 11:51:10 2026] 10.179.101.110:60920 Closing
+[Mon Jul 20 11:51:10 2026] 10.179.101.110:57306 Closing
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:52249 Accepted
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:55467 Accepted
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:52249 Closing
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:55021 Accepted
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:55467 Closing
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:55891 Accepted
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:55021 Closing
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:51736 Accepted
+[Mon Jul 20 11:51:13 2026] ProblemController::list called with filters: {"author_id":"4","approved":"2"}
+[Mon Jul 20 11:51:13 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:51:13 2026] Problems found: 0
+[Mon Jul 20 11:51:13 2026] Problems: []
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:55891 Closing
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:62220 Accepted
+[Mon Jul 20 11:51:13 2026] ProblemController::list called with filters: {"author_id":"4","approved":"0"}
+[Mon Jul 20 11:51:13 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:51:13 2026] Problems found: 0
+[Mon Jul 20 11:51:13 2026] Problems: []
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:51736 Closing
+[Mon Jul 20 11:51:13 2026] ProblemController::list called with filters: {"author_id":"4","approved":"1"}
+[Mon Jul 20 11:51:13 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:51:13 2026] Problems found: 0
+[Mon Jul 20 11:51:13 2026] Problems: []
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:62220 Closing
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:56624 Accepted
+[Mon Jul 20 11:51:13 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:51:13 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:51:13 2026] Problems found: 3
+[Mon Jul 20 11:51:13 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:56624 Closing
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:61021 Accepted
+[Mon Jul 20 11:51:13 2026] 10.179.101.110:61021 Closing
+[Mon Jul 20 11:51:31 2026] 10.179.101.177:56772 Accepted
+[Mon Jul 20 11:51:33 2026] 10.179.101.177:56772 Closing
+[Mon Jul 20 11:51:33 2026] 10.179.101.177:56774 Accepted
+[Mon Jul 20 11:51:33 2026] 10.179.101.227:64278 Accepted
+[Mon Jul 20 11:51:33 2026] 10.179.101.227:64424 Accepted
+[Mon Jul 20 11:51:33 2026] 10.179.101.227:49678 Accepted
+[Mon Jul 20 11:51:33 2026] 10.179.101.227:49678 Closing
+[Mon Jul 20 11:51:33 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Mon Jul 20 11:51:33 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:51:33 2026] Problems found: 0
+[Mon Jul 20 11:51:33 2026] Problems: []
+[Mon Jul 20 11:51:33 2026] 10.179.101.227:64424 Closing
+[Mon Jul 20 11:51:33 2026] 10.179.101.227:54871 Accepted
+[Mon Jul 20 11:51:33 2026] 10.179.101.227:62859 Accepted
+[Mon Jul 20 11:51:33 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Mon Jul 20 11:51:33 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:51:33 2026] Problems found: 0
+[Mon Jul 20 11:51:33 2026] Problems: []
+[Mon Jul 20 11:51:33 2026] 10.179.101.227:62859 Closing
+[Mon Jul 20 11:51:33 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Mon Jul 20 11:51:33 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:51:33 2026] Problems found: 0
+[Mon Jul 20 11:51:33 2026] Problems: []
+[Mon Jul 20 11:51:33 2026] 10.179.101.227:54871 Closing
+[Mon Jul 20 11:51:34 2026] 10.179.101.227:64278 Closing
+[Mon Jul 20 11:51:38 2026] 10.179.101.177:56774 Closing
+[Mon Jul 20 11:51:39 2026] 10.179.101.177:52020 Accepted
+[Mon Jul 20 11:51:39 2026] 10.179.101.177:52026 Accepted
+[Mon Jul 20 11:51:39 2026] 10.179.101.177:52020 Closing
+[Mon Jul 20 11:51:41 2026] 10.179.101.177:52026 Closing
+[Mon Jul 20 11:51:42 2026] 10.179.101.177:52028 Accepted
+[Mon Jul 20 11:51:42 2026] 10.179.101.177:52038 Accepted
+[Mon Jul 20 11:51:42 2026] 10.179.101.177:52028 Closing
+[Mon Jul 20 11:51:42 2026] 10.179.101.177:52038 Closing
+[Mon Jul 20 11:51:43 2026] 10.179.101.110:49174 Accepted
+[Mon Jul 20 11:51:43 2026] 10.179.101.110:49370 Accepted
+[Mon Jul 20 11:51:43 2026] 10.179.101.110:64413 Accepted
+[Mon Jul 20 11:51:43 2026] 10.179.101.110:63979 Accepted
+[Mon Jul 20 11:51:43 2026] 10.179.101.110:64413 Closing
+[Mon Jul 20 11:51:43 2026] ProblemController::list called with filters: {"author_id":"4","approved":"1"}
+[Mon Jul 20 11:51:43 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:51:43 2026] Problems found: 0
+[Mon Jul 20 11:51:43 2026] Problems: []
+[Mon Jul 20 11:51:43 2026] 10.179.101.110:49370 Closing
+[Mon Jul 20 11:51:43 2026] ProblemController::list called with filters: {"author_id":"4","approved":"0"}
+[Mon Jul 20 11:51:43 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:51:43 2026] Problems found: 0
+[Mon Jul 20 11:51:43 2026] Problems: []
+[Mon Jul 20 11:51:43 2026] 10.179.101.110:49174 Closing
+[Mon Jul 20 11:51:43 2026] ProblemController::list called with filters: {"author_id":"4","approved":"2"}
+[Mon Jul 20 11:51:43 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:51:43 2026] Problems found: 0
+[Mon Jul 20 11:51:43 2026] Problems: []
+[Mon Jul 20 11:51:43 2026] 10.179.101.110:63979 Closing
+[Mon Jul 20 11:51:44 2026] 10.179.101.110:60411 Accepted
+[Mon Jul 20 11:51:44 2026] 10.179.101.110:60411 Closing
+[Mon Jul 20 11:51:51 2026] 127.0.0.1:62172 Accepted
+[Mon Jul 20 11:51:51 2026] 127.0.0.1:62172 Closing
+[Mon Jul 20 11:51:52 2026] 127.0.0.1:65044 Accepted
+[Mon Jul 20 11:51:52 2026] 127.0.0.1:65044 Closing
+[Mon Jul 20 11:51:52 2026] 127.0.0.1:56331 Accepted
+[Mon Jul 20 11:51:57 2026] 127.0.0.1:56331 Closing
+[Mon Jul 20 11:51:57 2026] 127.0.0.1:63841 Accepted
+[Mon Jul 20 11:51:57 2026] 127.0.0.1:63841 Closing
+[Mon Jul 20 11:51:58 2026] 127.0.0.1:55155 Accepted
+[Mon Jul 20 11:51:58 2026] 127.0.0.1:55155 Closing
+[Mon Jul 20 11:51:58 2026] 127.0.0.1:56102 Accepted
+[Mon Jul 20 11:52:04 2026] 10.179.101.177:39604 Accepted
+[Mon Jul 20 11:52:04 2026] 10.179.101.177:39590 Accepted
+[Mon Jul 20 11:52:04 2026] 10.179.101.177:39604 Closing
+[Mon Jul 20 11:52:04 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:52:04 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:52:04 2026] Problems found: 3
+[Mon Jul 20 11:52:04 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:52:04 2026] 10.179.101.177:39590 Closing
+[Mon Jul 20 11:52:04 2026] 10.179.101.177:39618 Accepted
+[Mon Jul 20 11:52:04 2026] 10.179.101.177:39618 Closing
+[Mon Jul 20 11:52:13 2026] 10.179.101.110:58660 Accepted
+[Mon Jul 20 11:52:13 2026] 10.179.101.110:63405 Accepted
+[Mon Jul 20 11:52:13 2026] ProblemController::list called with filters: {"author_id":"4","approved":"1"}
+[Mon Jul 20 11:52:13 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:52:13 2026] Problems found: 0
+[Mon Jul 20 11:52:13 2026] Problems: []
+[Mon Jul 20 11:52:13 2026] 10.179.101.110:58660 Closing
+[Mon Jul 20 11:52:13 2026] 10.179.101.110:53662 Accepted
+[Mon Jul 20 11:52:13 2026] 10.179.101.110:63405 Closing
+[Mon Jul 20 11:52:13 2026] 10.179.101.110:60879 Accepted
+[Mon Jul 20 11:52:13 2026] ProblemController::list called with filters: {"author_id":"4","approved":"0"}
+[Mon Jul 20 11:52:13 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:52:13 2026] Problems found: 0
+[Mon Jul 20 11:52:13 2026] Problems: []
+[Mon Jul 20 11:52:13 2026] 10.179.101.110:53662 Closing
+[Mon Jul 20 11:52:13 2026] ProblemController::list called with filters: {"author_id":"4","approved":"2"}
+[Mon Jul 20 11:52:13 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:52:13 2026] Problems found: 0
+[Mon Jul 20 11:52:13 2026] Problems: []
+[Mon Jul 20 11:52:13 2026] 10.179.101.110:60879 Closing
+[Mon Jul 20 11:52:13 2026] 10.179.101.110:63554 Accepted
+[Mon Jul 20 11:52:13 2026] 10.179.101.110:63554 Closing
+[Mon Jul 20 11:52:14 2026] 10.179.101.177:58012 Accepted
+[Mon Jul 20 11:52:14 2026] 10.179.101.177:57998 Accepted
+[Mon Jul 20 11:52:14 2026] 10.179.101.177:58012 Closing
+[Mon Jul 20 11:52:14 2026] 10.179.101.177:57998 Closing
+[Mon Jul 20 11:52:15 2026] 10.179.101.177:58022 Accepted
+[Mon Jul 20 11:52:15 2026] 10.179.101.177:58022 Closing
+[Mon Jul 20 11:52:17 2026] 10.179.101.177:58036 Accepted
+[Mon Jul 20 11:52:17 2026] 10.179.101.177:58048 Accepted
+[Mon Jul 20 11:52:17 2026] 10.179.101.177:58036 Closing
+[Mon Jul 20 11:52:17 2026] 10.179.101.177:58048 Closing
+[Mon Jul 20 11:52:23 2026] 127.0.0.1:56102 Closing
+[Mon Jul 20 11:52:23 2026] 127.0.0.1:55231 Accepted
+[Mon Jul 20 11:52:23 2026] 127.0.0.1:55231 Closing
+[Mon Jul 20 11:52:34 2026] 10.179.101.227:52635 Accepted
+[Mon Jul 20 11:52:34 2026] 10.179.101.227:49671 Accepted
+[Mon Jul 20 11:52:34 2026] 10.179.101.227:56669 Accepted
+[Mon Jul 20 11:52:34 2026] 10.179.101.227:63274 Accepted
+[Mon Jul 20 11:52:34 2026] 10.179.101.227:52635 Closing
+[Mon Jul 20 11:52:34 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Mon Jul 20 11:52:34 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:52:34 2026] Problems found: 0
+[Mon Jul 20 11:52:34 2026] Problems: []
+[Mon Jul 20 11:52:34 2026] 10.179.101.227:49671 Closing
+[Mon Jul 20 11:52:34 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Mon Jul 20 11:52:34 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:52:34 2026] Problems found: 0
+[Mon Jul 20 11:52:34 2026] Problems: []
+[Mon Jul 20 11:52:34 2026] 10.179.101.227:56669 Closing
+[Mon Jul 20 11:52:34 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Mon Jul 20 11:52:34 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:52:34 2026] Problems found: 0
+[Mon Jul 20 11:52:34 2026] Problems: []
+[Mon Jul 20 11:52:34 2026] 10.179.101.227:63274 Closing
+[Mon Jul 20 11:52:34 2026] 10.179.101.227:57812 Accepted
+[Mon Jul 20 11:52:34 2026] 10.179.101.227:57812 Closing
+[Mon Jul 20 11:52:43 2026] 10.179.101.110:51433 Accepted
+[Mon Jul 20 11:52:43 2026] 10.179.101.110:63767 Accepted
+[Mon Jul 20 11:52:43 2026] ProblemController::list called with filters: {"author_id":"4","approved":"2"}
+[Mon Jul 20 11:52:43 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:52:43 2026] Problems found: 0
+[Mon Jul 20 11:52:43 2026] Problems: []
+[Mon Jul 20 11:52:43 2026] 10.179.101.110:51433 Closing
+[Mon Jul 20 11:52:43 2026] ProblemController::list called with filters: {"author_id":"4","approved":"0"}
+[Mon Jul 20 11:52:43 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:52:43 2026] Problems found: 0
+[Mon Jul 20 11:52:43 2026] Problems: []
+[Mon Jul 20 11:52:43 2026] 10.179.101.110:63767 Closing
+[Mon Jul 20 11:52:43 2026] 10.179.101.110:56251 Accepted
+[Mon Jul 20 11:52:43 2026] 10.179.101.110:50760 Accepted
+[Mon Jul 20 11:52:43 2026] ProblemController::list called with filters: {"author_id":"4","approved":"1"}
+[Mon Jul 20 11:52:43 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:52:43 2026] Problems found: 0
+[Mon Jul 20 11:52:43 2026] Problems: []
+[Mon Jul 20 11:52:43 2026] 10.179.101.110:56251 Closing
+[Mon Jul 20 11:52:43 2026] 10.179.101.110:50760 Closing
+[Mon Jul 20 11:52:43 2026] 10.179.101.110:64799 Accepted
+[Mon Jul 20 11:52:43 2026] 10.179.101.110:64799 Closing
+[Mon Jul 20 11:52:43 2026] 127.0.0.1:63436 Accepted
+[Mon Jul 20 11:52:43 2026] 127.0.0.1:64614 Accepted
+[Mon Jul 20 11:52:43 2026] 127.0.0.1:63436 Closing
+[Mon Jul 20 11:52:43 2026] 127.0.0.1:52529 Accepted
+[Mon Jul 20 11:52:43 2026] 127.0.0.1:64614 Closing
+[Mon Jul 20 11:52:43 2026] 127.0.0.1:60398 Accepted
+[Mon Jul 20 11:52:43 2026] ProblemController::list called with filters: {"author_id":"7","approved":"1"}
+[Mon Jul 20 11:52:43 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:52:43 2026] Problems found: 1
+[Mon Jul 20 11:52:43 2026] Problems: [{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:52:43 2026] 127.0.0.1:52529 Closing
+[Mon Jul 20 11:52:43 2026] 127.0.0.1:55287 Accepted
+[Mon Jul 20 11:52:43 2026] ProblemController::list called with filters: {"author_id":"7","approved":"0"}
+[Mon Jul 20 11:52:43 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:52:43 2026] Problems found: 0
+[Mon Jul 20 11:52:43 2026] Problems: []
+[Mon Jul 20 11:52:43 2026] 127.0.0.1:60398 Closing
+[Mon Jul 20 11:52:43 2026] 127.0.0.1:59470 Accepted
+[Mon Jul 20 11:52:43 2026] ProblemController::list called with filters: {"author_id":"7","approved":"2"}
+[Mon Jul 20 11:52:43 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:52:43 2026] Problems found: 0
+[Mon Jul 20 11:52:43 2026] Problems: []
+[Mon Jul 20 11:52:43 2026] 127.0.0.1:55287 Closing
+[Mon Jul 20 11:52:43 2026] 127.0.0.1:59470 Closing
+[Mon Jul 20 11:52:44 2026] 127.0.0.1:65137 Accepted
+[Mon Jul 20 11:52:44 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:52:44 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:52:44 2026] Problems found: 3
+[Mon Jul 20 11:52:44 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:52:44 2026] 127.0.0.1:65137 Closing
+[Mon Jul 20 11:52:44 2026] 127.0.0.1:61808 Accepted
+[Mon Jul 20 11:52:44 2026] 127.0.0.1:61808 Closing
+[Mon Jul 20 11:53:01 2026] 127.0.0.1:63768 Accepted
+[Mon Jul 20 11:53:01 2026] 127.0.0.1:59821 Accepted
+[Mon Jul 20 11:53:01 2026] 127.0.0.1:63768 Closing
+[Mon Jul 20 11:53:01 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:53:01 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:53:01 2026] Problems found: 3
+[Mon Jul 20 11:53:01 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:53:01 2026] 127.0.0.1:59821 Closing
+[Mon Jul 20 11:53:02 2026] 127.0.0.1:57149 Accepted
+[Mon Jul 20 11:53:02 2026] 127.0.0.1:57149 Closing
+[Mon Jul 20 11:53:02 2026] 127.0.0.1:60811 Accepted
+[Mon Jul 20 11:53:09 2026] 127.0.0.1:60811 Closing
+[Mon Jul 20 11:53:09 2026] 127.0.0.1:65211 Accepted
+[Mon Jul 20 11:53:09 2026] 127.0.0.1:65211 Closing
+[Mon Jul 20 11:53:10 2026] 127.0.0.1:52741 Accepted
+[Mon Jul 20 11:53:10 2026] 127.0.0.1:52741 Closing
+[Mon Jul 20 11:53:10 2026] 127.0.0.1:53066 Accepted
+[Mon Jul 20 11:53:10 2026] 127.0.0.1:53066 Closing
+[Mon Jul 20 11:53:10 2026] 127.0.0.1:62034 Accepted
+[Mon Jul 20 11:53:10 2026] 127.0.0.1:62034 Closing
+[Mon Jul 20 11:53:10 2026] 127.0.0.1:54448 Accepted
+[Mon Jul 20 11:53:10 2026] 127.0.0.1:54448 Closing
+[Mon Jul 20 11:53:10 2026] 127.0.0.1:61252 Accepted
+[Mon Jul 20 11:53:10 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.parent_comment_id' in 'field list' in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php:23
+Stack trace:
+#0 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php(23): PDOStatement->execute()
+#1 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Controllers\CommentController.php(21): Comment->getByProblemId('2')
+#2 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\index.php(162): CommentController->getCommentsByProblem('2')
+#3 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\router.php(47): require_once('C:\\Users\\suvar....')
+#4 {main}
+  thrown in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php on line 23
+[Mon Jul 20 11:53:10 2026] 127.0.0.1:61252 Closing
+[Mon Jul 20 11:53:10 2026] 127.0.0.1:65262 Accepted
+[Mon Jul 20 11:53:13 2026] 10.179.101.110:59348 Accepted
+[Mon Jul 20 11:53:13 2026] 10.179.101.110:55895 Accepted
+[Mon Jul 20 11:53:13 2026] 10.179.101.110:63626 Accepted
+[Mon Jul 20 11:53:13 2026] 10.179.101.110:59405 Accepted
+[Mon Jul 20 11:53:13 2026] 10.179.101.110:50382 Accepted
+[Mon Jul 20 11:53:13 2026] ProblemController::list called with filters: {"author_id":"4","approved":"1"}
+[Mon Jul 20 11:53:13 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:53:13 2026] Problems found: 0
+[Mon Jul 20 11:53:13 2026] Problems: []
+[Mon Jul 20 11:53:13 2026] 10.179.101.110:59405 Closing
+[Mon Jul 20 11:53:13 2026] 10.179.101.110:50382 Closing
+[Mon Jul 20 11:53:13 2026] ProblemController::list called with filters: {"author_id":"4","approved":"0"}
+[Mon Jul 20 11:53:13 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:53:13 2026] Problems found: 0
+[Mon Jul 20 11:53:13 2026] Problems: []
+[Mon Jul 20 11:53:13 2026] 10.179.101.110:59348 Closing
+[Mon Jul 20 11:53:13 2026] ProblemController::list called with filters: {"author_id":"4","approved":"2"}
+[Mon Jul 20 11:53:13 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:53:13 2026] Problems found: 0
+[Mon Jul 20 11:53:13 2026] Problems: []
+[Mon Jul 20 11:53:13 2026] 10.179.101.110:63626 Closing
+[Mon Jul 20 11:53:14 2026] 10.179.101.110:55895 Closing
+[Mon Jul 20 11:53:20 2026] 127.0.0.1:65262 Closed without sending a request; it was probably just an unused speculative preconnection
+[Mon Jul 20 11:53:20 2026] 127.0.0.1:65262 Closing
+[Mon Jul 20 11:53:35 2026] 10.179.101.227:50250 Accepted
+[Mon Jul 20 11:53:35 2026] 10.179.101.227:63887 Accepted
+[Mon Jul 20 11:53:35 2026] 10.179.101.227:51703 Accepted
+[Mon Jul 20 11:53:35 2026] 10.179.101.227:50029 Accepted
+[Mon Jul 20 11:53:35 2026] 10.179.101.227:63887 Closing
+[Mon Jul 20 11:53:35 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Mon Jul 20 11:53:35 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:53:35 2026] Problems found: 0
+[Mon Jul 20 11:53:35 2026] Problems: []
+[Mon Jul 20 11:53:35 2026] 10.179.101.227:50250 Closing
+[Mon Jul 20 11:53:35 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Mon Jul 20 11:53:35 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:53:35 2026] Problems found: 0
+[Mon Jul 20 11:53:35 2026] Problems: []
+[Mon Jul 20 11:53:35 2026] 10.179.101.227:51703 Closing
+[Mon Jul 20 11:53:35 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Mon Jul 20 11:53:35 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:53:35 2026] Problems found: 0
+[Mon Jul 20 11:53:35 2026] Problems: []
+[Mon Jul 20 11:53:35 2026] 10.179.101.227:50029 Closing
+[Mon Jul 20 11:53:35 2026] 10.179.101.227:51734 Accepted
+[Mon Jul 20 11:53:35 2026] 10.179.101.227:51734 Closing
+[Mon Jul 20 11:53:43 2026] 10.179.101.110:53832 Accepted
+[Mon Jul 20 11:53:43 2026] 10.179.101.110:57493 Accepted
+[Mon Jul 20 11:53:43 2026] 10.179.101.110:60608 Accepted
+[Mon Jul 20 11:53:43 2026] 10.179.101.110:62178 Accepted
+[Mon Jul 20 11:53:43 2026] ProblemController::list called with filters: {"author_id":"4","approved":"0"}
+[Mon Jul 20 11:53:43 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:53:43 2026] Problems found: 0
+[Mon Jul 20 11:53:43 2026] Problems: []
+[Mon Jul 20 11:53:43 2026] 10.179.101.110:57493 Closing
+[Mon Jul 20 11:53:43 2026] ProblemController::list called with filters: {"author_id":"4","approved":"1"}
+[Mon Jul 20 11:53:43 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:53:43 2026] Problems found: 0
+[Mon Jul 20 11:53:43 2026] Problems: []
+[Mon Jul 20 11:53:43 2026] 10.179.101.110:60608 Closing
+[Mon Jul 20 11:53:43 2026] 10.179.101.110:62178 Closing
+[Mon Jul 20 11:53:43 2026] ProblemController::list called with filters: {"author_id":"4","approved":"2"}
+[Mon Jul 20 11:53:43 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:53:43 2026] Problems found: 0
+[Mon Jul 20 11:53:43 2026] Problems: []
+[Mon Jul 20 11:53:43 2026] 10.179.101.110:53832 Closing
+[Mon Jul 20 11:53:43 2026] 10.179.101.110:57868 Accepted
+[Mon Jul 20 11:53:43 2026] 10.179.101.110:57868 Closing
+[Mon Jul 20 11:54:13 2026] 10.179.101.110:52312 Accepted
+[Mon Jul 20 11:54:13 2026] 10.179.101.110:56473 Accepted
+[Mon Jul 20 11:54:13 2026] 10.179.101.110:54193 Accepted
+[Mon Jul 20 11:54:13 2026] ProblemController::list called with filters: {"author_id":"4","approved":"2"}
+[Mon Jul 20 11:54:13 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:54:13 2026] Problems found: 0
+[Mon Jul 20 11:54:13 2026] Problems: []
+[Mon Jul 20 11:54:13 2026] 10.179.101.110:52312 Closing
+[Mon Jul 20 11:54:13 2026] ProblemController::list called with filters: {"author_id":"4","approved":"0"}
+[Mon Jul 20 11:54:13 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:54:13 2026] Problems found: 0
+[Mon Jul 20 11:54:13 2026] Problems: []
+[Mon Jul 20 11:54:13 2026] 10.179.101.110:56473 Closing
+[Mon Jul 20 11:54:13 2026] 10.179.101.110:64861 Accepted
+[Mon Jul 20 11:54:13 2026] ProblemController::list called with filters: {"author_id":"4","approved":"1"}
+[Mon Jul 20 11:54:13 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:54:13 2026] Problems found: 0
+[Mon Jul 20 11:54:13 2026] Problems: []
+[Mon Jul 20 11:54:13 2026] 10.179.101.110:54193 Closing
+[Mon Jul 20 11:54:13 2026] 10.179.101.110:64861 Closing
+[Mon Jul 20 11:54:13 2026] 10.179.101.110:63750 Accepted
+[Mon Jul 20 11:54:13 2026] 10.179.101.110:63750 Closing
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:61881 Accepted
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:53791 Accepted
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:63831 Accepted
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:49338 Accepted
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:53791 Closing
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:50529 Accepted
+[Mon Jul 20 11:54:21 2026] ProblemController::list called with filters: {"author_id":"6","approved":"1"}
+[Mon Jul 20 11:54:21 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:54:21 2026] Problems found: 0
+[Mon Jul 20 11:54:21 2026] Problems: []
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:61881 Closing
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:63831 Closing
+[Mon Jul 20 11:54:21 2026] ProblemController::list called with filters: {"author_id":"6","approved":"2"}
+[Mon Jul 20 11:54:21 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:54:21 2026] Problems found: 0
+[Mon Jul 20 11:54:21 2026] Problems: []
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:49338 Closing
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:49928 Accepted
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:50529 Closing
+[Mon Jul 20 11:54:21 2026] ProblemController::list called with filters: {"author_id":"6","approved":"0"}
+[Mon Jul 20 11:54:21 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:54:21 2026] Problems found: 0
+[Mon Jul 20 11:54:21 2026] Problems: []
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:49928 Closing
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:64842 Accepted
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:60100 Accepted
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:64842 Closing
+[Mon Jul 20 11:54:21 2026] ProblemController::list called with filters: []
+[Mon Jul 20 11:54:21 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:54:21 2026] Problems found: 3
+[Mon Jul 20 11:54:21 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"}]
+[Mon Jul 20 11:54:21 2026] 10.179.101.42:60100 Closing
+[Mon Jul 20 11:54:36 2026] 10.179.101.227:63239 Accepted
+[Mon Jul 20 11:54:36 2026] 10.179.101.227:64308 Accepted
+[Mon Jul 20 11:54:36 2026] 10.179.101.227:58416 Accepted
+[Mon Jul 20 11:54:36 2026] 10.179.101.227:65451 Accepted
+[Mon Jul 20 11:54:36 2026] 10.179.101.227:65451 Closing
+[Mon Jul 20 11:54:36 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Mon Jul 20 11:54:36 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:54:36 2026] Problems found: 0
+[Mon Jul 20 11:54:36 2026] Problems: []
+[Mon Jul 20 11:54:36 2026] 10.179.101.227:63239 Closing
+[Mon Jul 20 11:54:36 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Mon Jul 20 11:54:36 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:54:36 2026] Problems found: 0
+[Mon Jul 20 11:54:36 2026] Problems: []
+[Mon Jul 20 11:54:36 2026] 10.179.101.227:64308 Closing
+[Mon Jul 20 11:54:36 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Mon Jul 20 11:54:36 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:54:36 2026] Problems found: 0
+[Mon Jul 20 11:54:36 2026] Problems: []
+[Mon Jul 20 11:54:36 2026] 10.179.101.227:58416 Closing
+[Mon Jul 20 11:54:36 2026] 10.179.101.227:58614 Accepted
+[Mon Jul 20 11:54:36 2026] 10.179.101.227:58614 Closing
+[Mon Jul 20 11:54:43 2026] 10.179.101.110:55541 Accepted
+[Mon Jul 20 11:54:43 2026] 10.179.101.110:58229 Accepted
+[Mon Jul 20 11:54:43 2026] 10.179.101.110:52227 Accepted
+[Mon Jul 20 11:54:43 2026] 10.179.101.110:58851 Accepted
+[Mon Jul 20 11:54:43 2026] ProblemController::list called with filters: {"author_id":"4","approved":"2"}
+[Mon Jul 20 11:54:43 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:54:43 2026] Problems found: 0
+[Mon Jul 20 11:54:43 2026] Problems: []
+[Mon Jul 20 11:54:43 2026] 10.179.101.110:55541 Closing
+[Mon Jul 20 11:54:43 2026] ProblemController::list called with filters: {"author_id":"4","approved":"0"}
+[Mon Jul 20 11:54:43 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:54:43 2026] Problems found: 0
+[Mon Jul 20 11:54:43 2026] Problems: []
+[Mon Jul 20 11:54:43 2026] 10.179.101.110:58229 Closing
+[Mon Jul 20 11:54:43 2026] ProblemController::list called with filters: {"author_id":"4","approved":"1"}
+[Mon Jul 20 11:54:43 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:54:43 2026] Problems found: 0
+[Mon Jul 20 11:54:43 2026] Problems: []
+[Mon Jul 20 11:54:43 2026] 10.179.101.110:52227 Closing
+[Mon Jul 20 11:54:43 2026] 10.179.101.110:58851 Closing
+[Mon Jul 20 11:54:43 2026] 10.179.101.110:64994 Accepted
+[Mon Jul 20 11:54:43 2026] 10.179.101.110:64994 Closing
+[Mon Jul 20 11:54:51 2026] 10.179.101.42:56238 Accepted
+[Mon Jul 20 11:54:51 2026] 10.179.101.42:52332 Accepted
+[Mon Jul 20 11:54:51 2026] 10.179.101.42:65053 Accepted
+[Mon Jul 20 11:54:51 2026] 10.179.101.42:58082 Accepted
+[Mon Jul 20 11:54:51 2026] 10.179.101.42:58082 Closing
+[Mon Jul 20 11:54:51 2026] ProblemController::list called with filters: {"author_id":"6","approved":"2"}
+[Mon Jul 20 11:54:51 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:54:51 2026] Problems found: 0
+[Mon Jul 20 11:54:51 2026] Problems: []
+[Mon Jul 20 11:54:51 2026] 10.179.101.42:56238 Closing
+[Mon Jul 20 11:54:51 2026] ProblemController::list called with filters: {"author_id":"6","approved":"1"}
+[Mon Jul 20 11:54:51 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:54:51 2026] Problems found: 0
+[Mon Jul 20 11:54:51 2026] Problems: []
+[Mon Jul 20 11:54:51 2026] 10.179.101.42:52332 Closing
+[Mon Jul 20 11:54:51 2026] ProblemController::list called with filters: {"author_id":"6","approved":"0"}
+[Mon Jul 20 11:54:51 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:54:51 2026] Problems found: 0
+[Mon Jul 20 11:54:51 2026] Problems: []
+[Mon Jul 20 11:54:51 2026] 10.179.101.42:65053 Closing
+[Mon Jul 20 11:54:51 2026] 10.179.101.42:55662 Accepted
+[Mon Jul 20 11:54:51 2026] 10.179.101.42:55662 Closing
+[Mon Jul 20 11:55:13 2026] 10.179.101.110:63016 Accepted
+[Mon Jul 20 11:55:13 2026] 10.179.101.110:49191 Accepted
+[Mon Jul 20 11:55:13 2026] 10.179.101.110:60227 Accepted
+[Mon Jul 20 11:55:13 2026] 10.179.101.110:49191 Closing
+[Mon Jul 20 11:55:13 2026] 10.179.101.110:50107 Accepted
+[Mon Jul 20 11:55:13 2026] ProblemController::list called with filters: {"author_id":"4","approved":"0"}
+[Mon Jul 20 11:55:13 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:55:13 2026] Problems found: 0
+[Mon Jul 20 11:55:13 2026] Problems: []
+[Mon Jul 20 11:55:13 2026] 10.179.101.110:63016 Closing
+[Mon Jul 20 11:55:13 2026] ProblemController::list called with filters: {"author_id":"4","approved":"2"}
+[Mon Jul 20 11:55:13 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:55:13 2026] Problems found: 0
+[Mon Jul 20 11:55:13 2026] Problems: []
+[Mon Jul 20 11:55:13 2026] 10.179.101.110:60227 Closing
+[Mon Jul 20 11:55:13 2026] ProblemController::list called with filters: {"author_id":"4","approved":"1"}
+[Mon Jul 20 11:55:13 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:55:13 2026] Problems found: 0
+[Mon Jul 20 11:55:13 2026] Problems: []
+[Mon Jul 20 11:55:13 2026] 10.179.101.110:50107 Closing
+[Mon Jul 20 11:55:13 2026] 10.179.101.110:56372 Accepted
+[Mon Jul 20 11:55:13 2026] 10.179.101.110:56372 Closing
+[Mon Jul 20 11:55:21 2026] 10.179.101.42:60100 Accepted
+[Mon Jul 20 11:55:21 2026] 10.179.101.42:60897 Accepted
+[Mon Jul 20 11:55:21 2026] 10.179.101.42:52943 Accepted
+[Mon Jul 20 11:55:21 2026] 10.179.101.42:62279 Accepted
+[Mon Jul 20 11:55:21 2026] 10.179.101.42:60100 Closing
+[Mon Jul 20 11:55:21 2026] ProblemController::list called with filters: {"author_id":"6","approved":"0"}
+[Mon Jul 20 11:55:21 2026] approvedOnly converted to: 0
+[Mon Jul 20 11:55:21 2026] Problems found: 0
+[Mon Jul 20 11:55:21 2026] Problems: []
+[Mon Jul 20 11:55:21 2026] 10.179.101.42:60897 Closing
+[Mon Jul 20 11:55:21 2026] ProblemController::list called with filters: {"author_id":"6","approved":"1"}
+[Mon Jul 20 11:55:21 2026] approvedOnly converted to: 1
+[Mon Jul 20 11:55:21 2026] Problems found: 0
+[Mon Jul 20 11:55:21 2026] Problems: []
+[Mon Jul 20 11:55:21 2026] 10.179.101.42:52943 Closing
+[Mon Jul 20 11:55:21 2026] ProblemController::list called with filters: {"author_id":"6","approved":"2"}
+[Mon Jul 20 11:55:21 2026] approvedOnly converted to: 2
+[Mon Jul 20 11:55:21 2026] Problems found: 0
+[Mon Jul 20 11:55:21 2026] Problems: []
+[Mon Jul 20 11:55:21 2026] 10.179.101.42:62279 Closing
+[Mon Jul 20 11:55:21 2026] 10.179.101.42:50765 Accepted
+[Mon Jul 20 11:55:21 2026] 10.179.101.42:50765 Closing
