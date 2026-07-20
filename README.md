@@ -1,4 +1,4 @@
-# DSA Online Judge
+# AlgoNest
 
 A minimal, beautiful, and secure Online Judge system for C++ developers. This platform evaluates solutions directly on the user's computer via a local runner and submits only the results back to the server, solving performance, sandbox security, and infrastructure constraints.
 
