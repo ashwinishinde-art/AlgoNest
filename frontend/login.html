@@ -101,150 +101,123 @@
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* Code background */
+        /* Background */
         .code-bg {
             position: fixed;
             inset: 0;
             z-index: 0;
-            overflow: hidden;
             pointer-events: none;
-            background: #0d1117;
+            /* dark base */
+            background-color: #0d1117;
+            /* subtle dot grid */
+            background-image: radial-gradient(circle, #21262d 1px, transparent 1px);
+            background-size: 28px 28px;
         }
-        .code-bg pre {
+        /* dark vignette so card stands out */
+        .code-bg::after {
+            content: '';
             position: absolute;
-            inset: -20px;
-            margin: 0;
-            padding: 32px;
-            font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
-            font-size: 12.5px;
-            line-height: 1.7;
-            color: #3d444d;
-            white-space: pre-wrap;
-            word-break: break-all;
-            filter: blur(2.5px);
+            inset: 0;
+            background: radial-gradient(ellipse 70% 70% at 50% 50%, transparent 30%, #0d1117 100%);
+        }
+        /* floating code tokens */
+        .token-layer {
+            position: absolute;
+            inset: 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 13px;
+            line-height: 1.9;
+            overflow: hidden;
+            white-space: pre;
+            padding: 40px 56px;
+            filter: blur(1.8px);
+            opacity: 0.55;
             user-select: none;
-            opacity: 0.9;
         }
     </style>
 </head>
 <body class="text-slate-100 min-h-screen flex items-center justify-center p-4">
     <!-- Static blurred code background -->
     <div class="code-bg">
-        <pre>
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
+        <!-- Syntax-colored code tokens scattered across background -->
+        <div class="token-layer" aria-hidden="true"><span style="color:#388bfd">#include</span> <span style="color:#a5d6ff">&lt;bits/stdc++.h&gt;</span>
+<span style="color:#ff7b72">using namespace</span> <span style="color:#ffa657">std</span>;
 
-int binarySearch(vector&lt;int&gt;&amp; arr, int target) {
-    int lo = 0, hi = arr.size() - 1;
-    while (lo &lt;= hi) {
-        int mid = lo + (hi - lo) / 2;
-        if (arr[mid] == target) return mid;
-        else if (arr[mid] &lt; target) lo = mid + 1;
-        else hi = mid - 1;
+<span style="color:#388bfd">int</span> <span style="color:#d2a8ff">binarySearch</span>(<span style="color:#ffa657">vector</span><span style="color:#e6edf3">&lt;</span><span style="color:#388bfd">int</span><span style="color:#e6edf3">&gt;&amp;</span> arr, <span style="color:#388bfd">int</span> target) {
+    <span style="color:#388bfd">int</span> lo <span style="color:#ff7b72">=</span> <span style="color:#79c0ff">0</span>, hi <span style="color:#ff7b72">=</span> arr.<span style="color:#d2a8ff">size</span>() <span style="color:#ff7b72">-</span> <span style="color:#79c0ff">1</span>;
+    <span style="color:#ff7b72">while</span> (lo <span style="color:#ff7b72">&lt;=</span> hi) {
+        <span style="color:#388bfd">int</span> mid <span style="color:#ff7b72">=</span> lo <span style="color:#ff7b72">+</span> (hi <span style="color:#ff7b72">-</span> lo) <span style="color:#ff7b72">/</span> <span style="color:#79c0ff">2</span>;
+        <span style="color:#ff7b72">if</span> (arr[mid] <span style="color:#ff7b72">==</span> target) <span style="color:#ff7b72">return</span> mid;
+        <span style="color:#ff7b72">else if</span> (arr[mid] <span style="color:#ff7b72">&lt;</span> target) lo <span style="color:#ff7b72">=</span> mid <span style="color:#ff7b72">+</span> <span style="color:#79c0ff">1</span>;
+        <span style="color:#ff7b72">else</span> hi <span style="color:#ff7b72">=</span> mid <span style="color:#ff7b72">-</span> <span style="color:#79c0ff">1</span>;
     }
-    return -1;
+    <span style="color:#ff7b72">return</span> <span style="color:#ff7b72">-</span><span style="color:#79c0ff">1</span>;
 }
 
-struct ListNode {
-    int val;
-    ListNode* next;
-    ListNode(int x) : val(x), next(nullptr) {}
+<span style="color:#ff7b72">struct</span> <span style="color:#ffa657">ListNode</span> {
+    <span style="color:#388bfd">int</span> val;
+    <span style="color:#ffa657">ListNode</span><span style="color:#e6edf3">*</span> next;
+    <span style="color:#d2a8ff">ListNode</span>(<span style="color:#388bfd">int</span> x) : val(x), next(<span style="color:#79c0ff">nullptr</span>) {}
 };
 
-ListNode* reverseList(ListNode* head) {
-    ListNode* prev = nullptr;
-    ListNode* curr = head;
-    while (curr) {
-        ListNode* next = curr-&gt;next;
-        curr-&gt;next = prev;
-        prev = curr;
-        curr = next;
+<span style="color:#ffa657">ListNode</span><span style="color:#e6edf3">*</span> <span style="color:#d2a8ff">reverseList</span>(<span style="color:#ffa657">ListNode</span><span style="color:#e6edf3">*</span> head) {
+    <span style="color:#ffa657">ListNode</span><span style="color:#e6edf3">*</span> prev <span style="color:#ff7b72">=</span> <span style="color:#79c0ff">nullptr</span>;
+    <span style="color:#ffa657">ListNode</span><span style="color:#e6edf3">*</span> curr <span style="color:#ff7b72">=</span> head;
+    <span style="color:#ff7b72">while</span> (curr) {
+        <span style="color:#ffa657">ListNode</span><span style="color:#e6edf3">*</span> nxt <span style="color:#ff7b72">=</span> curr<span style="color:#ff7b72">-&gt;</span>next;
+        curr<span style="color:#ff7b72">-&gt;</span>next <span style="color:#ff7b72">=</span> prev;
+        prev <span style="color:#ff7b72">=</span> curr; curr <span style="color:#ff7b72">=</span> nxt;
     }
-    return prev;
+    <span style="color:#ff7b72">return</span> prev;
 }
 
-int dp[1001][1001];
-int knapsack(int W, vector&lt;int&gt;&amp; wt, vector&lt;int&gt;&amp; val, int n) {
-    for (int i = 0; i &lt;= n; i++) {
-        for (int w = 0; w &lt;= W; w++) {
-            if (i == 0 || w == 0) dp[i][w] = 0;
-            else if (wt[i-1] &lt;= w)
-                dp[i][w] = max(val[i-1] + dp[i-1][w-wt[i-1]], dp[i-1][w]);
-            else dp[i][w] = dp[i-1][w];
-        }
+<span style="color:#ff7b72">class</span> <span style="color:#ffa657">UnionFind</span> {
+    <span style="color:#ffa657">vector</span><span style="color:#e6edf3">&lt;</span><span style="color:#388bfd">int</span><span style="color:#e6edf3">&gt;</span> parent, rank;
+<span style="color:#ff7b72">public</span>:
+    <span style="color:#d2a8ff">UnionFind</span>(<span style="color:#388bfd">int</span> n) : parent(n), rank(n, <span style="color:#79c0ff">0</span>) {
+        <span style="color:#d2a8ff">iota</span>(parent.<span style="color:#d2a8ff">begin</span>(), parent.<span style="color:#d2a8ff">end</span>(), <span style="color:#79c0ff">0</span>);
     }
-    return dp[n][W];
-}
+    <span style="color:#388bfd">int</span> <span style="color:#d2a8ff">find</span>(<span style="color:#388bfd">int</span> x) {
+        <span style="color:#ff7b72">return</span> parent[x] <span style="color:#ff7b72">==</span> x <span style="color:#ff7b72">?</span> x : parent[x] <span style="color:#ff7b72">=</span> <span style="color:#d2a8ff">find</span>(parent[x]);
+    }
+    <span style="color:#388bfd">bool</span> <span style="color:#d2a8ff">unite</span>(<span style="color:#388bfd">int</span> x, <span style="color:#388bfd">int</span> y) {
+        x <span style="color:#ff7b72">=</span> <span style="color:#d2a8ff">find</span>(x); y <span style="color:#ff7b72">=</span> <span style="color:#d2a8ff">find</span>(y);
+        <span style="color:#ff7b72">if</span> (x <span style="color:#ff7b72">==</span> y) <span style="color:#ff7b72">return false</span>;
+        <span style="color:#ff7b72">if</span> (rank[x] <span style="color:#ff7b72">&lt;</span> rank[y]) <span style="color:#d2a8ff">swap</span>(x, y);
+        parent[y] <span style="color:#ff7b72">=</span> x;
+        <span style="color:#ff7b72">if</span> (rank[x] <span style="color:#ff7b72">==</span> rank[y]) rank[x]<span style="color:#ff7b72">++</span>;
+        <span style="color:#ff7b72">return true</span>;
+    }
+};
 
-vector&lt;int&gt; dijkstra(int src, vector&lt;vector&lt;pair&lt;int,int&gt;&gt;&gt;&amp; adj, int V) {
-    vector&lt;int&gt; dist(V, INT_MAX);
-    priority_queue&lt;pair&lt;int,int&gt;, vector&lt;pair&lt;int,int&gt;&gt;, greater&lt;&gt;&gt; pq;
-    dist[src] = 0;
-    pq.push({0, src});
-    while (!pq.empty()) {
-        auto [d, u] = pq.top(); pq.pop();
-        for (auto [v, w] : adj[u]) {
-            if (dist[u] + w &lt; dist[v]) {
-                dist[v] = dist[u] + w;
-                pq.push({dist[v], v});
+<span style="color:#ffa657">vector</span><span style="color:#e6edf3">&lt;</span><span style="color:#388bfd">int</span><span style="color:#e6edf3">&gt;</span> <span style="color:#d2a8ff">dijkstra</span>(<span style="color:#388bfd">int</span> src, <span style="color:#ffa657">vector</span><span style="color:#e6edf3">&lt;</span><span style="color:#ffa657">vector</span><span style="color:#e6edf3">&lt;</span><span style="color:#ffa657">pair</span><span style="color:#e6edf3">&lt;</span><span style="color:#388bfd">int</span>,<span style="color:#388bfd">int</span><span style="color:#e6edf3">&gt;&gt;&gt;&amp;</span> adj, <span style="color:#388bfd">int</span> V) {
+    <span style="color:#ffa657">vector</span><span style="color:#e6edf3">&lt;</span><span style="color:#388bfd">int</span><span style="color:#e6edf3">&gt;</span> dist(V, <span style="color:#ffa657">INT_MAX</span>);
+    <span style="color:#ffa657">priority_queue</span><span style="color:#e6edf3">&lt;</span><span style="color:#ffa657">pair</span><span style="color:#e6edf3">&lt;</span><span style="color:#388bfd">int</span>,<span style="color:#388bfd">int</span><span style="color:#e6edf3">&gt;,</span> <span style="color:#ffa657">vector</span><span style="color:#e6edf3">&lt;</span><span style="color:#ffa657">pair</span><span style="color:#e6edf3">&lt;</span><span style="color:#388bfd">int</span>,<span style="color:#388bfd">int</span><span style="color:#e6edf3">&gt;&gt;,</span> <span style="color:#ffa657">greater</span><span style="color:#e6edf3">&lt;&gt;&gt;</span> pq;
+    dist[src] <span style="color:#ff7b72">=</span> <span style="color:#79c0ff">0</span>; pq.<span style="color:#d2a8ff">push</span>({<span style="color:#79c0ff">0</span>, src});
+    <span style="color:#ff7b72">while</span> (!pq.<span style="color:#d2a8ff">empty</span>()) {
+        <span style="color:#ff7b72">auto</span> [d, u] <span style="color:#ff7b72">=</span> pq.<span style="color:#d2a8ff">top</span>(); pq.<span style="color:#d2a8ff">pop</span>();
+        <span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">auto</span> [v, w] : adj[u])
+            <span style="color:#ff7b72">if</span> (dist[u] <span style="color:#ff7b72">+</span> w <span style="color:#ff7b72">&lt;</span> dist[v]) {
+                dist[v] <span style="color:#ff7b72">=</span> dist[u] <span style="color:#ff7b72">+</span> w;
+                pq.<span style="color:#d2a8ff">push</span>({dist[v], v});
             }
-        }
     }
-    return dist;
+    <span style="color:#ff7b72">return</span> dist;
 }
 
-bool isBipartite(int node, vector&lt;vector&lt;int&gt;&gt;&amp; graph, vector&lt;int&gt;&amp; color) {
-    queue&lt;int&gt; q;
-    q.push(node);
-    color[node] = 0;
-    while (!q.empty()) {
-        int u = q.front(); q.pop();
-        for (int v : graph[u]) {
-            if (color[v] == -1) { color[v] = 1 - color[u]; q.push(v); }
-            else if (color[v] == color[u]) return false;
-        }
+<span style="color:#388bfd">int</span> <span style="color:#d2a8ff">main</span>() {
+    <span style="color:#ffa657">ios_base</span>::<span style="color:#d2a8ff">sync_with_stdio</span>(<span style="color:#79c0ff">false</span>);
+    cin.<span style="color:#d2a8ff">tie</span>(<span style="color:#79c0ff">NULL</span>);
+    <span style="color:#388bfd">int</span> t; cin <span style="color:#ff7b72">&gt;&gt;</span> t;
+    <span style="color:#ff7b72">while</span> (t<span style="color:#ff7b72">--</span>) {
+        <span style="color:#388bfd">int</span> n; cin <span style="color:#ff7b72">&gt;&gt;</span> n;
+        <span style="color:#ffa657">vector</span><span style="color:#e6edf3">&lt;</span><span style="color:#388bfd">int</span><span style="color:#e6edf3">&gt;</span> a(n);
+        <span style="color:#ff7b72">for</span> (<span style="color:#ff7b72">auto&amp;</span> x : a) cin <span style="color:#ff7b72">&gt;&gt;</span> x;
+        <span style="color:#d2a8ff">sort</span>(a.<span style="color:#d2a8ff">begin</span>(), a.<span style="color:#d2a8ff">end</span>());
+        cout <span style="color:#ff7b72">&lt;&lt;</span> a[<span style="color:#79c0ff">0</span>] <span style="color:#ff7b72">&lt;&lt;</span> <span style="color:#a5d6ff">"\n"</span>;
     }
-    return true;
-}
-
-int lcs(string a, string b) {
-    int m = a.size(), n = b.size();
-    vector&lt;vector&lt;int&gt;&gt; dp(m+1, vector&lt;int&gt;(n+1, 0));
-    for (int i = 1; i &lt;= m; i++)
-        for (int j = 1; j &lt;= n; j++)
-            dp[i][j] = (a[i-1]==b[j-1]) ? dp[i-1][j-1]+1 : max(dp[i-1][j], dp[i][j-1]);
-    return dp[m][n];
-}
-
-class UnionFind {
-    vector&lt;int&gt; parent, rank;
-public:
-    UnionFind(int n) : parent(n), rank(n, 0) { iota(parent.begin(), parent.end(), 0); }
-    int find(int x) { return parent[x]==x ? x : parent[x]=find(parent[x]); }
-    bool unite(int x, int y) {
-        x = find(x); y = find(y);
-        if (x == y) return false;
-        if (rank[x] &lt; rank[y]) swap(x, y);
-        parent[y] = x;
-        if (rank[x] == rank[y]) rank[x]++;
-        return true;
-    }
-};
-
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    int t; cin &gt;&gt; t;
-    while (t--) {
-        int n; cin &gt;&gt; n;
-        vector&lt;int&gt; a(n);
-        for (auto&amp; x : a) cin &gt;&gt; x;
-        sort(a.begin(), a.end());
-        cout &lt;&lt; a[0] &lt;&lt; "\n";
-    }
-    return 0;
-}
-        </pre>
+    <span style="color:#ff7b72">return</span> <span style="color:#79c0ff">0</span>;
+}</div>
     </div>
 
     <div x-data="loginForm()" class="glass-card w-full max-w-md rounded-2xl p-8 relative z-10">
@@ -304,11 +277,11 @@ int main() {
                     </svg>
                     Password
                 </label>
-                <div class="relative">
+                <div class="relative flex items-center">
                     <input :type="showPassword ? 'text' : 'password'" x-model="formData.password" required placeholder="••••••••"
-                           class="input-field w-full rounded-md py-2 pl-3 pr-10">
+                           class="input-field w-full rounded-md py-2 pl-3 pr-9" style="line-height:1.5;">
                     <button type="button" @click="showPassword = !showPassword"
-                            class="absolute inset-y-0 right-0 flex items-center px-3 text-slate-500 hover:text-blue-400 transition-colors"
+                            class="absolute right-0 top-0 bottom-0 w-9 flex items-center justify-center text-slate-500 hover:text-blue-400 transition-colors focus:outline-none"
                             :aria-label="showPassword ? 'Hide password' : 'Show password'">
                         <svg x-show="!showPassword" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
