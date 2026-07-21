@@ -215,14 +215,15 @@ switch ($resource) {
         $commentController = new CommentController();
         
         if ($method === 'GET' && $resourceId === 'problem' && $subResource !== null) {
-            // GET /api/comments/problem/{problem_id}
-            try {
-                $user = AuthMiddleware::authenticate();
-                $commentController->getCommentsByProblem($subResource, $user['id']);
-            } catch (Exception $e) {
-                // Allow unauthenticated users to view comments
-                $commentController->getCommentsByProblem($subResource);
+            // GET /api/comments/problem/{problem_id} — public, but attach user_id if token present
+            $authHeader = $_SERVER['HTTP_AUTHORIZATION'] ?? (getallheaders()['Authorization'] ?? null);
+            if ($authHeader && preg_match('/Bearer\s(\S+)/', $authHeader, $m)) {
+                $decoded = JWT::decode($m[1]);
+                $authedUser = $decoded ? $decoded['user'] : null;
+            } else {
+                $authedUser = null;
             }
+            $commentController->getCommentsByProblem($subResource, $authedUser ? $authedUser['id'] : null);
         } elseif ($method === 'POST' && $resourceId !== null && $subResource === 'vote') {
             // POST /api/comments/{comment_id}/vote - Vote on comment
             $user = AuthMiddleware::authenticate();
