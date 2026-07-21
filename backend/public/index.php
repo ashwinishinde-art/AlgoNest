@@ -1,4 +1,7 @@
 <?php
+// Skip ngrok browser warning for API calls
+header("ngrok-skip-browser-warning: true");
+
 // CORS Headers
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
