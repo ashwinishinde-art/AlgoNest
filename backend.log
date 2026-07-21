@@ -19537,3 +19537,2774 @@ Stack trace:
 [Tue Jul 21 10:29:20 2026] 10.179.101.227:64197 Closing
 [Tue Jul 21 10:29:30 2026] 10.179.101.42:50655 Accepted
 [Tue Jul 21 10:29:30 2026] 10.179.101.42:50655 Closing
+[Tue Jul 21 10:29:36 2026] 10.179.101.42:52020 Accepted
+[Tue Jul 21 10:29:36 2026] 10.179.101.42:59605 Accepted
+[Tue Jul 21 10:29:36 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:29:36 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:29:36 2026] Problems found: 6
+[Tue Jul 21 10:29:36 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"},{"id":7,"title":"idiotic pieces of shits !!","difficulty":"Medium","topic_tags":"dcjchs","approved":1,"rejection_reason":null,"approval_comment":"jdweojiw","author":"mansi"},{"id":9,"title":"Build a Tree","difficulty":"Hard","topic_tags":"Trees  ,graph Theory , constructive , Alogorithms  , ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":10,"title":"Palindrome","difficulty":"Hard","topic_tags":"string","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:29:36 2026] 10.179.101.42:52020 Closing
+[Tue Jul 21 10:29:36 2026] 10.179.101.42:59605 Closing
+[Tue Jul 21 10:29:36 2026] 10.179.101.42:53649 Accepted
+[Tue Jul 21 10:29:36 2026] 10.179.101.42:53649 Closing
+[Tue Jul 21 10:29:42 2026] 10.179.101.42:64892 Accepted
+[Tue Jul 21 10:29:42 2026] 10.179.101.42:64892 Closing
+[Tue Jul 21 10:29:42 2026] 10.179.101.42:62055 Accepted
+[Tue Jul 21 10:29:42 2026] 10.179.101.42:63443 Accepted
+[Tue Jul 21 10:29:42 2026] 10.179.101.42:62055 Closing
+[Tue Jul 21 10:29:42 2026] 10.179.101.42:63443 Closing
+[Tue Jul 21 10:29:50 2026] 10.179.101.227:55055 Accepted
+[Tue Jul 21 10:29:50 2026] 10.179.101.227:62031 Accepted
+[Tue Jul 21 10:29:50 2026] 10.179.101.227:54403 Accepted
+[Tue Jul 21 10:29:50 2026] 10.179.101.227:61034 Accepted
+[Tue Jul 21 10:29:50 2026] 10.179.101.227:55055 Closing
+[Tue Jul 21 10:29:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:29:50 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:29:50 2026] Problems found: 0
+[Tue Jul 21 10:29:50 2026] Problems: []
+[Tue Jul 21 10:29:50 2026] 10.179.101.227:62031 Closing
+[Tue Jul 21 10:29:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:29:50 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:29:50 2026] Problems found: 0
+[Tue Jul 21 10:29:50 2026] Problems: []
+[Tue Jul 21 10:29:50 2026] 10.179.101.227:54403 Closing
+[Tue Jul 21 10:29:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:29:50 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:29:50 2026] Problems found: 1
+[Tue Jul 21 10:29:50 2026] Problems: [{"id":9,"title":"Build a Tree","difficulty":"Hard","topic_tags":"Trees  ,graph Theory , constructive , Alogorithms  , ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:29:50 2026] 10.179.101.227:61034 Closing
+[Tue Jul 21 10:29:50 2026] 10.179.101.227:53509 Accepted
+[Tue Jul 21 10:29:50 2026] 10.179.101.227:53509 Closing
+[Tue Jul 21 10:29:50 2026] 10.179.101.42:52435 Accepted
+[Tue Jul 21 10:29:50 2026] 10.179.101.42:52435 Closing
+[Tue Jul 21 10:29:51 2026] 10.179.101.42:53982 Accepted
+[Tue Jul 21 10:29:51 2026] 10.179.101.42:53982 Closing
+[Tue Jul 21 10:29:51 2026] 10.179.101.42:64658 Accepted
+[Tue Jul 21 10:29:51 2026] 10.179.101.42:64658 Closing
+[Tue Jul 21 10:30:21 2026] 10.179.101.227:57131 Accepted
+[Tue Jul 21 10:30:21 2026] 10.179.101.227:57131 Closing
+[Tue Jul 21 10:30:21 2026] 10.179.101.227:51129 Accepted
+[Tue Jul 21 10:30:21 2026] 10.179.101.227:52898 Accepted
+[Tue Jul 21 10:30:21 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:30:21 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:30:21 2026] Problems found: 0
+[Tue Jul 21 10:30:21 2026] Problems: []
+[Tue Jul 21 10:30:21 2026] 10.179.101.227:51129 Closing
+[Tue Jul 21 10:30:21 2026] 10.179.101.227:63843 Accepted
+[Tue Jul 21 10:30:21 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:30:21 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:30:21 2026] Problems found: 0
+[Tue Jul 21 10:30:21 2026] Problems: []
+[Tue Jul 21 10:30:21 2026] 10.179.101.227:52898 Closing
+[Tue Jul 21 10:30:21 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:30:21 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:30:21 2026] Problems found: 0
+[Tue Jul 21 10:30:21 2026] Problems: []
+[Tue Jul 21 10:30:21 2026] 10.179.101.227:63843 Closing
+[Tue Jul 21 10:30:22 2026] 10.179.101.227:56637 Accepted
+[Tue Jul 21 10:30:22 2026] 10.179.101.227:56637 Closing
+[Tue Jul 21 10:30:50 2026] 10.179.101.227:51230 Accepted
+[Tue Jul 21 10:30:50 2026] 10.179.101.227:53038 Accepted
+[Tue Jul 21 10:30:50 2026] 10.179.101.227:63291 Accepted
+[Tue Jul 21 10:30:50 2026] 10.179.101.227:63291 Closing
+[Tue Jul 21 10:30:50 2026] 10.179.101.227:59645 Accepted
+[Tue Jul 21 10:30:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:30:50 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:30:50 2026] Problems found: 0
+[Tue Jul 21 10:30:50 2026] Problems: []
+[Tue Jul 21 10:30:50 2026] 10.179.101.227:51230 Closing
+[Tue Jul 21 10:30:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:30:50 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:30:50 2026] Problems found: 0
+[Tue Jul 21 10:30:50 2026] Problems: []
+[Tue Jul 21 10:30:50 2026] 10.179.101.227:53038 Closing
+[Tue Jul 21 10:30:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:30:50 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:30:50 2026] Problems found: 0
+[Tue Jul 21 10:30:50 2026] Problems: []
+[Tue Jul 21 10:30:50 2026] 10.179.101.227:59645 Closing
+[Tue Jul 21 10:30:50 2026] 10.179.101.227:54358 Accepted
+[Tue Jul 21 10:30:50 2026] 10.179.101.227:54358 Closing
+[Tue Jul 21 10:30:52 2026] 127.0.0.1:60767 Closed without sending a request; it was probably just an unused speculative preconnection
+[Tue Jul 21 10:30:52 2026] 127.0.0.1:60767 Closing
+[Tue Jul 21 10:31:14 2026] 10.179.101.110:58512 Accepted
+[Tue Jul 21 10:31:14 2026] 10.179.101.110:58512 Closing
+[Tue Jul 21 10:31:14 2026] 10.179.101.110:53994 Accepted
+[Tue Jul 21 10:31:14 2026] 10.179.101.110:54721 Accepted
+[Tue Jul 21 10:31:14 2026] 10.179.101.110:53994 Closing
+[Tue Jul 21 10:31:14 2026] 10.179.101.110:54721 Closing
+[Tue Jul 21 10:31:20 2026] 10.179.101.227:64202 Accepted
+[Tue Jul 21 10:31:20 2026] 10.179.101.227:57313 Accepted
+[Tue Jul 21 10:31:20 2026] 10.179.101.227:52970 Accepted
+[Tue Jul 21 10:31:20 2026] 10.179.101.227:50478 Accepted
+[Tue Jul 21 10:31:20 2026] 10.179.101.227:64202 Closing
+[Tue Jul 21 10:31:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:31:20 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:31:20 2026] Problems found: 0
+[Tue Jul 21 10:31:20 2026] Problems: []
+[Tue Jul 21 10:31:20 2026] 10.179.101.227:52970 Closing
+[Tue Jul 21 10:31:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:31:20 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:31:20 2026] Problems found: 0
+[Tue Jul 21 10:31:20 2026] Problems: []
+[Tue Jul 21 10:31:20 2026] 10.179.101.227:57313 Closing
+[Tue Jul 21 10:31:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:31:20 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:31:20 2026] Problems found: 0
+[Tue Jul 21 10:31:20 2026] Problems: []
+[Tue Jul 21 10:31:20 2026] 10.179.101.227:50478 Closing
+[Tue Jul 21 10:31:20 2026] 10.179.101.227:49672 Accepted
+[Tue Jul 21 10:31:20 2026] 10.179.101.227:54641 Accepted
+[Tue Jul 21 10:31:20 2026] 10.179.101.227:54641 Closing
+[Tue Jul 21 10:31:37 2026] 10.179.101.42:64649 Accepted
+[Tue Jul 21 10:31:37 2026] 10.179.101.42:64649 Closing
+[Tue Jul 21 10:31:37 2026] 10.179.101.42:63736 Accepted
+[Tue Jul 21 10:31:37 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:31:37 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:31:37 2026] Problems found: 5
+[Tue Jul 21 10:31:37 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"},{"id":7,"title":"idiotic pieces of shits !!","difficulty":"Medium","topic_tags":"dcjchs","approved":1,"rejection_reason":null,"approval_comment":"jdweojiw","author":"mansi"},{"id":10,"title":"Palindrome","difficulty":"Hard","topic_tags":"string","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:31:37 2026] 10.179.101.42:63736 Closing
+[Tue Jul 21 10:31:37 2026] 10.179.101.42:58853 Accepted
+[Tue Jul 21 10:31:37 2026] 10.179.101.42:58853 Closing
+[Tue Jul 21 10:31:46 2026] 10.179.101.42:59838 Accepted
+[Tue Jul 21 10:31:46 2026] 10.179.101.42:59838 Closing
+[Tue Jul 21 10:31:46 2026] 10.179.101.42:59976 Accepted
+[Tue Jul 21 10:31:47 2026] 10.179.101.42:59976 Closing
+[Tue Jul 21 10:31:47 2026] 10.179.101.42:50954 Accepted
+[Tue Jul 21 10:31:47 2026] 10.179.101.42:55330 Accepted
+[Tue Jul 21 10:31:47 2026] 10.179.101.42:55330 Closing
+[Tue Jul 21 10:31:47 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.parent_comment_id' in 'field list' in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php:23
+Stack trace:
+#0 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php(23): PDOStatement->execute()
+#1 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Controllers\CommentController.php(21): Comment->getByProblemId('10')
+#2 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\index.php(218): CommentController->getCommentsByProblem('10')
+#3 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\router.php(47): require_once('C:\\Users\\suvar....')
+#4 {main}
+  thrown in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php on line 23
+[Tue Jul 21 10:31:47 2026] 10.179.101.42:50954 Closing
+[Tue Jul 21 10:31:50 2026] 10.179.101.227:49672 Closing
+[Tue Jul 21 10:31:50 2026] 10.179.101.227:65466 Accepted
+[Tue Jul 21 10:31:50 2026] 10.179.101.227:58620 Accepted
+[Tue Jul 21 10:31:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:31:50 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:31:50 2026] Problems found: 0
+[Tue Jul 21 10:31:50 2026] Problems: []
+[Tue Jul 21 10:31:50 2026] 10.179.101.227:65466 Closing
+[Tue Jul 21 10:31:50 2026] 10.179.101.227:59100 Accepted
+[Tue Jul 21 10:31:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:31:50 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:31:50 2026] Problems found: 0
+[Tue Jul 21 10:31:50 2026] Problems: []
+[Tue Jul 21 10:31:50 2026] 10.179.101.227:59100 Closing
+[Tue Jul 21 10:31:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:31:50 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:31:50 2026] Problems found: 0
+[Tue Jul 21 10:31:50 2026] Problems: []
+[Tue Jul 21 10:31:50 2026] 10.179.101.227:58620 Closing
+[Tue Jul 21 10:31:50 2026] 10.179.101.227:55219 Accepted
+[Tue Jul 21 10:31:50 2026] 10.179.101.227:55219 Closing
+[Tue Jul 21 10:32:21 2026] 10.179.101.227:65449 Accepted
+[Tue Jul 21 10:32:21 2026] 10.179.101.227:63180 Accepted
+[Tue Jul 21 10:32:21 2026] 10.179.101.227:61722 Accepted
+[Tue Jul 21 10:32:21 2026] 10.179.101.227:59921 Accepted
+[Tue Jul 21 10:32:21 2026] 10.179.101.227:59921 Closing
+[Tue Jul 21 10:32:21 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:32:21 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:32:21 2026] Problems found: 0
+[Tue Jul 21 10:32:21 2026] Problems: []
+[Tue Jul 21 10:32:21 2026] 10.179.101.227:65449 Closing
+[Tue Jul 21 10:32:21 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:32:21 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:32:21 2026] Problems found: 0
+[Tue Jul 21 10:32:21 2026] Problems: []
+[Tue Jul 21 10:32:21 2026] 10.179.101.227:61722 Closing
+[Tue Jul 21 10:32:21 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:32:21 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:32:21 2026] Problems found: 0
+[Tue Jul 21 10:32:21 2026] Problems: []
+[Tue Jul 21 10:32:21 2026] 10.179.101.227:63180 Closing
+[Tue Jul 21 10:32:21 2026] 10.179.101.227:61133 Accepted
+[Tue Jul 21 10:32:21 2026] 10.179.101.227:61133 Closing
+[Tue Jul 21 10:32:21 2026] 10.179.101.227:57525 Accepted
+[Tue Jul 21 10:32:30 2026] 10.179.101.42:53287 Accepted
+[Tue Jul 21 10:32:30 2026] 10.179.101.42:53287 Closing
+[Tue Jul 21 10:32:30 2026] 10.179.101.42:51464 Accepted
+[Tue Jul 21 10:32:30 2026] 10.179.101.42:51464 Closing
+[Tue Jul 21 10:32:31 2026] 10.179.101.42:59342 Accepted
+[Tue Jul 21 10:32:31 2026] 10.179.101.42:55653 Accepted
+[Tue Jul 21 10:32:31 2026] 10.179.101.42:59342 Closing
+[Tue Jul 21 10:32:35 2026] 10.179.101.42:55653 Closing
+[Tue Jul 21 10:32:35 2026] 10.179.101.42:62577 Accepted
+[Tue Jul 21 10:32:35 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:32:35 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:32:35 2026] Problems found: 4
+[Tue Jul 21 10:32:35 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"},{"id":7,"title":"idiotic pieces of shits !!","difficulty":"Medium","topic_tags":"dcjchs","approved":1,"rejection_reason":null,"approval_comment":"jdweojiw","author":"mansi"}]
+[Tue Jul 21 10:32:35 2026] 10.179.101.42:62577 Closing
+[Tue Jul 21 10:32:36 2026] 10.179.101.42:49256 Accepted
+[Tue Jul 21 10:32:36 2026] 10.179.101.42:49256 Closing
+[Tue Jul 21 10:32:42 2026] 10.179.101.42:61914 Accepted
+[Tue Jul 21 10:32:42 2026] 10.179.101.42:60275 Accepted
+[Tue Jul 21 10:32:42 2026] 10.179.101.42:61914 Closing
+[Tue Jul 21 10:32:42 2026] 10.179.101.42:63440 Accepted
+[Tue Jul 21 10:32:42 2026] 10.179.101.42:60275 Closing
+[Tue Jul 21 10:32:42 2026] 10.179.101.42:64826 Accepted
+[Tue Jul 21 10:32:42 2026] 10.179.101.42:63440 Closing
+[Tue Jul 21 10:32:42 2026] 10.179.101.42:54846 Accepted
+[Tue Jul 21 10:32:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:32:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:32:42 2026] Problems found: 0
+[Tue Jul 21 10:32:42 2026] Problems: []
+[Tue Jul 21 10:32:42 2026] 10.179.101.42:64826 Closing
+[Tue Jul 21 10:32:42 2026] 10.179.101.42:51888 Accepted
+[Tue Jul 21 10:32:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:32:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:32:42 2026] Problems found: 0
+[Tue Jul 21 10:32:42 2026] Problems: []
+[Tue Jul 21 10:32:42 2026] 10.179.101.42:54846 Closing
+[Tue Jul 21 10:32:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:32:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:32:42 2026] Problems found: 0
+[Tue Jul 21 10:32:42 2026] Problems: []
+[Tue Jul 21 10:32:42 2026] 10.179.101.42:51888 Closing
+[Tue Jul 21 10:32:43 2026] 10.179.101.42:63018 Accepted
+[Tue Jul 21 10:32:43 2026] 10.179.101.42:63018 Closing
+[Tue Jul 21 10:32:43 2026] 10.179.101.42:54433 Accepted
+[Tue Jul 21 10:32:43 2026] 10.179.101.42:62090 Accepted
+[Tue Jul 21 10:32:43 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:32:43 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:32:43 2026] Problems found: 4
+[Tue Jul 21 10:32:43 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"},{"id":7,"title":"idiotic pieces of shits !!","difficulty":"Medium","topic_tags":"dcjchs","approved":1,"rejection_reason":null,"approval_comment":"jdweojiw","author":"mansi"}]
+[Tue Jul 21 10:32:43 2026] 10.179.101.42:62090 Closing
+[Tue Jul 21 10:32:46 2026] 10.179.101.42:54433 Closing
+[Tue Jul 21 10:32:47 2026] 10.179.101.42:63195 Accepted
+[Tue Jul 21 10:32:47 2026] 10.179.101.42:63195 Closing
+[Tue Jul 21 10:32:47 2026] 10.179.101.42:52515 Accepted
+[Tue Jul 21 10:32:47 2026] 10.179.101.42:52515 Closing
+[Tue Jul 21 10:32:47 2026] 10.179.101.42:62602 Accepted
+[Tue Jul 21 10:32:47 2026] 10.179.101.42:62602 Closing
+[Tue Jul 21 10:32:48 2026] 10.179.101.42:52897 Accepted
+[Tue Jul 21 10:32:50 2026] 10.179.101.42:52897 Closing
+[Tue Jul 21 10:32:51 2026] 10.179.101.227:57525 Closing
+[Tue Jul 21 10:32:51 2026] 10.179.101.227:65063 Accepted
+[Tue Jul 21 10:32:51 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:32:51 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:32:51 2026] Problems found: 0
+[Tue Jul 21 10:32:51 2026] Problems: []
+[Tue Jul 21 10:32:51 2026] 10.179.101.227:65063 Closing
+[Tue Jul 21 10:32:51 2026] 10.179.101.227:63590 Accepted
+[Tue Jul 21 10:32:51 2026] 10.179.101.227:56886 Accepted
+[Tue Jul 21 10:32:51 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:32:51 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:32:51 2026] Problems found: 0
+[Tue Jul 21 10:32:51 2026] Problems: []
+[Tue Jul 21 10:32:51 2026] 10.179.101.227:63590 Closing
+[Tue Jul 21 10:32:51 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:32:51 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:32:51 2026] Problems found: 0
+[Tue Jul 21 10:32:51 2026] Problems: []
+[Tue Jul 21 10:32:51 2026] 10.179.101.227:56886 Closing
+[Tue Jul 21 10:32:51 2026] 10.179.101.227:54663 Accepted
+[Tue Jul 21 10:32:51 2026] 10.179.101.227:54663 Closing
+[Tue Jul 21 10:32:51 2026] 10.179.101.42:59236 Accepted
+[Tue Jul 21 10:32:52 2026] 10.179.101.42:59236 Closing
+[Tue Jul 21 10:32:52 2026] 10.179.101.42:65001 Accepted
+[Tue Jul 21 10:32:52 2026] 10.179.101.42:65001 Closing
+[Tue Jul 21 10:32:53 2026] 10.179.101.42:59821 Accepted
+[Tue Jul 21 10:32:53 2026] 10.179.101.42:59821 Closing
+[Tue Jul 21 10:32:53 2026] 10.179.101.42:60048 Accepted
+[Tue Jul 21 10:32:54 2026] 10.179.101.42:60048 Closing
+[Tue Jul 21 10:32:54 2026] 10.179.101.42:61484 Accepted
+[Tue Jul 21 10:32:54 2026] 10.179.101.42:61484 Closing
+[Tue Jul 21 10:33:12 2026] 10.179.101.42:50899 Accepted
+[Tue Jul 21 10:33:12 2026] 10.179.101.42:55235 Accepted
+[Tue Jul 21 10:33:12 2026] 10.179.101.42:58806 Accepted
+[Tue Jul 21 10:33:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:33:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:33:12 2026] Problems found: 0
+[Tue Jul 21 10:33:12 2026] Problems: []
+[Tue Jul 21 10:33:12 2026] 10.179.101.42:50899 Closing
+[Tue Jul 21 10:33:12 2026] 10.179.101.42:54428 Accepted
+[Tue Jul 21 10:33:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:33:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:33:12 2026] Problems found: 0
+[Tue Jul 21 10:33:12 2026] Problems: []
+[Tue Jul 21 10:33:12 2026] 10.179.101.42:55235 Closing
+[Tue Jul 21 10:33:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:33:12 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:33:12 2026] Problems found: 0
+[Tue Jul 21 10:33:12 2026] Problems: []
+[Tue Jul 21 10:33:12 2026] 10.179.101.42:58806 Closing
+[Tue Jul 21 10:33:12 2026] 10.179.101.42:54428 Closing
+[Tue Jul 21 10:33:12 2026] 10.179.101.42:54489 Accepted
+[Tue Jul 21 10:33:12 2026] 10.179.101.42:54489 Closing
+[Tue Jul 21 10:33:12 2026] 10.179.101.42:60071 Accepted
+[Tue Jul 21 10:33:38 2026] 10.179.101.227:62448 Accepted
+[Tue Jul 21 10:33:38 2026] 10.179.101.227:54588 Accepted
+[Tue Jul 21 10:33:38 2026] 10.179.101.227:58163 Accepted
+[Tue Jul 21 10:33:38 2026] 10.179.101.227:61104 Accepted
+[Tue Jul 21 10:33:38 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:33:38 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:33:38 2026] Problems found: 0
+[Tue Jul 21 10:33:38 2026] Problems: []
+[Tue Jul 21 10:33:38 2026] 10.179.101.227:58163 Closing
+[Tue Jul 21 10:33:38 2026] 10.179.101.227:61104 Closing
+[Tue Jul 21 10:33:38 2026] 10.179.101.227:64977 Accepted
+[Tue Jul 21 10:33:38 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:33:38 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:33:38 2026] Problems found: 0
+[Tue Jul 21 10:33:38 2026] Problems: []
+[Tue Jul 21 10:33:38 2026] 10.179.101.227:62448 Closing
+[Tue Jul 21 10:33:38 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:33:38 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:33:38 2026] Problems found: 0
+[Tue Jul 21 10:33:38 2026] Problems: []
+[Tue Jul 21 10:33:38 2026] 10.179.101.227:54588 Closing
+[Tue Jul 21 10:33:38 2026] 10.179.101.227:64977 Closing
+[Tue Jul 21 10:33:42 2026] 10.179.101.42:60071 Closing
+[Tue Jul 21 10:33:42 2026] 10.179.101.42:64838 Accepted
+[Tue Jul 21 10:33:42 2026] 10.179.101.42:59173 Accepted
+[Tue Jul 21 10:33:42 2026] 10.179.101.42:55207 Accepted
+[Tue Jul 21 10:33:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:33:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:33:42 2026] Problems found: 0
+[Tue Jul 21 10:33:42 2026] Problems: []
+[Tue Jul 21 10:33:42 2026] 10.179.101.42:64838 Closing
+[Tue Jul 21 10:33:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:33:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:33:42 2026] Problems found: 0
+[Tue Jul 21 10:33:42 2026] Problems: []
+[Tue Jul 21 10:33:42 2026] 10.179.101.42:59173 Closing
+[Tue Jul 21 10:33:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:33:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:33:42 2026] Problems found: 0
+[Tue Jul 21 10:33:42 2026] Problems: []
+[Tue Jul 21 10:33:42 2026] 10.179.101.42:55207 Closing
+[Tue Jul 21 10:33:42 2026] 10.179.101.42:50412 Accepted
+[Tue Jul 21 10:33:42 2026] 10.179.101.42:50412 Closing
+[Tue Jul 21 10:33:50 2026] 10.179.101.227:61131 Accepted
+[Tue Jul 21 10:33:50 2026] 10.179.101.227:56716 Accepted
+[Tue Jul 21 10:33:50 2026] 10.179.101.227:54884 Accepted
+[Tue Jul 21 10:33:50 2026] 10.179.101.227:53165 Accepted
+[Tue Jul 21 10:33:50 2026] 10.179.101.227:61977 Accepted
+[Tue Jul 21 10:33:51 2026] 10.179.101.227:56716 Closing
+[Tue Jul 21 10:33:51 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:33:51 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:33:51 2026] Problems found: 0
+[Tue Jul 21 10:33:51 2026] Problems: []
+[Tue Jul 21 10:33:51 2026] 10.179.101.227:53165 Closing
+[Tue Jul 21 10:33:51 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:33:51 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:33:51 2026] Problems found: 0
+[Tue Jul 21 10:33:51 2026] Problems: []
+[Tue Jul 21 10:33:51 2026] 10.179.101.227:61977 Closing
+[Tue Jul 21 10:33:51 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:33:51 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:33:51 2026] Problems found: 0
+[Tue Jul 21 10:33:51 2026] Problems: []
+[Tue Jul 21 10:33:51 2026] 10.179.101.227:61131 Closing
+[Tue Jul 21 10:33:51 2026] 10.179.101.227:54884 Closing
+[Tue Jul 21 10:34:12 2026] 10.179.101.42:63400 Accepted
+[Tue Jul 21 10:34:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:34:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:34:12 2026] Problems found: 0
+[Tue Jul 21 10:34:12 2026] Problems: []
+[Tue Jul 21 10:34:12 2026] 10.179.101.42:63400 Closing
+[Tue Jul 21 10:34:12 2026] 10.179.101.42:64752 Accepted
+[Tue Jul 21 10:34:12 2026] 10.179.101.42:53528 Accepted
+[Tue Jul 21 10:34:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:34:12 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:34:12 2026] Problems found: 0
+[Tue Jul 21 10:34:12 2026] Problems: []
+[Tue Jul 21 10:34:12 2026] 10.179.101.42:64752 Closing
+[Tue Jul 21 10:34:12 2026] 10.179.101.42:58164 Accepted
+[Tue Jul 21 10:34:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:34:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:34:12 2026] Problems found: 0
+[Tue Jul 21 10:34:12 2026] Problems: []
+[Tue Jul 21 10:34:12 2026] 10.179.101.42:53528 Closing
+[Tue Jul 21 10:34:12 2026] 10.179.101.42:64402 Accepted
+[Tue Jul 21 10:34:12 2026] 10.179.101.42:58164 Closing
+[Tue Jul 21 10:34:14 2026] 10.179.101.42:64402 Closing
+[Tue Jul 21 10:34:20 2026] 10.179.101.227:64721 Accepted
+[Tue Jul 21 10:34:20 2026] 10.179.101.227:64721 Closing
+[Tue Jul 21 10:34:20 2026] 10.179.101.227:49672 Accepted
+[Tue Jul 21 10:34:20 2026] 10.179.101.227:63145 Accepted
+[Tue Jul 21 10:34:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:34:20 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:34:20 2026] Problems found: 0
+[Tue Jul 21 10:34:20 2026] Problems: []
+[Tue Jul 21 10:34:20 2026] 10.179.101.227:49672 Closing
+[Tue Jul 21 10:34:20 2026] 10.179.101.227:56290 Accepted
+[Tue Jul 21 10:34:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:34:20 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:34:20 2026] Problems found: 0
+[Tue Jul 21 10:34:20 2026] Problems: []
+[Tue Jul 21 10:34:20 2026] 10.179.101.227:63145 Closing
+[Tue Jul 21 10:34:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:34:20 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:34:20 2026] Problems found: 0
+[Tue Jul 21 10:34:20 2026] Problems: []
+[Tue Jul 21 10:34:20 2026] 10.179.101.227:56290 Closing
+[Tue Jul 21 10:34:20 2026] 10.179.101.227:50427 Accepted
+[Tue Jul 21 10:34:20 2026] 10.179.101.227:50427 Closing
+[Tue Jul 21 10:34:43 2026] 10.179.101.42:58593 Accepted
+[Tue Jul 21 10:34:43 2026] 10.179.101.42:56058 Accepted
+[Tue Jul 21 10:34:43 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:34:43 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:34:43 2026] Problems found: 0
+[Tue Jul 21 10:34:43 2026] Problems: []
+[Tue Jul 21 10:34:43 2026] 10.179.101.42:58593 Closing
+[Tue Jul 21 10:34:43 2026] 10.179.101.42:63449 Accepted
+[Tue Jul 21 10:34:43 2026] 10.179.101.42:63449 Closing
+[Tue Jul 21 10:34:43 2026] 10.179.101.42:52501 Accepted
+[Tue Jul 21 10:34:43 2026] 10.179.101.42:62179 Accepted
+[Tue Jul 21 10:34:43 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:34:43 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:34:43 2026] Problems found: 0
+[Tue Jul 21 10:34:43 2026] Problems: []
+[Tue Jul 21 10:34:43 2026] 10.179.101.42:52501 Closing
+[Tue Jul 21 10:34:43 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:34:43 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:34:43 2026] Problems found: 0
+[Tue Jul 21 10:34:43 2026] Problems: []
+[Tue Jul 21 10:34:43 2026] 10.179.101.42:62179 Closing
+[Tue Jul 21 10:34:44 2026] 10.179.101.42:56058 Closing
+[Tue Jul 21 10:34:50 2026] 10.179.101.227:55832 Accepted
+[Tue Jul 21 10:34:50 2026] 10.179.101.227:51328 Accepted
+[Tue Jul 21 10:34:50 2026] 10.179.101.227:61663 Accepted
+[Tue Jul 21 10:34:50 2026] 10.179.101.227:55774 Accepted
+[Tue Jul 21 10:34:50 2026] 10.179.101.227:55774 Closing
+[Tue Jul 21 10:34:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:34:50 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:34:50 2026] Problems found: 0
+[Tue Jul 21 10:34:50 2026] Problems: []
+[Tue Jul 21 10:34:50 2026] 10.179.101.227:55832 Closing
+[Tue Jul 21 10:34:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:34:50 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:34:50 2026] Problems found: 0
+[Tue Jul 21 10:34:50 2026] Problems: []
+[Tue Jul 21 10:34:50 2026] 10.179.101.227:51328 Closing
+[Tue Jul 21 10:34:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:34:50 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:34:50 2026] Problems found: 0
+[Tue Jul 21 10:34:50 2026] Problems: []
+[Tue Jul 21 10:34:50 2026] 10.179.101.227:61663 Closing
+[Tue Jul 21 10:34:50 2026] 10.179.101.227:57793 Accepted
+[Tue Jul 21 10:34:50 2026] 10.179.101.227:57793 Closing
+[Tue Jul 21 10:35:12 2026] 10.179.101.42:65174 Accepted
+[Tue Jul 21 10:35:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:35:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:35:12 2026] Problems found: 0
+[Tue Jul 21 10:35:12 2026] Problems: []
+[Tue Jul 21 10:35:12 2026] 10.179.101.42:65174 Closing
+[Tue Jul 21 10:35:12 2026] 10.179.101.42:62337 Accepted
+[Tue Jul 21 10:35:12 2026] 10.179.101.42:64466 Accepted
+[Tue Jul 21 10:35:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:35:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:35:12 2026] Problems found: 0
+[Tue Jul 21 10:35:12 2026] Problems: []
+[Tue Jul 21 10:35:12 2026] 10.179.101.42:62337 Closing
+[Tue Jul 21 10:35:12 2026] 10.179.101.42:52627 Accepted
+[Tue Jul 21 10:35:12 2026] 10.179.101.42:64466 Closing
+[Tue Jul 21 10:35:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:35:12 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:35:12 2026] Problems found: 0
+[Tue Jul 21 10:35:12 2026] Problems: []
+[Tue Jul 21 10:35:12 2026] 10.179.101.42:52627 Closing
+[Tue Jul 21 10:35:12 2026] 10.179.101.42:57852 Accepted
+[Tue Jul 21 10:35:12 2026] 10.179.101.42:57852 Closing
+[Tue Jul 21 10:35:21 2026] 10.179.101.227:60343 Accepted
+[Tue Jul 21 10:35:21 2026] 10.179.101.227:54451 Accepted
+[Tue Jul 21 10:35:21 2026] 10.179.101.227:57644 Accepted
+[Tue Jul 21 10:35:21 2026] 10.179.101.227:57644 Closing
+[Tue Jul 21 10:35:21 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:35:21 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:35:21 2026] Problems found: 0
+[Tue Jul 21 10:35:21 2026] Problems: []
+[Tue Jul 21 10:35:21 2026] 10.179.101.227:60343 Closing
+[Tue Jul 21 10:35:21 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:35:21 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:35:21 2026] Problems found: 0
+[Tue Jul 21 10:35:21 2026] Problems: []
+[Tue Jul 21 10:35:21 2026] 10.179.101.227:54451 Closing
+[Tue Jul 21 10:35:21 2026] 10.179.101.227:49672 Accepted
+[Tue Jul 21 10:35:21 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:35:21 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:35:21 2026] Problems found: 0
+[Tue Jul 21 10:35:21 2026] Problems: []
+[Tue Jul 21 10:35:21 2026] 10.179.101.227:49672 Closing
+[Tue Jul 21 10:35:21 2026] 10.179.101.227:61110 Accepted
+[Tue Jul 21 10:35:21 2026] 10.179.101.227:61110 Closing
+[Tue Jul 21 10:35:28 2026] 127.0.0.1:64560 Accepted
+[Tue Jul 21 10:35:28 2026] 127.0.0.1:64560 Closing
+[Tue Jul 21 10:35:28 2026] 127.0.0.1:50025 Accepted
+[Tue Jul 21 10:35:28 2026] 127.0.0.1:50250 Accepted
+[Tue Jul 21 10:35:28 2026] 127.0.0.1:50025 Closing
+[Tue Jul 21 10:35:28 2026] 127.0.0.1:50250 Closing
+[Tue Jul 21 10:35:28 2026] 127.0.0.1:53550 Accepted
+[Tue Jul 21 10:35:32 2026] 127.0.0.1:53550 Closed without sending a request; it was probably just an unused speculative preconnection
+[Tue Jul 21 10:35:32 2026] 127.0.0.1:53550 Closing
+[Tue Jul 21 10:35:42 2026] 10.179.101.42:61933 Accepted
+[Tue Jul 21 10:35:42 2026] 10.179.101.42:58189 Accepted
+[Tue Jul 21 10:35:42 2026] 10.179.101.42:61933 Closing
+[Tue Jul 21 10:35:42 2026] 10.179.101.42:63326 Accepted
+[Tue Jul 21 10:35:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:35:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:35:42 2026] Problems found: 0
+[Tue Jul 21 10:35:42 2026] Problems: []
+[Tue Jul 21 10:35:42 2026] 10.179.101.42:58189 Closing
+[Tue Jul 21 10:35:42 2026] 10.179.101.42:62708 Accepted
+[Tue Jul 21 10:35:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:35:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:35:42 2026] Problems found: 0
+[Tue Jul 21 10:35:42 2026] Problems: []
+[Tue Jul 21 10:35:42 2026] 10.179.101.42:63326 Closing
+[Tue Jul 21 10:35:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:35:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:35:42 2026] Problems found: 0
+[Tue Jul 21 10:35:42 2026] Problems: []
+[Tue Jul 21 10:35:42 2026] 10.179.101.42:62708 Closing
+[Tue Jul 21 10:35:43 2026] 10.179.101.42:53390 Accepted
+[Tue Jul 21 10:35:43 2026] 10.179.101.42:53390 Closing
+[Tue Jul 21 10:35:50 2026] 10.179.101.227:57220 Accepted
+[Tue Jul 21 10:35:50 2026] 10.179.101.227:51263 Accepted
+[Tue Jul 21 10:35:50 2026] 10.179.101.227:49723 Accepted
+[Tue Jul 21 10:35:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:35:50 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:35:50 2026] Problems found: 0
+[Tue Jul 21 10:35:50 2026] Problems: []
+[Tue Jul 21 10:35:50 2026] 10.179.101.227:51263 Closing
+[Tue Jul 21 10:35:50 2026] 10.179.101.227:62763 Accepted
+[Tue Jul 21 10:35:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:35:50 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:35:50 2026] Problems found: 0
+[Tue Jul 21 10:35:50 2026] Problems: []
+[Tue Jul 21 10:35:50 2026] 10.179.101.227:57220 Closing
+[Tue Jul 21 10:35:50 2026] 10.179.101.227:49723 Closing
+[Tue Jul 21 10:35:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:35:50 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:35:50 2026] Problems found: 0
+[Tue Jul 21 10:35:50 2026] Problems: []
+[Tue Jul 21 10:35:50 2026] 10.179.101.227:62763 Closing
+[Tue Jul 21 10:35:50 2026] 10.179.101.227:56350 Accepted
+[Tue Jul 21 10:35:50 2026] 10.179.101.227:56350 Closing
+[Tue Jul 21 10:36:18 2026] 10.179.101.42:56561 Accepted
+[Tue Jul 21 10:36:18 2026] 10.179.101.42:63571 Accepted
+[Tue Jul 21 10:36:18 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:36:18 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:36:18 2026] Problems found: 0
+[Tue Jul 21 10:36:18 2026] Problems: []
+[Tue Jul 21 10:36:18 2026] 10.179.101.42:63571 Closing
+[Tue Jul 21 10:36:19 2026] 10.179.101.42:59325 Accepted
+[Tue Jul 21 10:36:19 2026] 10.179.101.42:57402 Accepted
+[Tue Jul 21 10:36:19 2026] 10.179.101.42:52116 Accepted
+[Tue Jul 21 10:36:19 2026] 10.179.101.42:52116 Closing
+[Tue Jul 21 10:36:19 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:36:19 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:36:19 2026] Problems found: 0
+[Tue Jul 21 10:36:19 2026] Problems: []
+[Tue Jul 21 10:36:19 2026] 10.179.101.42:57402 Closing
+[Tue Jul 21 10:36:19 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:36:19 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:36:19 2026] Problems found: 0
+[Tue Jul 21 10:36:19 2026] Problems: []
+[Tue Jul 21 10:36:19 2026] 10.179.101.42:59325 Closing
+[Tue Jul 21 10:36:22 2026] 10.179.101.42:56561 Closing
+[Tue Jul 21 10:36:25 2026] 10.179.101.227:65413 Accepted
+[Tue Jul 21 10:36:25 2026] 10.179.101.227:59761 Accepted
+[Tue Jul 21 10:36:25 2026] 10.179.101.227:55628 Accepted
+[Tue Jul 21 10:36:26 2026] 10.179.101.227:65413 Closing
+[Tue Jul 21 10:36:26 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:36:26 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:36:26 2026] Problems found: 0
+[Tue Jul 21 10:36:26 2026] Problems: []
+[Tue Jul 21 10:36:26 2026] 10.179.101.227:59761 Closing
+[Tue Jul 21 10:36:26 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:36:26 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:36:26 2026] Problems found: 0
+[Tue Jul 21 10:36:26 2026] Problems: []
+[Tue Jul 21 10:36:26 2026] 10.179.101.227:55628 Closing
+[Tue Jul 21 10:36:26 2026] 10.179.101.227:64461 Accepted
+[Tue Jul 21 10:36:26 2026] 10.179.101.227:58542 Accepted
+[Tue Jul 21 10:36:26 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:36:26 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:36:26 2026] Problems found: 0
+[Tue Jul 21 10:36:26 2026] Problems: []
+[Tue Jul 21 10:36:26 2026] 10.179.101.227:64461 Closing
+[Tue Jul 21 10:36:28 2026] 10.179.101.227:58542 Closing
+[Tue Jul 21 10:36:42 2026] 10.179.101.42:52274 Accepted
+[Tue Jul 21 10:36:42 2026] 10.179.101.42:57589 Accepted
+[Tue Jul 21 10:36:42 2026] 10.179.101.42:57589 Closing
+[Tue Jul 21 10:36:42 2026] 10.179.101.42:59556 Accepted
+[Tue Jul 21 10:36:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:36:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:36:42 2026] Problems found: 0
+[Tue Jul 21 10:36:42 2026] Problems: []
+[Tue Jul 21 10:36:42 2026] 10.179.101.42:52274 Closing
+[Tue Jul 21 10:36:42 2026] 10.179.101.42:63847 Accepted
+[Tue Jul 21 10:36:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:36:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:36:42 2026] Problems found: 0
+[Tue Jul 21 10:36:42 2026] Problems: []
+[Tue Jul 21 10:36:42 2026] 10.179.101.42:63847 Closing
+[Tue Jul 21 10:36:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:36:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:36:42 2026] Problems found: 0
+[Tue Jul 21 10:36:42 2026] Problems: []
+[Tue Jul 21 10:36:42 2026] 10.179.101.42:59556 Closing
+[Tue Jul 21 10:36:42 2026] 10.179.101.42:58209 Accepted
+[Tue Jul 21 10:36:42 2026] 10.179.101.42:58209 Closing
+[Tue Jul 21 10:36:51 2026] 10.179.101.227:55228 Accepted
+[Tue Jul 21 10:36:51 2026] 10.179.101.227:50839 Accepted
+[Tue Jul 21 10:36:51 2026] 10.179.101.227:55617 Accepted
+[Tue Jul 21 10:36:52 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:36:52 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:36:52 2026] Problems found: 0
+[Tue Jul 21 10:36:52 2026] Problems: []
+[Tue Jul 21 10:36:52 2026] 10.179.101.227:55617 Closing
+[Tue Jul 21 10:36:52 2026] 10.179.101.227:51184 Accepted
+[Tue Jul 21 10:36:52 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:36:52 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:36:52 2026] Problems found: 0
+[Tue Jul 21 10:36:52 2026] Problems: []
+[Tue Jul 21 10:36:52 2026] 10.179.101.227:50839 Closing
+[Tue Jul 21 10:36:52 2026] 10.179.101.227:62008 Accepted
+[Tue Jul 21 10:36:52 2026] 10.179.101.227:62008 Closing
+[Tue Jul 21 10:36:52 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:36:52 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:36:52 2026] Problems found: 0
+[Tue Jul 21 10:36:52 2026] Problems: []
+[Tue Jul 21 10:36:52 2026] 10.179.101.227:51184 Closing
+[Tue Jul 21 10:36:54 2026] 10.179.101.227:55228 Closing
+[Tue Jul 21 10:37:11 2026] 10.179.101.42:51195 Accepted
+[Tue Jul 21 10:37:11 2026] 10.179.101.42:55665 Accepted
+[Tue Jul 21 10:37:11 2026] 10.179.101.42:50890 Accepted
+[Tue Jul 21 10:37:11 2026] 10.179.101.42:59213 Accepted
+[Tue Jul 21 10:37:11 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:37:11 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:37:11 2026] Problems found: 0
+[Tue Jul 21 10:37:11 2026] Problems: []
+[Tue Jul 21 10:37:11 2026] 10.179.101.42:55665 Closing
+[Tue Jul 21 10:37:11 2026] 10.179.101.42:51195 Closing
+[Tue Jul 21 10:37:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:37:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:37:12 2026] Problems found: 0
+[Tue Jul 21 10:37:12 2026] Problems: []
+[Tue Jul 21 10:37:12 2026] 10.179.101.42:50890 Closing
+[Tue Jul 21 10:37:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:37:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:37:12 2026] Problems found: 0
+[Tue Jul 21 10:37:12 2026] Problems: []
+[Tue Jul 21 10:37:12 2026] 10.179.101.42:59213 Closing
+[Tue Jul 21 10:37:12 2026] 10.179.101.42:53272 Accepted
+[Tue Jul 21 10:37:12 2026] 10.179.101.42:53272 Closing
+[Tue Jul 21 10:37:20 2026] 10.179.101.227:60976 Accepted
+[Tue Jul 21 10:37:20 2026] 10.179.101.227:58976 Accepted
+[Tue Jul 21 10:37:20 2026] 10.179.101.227:64417 Accepted
+[Tue Jul 21 10:37:20 2026] 10.179.101.227:64417 Closing
+[Tue Jul 21 10:37:20 2026] 10.179.101.227:64592 Accepted
+[Tue Jul 21 10:37:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:37:20 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:37:20 2026] Problems found: 0
+[Tue Jul 21 10:37:20 2026] Problems: []
+[Tue Jul 21 10:37:20 2026] 10.179.101.227:60976 Closing
+[Tue Jul 21 10:37:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:37:20 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:37:20 2026] Problems found: 0
+[Tue Jul 21 10:37:20 2026] Problems: []
+[Tue Jul 21 10:37:20 2026] 10.179.101.227:58976 Closing
+[Tue Jul 21 10:37:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:37:20 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:37:20 2026] Problems found: 0
+[Tue Jul 21 10:37:20 2026] Problems: []
+[Tue Jul 21 10:37:20 2026] 10.179.101.227:64592 Closing
+[Tue Jul 21 10:37:20 2026] 10.179.101.227:53579 Accepted
+[Tue Jul 21 10:37:20 2026] 10.179.101.227:53579 Closing
+[Tue Jul 21 10:37:39 2026] 10.179.101.227:55200 Accepted
+[Tue Jul 21 10:37:39 2026] 10.179.101.227:55200 Closing
+[Tue Jul 21 10:37:42 2026] 10.179.101.227:53746 Accepted
+[Tue Jul 21 10:37:42 2026] 10.179.101.227:62027 Accepted
+[Tue Jul 21 10:37:42 2026] 10.179.101.227:57258 Accepted
+[Tue Jul 21 10:37:42 2026] 10.179.101.227:50484 Accepted
+[Tue Jul 21 10:37:42 2026] 10.179.101.227:53746 Closing
+[Tue Jul 21 10:37:42 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:37:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:37:42 2026] Problems found: 0
+[Tue Jul 21 10:37:42 2026] Problems: []
+[Tue Jul 21 10:37:42 2026] 10.179.101.227:62027 Closing
+[Tue Jul 21 10:37:42 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:37:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:37:42 2026] Problems found: 1
+[Tue Jul 21 10:37:42 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Medium","topic_tags":"Math, Number Theory","approved":0,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:37:42 2026] 10.179.101.227:57258 Closing
+[Tue Jul 21 10:37:42 2026] 10.179.101.42:62427 Accepted
+[Tue Jul 21 10:37:42 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:37:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:37:42 2026] Problems found: 0
+[Tue Jul 21 10:37:42 2026] Problems: []
+[Tue Jul 21 10:37:42 2026] 10.179.101.227:50484 Closing
+[Tue Jul 21 10:37:42 2026] 10.179.101.42:61392 Accepted
+[Tue Jul 21 10:37:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:37:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:37:42 2026] Problems found: 0
+[Tue Jul 21 10:37:42 2026] Problems: []
+[Tue Jul 21 10:37:42 2026] 10.179.101.42:62427 Closing
+[Tue Jul 21 10:37:42 2026] 10.179.101.42:60975 Accepted
+[Tue Jul 21 10:37:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:37:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:37:42 2026] Problems found: 0
+[Tue Jul 21 10:37:42 2026] Problems: []
+[Tue Jul 21 10:37:42 2026] 10.179.101.42:61392 Closing
+[Tue Jul 21 10:37:42 2026] 10.179.101.42:60549 Accepted
+[Tue Jul 21 10:37:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:37:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:37:42 2026] Problems found: 0
+[Tue Jul 21 10:37:42 2026] Problems: []
+[Tue Jul 21 10:37:42 2026] 10.179.101.42:60975 Closing
+[Tue Jul 21 10:37:42 2026] 10.179.101.227:53123 Accepted
+[Tue Jul 21 10:37:42 2026] 10.179.101.42:60549 Closing
+[Tue Jul 21 10:37:42 2026] 10.179.101.227:53123 Closing
+[Tue Jul 21 10:37:42 2026] 10.179.101.42:62052 Accepted
+[Tue Jul 21 10:37:42 2026] 10.179.101.42:62052 Closing
+[Tue Jul 21 10:37:46 2026] 10.179.101.227:59628 Accepted
+[Tue Jul 21 10:37:46 2026] 10.179.101.227:59628 Closing
+[Tue Jul 21 10:37:46 2026] 10.179.101.227:63720 Accepted
+[Tue Jul 21 10:37:46 2026] 10.179.101.227:50876 Accepted
+[Tue Jul 21 10:37:46 2026] 10.179.101.227:63720 Closing
+[Tue Jul 21 10:37:46 2026] 10.179.101.227:50876 Closing
+[Tue Jul 21 10:37:46 2026] 10.179.101.227:65052 Accepted
+[Tue Jul 21 10:37:46 2026] 10.179.101.227:65052 Closing
+[Tue Jul 21 10:38:01 2026] 10.179.101.227:62899 Accepted
+[Tue Jul 21 10:38:01 2026] 10.179.101.227:62899 Closing
+[Tue Jul 21 10:38:01 2026] 10.179.101.227:57901 Accepted
+[Tue Jul 21 10:38:02 2026] 10.179.101.227:57901 Closing
+[Tue Jul 21 10:38:02 2026] 10.179.101.227:62960 Accepted
+[Tue Jul 21 10:38:02 2026] 10.179.101.227:56319 Accepted
+[Tue Jul 21 10:38:02 2026] 10.179.101.227:56319 Closing
+[Tue Jul 21 10:38:02 2026] 10.179.101.227:62960 Closing
+[Tue Jul 21 10:38:03 2026] 10.179.101.227:50051 Accepted
+[Tue Jul 21 10:38:03 2026] 10.179.101.227:50051 Closing
+[Tue Jul 21 10:38:03 2026] 10.179.101.227:60158 Accepted
+[Tue Jul 21 10:38:03 2026] 10.179.101.227:60158 Closing
+[Tue Jul 21 10:38:04 2026] 10.179.101.227:58566 Accepted
+[Tue Jul 21 10:38:04 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.parent_comment_id' in 'field list' in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php:23
+Stack trace:
+#0 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php(23): PDOStatement->execute()
+#1 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Controllers\CommentController.php(21): Comment->getByProblemId('11')
+#2 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\index.php(218): CommentController->getCommentsByProblem('11')
+#3 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\router.php(47): require_once('C:\\Users\\suvar....')
+#4 {main}
+  thrown in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php on line 23
+[Tue Jul 21 10:38:04 2026] 10.179.101.227:58566 Closing
+[Tue Jul 21 10:38:06 2026] 10.179.101.227:52762 Accepted
+[Tue Jul 21 10:38:12 2026] 10.179.101.42:59743 Accepted
+[Tue Jul 21 10:38:12 2026] 10.179.101.42:58512 Accepted
+[Tue Jul 21 10:38:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:38:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:38:12 2026] Problems found: 0
+[Tue Jul 21 10:38:12 2026] Problems: []
+[Tue Jul 21 10:38:12 2026] 10.179.101.42:59743 Closing
+[Tue Jul 21 10:38:12 2026] 10.179.101.42:55741 Accepted
+[Tue Jul 21 10:38:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:38:12 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:38:12 2026] Problems found: 0
+[Tue Jul 21 10:38:12 2026] Problems: []
+[Tue Jul 21 10:38:12 2026] 10.179.101.42:58512 Closing
+[Tue Jul 21 10:38:12 2026] 10.179.101.42:54371 Accepted
+[Tue Jul 21 10:38:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:38:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:38:12 2026] Problems found: 0
+[Tue Jul 21 10:38:12 2026] Problems: []
+[Tue Jul 21 10:38:12 2026] 10.179.101.42:55741 Closing
+[Tue Jul 21 10:38:12 2026] 10.179.101.42:54371 Closing
+[Tue Jul 21 10:38:12 2026] 10.179.101.42:55509 Accepted
+[Tue Jul 21 10:38:12 2026] 10.179.101.42:55509 Closing
+[Tue Jul 21 10:38:42 2026] 10.179.101.42:62931 Accepted
+[Tue Jul 21 10:38:42 2026] 10.179.101.42:54261 Accepted
+[Tue Jul 21 10:38:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:38:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:38:42 2026] Problems found: 0
+[Tue Jul 21 10:38:42 2026] Problems: []
+[Tue Jul 21 10:38:42 2026] 10.179.101.42:62931 Closing
+[Tue Jul 21 10:38:42 2026] 10.179.101.42:60037 Accepted
+[Tue Jul 21 10:38:42 2026] 10.179.101.42:54261 Closing
+[Tue Jul 21 10:38:42 2026] 10.179.101.42:63459 Accepted
+[Tue Jul 21 10:38:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:38:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:38:42 2026] Problems found: 0
+[Tue Jul 21 10:38:42 2026] Problems: []
+[Tue Jul 21 10:38:42 2026] 10.179.101.42:60037 Closing
+[Tue Jul 21 10:38:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:38:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:38:42 2026] Problems found: 0
+[Tue Jul 21 10:38:42 2026] Problems: []
+[Tue Jul 21 10:38:42 2026] 10.179.101.42:63459 Closing
+[Tue Jul 21 10:38:42 2026] 10.179.101.42:57715 Accepted
+[Tue Jul 21 10:38:42 2026] 10.179.101.42:57715 Closing
+[Tue Jul 21 10:38:54 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:38:54 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:38:54 2026] Problems found: 4
+[Tue Jul 21 10:38:54 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"},{"id":7,"title":"idiotic pieces of shits !!","difficulty":"Medium","topic_tags":"dcjchs","approved":1,"rejection_reason":null,"approval_comment":"jdweojiw","author":"mansi"}]
+[Tue Jul 21 10:38:54 2026] 10.179.101.227:52762 Closing
+[Tue Jul 21 10:38:54 2026] 10.179.101.227:53457 Accepted
+[Tue Jul 21 10:38:54 2026] 10.179.101.227:53457 Closing
+[Tue Jul 21 10:38:54 2026] 10.179.101.227:56178 Accepted
+[Tue Jul 21 10:38:54 2026] 10.179.101.227:56178 Closing
+[Tue Jul 21 10:39:02 2026] 10.179.101.227:64684 Accepted
+[Tue Jul 21 10:39:02 2026] 10.179.101.227:64684 Closing
+[Tue Jul 21 10:39:02 2026] 10.179.101.227:63895 Accepted
+[Tue Jul 21 10:39:02 2026] 10.179.101.227:63895 Closing
+[Tue Jul 21 10:39:02 2026] 10.179.101.227:65405 Accepted
+[Tue Jul 21 10:39:02 2026] 10.179.101.227:65405 Closing
+[Tue Jul 21 10:39:02 2026] 10.179.101.227:51978 Accepted
+[Tue Jul 21 10:39:02 2026] 10.179.101.227:51978 Closing
+[Tue Jul 21 10:39:11 2026] 10.179.101.227:63612 Accepted
+[Tue Jul 21 10:39:11 2026] 10.179.101.227:63612 Closing
+[Tue Jul 21 10:39:11 2026] 10.179.101.227:52553 Accepted
+[Tue Jul 21 10:39:11 2026] 10.179.101.227:52553 Closing
+[Tue Jul 21 10:39:11 2026] 10.179.101.227:52147 Accepted
+[Tue Jul 21 10:39:11 2026] 10.179.101.227:52147 Closing
+[Tue Jul 21 10:39:11 2026] 10.179.101.42:53637 Accepted
+[Tue Jul 21 10:39:11 2026] 10.179.101.42:63134 Accepted
+[Tue Jul 21 10:39:11 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:39:11 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:39:11 2026] Problems found: 0
+[Tue Jul 21 10:39:11 2026] Problems: []
+[Tue Jul 21 10:39:11 2026] 10.179.101.42:53637 Closing
+[Tue Jul 21 10:39:11 2026] 10.179.101.42:63061 Accepted
+[Tue Jul 21 10:39:11 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:39:11 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:39:11 2026] Problems found: 0
+[Tue Jul 21 10:39:11 2026] Problems: []
+[Tue Jul 21 10:39:11 2026] 10.179.101.42:63134 Closing
+[Tue Jul 21 10:39:11 2026] 10.179.101.42:52904 Accepted
+[Tue Jul 21 10:39:11 2026] 10.179.101.42:63061 Closing
+[Tue Jul 21 10:39:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:39:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:39:12 2026] Problems found: 0
+[Tue Jul 21 10:39:12 2026] Problems: []
+[Tue Jul 21 10:39:12 2026] 10.179.101.42:52904 Closing
+[Tue Jul 21 10:39:12 2026] 10.179.101.42:59986 Accepted
+[Tue Jul 21 10:39:12 2026] 10.179.101.42:59986 Closing
+[Tue Jul 21 10:39:14 2026] 10.179.101.227:62281 Accepted
+[Tue Jul 21 10:39:14 2026] 10.179.101.227:52919 Accepted
+[Tue Jul 21 10:39:14 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:39:14 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:39:14 2026] Problems found: 5
+[Tue Jul 21 10:39:14 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"},{"id":7,"title":"idiotic pieces of shits !!","difficulty":"Medium","topic_tags":"dcjchs","approved":1,"rejection_reason":null,"approval_comment":"jdweojiw","author":"mansi"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:39:14 2026] 10.179.101.227:62281 Closing
+[Tue Jul 21 10:39:14 2026] 10.179.101.227:52919 Closing
+[Tue Jul 21 10:39:14 2026] 10.179.101.227:64186 Accepted
+[Tue Jul 21 10:39:14 2026] 10.179.101.227:64186 Closing
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:64028 Accepted
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:58209 Accepted
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:63084 Accepted
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:53182 Accepted
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:61055 Accepted
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:51009 Accepted
+[Tue Jul 21 10:39:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:39:19 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:39:19 2026] Problems found: 1
+[Tue Jul 21 10:39:19 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:64028 Closing
+[Tue Jul 21 10:39:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:39:19 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:39:19 2026] Problems found: 0
+[Tue Jul 21 10:39:19 2026] Problems: []
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:58209 Closing
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:63084 Closing
+[Tue Jul 21 10:39:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:39:19 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:39:19 2026] Problems found: 0
+[Tue Jul 21 10:39:19 2026] Problems: []
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:53182 Closing
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:61055 Closing
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:51009 Closing
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:50956 Accepted
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:54889 Accepted
+[Tue Jul 21 10:39:19 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:39:19 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:39:19 2026] Problems found: 5
+[Tue Jul 21 10:39:19 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":4,"title":"fizzbuzz","difficulty":"Medium","topic_tags":"arrays","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii"},{"id":7,"title":"idiotic pieces of shits !!","difficulty":"Medium","topic_tags":"dcjchs","approved":1,"rejection_reason":null,"approval_comment":"jdweojiw","author":"mansi"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:50956 Closing
+[Tue Jul 21 10:39:19 2026] 10.179.101.227:54889 Closing
+[Tue Jul 21 10:39:42 2026] 10.179.101.42:53049 Accepted
+[Tue Jul 21 10:39:42 2026] 10.179.101.42:59016 Accepted
+[Tue Jul 21 10:39:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:39:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:39:42 2026] Problems found: 0
+[Tue Jul 21 10:39:42 2026] Problems: []
+[Tue Jul 21 10:39:42 2026] 10.179.101.42:53049 Closing
+[Tue Jul 21 10:39:42 2026] 10.179.101.42:54425 Accepted
+[Tue Jul 21 10:39:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:39:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:39:42 2026] Problems found: 0
+[Tue Jul 21 10:39:42 2026] Problems: []
+[Tue Jul 21 10:39:42 2026] 10.179.101.42:59016 Closing
+[Tue Jul 21 10:39:42 2026] 10.179.101.42:65424 Accepted
+[Tue Jul 21 10:39:42 2026] 10.179.101.42:54425 Closing
+[Tue Jul 21 10:39:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:39:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:39:42 2026] Problems found: 0
+[Tue Jul 21 10:39:42 2026] Problems: []
+[Tue Jul 21 10:39:42 2026] 10.179.101.42:65424 Closing
+[Tue Jul 21 10:39:42 2026] 10.179.101.42:63498 Accepted
+[Tue Jul 21 10:39:42 2026] 10.179.101.42:63498 Closing
+[Tue Jul 21 10:39:50 2026] 10.179.101.227:49672 Accepted
+[Tue Jul 21 10:39:50 2026] 10.179.101.227:50101 Accepted
+[Tue Jul 21 10:39:50 2026] 10.179.101.227:51462 Accepted
+[Tue Jul 21 10:39:50 2026] 10.179.101.227:63838 Accepted
+[Tue Jul 21 10:39:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:39:50 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:39:50 2026] Problems found: 0
+[Tue Jul 21 10:39:50 2026] Problems: []
+[Tue Jul 21 10:39:50 2026] 10.179.101.227:49672 Closing
+[Tue Jul 21 10:39:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:39:50 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:39:50 2026] Problems found: 1
+[Tue Jul 21 10:39:50 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:39:50 2026] 10.179.101.227:50101 Closing
+[Tue Jul 21 10:39:50 2026] 10.179.101.227:51462 Closing
+[Tue Jul 21 10:39:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:39:50 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:39:50 2026] Problems found: 0
+[Tue Jul 21 10:39:50 2026] Problems: []
+[Tue Jul 21 10:39:50 2026] 10.179.101.227:63838 Closing
+[Tue Jul 21 10:39:50 2026] 10.179.101.227:53922 Accepted
+[Tue Jul 21 10:39:50 2026] 10.179.101.227:53922 Closing
+[Tue Jul 21 10:39:59 2026] 10.179.101.42:53247 Accepted
+[Tue Jul 21 10:39:59 2026] 10.179.101.42:53247 Closing
+[Tue Jul 21 10:40:04 2026] 10.179.101.42:53934 Accepted
+[Tue Jul 21 10:40:04 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:40:04 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:40:04 2026] Problems found: 0
+[Tue Jul 21 10:40:04 2026] Problems: []
+[Tue Jul 21 10:40:04 2026] 10.179.101.42:53934 Closing
+[Tue Jul 21 10:40:04 2026] 10.179.101.42:58727 Accepted
+[Tue Jul 21 10:40:04 2026] 10.179.101.42:65167 Accepted
+[Tue Jul 21 10:40:04 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:40:04 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:40:04 2026] Problems found: 1
+[Tue Jul 21 10:40:04 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Medium","topic_tags":"String ","approved":0,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:40:04 2026] 10.179.101.42:58727 Closing
+[Tue Jul 21 10:40:04 2026] 10.179.101.42:61398 Accepted
+[Tue Jul 21 10:40:04 2026] 10.179.101.42:65167 Closing
+[Tue Jul 21 10:40:04 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:40:04 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:40:04 2026] Problems found: 0
+[Tue Jul 21 10:40:04 2026] Problems: []
+[Tue Jul 21 10:40:04 2026] 10.179.101.42:61398 Closing
+[Tue Jul 21 10:40:05 2026] 10.179.101.42:60133 Accepted
+[Tue Jul 21 10:40:05 2026] 10.179.101.42:60133 Closing
+[Tue Jul 21 10:40:13 2026] 10.179.101.42:50864 Accepted
+[Tue Jul 21 10:40:13 2026] 10.179.101.42:50864 Closing
+[Tue Jul 21 10:40:13 2026] 10.179.101.42:58355 Accepted
+[Tue Jul 21 10:40:13 2026] 10.179.101.42:62832 Accepted
+[Tue Jul 21 10:40:13 2026] 10.179.101.42:58355 Closing
+[Tue Jul 21 10:40:13 2026] 10.179.101.42:56403 Accepted
+[Tue Jul 21 10:40:13 2026] 10.179.101.42:62832 Closing
+[Tue Jul 21 10:40:13 2026] 10.179.101.42:56403 Closing
+[Tue Jul 21 10:40:13 2026] 10.179.101.42:57884 Accepted
+[Tue Jul 21 10:40:13 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:40:13 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:40:13 2026] Problems found: 1
+[Tue Jul 21 10:40:13 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Medium","topic_tags":"String ","approved":0,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:40:13 2026] 10.179.101.42:57884 Closing
+[Tue Jul 21 10:40:13 2026] 10.179.101.42:61349 Accepted
+[Tue Jul 21 10:40:13 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:40:13 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:40:13 2026] Problems found: 0
+[Tue Jul 21 10:40:13 2026] Problems: []
+[Tue Jul 21 10:40:13 2026] 10.179.101.42:61349 Closing
+[Tue Jul 21 10:40:13 2026] 10.179.101.42:59994 Accepted
+[Tue Jul 21 10:40:13 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:40:13 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:40:13 2026] Problems found: 0
+[Tue Jul 21 10:40:13 2026] Problems: []
+[Tue Jul 21 10:40:13 2026] 10.179.101.42:59994 Closing
+[Tue Jul 21 10:40:15 2026] 10.179.101.42:62397 Accepted
+[Tue Jul 21 10:40:15 2026] 10.179.101.42:62397 Closing
+[Tue Jul 21 10:40:20 2026] 10.179.101.42:53695 Accepted
+[Tue Jul 21 10:40:20 2026] 10.179.101.42:53695 Closing
+[Tue Jul 21 10:40:20 2026] 10.179.101.227:52662 Accepted
+[Tue Jul 21 10:40:20 2026] 10.179.101.227:55376 Accepted
+[Tue Jul 21 10:40:20 2026] 10.179.101.227:60606 Accepted
+[Tue Jul 21 10:40:20 2026] 10.179.101.227:55118 Accepted
+[Tue Jul 21 10:40:20 2026] 10.179.101.227:52662 Closing
+[Tue Jul 21 10:40:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:40:20 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:40:20 2026] Problems found: 0
+[Tue Jul 21 10:40:20 2026] Problems: []
+[Tue Jul 21 10:40:20 2026] 10.179.101.227:55376 Closing
+[Tue Jul 21 10:40:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:40:20 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:40:20 2026] Problems found: 0
+[Tue Jul 21 10:40:20 2026] Problems: []
+[Tue Jul 21 10:40:20 2026] 10.179.101.227:60606 Closing
+[Tue Jul 21 10:40:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:40:20 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:40:20 2026] Problems found: 1
+[Tue Jul 21 10:40:20 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:40:20 2026] 10.179.101.227:55118 Closing
+[Tue Jul 21 10:40:20 2026] 10.179.101.227:52895 Accepted
+[Tue Jul 21 10:40:20 2026] 10.179.101.227:52895 Closing
+[Tue Jul 21 10:40:20 2026] 10.179.101.42:63475 Accepted
+[Tue Jul 21 10:40:20 2026] 10.179.101.42:63475 Closing
+[Tue Jul 21 10:40:21 2026] 10.179.101.42:49672 Accepted
+[Tue Jul 21 10:40:21 2026] 10.179.101.42:49672 Closing
+[Tue Jul 21 10:40:21 2026] 10.179.101.42:53665 Accepted
+[Tue Jul 21 10:40:21 2026] 10.179.101.42:53665 Closing
+[Tue Jul 21 10:40:44 2026] 10.179.101.42:62932 Accepted
+[Tue Jul 21 10:40:44 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:40:44 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:40:44 2026] Problems found: 0
+[Tue Jul 21 10:40:44 2026] Problems: []
+[Tue Jul 21 10:40:44 2026] 10.179.101.42:62932 Closing
+[Tue Jul 21 10:40:44 2026] 10.179.101.42:52138 Accepted
+[Tue Jul 21 10:40:44 2026] 10.179.101.42:57980 Accepted
+[Tue Jul 21 10:40:44 2026] 10.179.101.42:57980 Closing
+[Tue Jul 21 10:40:44 2026] 10.179.101.42:60417 Accepted
+[Tue Jul 21 10:40:44 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:40:44 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:40:44 2026] Problems found: 0
+[Tue Jul 21 10:40:44 2026] Problems: []
+[Tue Jul 21 10:40:44 2026] 10.179.101.42:52138 Closing
+[Tue Jul 21 10:40:44 2026] 10.179.101.42:55309 Accepted
+[Tue Jul 21 10:40:44 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:40:44 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:40:44 2026] Problems found: 1
+[Tue Jul 21 10:40:44 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Medium","topic_tags":"String ","approved":0,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:40:44 2026] 10.179.101.42:55309 Closing
+[Tue Jul 21 10:40:46 2026] 10.179.101.42:60417 Closing
+[Tue Jul 21 10:40:49 2026] 10.179.101.227:58431 Accepted
+[Tue Jul 21 10:40:49 2026] 10.179.101.227:58431 Closing
+[Tue Jul 21 10:40:49 2026] 10.179.101.227:55401 Accepted
+[Tue Jul 21 10:40:49 2026] 10.179.101.227:55532 Accepted
+[Tue Jul 21 10:40:49 2026] 10.179.101.227:53387 Accepted
+[Tue Jul 21 10:40:49 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:40:49 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:40:49 2026] Problems found: 1
+[Tue Jul 21 10:40:49 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:40:49 2026] 10.179.101.227:53387 Closing
+[Tue Jul 21 10:40:49 2026] 10.179.101.227:55296 Accepted
+[Tue Jul 21 10:40:49 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:40:49 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:40:49 2026] Problems found: 0
+[Tue Jul 21 10:40:49 2026] Problems: []
+[Tue Jul 21 10:40:49 2026] 10.179.101.227:55401 Closing
+[Tue Jul 21 10:40:49 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:40:49 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:40:49 2026] Problems found: 0
+[Tue Jul 21 10:40:49 2026] Problems: []
+[Tue Jul 21 10:40:49 2026] 10.179.101.227:55532 Closing
+[Tue Jul 21 10:40:50 2026] 10.179.101.227:55296 Closing
+[Tue Jul 21 10:41:20 2026] 10.179.101.227:53312 Accepted
+[Tue Jul 21 10:41:20 2026] 10.179.101.227:64982 Accepted
+[Tue Jul 21 10:41:20 2026] 10.179.101.227:63229 Accepted
+[Tue Jul 21 10:41:20 2026] 10.179.101.227:64124 Accepted
+[Tue Jul 21 10:41:20 2026] 10.179.101.227:64212 Accepted
+[Tue Jul 21 10:41:20 2026] 10.179.101.227:63229 Closing
+[Tue Jul 21 10:41:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:41:20 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:41:20 2026] Problems found: 0
+[Tue Jul 21 10:41:20 2026] Problems: []
+[Tue Jul 21 10:41:20 2026] 10.179.101.227:53312 Closing
+[Tue Jul 21 10:41:21 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:41:21 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:41:21 2026] Problems found: 1
+[Tue Jul 21 10:41:21 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:41:21 2026] 10.179.101.227:64982 Closing
+[Tue Jul 21 10:41:21 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:41:21 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:41:21 2026] Problems found: 0
+[Tue Jul 21 10:41:21 2026] Problems: []
+[Tue Jul 21 10:41:21 2026] 10.179.101.227:64124 Closing
+[Tue Jul 21 10:41:21 2026] 10.179.101.227:64212 Closing
+[Tue Jul 21 10:41:44 2026] 10.179.101.42:55582 Accepted
+[Tue Jul 21 10:41:44 2026] 10.179.101.42:54729 Accepted
+[Tue Jul 21 10:41:44 2026] 10.179.101.42:55582 Closing
+[Tue Jul 21 10:41:44 2026] 10.179.101.42:59417 Accepted
+[Tue Jul 21 10:41:44 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:41:44 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:41:44 2026] Problems found: 1
+[Tue Jul 21 10:41:44 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Medium","topic_tags":"String ","approved":0,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:41:44 2026] 10.179.101.42:54729 Closing
+[Tue Jul 21 10:41:44 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:41:44 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:41:44 2026] Problems found: 0
+[Tue Jul 21 10:41:44 2026] Problems: []
+[Tue Jul 21 10:41:44 2026] 10.179.101.42:59417 Closing
+[Tue Jul 21 10:41:47 2026] 10.179.101.42:55045 Accepted
+[Tue Jul 21 10:41:47 2026] 10.179.101.42:51673 Accepted
+[Tue Jul 21 10:41:47 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:41:47 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:41:47 2026] Problems found: 0
+[Tue Jul 21 10:41:47 2026] Problems: []
+[Tue Jul 21 10:41:47 2026] 10.179.101.42:51673 Closing
+[Tue Jul 21 10:41:47 2026] 10.179.101.42:55045 Closing
+[Tue Jul 21 10:41:49 2026] 10.179.101.227:62295 Accepted
+[Tue Jul 21 10:41:49 2026] 10.179.101.227:50888 Accepted
+[Tue Jul 21 10:41:49 2026] 10.179.101.227:59062 Accepted
+[Tue Jul 21 10:41:49 2026] 10.179.101.227:51072 Accepted
+[Tue Jul 21 10:41:49 2026] 10.179.101.227:51424 Accepted
+[Tue Jul 21 10:41:49 2026] 10.179.101.227:50888 Closing
+[Tue Jul 21 10:41:49 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:41:49 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:41:49 2026] Problems found: 1
+[Tue Jul 21 10:41:49 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:41:49 2026] 10.179.101.227:62295 Closing
+[Tue Jul 21 10:41:49 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:41:49 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:41:49 2026] Problems found: 0
+[Tue Jul 21 10:41:49 2026] Problems: []
+[Tue Jul 21 10:41:49 2026] 10.179.101.227:51072 Closing
+[Tue Jul 21 10:41:49 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:41:49 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:41:49 2026] Problems found: 0
+[Tue Jul 21 10:41:49 2026] Problems: []
+[Tue Jul 21 10:41:49 2026] 10.179.101.227:51424 Closing
+[Tue Jul 21 10:41:49 2026] 10.179.101.227:59062 Closing
+[Tue Jul 21 10:42:19 2026] 10.179.101.227:58500 Accepted
+[Tue Jul 21 10:42:19 2026] 10.179.101.227:50812 Accepted
+[Tue Jul 21 10:42:19 2026] 10.179.101.227:58500 Closing
+[Tue Jul 21 10:42:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:42:19 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:42:19 2026] Problems found: 1
+[Tue Jul 21 10:42:19 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:42:19 2026] 10.179.101.227:50812 Closing
+[Tue Jul 21 10:42:19 2026] 10.179.101.227:52962 Accepted
+[Tue Jul 21 10:42:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:42:19 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:42:19 2026] Problems found: 0
+[Tue Jul 21 10:42:19 2026] Problems: []
+[Tue Jul 21 10:42:19 2026] 10.179.101.227:52962 Closing
+[Tue Jul 21 10:42:19 2026] 10.179.101.227:53479 Accepted
+[Tue Jul 21 10:42:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:42:19 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:42:19 2026] Problems found: 0
+[Tue Jul 21 10:42:19 2026] Problems: []
+[Tue Jul 21 10:42:19 2026] 10.179.101.227:53479 Closing
+[Tue Jul 21 10:42:19 2026] 10.179.101.227:49672 Accepted
+[Tue Jul 21 10:42:19 2026] 10.179.101.227:49672 Closing
+[Tue Jul 21 10:42:40 2026] 10.179.101.42:54927 Accepted
+[Tue Jul 21 10:42:40 2026] 10.179.101.42:54927 Closing
+[Tue Jul 21 10:42:41 2026] 10.179.101.42:62968 Accepted
+[Tue Jul 21 10:42:41 2026] 10.179.101.42:63852 Accepted
+[Tue Jul 21 10:42:41 2026] 10.179.101.42:63852 Closing
+[Tue Jul 21 10:42:41 2026] 10.179.101.42:62968 Closing
+[Tue Jul 21 10:42:44 2026] 10.179.101.42:56662 Accepted
+[Tue Jul 21 10:42:44 2026] 10.179.101.42:55251 Accepted
+[Tue Jul 21 10:42:44 2026] 10.179.101.42:54364 Accepted
+[Tue Jul 21 10:42:44 2026] 10.179.101.42:49743 Accepted
+[Tue Jul 21 10:42:44 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:42:44 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:42:44 2026] Problems found: 1
+[Tue Jul 21 10:42:44 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Medium","topic_tags":"String ","approved":2,"rejection_reason":"something wrong ","approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:42:44 2026] 10.179.101.42:56662 Closing
+[Tue Jul 21 10:42:44 2026] 10.179.101.42:49743 Closing
+[Tue Jul 21 10:42:44 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:42:44 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:42:44 2026] Problems found: 0
+[Tue Jul 21 10:42:44 2026] Problems: []
+[Tue Jul 21 10:42:44 2026] 10.179.101.42:55251 Closing
+[Tue Jul 21 10:42:44 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:42:44 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:42:44 2026] Problems found: 0
+[Tue Jul 21 10:42:44 2026] Problems: []
+[Tue Jul 21 10:42:44 2026] 10.179.101.42:54364 Closing
+[Tue Jul 21 10:42:44 2026] 10.179.101.42:59833 Accepted
+[Tue Jul 21 10:42:44 2026] 10.179.101.42:59833 Closing
+[Tue Jul 21 10:42:49 2026] 10.179.101.227:52729 Accepted
+[Tue Jul 21 10:42:49 2026] 10.179.101.227:55228 Accepted
+[Tue Jul 21 10:42:49 2026] 10.179.101.227:51193 Accepted
+[Tue Jul 21 10:42:49 2026] 10.179.101.227:52146 Accepted
+[Tue Jul 21 10:42:49 2026] 10.179.101.227:51193 Closing
+[Tue Jul 21 10:42:49 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:42:49 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:42:49 2026] Problems found: 1
+[Tue Jul 21 10:42:49 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:42:49 2026] 10.179.101.227:52729 Closing
+[Tue Jul 21 10:42:49 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:42:49 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:42:49 2026] Problems found: 0
+[Tue Jul 21 10:42:49 2026] Problems: []
+[Tue Jul 21 10:42:49 2026] 10.179.101.227:55228 Closing
+[Tue Jul 21 10:42:49 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:42:49 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:42:49 2026] Problems found: 0
+[Tue Jul 21 10:42:49 2026] Problems: []
+[Tue Jul 21 10:42:49 2026] 10.179.101.227:52146 Closing
+[Tue Jul 21 10:42:49 2026] 10.179.101.227:49745 Accepted
+[Tue Jul 21 10:42:49 2026] 10.179.101.227:49745 Closing
+[Tue Jul 21 10:43:00 2026] 10.179.101.42:59136 Accepted
+[Tue Jul 21 10:43:00 2026] 10.179.101.42:59136 Closing
+[Tue Jul 21 10:43:00 2026] 10.179.101.42:54556 Accepted
+[Tue Jul 21 10:43:00 2026] 10.179.101.42:54556 Closing
+[Tue Jul 21 10:43:12 2026] 10.179.101.42:58247 Accepted
+[Tue Jul 21 10:43:12 2026] 10.179.101.42:62149 Accepted
+[Tue Jul 21 10:43:12 2026] 10.179.101.42:56335 Accepted
+[Tue Jul 21 10:43:12 2026] 10.179.101.42:58247 Closing
+[Tue Jul 21 10:43:12 2026] 10.179.101.42:58303 Accepted
+[Tue Jul 21 10:43:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:43:12 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:43:12 2026] Problems found: 0
+[Tue Jul 21 10:43:12 2026] Problems: []
+[Tue Jul 21 10:43:12 2026] 10.179.101.42:56335 Closing
+[Tue Jul 21 10:43:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:43:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:43:12 2026] Problems found: 1
+[Tue Jul 21 10:43:12 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Medium","topic_tags":"String ","approved":2,"rejection_reason":"something wrong ","approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:43:12 2026] 10.179.101.42:62149 Closing
+[Tue Jul 21 10:43:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:43:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:43:12 2026] Problems found: 0
+[Tue Jul 21 10:43:12 2026] Problems: []
+[Tue Jul 21 10:43:12 2026] 10.179.101.42:58303 Closing
+[Tue Jul 21 10:43:12 2026] 10.179.101.42:55422 Accepted
+[Tue Jul 21 10:43:13 2026] 10.179.101.42:55422 Closing
+[Tue Jul 21 10:43:19 2026] 10.179.101.227:62606 Accepted
+[Tue Jul 21 10:43:19 2026] 10.179.101.227:58937 Accepted
+[Tue Jul 21 10:43:19 2026] 10.179.101.227:61013 Accepted
+[Tue Jul 21 10:43:19 2026] 10.179.101.227:63342 Accepted
+[Tue Jul 21 10:43:19 2026] 10.179.101.227:62606 Closing
+[Tue Jul 21 10:43:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:43:19 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:43:19 2026] Problems found: 0
+[Tue Jul 21 10:43:19 2026] Problems: []
+[Tue Jul 21 10:43:19 2026] 10.179.101.227:58937 Closing
+[Tue Jul 21 10:43:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:43:19 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:43:19 2026] Problems found: 0
+[Tue Jul 21 10:43:19 2026] Problems: []
+[Tue Jul 21 10:43:19 2026] 10.179.101.227:61013 Closing
+[Tue Jul 21 10:43:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:43:19 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:43:19 2026] Problems found: 1
+[Tue Jul 21 10:43:19 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:43:19 2026] 10.179.101.227:63342 Closing
+[Tue Jul 21 10:43:19 2026] 10.179.101.227:62337 Accepted
+[Tue Jul 21 10:43:19 2026] 10.179.101.227:62337 Closing
+[Tue Jul 21 10:43:19 2026] 10.179.101.227:53757 Accepted
+[Tue Jul 21 10:43:42 2026] 10.179.101.42:49672 Accepted
+[Tue Jul 21 10:43:42 2026] 10.179.101.42:50302 Accepted
+[Tue Jul 21 10:43:42 2026] 10.179.101.42:57823 Accepted
+[Tue Jul 21 10:43:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:43:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:43:42 2026] Problems found: 0
+[Tue Jul 21 10:43:42 2026] Problems: []
+[Tue Jul 21 10:43:42 2026] 10.179.101.42:49672 Closing
+[Tue Jul 21 10:43:42 2026] 10.179.101.42:50302 Closing
+[Tue Jul 21 10:43:42 2026] 10.179.101.42:58321 Accepted
+[Tue Jul 21 10:43:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:43:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:43:42 2026] Problems found: 0
+[Tue Jul 21 10:43:42 2026] Problems: []
+[Tue Jul 21 10:43:42 2026] 10.179.101.42:58321 Closing
+[Tue Jul 21 10:43:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:43:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:43:42 2026] Problems found: 1
+[Tue Jul 21 10:43:42 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Medium","topic_tags":"String ","approved":2,"rejection_reason":"something wrong ","approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:43:42 2026] 10.179.101.42:57823 Closing
+[Tue Jul 21 10:43:42 2026] 10.179.101.42:60786 Accepted
+[Tue Jul 21 10:43:42 2026] 10.179.101.42:60786 Closing
+[Tue Jul 21 10:43:50 2026] 10.179.101.227:53757 Closing
+[Tue Jul 21 10:43:50 2026] 10.179.101.227:59302 Accepted
+[Tue Jul 21 10:43:50 2026] 10.179.101.227:50192 Accepted
+[Tue Jul 21 10:43:50 2026] 10.179.101.227:59068 Accepted
+[Tue Jul 21 10:43:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:43:50 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:43:50 2026] Problems found: 0
+[Tue Jul 21 10:43:50 2026] Problems: []
+[Tue Jul 21 10:43:50 2026] 10.179.101.227:59302 Closing
+[Tue Jul 21 10:43:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:43:50 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:43:50 2026] Problems found: 1
+[Tue Jul 21 10:43:50 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:43:50 2026] 10.179.101.227:59068 Closing
+[Tue Jul 21 10:43:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:43:50 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:43:50 2026] Problems found: 0
+[Tue Jul 21 10:43:50 2026] Problems: []
+[Tue Jul 21 10:43:50 2026] 10.179.101.227:50192 Closing
+[Tue Jul 21 10:43:50 2026] 10.179.101.227:59346 Accepted
+[Tue Jul 21 10:43:50 2026] 10.179.101.227:59346 Closing
+[Tue Jul 21 10:44:11 2026] 10.179.101.42:50581 Accepted
+[Tue Jul 21 10:44:11 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:44:11 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:44:11 2026] Problems found: 1
+[Tue Jul 21 10:44:11 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Medium","topic_tags":"String ","approved":2,"rejection_reason":"something wrong ","approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:44:11 2026] 10.179.101.42:50581 Closing
+[Tue Jul 21 10:44:11 2026] 10.179.101.42:58962 Accepted
+[Tue Jul 21 10:44:11 2026] 10.179.101.42:62090 Accepted
+[Tue Jul 21 10:44:11 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:44:11 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:44:11 2026] Problems found: 0
+[Tue Jul 21 10:44:11 2026] Problems: []
+[Tue Jul 21 10:44:11 2026] 10.179.101.42:58962 Closing
+[Tue Jul 21 10:44:11 2026] 10.179.101.42:62915 Accepted
+[Tue Jul 21 10:44:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:44:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:44:12 2026] Problems found: 0
+[Tue Jul 21 10:44:12 2026] Problems: []
+[Tue Jul 21 10:44:12 2026] 10.179.101.42:62090 Closing
+[Tue Jul 21 10:44:12 2026] 10.179.101.42:62915 Closing
+[Tue Jul 21 10:44:12 2026] 10.179.101.42:57400 Accepted
+[Tue Jul 21 10:44:12 2026] 10.179.101.42:57400 Closing
+[Tue Jul 21 10:44:20 2026] 10.179.101.227:59583 Accepted
+[Tue Jul 21 10:44:20 2026] 10.179.101.227:53480 Accepted
+[Tue Jul 21 10:44:20 2026] 10.179.101.227:52550 Accepted
+[Tue Jul 21 10:44:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:44:20 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:44:20 2026] Problems found: 1
+[Tue Jul 21 10:44:20 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:44:20 2026] 10.179.101.227:59583 Closing
+[Tue Jul 21 10:44:20 2026] 10.179.101.227:53480 Closing
+[Tue Jul 21 10:44:20 2026] 10.179.101.227:55957 Accepted
+[Tue Jul 21 10:44:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:44:20 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:44:20 2026] Problems found: 0
+[Tue Jul 21 10:44:20 2026] Problems: []
+[Tue Jul 21 10:44:20 2026] 10.179.101.227:52550 Closing
+[Tue Jul 21 10:44:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:44:20 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:44:20 2026] Problems found: 0
+[Tue Jul 21 10:44:20 2026] Problems: []
+[Tue Jul 21 10:44:20 2026] 10.179.101.227:55957 Closing
+[Tue Jul 21 10:44:20 2026] 10.179.101.227:62583 Accepted
+[Tue Jul 21 10:44:20 2026] 10.179.101.227:62583 Closing
+[Tue Jul 21 10:44:38 2026] 10.179.101.42:61082 Accepted
+[Tue Jul 21 10:44:38 2026] 10.179.101.42:61082 Closing
+[Tue Jul 21 10:44:39 2026] 10.179.101.42:63557 Accepted
+[Tue Jul 21 10:44:39 2026] 10.179.101.42:51631 Accepted
+[Tue Jul 21 10:44:39 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:44:39 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:44:39 2026] Problems found: 0
+[Tue Jul 21 10:44:39 2026] Problems: []
+[Tue Jul 21 10:44:39 2026] 10.179.101.42:63557 Closing
+[Tue Jul 21 10:44:39 2026] 10.179.101.42:64311 Accepted
+[Tue Jul 21 10:44:39 2026] 10.179.101.42:51631 Closing
+[Tue Jul 21 10:44:39 2026] 10.179.101.42:64398 Accepted
+[Tue Jul 21 10:44:39 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:44:39 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:44:39 2026] Problems found: 0
+[Tue Jul 21 10:44:39 2026] Problems: []
+[Tue Jul 21 10:44:39 2026] 10.179.101.42:64311 Closing
+[Tue Jul 21 10:44:39 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:44:39 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:44:39 2026] Problems found: 1
+[Tue Jul 21 10:44:39 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Medium","topic_tags":"String ","approved":0,"rejection_reason":"something wrong ","approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:44:39 2026] 10.179.101.42:64398 Closing
+[Tue Jul 21 10:44:39 2026] 10.179.101.42:63701 Accepted
+[Tue Jul 21 10:44:39 2026] 10.179.101.42:63701 Closing
+[Tue Jul 21 10:44:41 2026] 10.179.101.42:53012 Accepted
+[Tue Jul 21 10:44:41 2026] 10.179.101.42:53293 Accepted
+[Tue Jul 21 10:44:41 2026] 10.179.101.42:53012 Closing
+[Tue Jul 21 10:44:41 2026] 10.179.101.42:60272 Accepted
+[Tue Jul 21 10:44:41 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:44:41 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:44:41 2026] Problems found: 1
+[Tue Jul 21 10:44:41 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Medium","topic_tags":"String ","approved":0,"rejection_reason":"something wrong ","approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:44:41 2026] 10.179.101.42:53293 Closing
+[Tue Jul 21 10:44:41 2026] 10.179.101.42:50060 Accepted
+[Tue Jul 21 10:44:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:44:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:44:42 2026] Problems found: 0
+[Tue Jul 21 10:44:42 2026] Problems: []
+[Tue Jul 21 10:44:42 2026] 10.179.101.42:60272 Closing
+[Tue Jul 21 10:44:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:44:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:44:42 2026] Problems found: 0
+[Tue Jul 21 10:44:42 2026] Problems: []
+[Tue Jul 21 10:44:42 2026] 10.179.101.42:50060 Closing
+[Tue Jul 21 10:44:42 2026] 10.179.101.42:53409 Accepted
+[Tue Jul 21 10:44:42 2026] 10.179.101.42:53409 Closing
+[Tue Jul 21 10:44:43 2026] 10.179.101.42:65337 Accepted
+[Tue Jul 21 10:44:43 2026] 10.179.101.42:65337 Closing
+[Tue Jul 21 10:44:43 2026] 10.179.101.42:49196 Accepted
+[Tue Jul 21 10:44:43 2026] 10.179.101.42:49196 Closing
+[Tue Jul 21 10:44:43 2026] 10.179.101.42:54087 Accepted
+[Tue Jul 21 10:44:43 2026] 10.179.101.42:54087 Closing
+[Tue Jul 21 10:44:53 2026] 10.179.101.42:62549 Accepted
+[Tue Jul 21 10:44:53 2026] 10.179.101.42:53071 Accepted
+[Tue Jul 21 10:44:53 2026] 10.179.101.42:62549 Closing
+[Tue Jul 21 10:44:53 2026] 10.179.101.42:60985 Accepted
+[Tue Jul 21 10:44:53 2026] 10.179.101.42:53071 Closing
+[Tue Jul 21 10:44:53 2026] 10.179.101.42:60985 Closing
+[Tue Jul 21 10:44:57 2026] 10.179.101.227:49672 Accepted
+[Tue Jul 21 10:44:58 2026] 10.179.101.227:49672 Closing
+[Tue Jul 21 10:44:58 2026] 10.179.101.227:61934 Accepted
+[Tue Jul 21 10:44:58 2026] 10.179.101.227:59729 Accepted
+[Tue Jul 21 10:44:58 2026] 10.179.101.227:52009 Accepted
+[Tue Jul 21 10:44:58 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:44:58 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:44:58 2026] Problems found: 1
+[Tue Jul 21 10:44:58 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:44:58 2026] 10.179.101.227:52009 Closing
+[Tue Jul 21 10:44:58 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:44:58 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:44:58 2026] Problems found: 0
+[Tue Jul 21 10:44:58 2026] Problems: []
+[Tue Jul 21 10:44:58 2026] 10.179.101.227:59729 Closing
+[Tue Jul 21 10:44:58 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:44:58 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:44:58 2026] Problems found: 0
+[Tue Jul 21 10:44:58 2026] Problems: []
+[Tue Jul 21 10:44:58 2026] 10.179.101.227:61934 Closing
+[Tue Jul 21 10:44:58 2026] 10.179.101.227:58153 Accepted
+[Tue Jul 21 10:44:58 2026] 10.179.101.227:58153 Closing
+[Tue Jul 21 10:45:09 2026] 10.179.101.42:58505 Accepted
+[Tue Jul 21 10:45:09 2026] 10.179.101.42:58505 Closing
+[Tue Jul 21 10:45:09 2026] 10.179.101.42:65488 Accepted
+[Tue Jul 21 10:45:09 2026] 10.179.101.42:65488 Closing
+[Tue Jul 21 10:45:09 2026] 10.179.101.42:56172 Accepted
+[Tue Jul 21 10:45:09 2026] 10.179.101.42:56172 Closing
+[Tue Jul 21 10:45:12 2026] 10.179.101.42:62364 Accepted
+[Tue Jul 21 10:45:12 2026] 10.179.101.42:62364 Closing
+[Tue Jul 21 10:45:12 2026] 10.179.101.42:58854 Accepted
+[Tue Jul 21 10:45:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:45:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:45:12 2026] Problems found: 1
+[Tue Jul 21 10:45:12 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:45:12 2026] 10.179.101.42:58854 Closing
+[Tue Jul 21 10:45:12 2026] 10.179.101.42:60725 Accepted
+[Tue Jul 21 10:45:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:45:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:45:12 2026] Problems found: 0
+[Tue Jul 21 10:45:12 2026] Problems: []
+[Tue Jul 21 10:45:12 2026] 10.179.101.42:60725 Closing
+[Tue Jul 21 10:45:12 2026] 10.179.101.42:59640 Accepted
+[Tue Jul 21 10:45:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:45:12 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:45:12 2026] Problems found: 0
+[Tue Jul 21 10:45:12 2026] Problems: []
+[Tue Jul 21 10:45:12 2026] 10.179.101.42:59640 Closing
+[Tue Jul 21 10:45:13 2026] 10.179.101.42:53500 Accepted
+[Tue Jul 21 10:45:13 2026] 10.179.101.42:53500 Closing
+[Tue Jul 21 10:45:19 2026] 10.179.101.227:53900 Accepted
+[Tue Jul 21 10:45:19 2026] 10.179.101.227:63859 Accepted
+[Tue Jul 21 10:45:19 2026] 10.179.101.227:57778 Accepted
+[Tue Jul 21 10:45:19 2026] 10.179.101.227:53900 Closing
+[Tue Jul 21 10:45:19 2026] 10.179.101.227:63119 Accepted
+[Tue Jul 21 10:45:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:45:19 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:45:19 2026] Problems found: 0
+[Tue Jul 21 10:45:19 2026] Problems: []
+[Tue Jul 21 10:45:19 2026] 10.179.101.227:63859 Closing
+[Tue Jul 21 10:45:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:45:19 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:45:19 2026] Problems found: 0
+[Tue Jul 21 10:45:19 2026] Problems: []
+[Tue Jul 21 10:45:19 2026] 10.179.101.227:57778 Closing
+[Tue Jul 21 10:45:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:45:19 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:45:19 2026] Problems found: 1
+[Tue Jul 21 10:45:19 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:45:19 2026] 10.179.101.227:63119 Closing
+[Tue Jul 21 10:45:20 2026] 10.179.101.227:65414 Accepted
+[Tue Jul 21 10:45:20 2026] 10.179.101.227:56699 Accepted
+[Tue Jul 21 10:45:20 2026] 10.179.101.227:65414 Closing
+[Tue Jul 21 10:45:32 2026] 10.179.101.42:50623 Accepted
+[Tue Jul 21 10:45:32 2026] 10.179.101.42:50623 Closing
+[Tue Jul 21 10:45:32 2026] 10.179.101.42:63775 Accepted
+[Tue Jul 21 10:45:32 2026] 10.179.101.42:63775 Closing
+[Tue Jul 21 10:45:33 2026] 10.179.101.42:52746 Accepted
+[Tue Jul 21 10:45:33 2026] 10.179.101.42:52746 Closing
+[Tue Jul 21 10:45:37 2026] 10.179.101.42:55125 Accepted
+[Tue Jul 21 10:45:37 2026] 10.179.101.42:55125 Closing
+[Tue Jul 21 10:45:37 2026] 10.179.101.42:55739 Accepted
+[Tue Jul 21 10:45:37 2026] 10.179.101.42:55739 Closing
+[Tue Jul 21 10:45:37 2026] 10.179.101.42:58972 Accepted
+[Tue Jul 21 10:45:37 2026] 10.179.101.42:58972 Closing
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:59888 Accepted
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:59888 Closing
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:56367 Accepted
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:56367 Closing
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:50660 Accepted
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:50660 Closing
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:53487 Accepted
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:62833 Accepted
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:52275 Accepted
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:53457 Accepted
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:53457 Closing
+[Tue Jul 21 10:45:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:45:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:45:42 2026] Problems found: 0
+[Tue Jul 21 10:45:42 2026] Problems: []
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:53487 Closing
+[Tue Jul 21 10:45:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:45:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:45:42 2026] Problems found: 1
+[Tue Jul 21 10:45:42 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:62833 Closing
+[Tue Jul 21 10:45:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:45:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:45:42 2026] Problems found: 0
+[Tue Jul 21 10:45:42 2026] Problems: []
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:52275 Closing
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:61665 Accepted
+[Tue Jul 21 10:45:42 2026] 10.179.101.42:61665 Closing
+[Tue Jul 21 10:45:50 2026] 10.179.101.227:56699 Closing
+[Tue Jul 21 10:45:50 2026] 10.179.101.227:54156 Accepted
+[Tue Jul 21 10:45:50 2026] 10.179.101.227:52031 Accepted
+[Tue Jul 21 10:45:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:45:50 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:45:50 2026] Problems found: 0
+[Tue Jul 21 10:45:50 2026] Problems: []
+[Tue Jul 21 10:45:50 2026] 10.179.101.227:54156 Closing
+[Tue Jul 21 10:45:50 2026] 10.179.101.227:52118 Accepted
+[Tue Jul 21 10:45:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:45:50 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:45:50 2026] Problems found: 0
+[Tue Jul 21 10:45:50 2026] Problems: []
+[Tue Jul 21 10:45:50 2026] 10.179.101.227:52031 Closing
+[Tue Jul 21 10:45:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:45:50 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:45:50 2026] Problems found: 1
+[Tue Jul 21 10:45:50 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:45:50 2026] 10.179.101.227:52118 Closing
+[Tue Jul 21 10:45:50 2026] 10.179.101.227:49673 Accepted
+[Tue Jul 21 10:45:50 2026] 10.179.101.227:49673 Closing
+[Tue Jul 21 10:46:19 2026] 10.179.101.227:52572 Accepted
+[Tue Jul 21 10:46:19 2026] 10.179.101.227:62750 Accepted
+[Tue Jul 21 10:46:19 2026] 10.179.101.227:64599 Accepted
+[Tue Jul 21 10:46:19 2026] 10.179.101.227:57234 Accepted
+[Tue Jul 21 10:46:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:46:19 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:46:19 2026] Problems found: 0
+[Tue Jul 21 10:46:19 2026] Problems: []
+[Tue Jul 21 10:46:19 2026] 10.179.101.227:52572 Closing
+[Tue Jul 21 10:46:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:46:19 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:46:19 2026] Problems found: 0
+[Tue Jul 21 10:46:19 2026] Problems: []
+[Tue Jul 21 10:46:19 2026] 10.179.101.227:62750 Closing
+[Tue Jul 21 10:46:19 2026] 10.179.101.227:64599 Closing
+[Tue Jul 21 10:46:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:46:19 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:46:19 2026] Problems found: 1
+[Tue Jul 21 10:46:19 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:46:19 2026] 10.179.101.227:57234 Closing
+[Tue Jul 21 10:46:19 2026] 10.179.101.227:58724 Accepted
+[Tue Jul 21 10:46:19 2026] 10.179.101.227:58724 Closing
+[Tue Jul 21 10:46:43 2026] 10.179.101.42:63978 Accepted
+[Tue Jul 21 10:46:43 2026] 10.179.101.42:65220 Accepted
+[Tue Jul 21 10:46:43 2026] 10.179.101.42:50106 Accepted
+[Tue Jul 21 10:46:43 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:46:43 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:46:43 2026] Problems found: 0
+[Tue Jul 21 10:46:43 2026] Problems: []
+[Tue Jul 21 10:46:43 2026] 10.179.101.42:63978 Closing
+[Tue Jul 21 10:46:43 2026] 10.179.101.42:51919 Accepted
+[Tue Jul 21 10:46:43 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:46:43 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:46:43 2026] Problems found: 0
+[Tue Jul 21 10:46:43 2026] Problems: []
+[Tue Jul 21 10:46:43 2026] 10.179.101.42:50106 Closing
+[Tue Jul 21 10:46:43 2026] 10.179.101.42:53277 Accepted
+[Tue Jul 21 10:46:43 2026] 10.179.101.42:51919 Closing
+[Tue Jul 21 10:46:43 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:46:43 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:46:43 2026] Problems found: 1
+[Tue Jul 21 10:46:43 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:46:43 2026] 10.179.101.42:53277 Closing
+[Tue Jul 21 10:46:44 2026] 10.179.101.42:65220 Closing
+[Tue Jul 21 10:46:49 2026] 10.179.101.227:65107 Accepted
+[Tue Jul 21 10:46:49 2026] 10.179.101.227:65107 Closing
+[Tue Jul 21 10:46:49 2026] 10.179.101.227:51257 Accepted
+[Tue Jul 21 10:46:49 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:46:49 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:46:49 2026] Problems found: 1
+[Tue Jul 21 10:46:49 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:46:49 2026] 10.179.101.227:51257 Closing
+[Tue Jul 21 10:46:49 2026] 10.179.101.227:58803 Accepted
+[Tue Jul 21 10:46:49 2026] 10.179.101.227:64553 Accepted
+[Tue Jul 21 10:46:49 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:46:49 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:46:49 2026] Problems found: 0
+[Tue Jul 21 10:46:49 2026] Problems: []
+[Tue Jul 21 10:46:49 2026] 10.179.101.227:58803 Closing
+[Tue Jul 21 10:46:49 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:46:49 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:46:49 2026] Problems found: 0
+[Tue Jul 21 10:46:49 2026] Problems: []
+[Tue Jul 21 10:46:49 2026] 10.179.101.227:64553 Closing
+[Tue Jul 21 10:46:49 2026] 10.179.101.227:49862 Accepted
+[Tue Jul 21 10:46:50 2026] 10.179.101.227:49862 Closing
+[Tue Jul 21 10:47:20 2026] 10.179.101.227:62705 Accepted
+[Tue Jul 21 10:47:20 2026] 10.179.101.227:51408 Accepted
+[Tue Jul 21 10:47:20 2026] 10.179.101.227:54385 Accepted
+[Tue Jul 21 10:47:20 2026] 10.179.101.227:57918 Accepted
+[Tue Jul 21 10:47:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:47:20 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:47:20 2026] Problems found: 0
+[Tue Jul 21 10:47:20 2026] Problems: []
+[Tue Jul 21 10:47:20 2026] 10.179.101.227:62705 Closing
+[Tue Jul 21 10:47:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:47:20 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:47:20 2026] Problems found: 0
+[Tue Jul 21 10:47:20 2026] Problems: []
+[Tue Jul 21 10:47:20 2026] 10.179.101.227:51408 Closing
+[Tue Jul 21 10:47:20 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:47:20 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:47:20 2026] Problems found: 1
+[Tue Jul 21 10:47:20 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:47:20 2026] 10.179.101.227:54385 Closing
+[Tue Jul 21 10:47:20 2026] 10.179.101.227:57918 Closing
+[Tue Jul 21 10:47:20 2026] 10.179.101.227:61225 Accepted
+[Tue Jul 21 10:47:20 2026] 10.179.101.227:61225 Closing
+[Tue Jul 21 10:47:36 2026] 10.179.101.42:58327 Accepted
+[Tue Jul 21 10:47:36 2026] 10.179.101.42:62926 Accepted
+[Tue Jul 21 10:47:36 2026] 10.179.101.42:57115 Accepted
+[Tue Jul 21 10:47:36 2026] 10.179.101.42:64720 Accepted
+[Tue Jul 21 10:47:36 2026] 10.179.101.42:62926 Closing
+[Tue Jul 21 10:47:36 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:47:36 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:47:36 2026] Problems found: 1
+[Tue Jul 21 10:47:36 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:47:36 2026] 10.179.101.42:58327 Closing
+[Tue Jul 21 10:47:36 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:47:36 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:47:36 2026] Problems found: 0
+[Tue Jul 21 10:47:36 2026] Problems: []
+[Tue Jul 21 10:47:36 2026] 10.179.101.42:57115 Closing
+[Tue Jul 21 10:47:36 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:47:36 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:47:36 2026] Problems found: 0
+[Tue Jul 21 10:47:36 2026] Problems: []
+[Tue Jul 21 10:47:36 2026] 10.179.101.42:64720 Closing
+[Tue Jul 21 10:47:36 2026] 10.179.101.42:58027 Accepted
+[Tue Jul 21 10:47:36 2026] 10.179.101.42:58027 Closing
+[Tue Jul 21 10:47:42 2026] 10.179.101.42:52433 Accepted
+[Tue Jul 21 10:47:42 2026] 10.179.101.42:62130 Accepted
+[Tue Jul 21 10:47:42 2026] 10.179.101.42:54009 Accepted
+[Tue Jul 21 10:47:42 2026] 10.179.101.42:59018 Accepted
+[Tue Jul 21 10:47:42 2026] 10.179.101.42:59018 Closing
+[Tue Jul 21 10:47:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:47:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:47:42 2026] Problems found: 0
+[Tue Jul 21 10:47:42 2026] Problems: []
+[Tue Jul 21 10:47:42 2026] 10.179.101.42:52433 Closing
+[Tue Jul 21 10:47:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:47:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:47:42 2026] Problems found: 0
+[Tue Jul 21 10:47:42 2026] Problems: []
+[Tue Jul 21 10:47:42 2026] 10.179.101.42:62130 Closing
+[Tue Jul 21 10:47:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:47:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:47:42 2026] Problems found: 1
+[Tue Jul 21 10:47:42 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:47:42 2026] 10.179.101.42:54009 Closing
+[Tue Jul 21 10:47:42 2026] 10.179.101.42:60608 Accepted
+[Tue Jul 21 10:47:42 2026] 10.179.101.42:60608 Closing
+[Tue Jul 21 10:47:50 2026] 10.179.101.227:54273 Accepted
+[Tue Jul 21 10:47:50 2026] 10.179.101.227:57325 Accepted
+[Tue Jul 21 10:47:50 2026] 10.179.101.227:54284 Accepted
+[Tue Jul 21 10:47:50 2026] 10.179.101.227:58536 Accepted
+[Tue Jul 21 10:47:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:47:50 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:47:50 2026] Problems found: 1
+[Tue Jul 21 10:47:50 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:47:50 2026] 10.179.101.227:54284 Closing
+[Tue Jul 21 10:47:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:47:50 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:47:50 2026] Problems found: 0
+[Tue Jul 21 10:47:50 2026] Problems: []
+[Tue Jul 21 10:47:50 2026] 10.179.101.227:54273 Closing
+[Tue Jul 21 10:47:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:47:50 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:47:50 2026] Problems found: 0
+[Tue Jul 21 10:47:50 2026] Problems: []
+[Tue Jul 21 10:47:50 2026] 10.179.101.227:57325 Closing
+[Tue Jul 21 10:47:50 2026] 10.179.101.227:58536 Closing
+[Tue Jul 21 10:47:50 2026] 10.179.101.227:52900 Accepted
+[Tue Jul 21 10:47:50 2026] 10.179.101.227:52900 Closing
+[Tue Jul 21 10:48:12 2026] 10.179.101.42:60502 Accepted
+[Tue Jul 21 10:48:12 2026] 10.179.101.42:55481 Accepted
+[Tue Jul 21 10:48:12 2026] 10.179.101.42:63888 Accepted
+[Tue Jul 21 10:48:12 2026] 10.179.101.42:51963 Accepted
+[Tue Jul 21 10:48:12 2026] 10.179.101.42:63888 Closing
+[Tue Jul 21 10:48:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:48:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:48:12 2026] Problems found: 0
+[Tue Jul 21 10:48:12 2026] Problems: []
+[Tue Jul 21 10:48:12 2026] 10.179.101.42:60502 Closing
+[Tue Jul 21 10:48:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:48:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:48:12 2026] Problems found: 1
+[Tue Jul 21 10:48:12 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:48:12 2026] 10.179.101.42:55481 Closing
+[Tue Jul 21 10:48:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:48:12 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:48:12 2026] Problems found: 0
+[Tue Jul 21 10:48:12 2026] Problems: []
+[Tue Jul 21 10:48:12 2026] 10.179.101.42:51963 Closing
+[Tue Jul 21 10:48:12 2026] 10.179.101.42:49672 Accepted
+[Tue Jul 21 10:48:12 2026] 10.179.101.42:49672 Closing
+[Tue Jul 21 10:48:19 2026] 10.179.101.227:52350 Accepted
+[Tue Jul 21 10:48:19 2026] 10.179.101.227:57983 Accepted
+[Tue Jul 21 10:48:19 2026] 10.179.101.227:58219 Accepted
+[Tue Jul 21 10:48:19 2026] 10.179.101.227:61752 Accepted
+[Tue Jul 21 10:48:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:48:19 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:48:19 2026] Problems found: 1
+[Tue Jul 21 10:48:19 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:48:19 2026] 10.179.101.227:52350 Closing
+[Tue Jul 21 10:48:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:48:19 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:48:19 2026] Problems found: 0
+[Tue Jul 21 10:48:19 2026] Problems: []
+[Tue Jul 21 10:48:19 2026] 10.179.101.227:57983 Closing
+[Tue Jul 21 10:48:19 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:48:19 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:48:19 2026] Problems found: 0
+[Tue Jul 21 10:48:19 2026] Problems: []
+[Tue Jul 21 10:48:19 2026] 10.179.101.227:58219 Closing
+[Tue Jul 21 10:48:19 2026] 10.179.101.227:61752 Closing
+[Tue Jul 21 10:48:19 2026] 10.179.101.227:62011 Accepted
+[Tue Jul 21 10:48:19 2026] 10.179.101.227:62011 Closing
+[Tue Jul 21 10:48:29 2026] 10.179.101.227:57599 Accepted
+[Tue Jul 21 10:48:30 2026] 10.179.101.227:57599 Closing
+[Tue Jul 21 10:48:33 2026] 10.179.101.227:52026 Accepted
+[Tue Jul 21 10:48:33 2026] 10.179.101.227:57867 Accepted
+[Tue Jul 21 10:48:33 2026] 10.179.101.227:64229 Accepted
+[Tue Jul 21 10:48:33 2026] 10.179.101.227:53766 Accepted
+[Tue Jul 21 10:48:33 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:48:33 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:48:33 2026] Problems found: 0
+[Tue Jul 21 10:48:33 2026] Problems: []
+[Tue Jul 21 10:48:33 2026] 10.179.101.227:57867 Closing
+[Tue Jul 21 10:48:33 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:48:33 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:48:33 2026] Problems found: 1
+[Tue Jul 21 10:48:33 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:48:33 2026] 10.179.101.227:64229 Closing
+[Tue Jul 21 10:48:33 2026] 10.179.101.227:52026 Closing
+[Tue Jul 21 10:48:33 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:48:33 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:48:33 2026] Problems found: 1
+[Tue Jul 21 10:48:33 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":0,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:48:33 2026] 10.179.101.227:53766 Closing
+[Tue Jul 21 10:48:33 2026] 10.179.101.227:50464 Accepted
+[Tue Jul 21 10:48:33 2026] 10.179.101.227:50464 Closing
+[Tue Jul 21 10:48:44 2026] 10.179.101.227:56583 Accepted
+[Tue Jul 21 10:48:44 2026] 10.179.101.227:56583 Closing
+[Tue Jul 21 10:48:44 2026] 10.179.101.227:51858 Accepted
+[Tue Jul 21 10:48:44 2026] 10.179.101.227:62078 Accepted
+[Tue Jul 21 10:48:44 2026] 10.179.101.227:51858 Closing
+[Tue Jul 21 10:48:44 2026] 10.179.101.227:62078 Closing
+[Tue Jul 21 10:48:45 2026] 10.179.101.227:60510 Accepted
+[Tue Jul 21 10:48:45 2026] 10.179.101.227:60510 Closing
+[Tue Jul 21 10:48:48 2026] 10.179.101.227:58129 Accepted
+[Tue Jul 21 10:48:48 2026] 10.179.101.227:58129 Closing
+[Tue Jul 21 10:48:49 2026] 10.179.101.227:55976 Accepted
+[Tue Jul 21 10:48:49 2026] 10.179.101.227:55976 Closing
+[Tue Jul 21 10:48:49 2026] 10.179.101.227:64606 Accepted
+[Tue Jul 21 10:48:49 2026] 10.179.101.227:64606 Closing
+[Tue Jul 21 10:48:49 2026] 10.179.101.227:50883 Accepted
+[Tue Jul 21 10:48:49 2026] 10.179.101.227:50883 Closing
+[Tue Jul 21 10:48:49 2026] 10.179.101.227:62047 Accepted
+[Tue Jul 21 10:48:49 2026] 10.179.101.227:62047 Closing
+[Tue Jul 21 10:48:49 2026] 10.179.101.227:51441 Accepted
+[Tue Jul 21 10:48:50 2026] 10.179.101.227:51441 Closing
+[Tue Jul 21 10:48:50 2026] 10.179.101.227:64908 Accepted
+[Tue Jul 21 10:48:50 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.parent_comment_id' in 'field list' in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php:23
+Stack trace:
+#0 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php(23): PDOStatement->execute()
+#1 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Controllers\CommentController.php(21): Comment->getByProblemId('13')
+#2 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\index.php(218): CommentController->getCommentsByProblem('13')
+#3 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\router.php(47): require_once('C:\\Users\\suvar....')
+#4 {main}
+  thrown in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php on line 23
+[Tue Jul 21 10:48:50 2026] 10.179.101.227:64908 Closing
+[Tue Jul 21 10:49:05 2026] 10.179.101.42:62007 Accepted
+[Tue Jul 21 10:49:05 2026] 10.179.101.42:54668 Accepted
+[Tue Jul 21 10:49:05 2026] 10.179.101.42:62007 Closing
+[Tue Jul 21 10:49:05 2026] 10.179.101.42:56029 Accepted
+[Tue Jul 21 10:49:05 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:49:05 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:49:05 2026] Problems found: 0
+[Tue Jul 21 10:49:05 2026] Problems: []
+[Tue Jul 21 10:49:05 2026] 10.179.101.42:54668 Closing
+[Tue Jul 21 10:49:05 2026] 10.179.101.42:53567 Accepted
+[Tue Jul 21 10:49:05 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:49:05 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:49:05 2026] Problems found: 0
+[Tue Jul 21 10:49:05 2026] Problems: []
+[Tue Jul 21 10:49:05 2026] 10.179.101.42:56029 Closing
+[Tue Jul 21 10:49:05 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:49:05 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:49:05 2026] Problems found: 1
+[Tue Jul 21 10:49:05 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:49:05 2026] 10.179.101.42:53567 Closing
+[Tue Jul 21 10:49:05 2026] 10.179.101.42:52928 Accepted
+[Tue Jul 21 10:49:06 2026] 10.179.101.42:52928 Closing
+[Tue Jul 21 10:49:34 2026] 10.179.101.42:60866 Accepted
+[Tue Jul 21 10:49:34 2026] 10.179.101.42:53202 Accepted
+[Tue Jul 21 10:49:34 2026] 10.179.101.42:57854 Accepted
+[Tue Jul 21 10:49:34 2026] 10.179.101.42:60866 Closing
+[Tue Jul 21 10:49:34 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:49:34 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:49:34 2026] Problems found: 1
+[Tue Jul 21 10:49:34 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:49:34 2026] 10.179.101.42:53202 Closing
+[Tue Jul 21 10:49:34 2026] 10.179.101.42:54973 Accepted
+[Tue Jul 21 10:49:34 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:49:34 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:49:34 2026] Problems found: 0
+[Tue Jul 21 10:49:34 2026] Problems: []
+[Tue Jul 21 10:49:34 2026] 10.179.101.42:57854 Closing
+[Tue Jul 21 10:49:34 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:49:34 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:49:34 2026] Problems found: 0
+[Tue Jul 21 10:49:34 2026] Problems: []
+[Tue Jul 21 10:49:34 2026] 10.179.101.42:54973 Closing
+[Tue Jul 21 10:49:34 2026] 10.179.101.42:56029 Accepted
+[Tue Jul 21 10:49:34 2026] 10.179.101.42:56029 Closing
+[Tue Jul 21 10:49:42 2026] 10.179.101.42:49672 Accepted
+[Tue Jul 21 10:49:42 2026] 10.179.101.42:60018 Accepted
+[Tue Jul 21 10:49:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:49:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:49:42 2026] Problems found: 0
+[Tue Jul 21 10:49:42 2026] Problems: []
+[Tue Jul 21 10:49:42 2026] 10.179.101.42:49672 Closing
+[Tue Jul 21 10:49:42 2026] 10.179.101.42:60622 Accepted
+[Tue Jul 21 10:49:42 2026] 10.179.101.42:60018 Closing
+[Tue Jul 21 10:49:42 2026] 10.179.101.42:56901 Accepted
+[Tue Jul 21 10:49:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:49:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:49:42 2026] Problems found: 0
+[Tue Jul 21 10:49:42 2026] Problems: []
+[Tue Jul 21 10:49:42 2026] 10.179.101.42:60622 Closing
+[Tue Jul 21 10:49:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:49:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:49:42 2026] Problems found: 1
+[Tue Jul 21 10:49:42 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:49:42 2026] 10.179.101.42:56901 Closing
+[Tue Jul 21 10:49:42 2026] 10.179.101.42:63872 Accepted
+[Tue Jul 21 10:49:42 2026] 10.179.101.42:63872 Closing
+[Tue Jul 21 10:50:12 2026] 10.179.101.42:58955 Accepted
+[Tue Jul 21 10:50:12 2026] 10.179.101.42:58955 Closing
+[Tue Jul 21 10:50:12 2026] 10.179.101.42:62545 Accepted
+[Tue Jul 21 10:50:12 2026] 10.179.101.42:62479 Accepted
+[Tue Jul 21 10:50:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:50:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:50:12 2026] Problems found: 0
+[Tue Jul 21 10:50:12 2026] Problems: []
+[Tue Jul 21 10:50:12 2026] 10.179.101.42:62545 Closing
+[Tue Jul 21 10:50:12 2026] 10.179.101.42:61354 Accepted
+[Tue Jul 21 10:50:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:50:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:50:12 2026] Problems found: 1
+[Tue Jul 21 10:50:12 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:50:12 2026] 10.179.101.42:62479 Closing
+[Tue Jul 21 10:50:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:50:12 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:50:12 2026] Problems found: 0
+[Tue Jul 21 10:50:12 2026] Problems: []
+[Tue Jul 21 10:50:12 2026] 10.179.101.42:61354 Closing
+[Tue Jul 21 10:50:12 2026] 10.179.101.42:61043 Accepted
+[Tue Jul 21 10:50:12 2026] 10.179.101.42:61043 Closing
+[Tue Jul 21 10:50:57 2026] 10.179.101.227:60228 Accepted
+[Tue Jul 21 10:50:57 2026] 10.179.101.227:64437 Accepted
+[Tue Jul 21 10:50:57 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:50:57 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:50:57 2026] Problems found: 4
+[Tue Jul 21 10:50:57 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:50:57 2026] 10.179.101.227:64437 Closing
+[Tue Jul 21 10:50:57 2026] 10.179.101.227:60228 Closing
+[Tue Jul 21 10:50:58 2026] 10.179.101.227:60140 Accepted
+[Tue Jul 21 10:50:58 2026] 10.179.101.227:60140 Closing
+[Tue Jul 21 10:51:03 2026] 10.179.101.227:50503 Accepted
+[Tue Jul 21 10:51:03 2026] 10.179.101.227:50503 Closing
+[Tue Jul 21 10:51:03 2026] 10.179.101.42:57331 Accepted
+[Tue Jul 21 10:51:03 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:51:03 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:51:03 2026] Problems found: 0
+[Tue Jul 21 10:51:03 2026] Problems: []
+[Tue Jul 21 10:51:03 2026] 10.179.101.42:57331 Closing
+[Tue Jul 21 10:51:03 2026] 10.179.101.42:62522 Accepted
+[Tue Jul 21 10:51:03 2026] 10.179.101.42:64442 Accepted
+[Tue Jul 21 10:51:03 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:51:03 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:51:03 2026] Problems found: 0
+[Tue Jul 21 10:51:03 2026] Problems: []
+[Tue Jul 21 10:51:03 2026] 10.179.101.42:62522 Closing
+[Tue Jul 21 10:51:03 2026] 10.179.101.42:49220 Accepted
+[Tue Jul 21 10:51:03 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:51:03 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:51:03 2026] Problems found: 1
+[Tue Jul 21 10:51:03 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:51:03 2026] 10.179.101.42:64442 Closing
+[Tue Jul 21 10:51:03 2026] 10.179.101.42:49220 Closing
+[Tue Jul 21 10:51:04 2026] 10.179.101.227:61850 Accepted
+[Tue Jul 21 10:51:04 2026] 10.179.101.227:53916 Accepted
+[Tue Jul 21 10:51:04 2026] 10.179.101.227:61850 Closing
+[Tue Jul 21 10:51:04 2026] 10.179.101.227:53916 Closing
+[Tue Jul 21 10:51:04 2026] 10.179.101.227:62099 Accepted
+[Tue Jul 21 10:51:04 2026] 10.179.101.42:61029 Accepted
+[Tue Jul 21 10:51:04 2026] 10.179.101.42:61029 Closing
+[Tue Jul 21 10:51:04 2026] 10.179.101.227:62099 Closing
+[Tue Jul 21 10:51:12 2026] 10.179.101.42:59085 Accepted
+[Tue Jul 21 10:51:12 2026] 10.179.101.42:52849 Accepted
+[Tue Jul 21 10:51:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:51:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:51:12 2026] Problems found: 0
+[Tue Jul 21 10:51:12 2026] Problems: []
+[Tue Jul 21 10:51:12 2026] 10.179.101.42:59085 Closing
+[Tue Jul 21 10:51:12 2026] 10.179.101.42:53893 Accepted
+[Tue Jul 21 10:51:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:51:12 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:51:12 2026] Problems found: 0
+[Tue Jul 21 10:51:12 2026] Problems: []
+[Tue Jul 21 10:51:12 2026] 10.179.101.42:52849 Closing
+[Tue Jul 21 10:51:12 2026] 10.179.101.42:58987 Accepted
+[Tue Jul 21 10:51:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:51:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:51:12 2026] Problems found: 1
+[Tue Jul 21 10:51:12 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:51:12 2026] 10.179.101.42:53893 Closing
+[Tue Jul 21 10:51:12 2026] 10.179.101.42:55738 Accepted
+[Tue Jul 21 10:51:12 2026] 10.179.101.42:58987 Closing
+[Tue Jul 21 10:51:12 2026] 10.179.101.42:55738 Closing
+[Tue Jul 21 10:51:19 2026] 10.179.101.227:57069 Accepted
+[Tue Jul 21 10:51:19 2026] 10.179.101.227:51441 Accepted
+[Tue Jul 21 10:51:19 2026] 10.179.101.227:51441 Closing
+[Tue Jul 21 10:51:19 2026] 10.179.101.227:57069 Closing
+[Tue Jul 21 10:51:21 2026] 10.179.101.227:50269 Accepted
+[Tue Jul 21 10:51:21 2026] 10.179.101.227:50269 Closing
+[Tue Jul 21 10:51:21 2026] 10.179.101.227:53152 Accepted
+[Tue Jul 21 10:51:25 2026] 10.179.101.227:53152 Closing
+[Tue Jul 21 10:51:25 2026] 10.179.101.227:55158 Accepted
+[Tue Jul 21 10:51:25 2026] 10.179.101.227:64938 Accepted
+[Tue Jul 21 10:51:25 2026] 10.179.101.227:62364 Accepted
+[Tue Jul 21 10:51:25 2026] 10.179.101.227:49198 Accepted
+[Tue Jul 21 10:51:25 2026] 10.179.101.227:56187 Accepted
+[Tue Jul 21 10:51:25 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:51:25 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:51:25 2026] Problems found: 1
+[Tue Jul 21 10:51:25 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":2,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:51:25 2026] 10.179.101.227:64938 Closing
+[Tue Jul 21 10:51:25 2026] 10.179.101.227:62364 Closing
+[Tue Jul 21 10:51:25 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:51:25 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:51:25 2026] Problems found: 1
+[Tue Jul 21 10:51:25 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:51:25 2026] 10.179.101.227:56187 Closing
+[Tue Jul 21 10:51:25 2026] 10.179.101.227:55158 Closing
+[Tue Jul 21 10:51:25 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:51:25 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:51:25 2026] Problems found: 0
+[Tue Jul 21 10:51:25 2026] Problems: []
+[Tue Jul 21 10:51:25 2026] 10.179.101.227:49198 Closing
+[Tue Jul 21 10:51:26 2026] 10.179.101.227:50254 Accepted
+[Tue Jul 21 10:51:26 2026] 10.179.101.227:53649 Accepted
+[Tue Jul 21 10:51:26 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:51:26 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:51:26 2026] Problems found: 4
+[Tue Jul 21 10:51:26 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:51:26 2026] 10.179.101.227:50254 Closing
+[Tue Jul 21 10:51:26 2026] 10.179.101.227:53649 Closing
+[Tue Jul 21 10:51:28 2026] 10.179.101.227:49672 Accepted
+[Tue Jul 21 10:51:35 2026] 10.179.101.227:49672 Closing
+[Tue Jul 21 10:51:36 2026] 10.179.101.227:50984 Accepted
+[Tue Jul 21 10:51:36 2026] 10.179.101.227:54902 Accepted
+[Tue Jul 21 10:51:36 2026] 10.179.101.227:54902 Closing
+[Tue Jul 21 10:51:44 2026] 10.179.101.42:59345 Accepted
+[Tue Jul 21 10:51:44 2026] 10.179.101.42:54559 Accepted
+[Tue Jul 21 10:51:44 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:51:44 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:51:44 2026] Problems found: 0
+[Tue Jul 21 10:51:44 2026] Problems: []
+[Tue Jul 21 10:51:44 2026] 10.179.101.42:59345 Closing
+[Tue Jul 21 10:51:44 2026] 10.179.101.42:62211 Accepted
+[Tue Jul 21 10:51:44 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:51:44 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:51:44 2026] Problems found: 1
+[Tue Jul 21 10:51:44 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:51:44 2026] 10.179.101.42:54559 Closing
+[Tue Jul 21 10:51:44 2026] 10.179.101.42:53484 Accepted
+[Tue Jul 21 10:51:44 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:51:44 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:51:44 2026] Problems found: 0
+[Tue Jul 21 10:51:44 2026] Problems: []
+[Tue Jul 21 10:51:44 2026] 10.179.101.42:62211 Closing
+[Tue Jul 21 10:51:44 2026] 10.179.101.42:53484 Closing
+[Tue Jul 21 10:51:44 2026] 10.179.101.42:59639 Accepted
+[Tue Jul 21 10:51:45 2026] 10.179.101.42:59639 Closing
+[Tue Jul 21 10:51:59 2026] 10.179.101.227:50984 Closing
+[Tue Jul 21 10:52:02 2026] 10.179.101.227:64406 Accepted
+[Tue Jul 21 10:52:02 2026] 10.179.101.227:64473 Accepted
+[Tue Jul 21 10:52:02 2026] 10.179.101.227:49672 Accepted
+[Tue Jul 21 10:52:02 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:52:02 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:52:02 2026] Problems found: 1
+[Tue Jul 21 10:52:02 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:52:02 2026] 10.179.101.227:49672 Closing
+[Tue Jul 21 10:52:02 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:52:02 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:52:02 2026] Problems found: 1
+[Tue Jul 21 10:52:02 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":2,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:52:02 2026] 10.179.101.227:64406 Closing
+[Tue Jul 21 10:52:02 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:52:02 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:52:02 2026] Problems found: 0
+[Tue Jul 21 10:52:02 2026] Problems: []
+[Tue Jul 21 10:52:02 2026] 10.179.101.227:64473 Closing
+[Tue Jul 21 10:52:09 2026] 10.179.101.227:62061 Accepted
+[Tue Jul 21 10:52:09 2026] 10.179.101.227:62061 Closing
+[Tue Jul 21 10:52:12 2026] 10.179.101.42:63526 Accepted
+[Tue Jul 21 10:52:12 2026] 10.179.101.42:54273 Accepted
+[Tue Jul 21 10:52:12 2026] 10.179.101.42:51594 Accepted
+[Tue Jul 21 10:52:12 2026] 10.179.101.42:52442 Accepted
+[Tue Jul 21 10:52:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:52:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:52:12 2026] Problems found: 0
+[Tue Jul 21 10:52:12 2026] Problems: []
+[Tue Jul 21 10:52:12 2026] 10.179.101.42:54273 Closing
+[Tue Jul 21 10:52:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:52:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:52:12 2026] Problems found: 1
+[Tue Jul 21 10:52:12 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:52:12 2026] 10.179.101.42:51594 Closing
+[Tue Jul 21 10:52:12 2026] 10.179.101.42:52442 Closing
+[Tue Jul 21 10:52:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:52:12 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:52:12 2026] Problems found: 0
+[Tue Jul 21 10:52:12 2026] Problems: []
+[Tue Jul 21 10:52:12 2026] 10.179.101.42:63526 Closing
+[Tue Jul 21 10:52:12 2026] 10.179.101.42:50847 Accepted
+[Tue Jul 21 10:52:12 2026] 10.179.101.42:50847 Closing
+[Tue Jul 21 10:52:32 2026] 10.179.101.227:53590 Accepted
+[Tue Jul 21 10:52:32 2026] 10.179.101.227:50852 Accepted
+[Tue Jul 21 10:52:32 2026] 10.179.101.227:58927 Accepted
+[Tue Jul 21 10:52:32 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:52:32 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:52:32 2026] Problems found: 1
+[Tue Jul 21 10:52:32 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":2,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:52:32 2026] 10.179.101.227:50852 Closing
+[Tue Jul 21 10:52:32 2026] 10.179.101.227:53131 Accepted
+[Tue Jul 21 10:52:32 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:52:32 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:52:32 2026] Problems found: 1
+[Tue Jul 21 10:52:32 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:52:32 2026] 10.179.101.227:58927 Closing
+[Tue Jul 21 10:52:32 2026] 10.179.101.227:64909 Accepted
+[Tue Jul 21 10:52:32 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:52:32 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:52:32 2026] Problems found: 0
+[Tue Jul 21 10:52:32 2026] Problems: []
+[Tue Jul 21 10:52:32 2026] 10.179.101.227:53131 Closing
+[Tue Jul 21 10:52:32 2026] 10.179.101.227:64909 Closing
+[Tue Jul 21 10:52:36 2026] 10.179.101.227:53590 Closing
+[Tue Jul 21 10:52:52 2026] 10.179.101.42:53335 Accepted
+[Tue Jul 21 10:52:52 2026] 10.179.101.42:56700 Accepted
+[Tue Jul 21 10:52:52 2026] 10.179.101.42:52763 Accepted
+[Tue Jul 21 10:52:52 2026] 10.179.101.42:56700 Closing
+[Tue Jul 21 10:52:52 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:52:52 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:52:52 2026] Problems found: 0
+[Tue Jul 21 10:52:52 2026] Problems: []
+[Tue Jul 21 10:52:52 2026] 10.179.101.42:52763 Closing
+[Tue Jul 21 10:52:52 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:52:52 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:52:52 2026] Problems found: 0
+[Tue Jul 21 10:52:52 2026] Problems: []
+[Tue Jul 21 10:52:52 2026] 10.179.101.42:53335 Closing
+[Tue Jul 21 10:52:52 2026] 10.179.101.42:62362 Accepted
+[Tue Jul 21 10:52:52 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:52:52 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:52:52 2026] Problems found: 1
+[Tue Jul 21 10:52:52 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:52:52 2026] 10.179.101.42:62362 Closing
+[Tue Jul 21 10:52:52 2026] 10.179.101.42:53193 Accepted
+[Tue Jul 21 10:52:53 2026] 10.179.101.227:54941 Accepted
+[Tue Jul 21 10:52:53 2026] 10.179.101.227:64732 Accepted
+[Tue Jul 21 10:52:53 2026] 10.179.101.227:54941 Closing
+[Tue Jul 21 10:52:53 2026] 10.179.101.227:64732 Closing
+[Tue Jul 21 10:52:56 2026] 10.179.101.227:53944 Accepted
+[Tue Jul 21 10:52:58 2026] 10.179.101.42:53193 Closing
+[Tue Jul 21 10:52:58 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:52:58 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:52:58 2026] Problems found: 1
+[Tue Jul 21 10:52:58 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:52:58 2026] 10.179.101.227:53944 Closing
+[Tue Jul 21 10:52:59 2026] 10.179.101.227:54871 Accepted
+[Tue Jul 21 10:52:59 2026] 10.179.101.227:62215 Accepted
+[Tue Jul 21 10:52:59 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:52:59 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:52:59 2026] Problems found: 0
+[Tue Jul 21 10:52:59 2026] Problems: []
+[Tue Jul 21 10:52:59 2026] 10.179.101.227:62215 Closing
+[Tue Jul 21 10:52:59 2026] 10.179.101.227:54871 Closing
+[Tue Jul 21 10:52:59 2026] 10.179.101.227:49267 Accepted
+[Tue Jul 21 10:52:59 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:52:59 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:52:59 2026] Problems found: 1
+[Tue Jul 21 10:52:59 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":0,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:52:59 2026] 10.179.101.227:49267 Closing
+[Tue Jul 21 10:53:03 2026] 10.179.101.227:56778 Accepted
+[Tue Jul 21 10:53:03 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:53:03 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:53:03 2026] Problems found: 1
+[Tue Jul 21 10:53:03 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:53:03 2026] 10.179.101.227:56778 Closing
+[Tue Jul 21 10:53:06 2026] 10.179.101.227:51521 Accepted
+[Tue Jul 21 10:53:06 2026] 10.179.101.227:58029 Accepted
+[Tue Jul 21 10:53:06 2026] 10.179.101.227:56442 Accepted
+[Tue Jul 21 10:53:06 2026] 10.179.101.227:58072 Accepted
+[Tue Jul 21 10:53:06 2026] 10.179.101.227:51521 Closing
+[Tue Jul 21 10:53:06 2026] 10.179.101.227:58029 Closing
+[Tue Jul 21 10:53:06 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:53:06 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:53:06 2026] Problems found: 0
+[Tue Jul 21 10:53:06 2026] Problems: []
+[Tue Jul 21 10:53:06 2026] 10.179.101.227:58072 Closing
+[Tue Jul 21 10:53:06 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:53:06 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:53:06 2026] Problems found: 1
+[Tue Jul 21 10:53:06 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":0,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:53:06 2026] 10.179.101.227:56442 Closing
+[Tue Jul 21 10:53:09 2026] 10.179.101.227:64574 Accepted
+[Tue Jul 21 10:53:09 2026] 10.179.101.227:51737 Accepted
+[Tue Jul 21 10:53:09 2026] 10.179.101.42:59421 Accepted
+[Tue Jul 21 10:53:09 2026] 10.179.101.42:59421 Closing
+[Tue Jul 21 10:53:09 2026] 10.179.101.42:57493 Accepted
+[Tue Jul 21 10:53:09 2026] 10.179.101.42:57493 Closing
+[Tue Jul 21 10:53:09 2026] 10.179.101.42:58812 Accepted
+[Tue Jul 21 10:53:09 2026] 10.179.101.42:65306 Accepted
+[Tue Jul 21 10:53:09 2026] 10.179.101.42:58812 Closing
+[Tue Jul 21 10:53:09 2026] ProblemController::list called with filters: {"author_id":"1","approved":"0"}
+[Tue Jul 21 10:53:09 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:53:09 2026] Problems found: 0
+[Tue Jul 21 10:53:09 2026] Problems: []
+[Tue Jul 21 10:53:09 2026] 10.179.101.42:65306 Closing
+[Tue Jul 21 10:53:09 2026] 10.179.101.42:61492 Accepted
+[Tue Jul 21 10:53:09 2026] ProblemController::list called with filters: {"author_id":"1","approved":"2"}
+[Tue Jul 21 10:53:09 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:53:09 2026] Problems found: 0
+[Tue Jul 21 10:53:09 2026] Problems: []
+[Tue Jul 21 10:53:09 2026] 10.179.101.42:61492 Closing
+[Tue Jul 21 10:53:09 2026] 10.179.101.42:53574 Accepted
+[Tue Jul 21 10:53:09 2026] ProblemController::list called with filters: {"author_id":"1","approved":"1"}
+[Tue Jul 21 10:53:09 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:53:09 2026] Problems found: 2
+[Tue Jul 21 10:53:09 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"}]
+[Tue Jul 21 10:53:09 2026] 10.179.101.42:53574 Closing
+[Tue Jul 21 10:53:11 2026] 10.179.101.42:65310 Accepted
+[Tue Jul 21 10:53:11 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:53:11 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:53:11 2026] Problems found: 4
+[Tue Jul 21 10:53:11 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:53:11 2026] 10.179.101.42:65310 Closing
+[Tue Jul 21 10:53:11 2026] 10.179.101.42:51746 Accepted
+[Tue Jul 21 10:53:11 2026] 10.179.101.42:51746 Closing
+[Tue Jul 21 10:53:13 2026] 10.179.101.227:64574 Closing
+[Tue Jul 21 10:53:14 2026] 10.179.101.227:51737 Closing
+[Tue Jul 21 10:53:14 2026] 10.179.101.42:58749 Accepted
+[Tue Jul 21 10:53:14 2026] 10.179.101.42:62286 Accepted
+[Tue Jul 21 10:53:14 2026] 10.179.101.42:62286 Closing
+[Tue Jul 21 10:53:14 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:53:14 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:53:14 2026] Problems found: 1
+[Tue Jul 21 10:53:14 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:53:14 2026] 10.179.101.42:58749 Closing
+[Tue Jul 21 10:53:14 2026] 10.179.101.42:60493 Accepted
+[Tue Jul 21 10:53:14 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:53:14 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:53:14 2026] Problems found: 0
+[Tue Jul 21 10:53:14 2026] Problems: []
+[Tue Jul 21 10:53:14 2026] 10.179.101.42:60493 Closing
+[Tue Jul 21 10:53:14 2026] 10.179.101.42:64645 Accepted
+[Tue Jul 21 10:53:14 2026] 10.179.101.42:55611 Accepted
+[Tue Jul 21 10:53:14 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:53:14 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:53:14 2026] Problems found: 0
+[Tue Jul 21 10:53:14 2026] Problems: []
+[Tue Jul 21 10:53:14 2026] 10.179.101.42:55611 Closing
+[Tue Jul 21 10:53:14 2026] 10.179.101.227:65496 Accepted
+[Tue Jul 21 10:53:14 2026] 10.179.101.227:65496 Closing
+[Tue Jul 21 10:53:15 2026] 10.179.101.227:51719 Accepted
+[Tue Jul 21 10:53:15 2026] 10.179.101.227:51719 Closing
+[Tue Jul 21 10:53:15 2026] 10.179.101.227:65194 Accepted
+[Tue Jul 21 10:53:16 2026] 10.179.101.42:64645 Closing
+[Tue Jul 21 10:53:18 2026] 10.179.101.42:62417 Accepted
+[Tue Jul 21 10:53:18 2026] 10.179.101.42:53928 Accepted
+[Tue Jul 21 10:53:19 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:53:19 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:53:19 2026] Problems found: 4
+[Tue Jul 21 10:53:19 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:53:19 2026] 10.179.101.42:62417 Closing
+[Tue Jul 21 10:53:19 2026] 10.179.101.42:53928 Closing
+[Tue Jul 21 10:53:19 2026] 10.179.101.42:55561 Accepted
+[Tue Jul 21 10:53:19 2026] 10.179.101.42:55561 Closing
+[Tue Jul 21 10:53:21 2026] 10.179.101.227:65194 Closing
+[Tue Jul 21 10:53:22 2026] 10.179.101.227:52317 Accepted
+[Tue Jul 21 10:53:22 2026] 10.179.101.227:59924 Accepted
+[Tue Jul 21 10:53:22 2026] 10.179.101.227:52161 Accepted
+[Tue Jul 21 10:53:22 2026] 10.179.101.227:59924 Closing
+[Tue Jul 21 10:53:22 2026] 10.179.101.227:52161 Closing
+[Tue Jul 21 10:53:22 2026] 10.179.101.227:52317 Closing
+[Tue Jul 21 10:53:29 2026] 10.179.101.42:64053 Accepted
+[Tue Jul 21 10:53:29 2026] 10.179.101.42:54691 Accepted
+[Tue Jul 21 10:53:29 2026] 10.179.101.42:64053 Closing
+[Tue Jul 21 10:53:32 2026] 10.179.101.42:54691 Closing
+[Tue Jul 21 10:53:37 2026] 10.179.101.42:64920 Accepted
+[Tue Jul 21 10:53:37 2026] 10.179.101.42:64920 Closing
+[Tue Jul 21 10:53:37 2026] 10.179.101.42:59739 Accepted
+[Tue Jul 21 10:53:39 2026] 10.179.101.42:59739 Closing
+[Tue Jul 21 10:53:48 2026] 10.179.101.42:55867 Accepted
+[Tue Jul 21 10:53:48 2026] 10.179.101.42:55867 Closing
+[Tue Jul 21 10:53:49 2026] 10.179.101.42:57591 Accepted
+[Tue Jul 21 10:53:49 2026] 10.179.101.42:57591 Closing
+[Tue Jul 21 10:53:49 2026] 10.179.101.42:53204 Accepted
+[Tue Jul 21 10:53:49 2026] 10.179.101.42:65058 Accepted
+[Tue Jul 21 10:53:49 2026] 10.179.101.42:52459 Accepted
+[Tue Jul 21 10:53:49 2026] 10.179.101.42:55142 Accepted
+[Tue Jul 21 10:53:49 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:53:49 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:53:49 2026] Problems found: 1
+[Tue Jul 21 10:53:49 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:53:49 2026] 10.179.101.42:65058 Closing
+[Tue Jul 21 10:53:49 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:53:49 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:53:49 2026] Problems found: 0
+[Tue Jul 21 10:53:49 2026] Problems: []
+[Tue Jul 21 10:53:49 2026] 10.179.101.42:53204 Closing
+[Tue Jul 21 10:53:49 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:53:49 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:53:49 2026] Problems found: 0
+[Tue Jul 21 10:53:49 2026] Problems: []
+[Tue Jul 21 10:53:49 2026] 10.179.101.42:55142 Closing
+[Tue Jul 21 10:53:49 2026] 10.179.101.42:52459 Closing
+[Tue Jul 21 10:53:50 2026] 10.179.101.227:60666 Accepted
+[Tue Jul 21 10:53:50 2026] 10.179.101.227:51416 Accepted
+[Tue Jul 21 10:53:50 2026] 10.179.101.227:52036 Accepted
+[Tue Jul 21 10:53:50 2026] 10.179.101.227:59236 Accepted
+[Tue Jul 21 10:53:50 2026] 10.179.101.227:61989 Accepted
+[Tue Jul 21 10:53:50 2026] 10.179.101.227:51785 Accepted
+[Tue Jul 21 10:53:50 2026] 10.179.101.227:51416 Closing
+[Tue Jul 21 10:53:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:53:50 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:53:50 2026] Problems found: 1
+[Tue Jul 21 10:53:50 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:53:50 2026] 10.179.101.227:60666 Closing
+[Tue Jul 21 10:53:50 2026] 10.179.101.227:59236 Closing
+[Tue Jul 21 10:53:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:53:50 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:53:50 2026] Problems found: 1
+[Tue Jul 21 10:53:50 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":0,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:53:50 2026] 10.179.101.227:52036 Closing
+[Tue Jul 21 10:53:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:53:50 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:53:50 2026] Problems found: 0
+[Tue Jul 21 10:53:50 2026] Problems: []
+[Tue Jul 21 10:53:50 2026] 10.179.101.227:61989 Closing
+[Tue Jul 21 10:53:50 2026] 10.179.101.227:51785 Closing
+[Tue Jul 21 10:53:52 2026] 10.179.101.227:50106 Accepted
+[Tue Jul 21 10:53:52 2026] 10.179.101.227:50669 Accepted
+[Tue Jul 21 10:53:52 2026] 10.179.101.227:62066 Accepted
+[Tue Jul 21 10:53:52 2026] 10.179.101.227:62066 Closing
+[Tue Jul 21 10:53:52 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:53:52 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:53:52 2026] Problems found: 4
+[Tue Jul 21 10:53:52 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:53:52 2026] 10.179.101.227:50669 Closing
+[Tue Jul 21 10:53:58 2026] 10.179.101.42:53700 Accepted
+[Tue Jul 21 10:53:58 2026] 10.179.101.42:50060 Accepted
+[Tue Jul 21 10:53:58 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.parent_comment_id' in 'field list' in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php:23
+Stack trace:
+#0 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php(23): PDOStatement->execute()
+#1 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Controllers\CommentController.php(21): Comment->getByProblemId('2')
+#2 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\index.php(218): CommentController->getCommentsByProblem('2')
+#3 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\router.php(47): require_once('C:\\Users\\suvar....')
+#4 {main}
+  thrown in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php on line 23
+[Tue Jul 21 10:53:58 2026] 10.179.101.42:53700 Closing
+[Tue Jul 21 10:53:58 2026] 10.179.101.42:50060 Closing
+[Tue Jul 21 10:54:03 2026] 10.179.101.227:50106 Closing
+[Tue Jul 21 10:54:03 2026] 10.179.101.227:54673 Accepted
+[Tue Jul 21 10:54:03 2026] 10.179.101.227:54673 Closing
+[Tue Jul 21 10:54:03 2026] 10.179.101.227:55768 Accepted
+[Tue Jul 21 10:54:03 2026] 10.179.101.227:55768 Closing
+[Tue Jul 21 10:54:04 2026] 10.179.101.227:55271 Accepted
+[Tue Jul 21 10:54:04 2026] 10.179.101.227:55271 Closing
+[Tue Jul 21 10:54:04 2026] 10.179.101.42:65150 Accepted
+[Tue Jul 21 10:54:04 2026] 10.179.101.42:50240 Accepted
+[Tue Jul 21 10:54:04 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:54:04 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:54:04 2026] Problems found: 4
+[Tue Jul 21 10:54:04 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:54:04 2026] 10.179.101.42:65150 Closing
+[Tue Jul 21 10:54:04 2026] 10.179.101.42:50240 Closing
+[Tue Jul 21 10:54:04 2026] 10.179.101.42:65236 Accepted
+[Tue Jul 21 10:54:04 2026] 10.179.101.42:65236 Closing
+[Tue Jul 21 10:54:11 2026] 10.179.101.227:63150 Accepted
+[Tue Jul 21 10:54:11 2026] 10.179.101.227:63150 Closing
+[Tue Jul 21 10:54:11 2026] 10.179.101.227:52850 Accepted
+[Tue Jul 21 10:54:12 2026] 10.179.101.227:52850 Closing
+[Tue Jul 21 10:54:16 2026] 10.179.101.42:56910 Accepted
+[Tue Jul 21 10:54:16 2026] 10.179.101.42:56910 Closing
+[Tue Jul 21 10:54:16 2026] 10.179.101.42:58958 Accepted
+[Tue Jul 21 10:54:16 2026] 10.179.101.42:58958 Closing
+[Tue Jul 21 10:54:16 2026] 10.179.101.42:54696 Accepted
+[Tue Jul 21 10:54:16 2026] 10.179.101.42:54696 Closing
+[Tue Jul 21 10:54:16 2026] 10.179.101.42:57848 Accepted
+[Tue Jul 21 10:54:16 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.parent_comment_id' in 'field list' in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php:23
+Stack trace:
+#0 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php(23): PDOStatement->execute()
+#1 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Controllers\CommentController.php(21): Comment->getByProblemId('1')
+#2 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\index.php(218): CommentController->getCommentsByProblem('1')
+#3 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\router.php(47): require_once('C:\\Users\\suvar....')
+#4 {main}
+  thrown in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php on line 23
+[Tue Jul 21 10:54:16 2026] 10.179.101.42:57848 Closing
+[Tue Jul 21 10:54:27 2026] 10.179.101.227:57931 Accepted
+[Tue Jul 21 10:54:27 2026] 10.179.101.227:52320 Accepted
+[Tue Jul 21 10:54:27 2026] 10.179.101.227:53365 Accepted
+[Tue Jul 21 10:54:27 2026] 10.179.101.227:60873 Accepted
+[Tue Jul 21 10:54:27 2026] 10.179.101.227:63090 Accepted
+[Tue Jul 21 10:54:27 2026] 10.179.101.227:49672 Accepted
+[Tue Jul 21 10:54:27 2026] 10.179.101.227:52320 Closing
+[Tue Jul 21 10:54:27 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:54:27 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:54:27 2026] Problems found: 1
+[Tue Jul 21 10:54:27 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:54:27 2026] 10.179.101.227:57931 Closing
+[Tue Jul 21 10:54:28 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:54:28 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:54:28 2026] Problems found: 0
+[Tue Jul 21 10:54:28 2026] Problems: []
+[Tue Jul 21 10:54:28 2026] 10.179.101.227:53365 Closing
+[Tue Jul 21 10:54:28 2026] 10.179.101.227:60873 Closing
+[Tue Jul 21 10:54:28 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:54:28 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:54:28 2026] Problems found: 1
+[Tue Jul 21 10:54:28 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":0,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:54:28 2026] 10.179.101.227:63090 Closing
+[Tue Jul 21 10:54:28 2026] 10.179.101.227:49672 Closing
+[Tue Jul 21 10:54:28 2026] 10.179.101.227:49275 Accepted
+[Tue Jul 21 10:54:28 2026] 10.179.101.227:49275 Closing
+[Tue Jul 21 10:54:28 2026] 10.179.101.227:65200 Accepted
+[Tue Jul 21 10:54:28 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:54:28 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:54:28 2026] Problems found: 4
+[Tue Jul 21 10:54:28 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:54:28 2026] 10.179.101.227:65200 Closing
+[Tue Jul 21 10:54:38 2026] 10.179.101.227:61838 Accepted
+[Tue Jul 21 10:54:38 2026] 10.179.101.227:61838 Closing
+[Tue Jul 21 10:54:39 2026] 10.179.101.227:50230 Accepted
+[Tue Jul 21 10:54:46 2026] 10.179.101.42:53244 Accepted
+[Tue Jul 21 10:54:46 2026] 10.179.101.42:53688 Accepted
+[Tue Jul 21 10:54:46 2026] 10.179.101.42:56598 Accepted
+[Tue Jul 21 10:54:46 2026] 10.179.101.42:56826 Accepted
+[Tue Jul 21 10:54:46 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:54:46 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:54:46 2026] Problems found: 0
+[Tue Jul 21 10:54:46 2026] Problems: []
+[Tue Jul 21 10:54:46 2026] 10.179.101.42:56598 Closing
+[Tue Jul 21 10:54:46 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:54:46 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:54:46 2026] Problems found: 1
+[Tue Jul 21 10:54:46 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:54:46 2026] 10.179.101.42:56826 Closing
+[Tue Jul 21 10:54:46 2026] 10.179.101.42:62942 Accepted
+[Tue Jul 21 10:54:46 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:54:46 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:54:46 2026] Problems found: 0
+[Tue Jul 21 10:54:46 2026] Problems: []
+[Tue Jul 21 10:54:46 2026] 10.179.101.42:53688 Closing
+[Tue Jul 21 10:54:46 2026] 10.179.101.42:62942 Closing
+[Tue Jul 21 10:54:49 2026] 10.179.101.42:53244 Closing
+[Tue Jul 21 10:54:58 2026] 10.179.101.227:50230 Closing
+[Tue Jul 21 10:54:58 2026] 10.179.101.227:62833 Accepted
+[Tue Jul 21 10:54:58 2026] 10.179.101.227:60938 Accepted
+[Tue Jul 21 10:54:58 2026] 10.179.101.227:58972 Accepted
+[Tue Jul 21 10:54:58 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:54:58 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:54:58 2026] Problems found: 1
+[Tue Jul 21 10:54:58 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:54:58 2026] 10.179.101.227:60938 Closing
+[Tue Jul 21 10:54:58 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:54:58 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:54:58 2026] Problems found: 1
+[Tue Jul 21 10:54:58 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":0,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:54:58 2026] 10.179.101.227:62833 Closing
+[Tue Jul 21 10:54:59 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:54:59 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:54:59 2026] Problems found: 0
+[Tue Jul 21 10:54:59 2026] Problems: []
+[Tue Jul 21 10:54:59 2026] 10.179.101.227:58972 Closing
+[Tue Jul 21 10:55:00 2026] 10.179.101.227:49672 Accepted
+[Tue Jul 21 10:55:00 2026] 10.179.101.227:49672 Closing
+[Tue Jul 21 10:55:38 2026] 10.179.101.227:54513 Accepted
+[Tue Jul 21 10:55:38 2026] 10.179.101.227:64925 Accepted
+[Tue Jul 21 10:55:39 2026] 10.179.101.227:64925 Closing
+[Tue Jul 21 10:55:39 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:55:39 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:55:39 2026] Problems found: 1
+[Tue Jul 21 10:55:39 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":0,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:55:39 2026] 10.179.101.227:54513 Closing
+[Tue Jul 21 10:55:39 2026] 10.179.101.227:59646 Accepted
+[Tue Jul 21 10:55:39 2026] 10.179.101.227:53160 Accepted
+[Tue Jul 21 10:55:39 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:55:39 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:55:39 2026] Problems found: 0
+[Tue Jul 21 10:55:39 2026] Problems: []
+[Tue Jul 21 10:55:39 2026] 10.179.101.227:53160 Closing
+[Tue Jul 21 10:55:39 2026] 10.179.101.227:52400 Accepted
+[Tue Jul 21 10:55:39 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:55:39 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:55:39 2026] Problems found: 1
+[Tue Jul 21 10:55:39 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:55:39 2026] 10.179.101.227:52400 Closing
+[Tue Jul 21 10:55:40 2026] 10.179.101.227:59646 Closing
+[Tue Jul 21 10:55:40 2026] 10.179.101.42:50309 Accepted
+[Tue Jul 21 10:55:40 2026] 10.179.101.42:59755 Accepted
+[Tue Jul 21 10:55:40 2026] 10.179.101.42:59755 Closing
+[Tue Jul 21 10:55:40 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:55:40 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:55:40 2026] Problems found: 0
+[Tue Jul 21 10:55:40 2026] Problems: []
+[Tue Jul 21 10:55:40 2026] 10.179.101.42:50309 Closing
+[Tue Jul 21 10:55:41 2026] 10.179.101.42:64019 Accepted
+[Tue Jul 21 10:55:41 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:55:41 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:55:41 2026] Problems found: 1
+[Tue Jul 21 10:55:41 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:55:41 2026] 10.179.101.42:64019 Closing
+[Tue Jul 21 10:55:41 2026] 10.179.101.42:49212 Accepted
+[Tue Jul 21 10:55:41 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:55:41 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:55:41 2026] Problems found: 0
+[Tue Jul 21 10:55:41 2026] Problems: []
+[Tue Jul 21 10:55:41 2026] 10.179.101.42:49212 Closing
+[Tue Jul 21 10:55:41 2026] 10.179.101.42:51580 Accepted
+[Tue Jul 21 10:55:42 2026] 10.179.101.42:51580 Closing
+[Tue Jul 21 10:55:43 2026] 10.179.101.227:55709 Accepted
+[Tue Jul 21 10:55:43 2026] 10.179.101.227:63737 Accepted
+[Tue Jul 21 10:55:43 2026] 10.179.101.227:59140 Accepted
+[Tue Jul 21 10:55:43 2026] 10.179.101.227:53217 Accepted
+[Tue Jul 21 10:55:43 2026] 10.179.101.227:63737 Closing
+[Tue Jul 21 10:55:43 2026] 10.179.101.227:55709 Closing
+[Tue Jul 21 10:55:43 2026] 10.179.101.227:53217 Closing
+[Tue Jul 21 10:55:45 2026] 10.179.101.42:61197 Accepted
+[Tue Jul 21 10:55:45 2026] 10.179.101.42:65213 Accepted
+[Tue Jul 21 10:55:45 2026] 10.179.101.42:53768 Accepted
+[Tue Jul 21 10:55:45 2026] 10.179.101.42:65213 Closing
+[Tue Jul 21 10:55:45 2026] 10.179.101.42:50723 Accepted
+[Tue Jul 21 10:55:45 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:55:45 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:55:45 2026] Problems found: 1
+[Tue Jul 21 10:55:45 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:55:45 2026] 10.179.101.42:61197 Closing
+[Tue Jul 21 10:55:45 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:55:45 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:55:45 2026] Problems found: 0
+[Tue Jul 21 10:55:45 2026] Problems: []
+[Tue Jul 21 10:55:45 2026] 10.179.101.42:53768 Closing
+[Tue Jul 21 10:55:45 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:55:45 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:55:45 2026] Problems found: 0
+[Tue Jul 21 10:55:45 2026] Problems: []
+[Tue Jul 21 10:55:45 2026] 10.179.101.42:50723 Closing
+[Tue Jul 21 10:55:46 2026] 10.179.101.227:59140 Closing
+[Tue Jul 21 10:55:50 2026] 10.179.101.227:52019 Accepted
+[Tue Jul 21 10:55:50 2026] 10.179.101.227:51935 Accepted
+[Tue Jul 21 10:55:50 2026] 10.179.101.227:65345 Accepted
+[Tue Jul 21 10:55:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:55:50 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:55:50 2026] Problems found: 1
+[Tue Jul 21 10:55:50 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":0,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:55:50 2026] 10.179.101.227:51935 Closing
+[Tue Jul 21 10:55:50 2026] 10.179.101.227:62159 Accepted
+[Tue Jul 21 10:55:50 2026] 10.179.101.227:52019 Closing
+[Tue Jul 21 10:55:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:55:50 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:55:50 2026] Problems found: 0
+[Tue Jul 21 10:55:50 2026] Problems: []
+[Tue Jul 21 10:55:50 2026] 10.179.101.227:65345 Closing
+[Tue Jul 21 10:55:50 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:55:50 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:55:50 2026] Problems found: 1
+[Tue Jul 21 10:55:50 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:55:50 2026] 10.179.101.227:62159 Closing
+[Tue Jul 21 10:55:51 2026] 10.179.101.42:57026 Accepted
+[Tue Jul 21 10:55:51 2026] 10.179.101.42:52862 Accepted
+[Tue Jul 21 10:55:51 2026] 10.179.101.42:57026 Closing
+[Tue Jul 21 10:55:51 2026] 10.179.101.227:64443 Accepted
+[Tue Jul 21 10:55:51 2026] 10.179.101.227:52247 Accepted
+[Tue Jul 21 10:55:51 2026] 10.179.101.227:64443 Closing
+[Tue Jul 21 10:55:51 2026] 10.179.101.227:55176 Accepted
+[Tue Jul 21 10:55:51 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:55:51 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:55:51 2026] Problems found: 0
+[Tue Jul 21 10:55:51 2026] Problems: []
+[Tue Jul 21 10:55:51 2026] 10.179.101.227:52247 Closing
+[Tue Jul 21 10:55:51 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:55:51 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:55:51 2026] Problems found: 1
+[Tue Jul 21 10:55:51 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:55:51 2026] 10.179.101.227:55176 Closing
+[Tue Jul 21 10:55:51 2026] 10.179.101.227:60084 Accepted
+[Tue Jul 21 10:55:51 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:55:51 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:55:51 2026] Problems found: 1
+[Tue Jul 21 10:55:51 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":0,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:55:51 2026] 10.179.101.227:60084 Closing
+[Tue Jul 21 10:55:51 2026] 10.179.101.227:49672 Accepted
+[Tue Jul 21 10:55:51 2026] 10.179.101.227:49672 Closing
+[Tue Jul 21 10:55:52 2026] 10.179.101.227:59947 Accepted
+[Tue Jul 21 10:55:52 2026] 10.179.101.227:52235 Accepted
+[Tue Jul 21 10:55:52 2026] 10.179.101.227:60077 Accepted
+[Tue Jul 21 10:55:52 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:55:52 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:55:52 2026] Problems found: 1
+[Tue Jul 21 10:55:52 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":0,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:55:52 2026] 10.179.101.227:60077 Closing
+[Tue Jul 21 10:55:52 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:55:52 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:55:52 2026] Problems found: 0
+[Tue Jul 21 10:55:52 2026] Problems: []
+[Tue Jul 21 10:55:52 2026] 10.179.101.227:59947 Closing
+[Tue Jul 21 10:55:52 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:55:52 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:55:52 2026] Problems found: 1
+[Tue Jul 21 10:55:52 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:55:52 2026] 10.179.101.227:52235 Closing
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:57731 Accepted
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:62921 Accepted
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:64986 Accepted
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:59779 Accepted
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:55549 Accepted
+[Tue Jul 21 10:56:03 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:56:03 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:56:03 2026] Problems found: 1
+[Tue Jul 21 10:56:03 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:64986 Closing
+[Tue Jul 21 10:56:03 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:56:03 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:56:03 2026] Problems found: 1
+[Tue Jul 21 10:56:03 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":0,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:62921 Closing
+[Tue Jul 21 10:56:03 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:56:03 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:56:03 2026] Problems found: 0
+[Tue Jul 21 10:56:03 2026] Problems: []
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:55549 Closing
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:57731 Closing
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:59779 Closing
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:59018 Accepted
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:53465 Accepted
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:63934 Accepted
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:65234 Accepted
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:60224 Accepted
+[Tue Jul 21 10:56:03 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:56:03 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:56:03 2026] Problems found: 0
+[Tue Jul 21 10:56:03 2026] Problems: []
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:65234 Closing
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:59018 Closing
+[Tue Jul 21 10:56:03 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:56:03 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:56:03 2026] Problems found: 1
+[Tue Jul 21 10:56:03 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:53465 Closing
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:63934 Closing
+[Tue Jul 21 10:56:03 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:56:03 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:56:03 2026] Problems found: 1
+[Tue Jul 21 10:56:03 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":0,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:60224 Closing
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:57846 Accepted
+[Tue Jul 21 10:56:03 2026] 10.179.101.227:57846 Closing
+[Tue Jul 21 10:56:04 2026] 10.179.101.227:52337 Accepted
+[Tue Jul 21 10:56:04 2026] 10.179.101.227:52337 Closing
+[Tue Jul 21 10:56:04 2026] 10.179.101.227:53365 Accepted
+[Tue Jul 21 10:56:04 2026] 10.179.101.227:53365 Closing
+[Tue Jul 21 10:56:06 2026] 10.179.101.227:65083 Accepted
+[Tue Jul 21 10:56:06 2026] 10.179.101.227:58334 Accepted
+[Tue Jul 21 10:56:06 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:56:06 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:56:06 2026] Problems found: 4
+[Tue Jul 21 10:56:06 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:56:06 2026] 10.179.101.227:65083 Closing
+[Tue Jul 21 10:56:06 2026] 10.179.101.227:58334 Closing
+[Tue Jul 21 10:56:06 2026] 10.179.101.227:49353 Accepted
+[Tue Jul 21 10:56:06 2026] 10.179.101.227:49353 Closing
+[Tue Jul 21 10:56:11 2026] 10.179.101.227:54156 Accepted
+[Tue Jul 21 10:56:11 2026] 10.179.101.227:50795 Accepted
+[Tue Jul 21 10:56:11 2026] 10.179.101.227:52303 Accepted
+[Tue Jul 21 10:56:11 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:56:11 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:56:11 2026] Problems found: 4
+[Tue Jul 21 10:56:11 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:56:11 2026] 10.179.101.227:50795 Closing
+[Tue Jul 21 10:56:11 2026] 10.179.101.227:52303 Closing
+[Tue Jul 21 10:56:12 2026] 10.179.101.227:54156 Closing
+[Tue Jul 21 10:56:13 2026] 10.179.101.42:52862 Closing
+[Tue Jul 21 10:56:13 2026] 10.179.101.42:51902 Accepted
+[Tue Jul 21 10:56:13 2026] 10.179.101.42:59488 Accepted
+[Tue Jul 21 10:56:13 2026] 10.179.101.42:50060 Accepted
+[Tue Jul 21 10:56:13 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:56:13 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:56:13 2026] Problems found: 1
+[Tue Jul 21 10:56:13 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:56:13 2026] 10.179.101.42:59488 Closing
+[Tue Jul 21 10:56:13 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:56:13 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:56:13 2026] Problems found: 0
+[Tue Jul 21 10:56:13 2026] Problems: []
+[Tue Jul 21 10:56:13 2026] 10.179.101.42:51902 Closing
+[Tue Jul 21 10:56:13 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:56:13 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:56:13 2026] Problems found: 0
+[Tue Jul 21 10:56:13 2026] Problems: []
+[Tue Jul 21 10:56:13 2026] 10.179.101.42:50060 Closing
+[Tue Jul 21 10:56:13 2026] 10.179.101.42:53766 Accepted
+[Tue Jul 21 10:56:13 2026] 10.179.101.42:53766 Closing
+[Tue Jul 21 10:56:18 2026] 10.179.101.227:53746 Accepted
+[Tue Jul 21 10:56:18 2026] 10.179.101.227:53746 Closing
+[Tue Jul 21 10:56:18 2026] 10.179.101.227:53439 Accepted
+[Tue Jul 21 10:56:18 2026] 10.179.101.227:53439 Closing
+[Tue Jul 21 10:56:18 2026] 10.179.101.227:51046 Accepted
+[Tue Jul 21 10:56:18 2026] 10.179.101.227:51046 Closing
+[Tue Jul 21 10:56:19 2026] 10.179.101.227:64660 Accepted
+[Tue Jul 21 10:56:19 2026] 10.179.101.227:64660 Closing
+[Tue Jul 21 10:56:21 2026] 10.179.101.227:51270 Accepted
+[Tue Jul 21 10:56:21 2026] 10.179.101.227:51270 Closing
+[Tue Jul 21 10:56:21 2026] 10.179.101.227:51822 Accepted
+[Tue Jul 21 10:56:21 2026] 10.179.101.227:64984 Accepted
+[Tue Jul 21 10:56:21 2026] 10.179.101.227:51822 Closing
+[Tue Jul 21 10:56:21 2026] 10.179.101.227:64984 Closing
+[Tue Jul 21 10:56:21 2026] 10.179.101.227:53135 Accepted
+[Tue Jul 21 10:56:21 2026] 10.179.101.227:53135 Closing
+[Tue Jul 21 10:56:22 2026] 10.179.101.227:64154 Accepted
+[Tue Jul 21 10:56:22 2026] 10.179.101.227:64154 Closing
+[Tue Jul 21 10:56:22 2026] 10.179.101.227:52613 Accepted
+[Tue Jul 21 10:56:22 2026] 10.179.101.227:58253 Accepted
+[Tue Jul 21 10:56:23 2026] 10.179.101.227:52613 Closing
+[Tue Jul 21 10:56:23 2026] 10.179.101.227:58253 Closing
+[Tue Jul 21 10:56:23 2026] 10.179.101.227:58055 Accepted
+[Tue Jul 21 10:56:23 2026] 10.179.101.227:58055 Closing
+[Tue Jul 21 10:56:27 2026] 10.179.101.227:58881 Accepted
+[Tue Jul 21 10:56:27 2026] 10.179.101.227:58881 Closing
+[Tue Jul 21 10:56:27 2026] 10.179.101.227:50416 Accepted
+[Tue Jul 21 10:56:27 2026] 10.179.101.227:65162 Accepted
+[Tue Jul 21 10:56:28 2026] 10.179.101.227:50416 Closing
+[Tue Jul 21 10:56:28 2026] 10.179.101.227:65162 Closing
+[Tue Jul 21 10:56:28 2026] 10.179.101.227:62322 Accepted
+[Tue Jul 21 10:56:28 2026] 10.179.101.227:62322 Closing
+[Tue Jul 21 10:56:38 2026] 10.179.101.227:58710 Accepted
+[Tue Jul 21 10:56:38 2026] 10.179.101.227:55453 Accepted
+[Tue Jul 21 10:56:38 2026] 10.179.101.227:58710 Closing
+[Tue Jul 21 10:56:38 2026] 10.179.101.227:55453 Closing
+[Tue Jul 21 10:56:40 2026] 10.179.101.227:55278 Accepted
+[Tue Jul 21 10:56:40 2026] 10.179.101.227:50816 Accepted
+[Tue Jul 21 10:56:40 2026] 10.179.101.227:55278 Closing
+[Tue Jul 21 10:56:40 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:56:40 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:56:40 2026] Problems found: 4
+[Tue Jul 21 10:56:40 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:56:40 2026] 10.179.101.227:50816 Closing
+[Tue Jul 21 10:56:40 2026] 10.179.101.227:61566 Accepted
+[Tue Jul 21 10:56:40 2026] 10.179.101.227:61566 Closing
+[Tue Jul 21 10:56:42 2026] 10.179.101.42:62558 Accepted
+[Tue Jul 21 10:56:42 2026] 10.179.101.42:64555 Accepted
+[Tue Jul 21 10:56:42 2026] 10.179.101.42:56343 Accepted
+[Tue Jul 21 10:56:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:56:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:56:42 2026] Problems found: 0
+[Tue Jul 21 10:56:42 2026] Problems: []
+[Tue Jul 21 10:56:42 2026] 10.179.101.42:62558 Closing
+[Tue Jul 21 10:56:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:56:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:56:42 2026] Problems found: 1
+[Tue Jul 21 10:56:42 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:56:42 2026] 10.179.101.42:64555 Closing
+[Tue Jul 21 10:56:42 2026] 10.179.101.42:56343 Closing
+[Tue Jul 21 10:56:42 2026] 10.179.101.42:55602 Accepted
+[Tue Jul 21 10:56:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:56:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:56:42 2026] Problems found: 0
+[Tue Jul 21 10:56:42 2026] Problems: []
+[Tue Jul 21 10:56:42 2026] 10.179.101.42:55602 Closing
+[Tue Jul 21 10:56:42 2026] 10.179.101.42:62448 Accepted
+[Tue Jul 21 10:56:42 2026] 10.179.101.42:62448 Closing
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:55288 Accepted
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:50081 Accepted
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:54941 Accepted
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:55576 Accepted
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:55248 Accepted
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:56728 Accepted
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:54941 Closing
+[Tue Jul 21 10:56:43 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:56:43 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:56:43 2026] Problems found: 1
+[Tue Jul 21 10:56:43 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":0,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:55288 Closing
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:50081 Closing
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:55576 Closing
+[Tue Jul 21 10:56:43 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:56:43 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:56:43 2026] Problems found: 0
+[Tue Jul 21 10:56:43 2026] Problems: []
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:55248 Closing
+[Tue Jul 21 10:56:43 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:56:43 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:56:43 2026] Problems found: 1
+[Tue Jul 21 10:56:43 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:56728 Closing
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:56723 Accepted
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:49351 Accepted
+[Tue Jul 21 10:56:43 2026] ProblemController::list called with filters: []
+[Tue Jul 21 10:56:43 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:56:43 2026] Problems found: 4
+[Tue Jul 21 10:56:43 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:49351 Closing
+[Tue Jul 21 10:56:43 2026] 10.179.101.227:56723 Closing
+[Tue Jul 21 10:56:56 2026] 10.179.101.227:56609 Accepted
+[Tue Jul 21 10:56:56 2026] 10.179.101.227:56609 Closing
+[Tue Jul 21 10:56:56 2026] 10.179.101.227:58015 Accepted
+[Tue Jul 21 10:57:12 2026] 10.179.101.42:64428 Accepted
+[Tue Jul 21 10:57:12 2026] 10.179.101.42:61450 Accepted
+[Tue Jul 21 10:57:12 2026] 10.179.101.42:65104 Accepted
+[Tue Jul 21 10:57:12 2026] 10.179.101.42:55079 Accepted
+[Tue Jul 21 10:57:12 2026] 10.179.101.42:57308 Accepted
+[Tue Jul 21 10:57:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 10:57:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:57:12 2026] Problems found: 0
+[Tue Jul 21 10:57:12 2026] Problems: []
+[Tue Jul 21 10:57:12 2026] 10.179.101.42:64428 Closing
+[Tue Jul 21 10:57:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 10:57:12 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:57:12 2026] Problems found: 0
+[Tue Jul 21 10:57:12 2026] Problems: []
+[Tue Jul 21 10:57:12 2026] 10.179.101.42:65104 Closing
+[Tue Jul 21 10:57:12 2026] 10.179.101.42:55079 Closing
+[Tue Jul 21 10:57:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 10:57:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:57:12 2026] Problems found: 1
+[Tue Jul 21 10:57:12 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 10:57:12 2026] 10.179.101.42:57308 Closing
+[Tue Jul 21 10:57:12 2026] 10.179.101.42:61450 Closing
+[Tue Jul 21 10:57:13 2026] 10.179.101.227:58015 Closing
+[Tue Jul 21 10:57:14 2026] 10.179.101.227:63858 Accepted
+[Tue Jul 21 10:57:14 2026] 10.179.101.227:50364 Accepted
+[Tue Jul 21 10:57:14 2026] 10.179.101.227:62798 Accepted
+[Tue Jul 21 10:57:14 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 10:57:14 2026] approvedOnly converted to: 2
+[Tue Jul 21 10:57:14 2026] Problems found: 0
+[Tue Jul 21 10:57:14 2026] Problems: []
+[Tue Jul 21 10:57:14 2026] 10.179.101.227:63858 Closing
+[Tue Jul 21 10:57:14 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 10:57:14 2026] approvedOnly converted to: 0
+[Tue Jul 21 10:57:14 2026] Problems found: 1
+[Tue Jul 21 10:57:14 2026] Problems: [{"id":13,"title":"Bit++","difficulty":"Medium","topic_tags":"Implementation, Simulation","approved":0,"rejection_reason":"v","approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:57:14 2026] 10.179.101.227:50364 Closing
+[Tue Jul 21 10:57:14 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 10:57:14 2026] approvedOnly converted to: 1
+[Tue Jul 21 10:57:14 2026] Problems found: 1
+[Tue Jul 21 10:57:14 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 10:57:14 2026] 10.179.101.227:62798 Closing
+[Tue Jul 21 10:57:14 2026] 10.179.101.227:51623 Accepted
+[Tue Jul 21 10:57:14 2026] 10.179.101.227:51623 Closing

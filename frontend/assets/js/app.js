@@ -1,6 +1,6 @@
 // Global application state and utility methods
-const API_BASE_URL = `http://${window.location.hostname || 'localhost'}:8080/api`;
-const RUNNER_URL = `http://${window.location.hostname || 'localhost'}:8080/api/run`;
+const API_BASE_URL = `https://previews-removable-ala-longitude.trycloudflare.com/api`;
+const RUNNER_URL   = `https://previews-removable-ala-longitude.trycloudflare.com/api/run`;
 
 // Dark Mode Toggle
 function initTheme() {
