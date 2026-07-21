@@ -48,6 +48,26 @@ class AuthController {
                 return;
             }
 
+            // Block declined faculty from logging in — include the rejection reason
+            if ($userData['role'] === 'declined_faculty') {
+                $stmt = $this->db->prepare(
+                    "SELECT admin_note FROM faculty_requests
+                     WHERE user_id = :uid AND status = 'rejected'
+                     ORDER BY reviewed_at DESC LIMIT 1"
+                );
+                $stmt->bindParam(':uid', $userData['id']);
+                $stmt->execute();
+                $req = $stmt->fetch();
+                $reason = (!empty($req['admin_note']) && $req['admin_note'] !== 'No reason provided.')
+                    ? $req['admin_note']
+                    : 'No reason was provided.';
+                http_response_code(403);
+                echo json_encode([
+                    "message" => "Your faculty registration request was declined.\n\nReason: " . $reason . "\n\nPlease contact the administrator to appeal."
+                ]);
+                return;
+            }
+
             // Generate token payload
             $token_payload = [
                 "iss" => "algonest",
@@ -209,6 +229,11 @@ class AuthController {
         if ($user['role'] === 'pending_faculty') {
             http_response_code(400);
             echo json_encode(["message" => "You already have a pending faculty request."]);
+            return;
+        }
+        if ($user['role'] === 'declined_faculty') {
+            http_response_code(403);
+            echo json_encode(["message" => "Your previous faculty request was declined. Please contact the administrator to appeal."]);
             return;
         }
 

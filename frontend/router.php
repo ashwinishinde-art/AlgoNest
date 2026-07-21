@@ -11,8 +11,12 @@ $uri      = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 $docRoot  = __DIR__;
 $filePath = $docRoot . $uri;
 
+// Root → serve landing page
+if ($uri === '/' || $uri === '') {
+    $filePath = $docRoot . '/landing.html';
+}
 // Directory → serve its index.html
-if (is_dir($filePath)) {
+elseif (is_dir($filePath)) {
     $filePath = rtrim($filePath, '/') . '/index.html';
 }
 

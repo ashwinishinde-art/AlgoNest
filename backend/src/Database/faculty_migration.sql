@@ -3,7 +3,7 @@
 
 -- 1. Update users role ENUM to include faculty roles
 ALTER TABLE users
-  MODIFY COLUMN role ENUM('user', 'admin', 'faculty', 'pending_faculty') DEFAULT 'user';
+  MODIFY COLUMN role ENUM('user', 'admin', 'faculty', 'pending_faculty', 'declined_faculty') DEFAULT 'user';
 
 -- 2. Faculty registration requests table
 CREATE TABLE IF NOT EXISTS faculty_requests (

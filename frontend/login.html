@@ -406,6 +406,22 @@
                 },
                 alert: { show: false, type: 'error', message: '' },
 
+                init() {
+                    const user = Auth.getUser();
+                    if (!user) return;
+
+                    // Any blocked role — clear the stale token so the form works cleanly
+                    if (user.role === 'pending_faculty' || user.role === 'declined_faculty') {
+                        Auth.clearToken();
+                        return; // Let them log in normally; backend will return the real status message
+                    }
+
+                    // Valid active session — skip the login page entirely
+                    if (Auth.isAuthenticated()) {
+                        window.location.href = 'index.html';
+                    }
+                },
+
                 setMode(m) {
                     this.mode = m;
                     this.alert.show = false;

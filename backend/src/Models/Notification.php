@@ -7,14 +7,14 @@ class Notification {
         $this->conn = $db;
     }
 
-    public function create($user_id, $problem_id, $type, $title, $message) {
+    public function create($user_id, $type, $title, $message, $problem_id = null) {
         $query = "INSERT INTO " . $this->table_name . " 
                   (user_id, problem_id, type, title, message) 
                   VALUES (:user_id, :problem_id, :type, :title, :message)";
 
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":user_id", $user_id);
-        $stmt->bindParam(":problem_id", $problem_id);
+        $stmt->bindParam(":problem_id", $problem_id, PDO::PARAM_INT);
         $stmt->bindParam(":type", $type);
         $stmt->bindParam(":title", $title);
         $stmt->bindParam(":message", $message);
@@ -23,9 +23,10 @@ class Notification {
     }
 
     public function getByUserId($user_id, $unread_only = false) {
+        // LEFT JOIN so faculty notifications (no problem_id) are still returned
         $query = "SELECT n.*, p.title as problem_title 
                   FROM " . $this->table_name . " n
-                  JOIN problems p ON n.problem_id = p.id
+                  LEFT JOIN problems p ON n.problem_id = p.id
                   WHERE n.user_id = :user_id";
 
         if ($unread_only) {

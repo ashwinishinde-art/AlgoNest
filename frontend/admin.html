@@ -87,6 +87,11 @@
                 Faculty Requests
                 <span x-show="pendingFacultyCount > 0" class="bg-purple-600 text-white text-xs rounded-full px-1.5 py-0.5 font-bold" x-text="pendingFacultyCount"></span>
             </button>
+            <button @click="adminTab = 'users'; loadUsers()"
+                    :class="adminTab === 'users' ? 'bg-white dark:bg-slate-700 shadow text-slate-800 dark:text-white' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'"
+                    class="px-4 py-2 rounded-lg text-sm font-semibold transition-all">
+                Users
+            </button>
         </div>
 
         <!-- Problems tab -->
@@ -267,6 +272,134 @@
                 </div>
             </div>
         </div><!-- end faculty tab -->
+
+        <!-- Users Tab -->
+        <div x-show="adminTab === 'users'">
+            <!-- Search + Filter bar -->
+            <div class="flex flex-col sm:flex-row gap-3 mb-5">
+                <input type="text" x-model="userSearch" @input.debounce.400ms="loadUsers()"
+                       placeholder="Search by username or email…"
+                       class="flex-1 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-4 text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <select x-model="userRoleFilter" @change="loadUsers()"
+                        class="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-4 text-sm text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="">All Roles</option>
+                    <option value="user">User</option>
+                    <option value="faculty">Faculty</option>
+                    <option value="pending_faculty">Pending Faculty</option>
+                    <option value="declined_faculty">Declined Faculty</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+
+            <!-- Table -->
+            <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-hidden">
+                <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
+                    <thead class="bg-slate-50 dark:bg-slate-800">
+                        <tr>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">#</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">User</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Email</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Role</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Joined</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                        <template x-if="loadingUsers">
+                            <tr>
+                                <td colspan="6" class="px-6 py-10 text-center text-slate-400 text-sm">Loading users…</td>
+                            </tr>
+                        </template>
+                        <template x-if="!loadingUsers && users.length === 0">
+                            <tr>
+                                <td colspan="6" class="px-6 py-10 text-center text-slate-400 text-sm">No users found.</td>
+                            </tr>
+                        </template>
+                        <template x-for="(u, idx) in users" :key="u.id">
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                <td class="px-6 py-4 text-sm font-semibold text-slate-500" x-text="idx + 1"></td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-3">
+                                        <template x-if="u.avatar_url">
+                                            <img :src="API_BASE_URL.replace('/api', '') + u.avatar_url" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+                                        </template>
+                                        <template x-if="!u.avatar_url">
+                                            <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs flex-shrink-0"
+                                                 x-text="u.username.charAt(0).toUpperCase()"></div>
+                                        </template>
+                                        <span class="text-sm font-semibold text-slate-800 dark:text-slate-100" x-text="u.username"></span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400" x-text="u.email"></td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2.5 py-0.5 rounded text-xs font-bold"
+                                          :class="{
+                                              'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400':   u.role === 'user',
+                                              'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400': u.role === 'faculty',
+                                              'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-500': u.role === 'pending_faculty',
+                                              'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400':      u.role === 'declined_faculty',
+                                              'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400': u.role === 'admin'
+                                          }"
+                                          x-text="u.role.replaceAll('_', ' ')"></span>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-slate-500 dark:text-slate-400" x-text="formatDate(u.created_at)"></td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-2">
+                                        <!-- Role change — hidden for admin rows -->
+                                        <template x-if="u.role !== 'admin'">
+                                            <button @click="openRoleModal(u)"
+                                                    class="text-xs bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-semibold px-3 py-1.5 rounded transition-all">
+                                                Change Role
+                                            </button>
+                                        </template>
+                                        <!-- Delete — hidden for admin rows and self -->
+                                        <template x-if="u.role !== 'admin' && u.id !== (user && user.id)">
+                                            <button @click="deleteUser(u)"
+                                                    class="text-xs bg-red-600 hover:bg-red-700 text-white font-semibold px-3 py-1.5 rounded transition-all">
+                                                Delete
+                                            </button>
+                                        </template>
+                                        <template x-if="u.role === 'admin'">
+                                            <span class="text-xs text-slate-400 italic">Protected</span>
+                                        </template>
+                                    </div>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </div><!-- end users tab -->
+
+        <!-- Change Role Modal -->
+        <div x-show="roleModal.show" x-cloak x-transition class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl p-6 w-full max-w-sm shadow-2xl">
+                <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100 mb-1">Change Role</h3>
+                <p class="text-sm text-slate-500 mb-5">
+                    Updating role for <strong x-text="roleModal.user?.username"></strong>
+                    (currently <span class="font-semibold" x-text="roleModal.user?.role?.replace('_',' ')"></span>).
+                </p>
+                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">New Role</label>
+                <select x-model="roleModal.newRole"
+                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2.5 px-4 text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-5">
+                    <option value="user">User</option>
+                    <option value="faculty">Faculty</option>
+                    <option value="pending_faculty">Pending Faculty</option>
+                    <option value="declined_faculty">Declined Faculty</option>
+                </select>
+                <div class="flex gap-3">
+                    <button @click="roleModal.show = false"
+                            class="flex-1 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 py-2.5 rounded-lg font-semibold">
+                        Cancel
+                    </button>
+                    <button @click="confirmRoleChange()" :disabled="roleModal.loading"
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg font-semibold disabled:opacity-50">
+                        <span x-show="!roleModal.loading">Save</span>
+                        <span x-show="roleModal.loading">Saving…</span>
+                    </button>
+                </div>
+            </div>
+        </div>
 
         <!-- View Problem Modal -->
         <div x-show="showViewModal" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 overflow-y-auto" x-transition>
@@ -517,6 +650,12 @@
                 pendingFacultyCount: 0,
                 facultyApproveModal: { show: false, req: null, note: '', loading: false },
                 facultyRejectModal:  { show: false, req: null, note: '', loading: false },
+                // ── Users ──────────────────────────────────────────────────
+                users: [],
+                loadingUsers: false,
+                userSearch: '',
+                userRoleFilter: '',
+                roleModal: { show: false, user: null, newRole: 'user', loading: false },
                 showModal: false,
                 showApproveModal: false,
                 showRejectModal: false,
@@ -745,7 +884,6 @@
                 },
 
                 async loadFacultyRequests() {
-                    if (this.facultyRequests.length) return;
                     this.loadingFaculty = true;
                     try {
                         const res = await fetch(`${API_BASE_URL}/admin/faculty-requests?status=pending`, {
@@ -775,6 +913,7 @@
                         if (res.ok) {
                             this.facultyRequests = this.facultyRequests.filter(r => r.id !== this.facultyApproveModal.req.id);
                             this.pendingFacultyCount = Math.max(0, this.pendingFacultyCount - 1);
+                            this.users = []; // flush users cache — role changed to 'faculty'
                             this.facultyApproveModal.show = false;
                         } else {
                             const e = await res.json();
@@ -795,6 +934,7 @@
                         if (res.ok) {
                             this.facultyRequests = this.facultyRequests.filter(r => r.id !== this.facultyRejectModal.req.id);
                             this.pendingFacultyCount = Math.max(0, this.pendingFacultyCount - 1);
+                            this.users = []; // flush users cache — role changed to 'declined_faculty'
                             this.facultyRejectModal.show = false;
                         } else {
                             const e = await res.json();
@@ -802,6 +942,63 @@
                         }
                     } catch (e) { alert('Error: ' + e.message); }
                     finally { this.facultyRejectModal.loading = false; }
+                },
+
+                // ── User Management Methods ───────────────────────────────
+
+                async loadUsers() {
+                    this.loadingUsers = true;
+                    try {
+                        const qs = new URLSearchParams();
+                        if (this.userSearch.trim())    qs.set('search', this.userSearch.trim());
+                        if (this.userRoleFilter)        qs.set('role',   this.userRoleFilter);
+                        const res = await fetch(`${API_BASE_URL}/admin/users?${qs}`, {
+                            headers: Auth.getAuthHeader()
+                        });
+                        if (res.ok) this.users = await res.json();
+                    } catch (e) { console.error(e); }
+                    finally { this.loadingUsers = false; }
+                },
+
+                async deleteUser(u) {
+                    if (!confirm(`Delete user "${u.username}"? This will remove all their submissions and data. This cannot be undone.`)) return;
+                    try {
+                        const res = await fetch(`${API_BASE_URL}/admin/users/${u.id}`, {
+                            method: 'DELETE',
+                            headers: Auth.getAuthHeader()
+                        });
+                        const data = await res.json();
+                        if (res.ok) {
+                            this.users = this.users.filter(x => x.id !== u.id);
+                        } else {
+                            alert(data.message || 'Failed to delete user.');
+                        }
+                    } catch (e) { alert('Error: ' + e.message); }
+                },
+
+                openRoleModal(u) {
+                    this.roleModal = { show: true, user: u, newRole: u.role, loading: false };
+                },
+
+                async confirmRoleChange() {
+                    this.roleModal.loading = true;
+                    try {
+                        const res = await fetch(`${API_BASE_URL}/admin/users/${this.roleModal.user.id}/role`, {
+                            method: 'PUT',
+                            headers: { 'Content-Type': 'application/json', ...Auth.getAuthHeader() },
+                            body: JSON.stringify({ role: this.roleModal.newRole })
+                        });
+                        const data = await res.json();
+                        if (res.ok) {
+                            // Update the local list in-place so the badge refreshes immediately
+                            const target = this.users.find(x => x.id === this.roleModal.user.id);
+                            if (target) target.role = this.roleModal.newRole;
+                            this.roleModal.show = false;
+                        } else {
+                            alert(data.message || 'Failed to change role.');
+                        }
+                    } catch (e) { alert('Error: ' + e.message); }
+                    finally { this.roleModal.loading = false; }
                 },
 
                 formatDate(d) {
