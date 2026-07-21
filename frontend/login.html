@@ -11,112 +11,79 @@
     <link rel="stylesheet" href="assets/css/styles.css?v=2">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
-        /* Animated gradient background */
-        .login-bg {
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #0f172a 70%, #0c1a2e 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 12s ease infinite;
-        }
-        @keyframes gradientShift {
-            0%   { background-position: 0% 50%; }
-            50%  { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        /* Floating orbs */
-        .orb {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.18;
-            animation: float 8s ease-in-out infinite;
-            pointer-events: none;
-        }
-        .orb-1 { width: 400px; height: 400px; background: #3b82f6; top: -100px; left: -100px; animation-delay: 0s; }
-        .orb-2 { width: 300px; height: 300px; background: #8b5cf6; bottom: -80px; right: -80px; animation-delay: 3s; }
-        .orb-3 { width: 200px; height: 200px; background: #06b6d4; top: 50%; left: 60%; animation-delay: 6s; }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50%       { transform: translateY(-30px) scale(1.05); }
-        }
+        /* Dark background — canvas renders code rain on top */
+        body { background: #0d1117; }
+
         /* Card glass effect */
         .glass-card {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 25px 50px rgba(0,0,0,0.5);
+            background: rgba(13, 17, 23, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(48, 54, 61, 0.9);
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.03), 0 20px 60px rgba(0,0,0,0.6);
         }
         /* Tab switcher */
         .tab-active {
-            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            background: #238636;
             color: #fff;
-            box-shadow: 0 4px 14px rgba(99,102,241,0.4);
+            box-shadow: 0 2px 8px rgba(35,134,54,0.4);
         }
-        /* Input focus glow */
+        /* Input */
         .input-field {
-            background: rgba(30, 41, 59, 0.8);
-            border: 1px solid rgba(99, 102, 241, 0.25);
-            color: #e2e8f0;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            background: #161b22;
+            border: 1px solid #30363d;
+            color: #e6edf3;
+            transition: border-color 0.15s, box-shadow 0.15s;
         }
-        .input-field::placeholder { color: #475569; }
+        .input-field::placeholder { color: #484f58; }
         .input-field:focus {
             outline: none;
-            border-color: #6366f1;
-            box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+            border-color: #388bfd;
+            box-shadow: 0 0 0 3px rgba(56,139,253,0.15);
         }
-        /* Submit button gradient */
+        /* Submit button */
         .btn-primary {
-            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
-            box-shadow: 0 4px 20px rgba(99,102,241,0.35);
-            transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+            background: #238636;
+            border: 1px solid rgba(240,246,252,0.1);
+            transition: background 0.15s, transform 0.1s;
         }
-        .btn-primary:hover:not(:disabled) {
-            opacity: 0.92;
-            transform: translateY(-1px);
-            box-shadow: 0 8px 28px rgba(99,102,241,0.5);
-        }
-        .btn-primary:active:not(:disabled) { transform: translateY(0); }
-        .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+        .btn-primary:hover:not(:disabled) { background: #2ea043; transform: translateY(-1px); }
+        .btn-primary:active:not(:disabled) { transform: translateY(0); background: #238636; }
+        .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
         /* Spinner */
         .spinner {
-            width: 18px; height: 18px;
-            border: 2px solid rgba(255,255,255,0.3);
+            width: 16px; height: 16px;
+            border: 2px solid rgba(255,255,255,0.25);
             border-top-color: #fff;
             border-radius: 50%;
             animation: spin 0.7s linear infinite;
             display: inline-block;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
+        /* Code rain canvas */
+        #codeCanvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.45;
+        }
     </style>
 </head>
-<body class="login-bg text-slate-100 min-h-screen flex items-center justify-center p-4">
-    <!-- Background orbs -->
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
+<body class="text-slate-100 min-h-screen flex items-center justify-center p-4">
+    <!-- Code rain canvas -->
+    <canvas id="codeCanvas"></canvas>
 
     <div x-data="loginForm()" class="glass-card w-full max-w-md rounded-2xl p-8 relative z-10">
 
         <!-- Logo/Header -->
         <div class="text-center mb-7">
-            <!-- Logo mark + wordmark side by side -->
-            <div class="inline-flex items-center gap-3 mb-3">
-                <!-- Icon background pill -->
-                <div class="flex items-center justify-center w-11 h-11 rounded-xl shrink-0"
-                     style="background: linear-gradient(135deg,#3b82f6,#6366f1); box-shadow: 0 6px 20px rgba(99,102,241,0.45);">
-                    <!-- </> brackets icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16M7 8l-4 4 4 4M17 8l4 4-4 4"/>
-                    </svg>
-                </div>
-                <!-- Wordmark -->
-                <span class="text-3xl font-extrabold tracking-tight text-white" style="letter-spacing:-0.5px;">
-                    Algo<span style="background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Nest</span>
-                </span>
-            </div>
-            <p class="text-slate-400 mt-1 text-sm"
-               x-text="mode === 'faculty' ? 'Apply for Faculty Access' : 'Your competitive coding arena'">
+            <h1 class="text-3xl font-extrabold tracking-tight text-white mb-1" style="letter-spacing:-0.5px;">
+                Algo<span style="color:#3fb950;">Nest</span>
+            </h1>
+            <p class="text-slate-500 text-sm"
+               x-text="mode === 'login' ? 'Welcome back, coder!' : mode === 'register' ? 'Create an account to start coding' : 'Apply for Faculty Access'">
             </p>
         </div>
 
@@ -160,13 +127,16 @@
 
             <!-- Email -->
             <div>
-                <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Email Address</label>
+                <div class="flex items-center justify-between mb-1.5">
+                    <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Email Address</label>
+                    <span class="text-xs text-slate-600 font-mono">you@example.com</span>
+                </div>
                 <div class="relative">
                     <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-500">
                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                     </span>
                     <input type="email" x-model="formData.email" required placeholder="you@example.com"
-                           class="input-field w-full rounded-xl py-3 pl-9 pr-4 text-sm">
+                           class="input-field w-full rounded-lg py-2.5 pl-9 pr-4 text-sm">
                 </div>
             </div>
 
@@ -175,18 +145,15 @@
                 <div class="flex items-center justify-between mb-1.5">
                     <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Password</label>
                     <button type="button" @click="showPassword = !showPassword"
-                            class="flex items-center gap-1 text-xs text-slate-500 hover:text-indigo-400 transition-colors"
+                            class="text-slate-500 hover:text-slate-300 transition-colors"
                             :aria-label="showPassword ? 'Hide password' : 'Show password'">
-                        <!-- Eye open -->
                         <svg x-show="!showPassword" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
                         </svg>
-                        <!-- Eye closed -->
                         <svg x-show="showPassword" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7a9.956 9.956 0 012.293-3.95M6.228 6.228A9.956 9.956 0 0112 5c4.477 0 8.268 2.943 9.542 7a9.956 9.956 0 01-1.768 3.228M6.228 6.228L3 3m3.228 3.228l3.65 3.65M17.772 17.772L21 21m-3.228-3.228l-3.65-3.65"/>
                         </svg>
-                        <span x-text="showPassword ? 'Hide' : 'Show'"></span>
                     </button>
                 </div>
                 <div class="relative">
@@ -194,7 +161,7 @@
                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M7 11V7a5 5 0 0110 0v4"/></svg>
                     </span>
                     <input :type="showPassword ? 'text' : 'password'" x-model="formData.password" required placeholder="••••••••"
-                           class="input-field w-full rounded-xl py-3 pl-9 pr-4 text-sm">
+                           class="input-field w-full rounded-lg py-2.5 pl-9 pr-4 text-sm">
                 </div>
             </div>
 
@@ -369,6 +336,60 @@
 
     <script src="assets/js/app.js"></script>
     <script src="assets/js/auth.js"></script>
+    <script>
+        // ── Code Rain Background ──
+        (function() {
+            const canvas = document.getElementById('codeCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Mix of C++, Python, JS snippets and symbols
+            const chars = 'int void bool return if else for while auto const std::vector push_back nullptr true false 01{}[]();=>+-%&&||!#include<bits/stdc++.h>defclassimportfrompasslambda';
+            const charArr = chars.split('');
+
+            let cols, drops;
+            const fontSize = 13;
+
+            function init() {
+                canvas.width  = window.innerWidth;
+                canvas.height = window.innerHeight;
+                cols  = Math.floor(canvas.width / fontSize);
+                drops = Array.from({ length: cols }, () => Math.random() * -50);
+            }
+
+            function draw() {
+                // Semi-transparent fade
+                ctx.fillStyle = 'rgba(13, 17, 23, 0.055)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.font = `${fontSize}px "Fira Code", monospace`;
+
+                for (let i = 0; i < drops.length; i++) {
+                    const ch = charArr[Math.floor(Math.random() * charArr.length)];
+                    const y  = drops[i] * fontSize;
+
+                    // Head of stream — bright green
+                    if (drops[i] > 0 && drops[i] < canvas.height / fontSize) {
+                        ctx.fillStyle = '#7ee787';
+                        ctx.fillText(ch, i * fontSize, y);
+                    }
+
+                    // Body — dimmer green
+                    ctx.fillStyle = '#238636';
+                    ctx.fillText(ch, i * fontSize, y - fontSize);
+
+                    // Random reset
+                    if (y > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i] += 0.4;
+                }
+            }
+
+            init();
+            window.addEventListener('resize', init);
+            setInterval(draw, 45);
+        })();
+    </script>
     <script>
         function loginForm() {
             return {
