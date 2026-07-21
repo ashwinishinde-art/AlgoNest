@@ -98,7 +98,7 @@ class User {
         $query = "SELECT u.id, u.username, u.role, u.streak_count, COUNT(DISTINCT s.problem_id) as solved_count 
                   FROM " . $this->table_name . " u
                   LEFT JOIN submissions s ON u.id = s.user_id AND s.status = 'Accepted'
-                  WHERE u.role NOT IN ('admin', 'faculty')
+                  WHERE u.role NOT IN ('admin', 'faculty', 'pending_faculty', 'declined_faculty')
                   GROUP BY u.id
                   ORDER BY solved_count DESC, u.streak_count DESC
                   LIMIT 50";
