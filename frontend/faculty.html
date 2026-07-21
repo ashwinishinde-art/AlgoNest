@@ -242,12 +242,21 @@
 
             async init() {
                 const u = Auth.getUser();
-                if (!u || !['faculty', 'admin'].includes(u.role)) {
+                if (!u) {
                     window.location.href = 'login.html';
                     return;
                 }
                 this.user = u;
-                await Promise.all([this.loadStats(), this.loadPendingProblems()]);
+                // Load stats first — if the backend returns 403 the role was revoked
+                const statsRes = await fetch(`${API_BASE_URL}/faculty/stats`, { headers: Auth.getAuthHeader() });
+                if (statsRes.status === 403) {
+                    // Token role is stale — user was demoted, force re-login
+                    Auth.clearToken();
+                    window.location.href = 'login.html';
+                    return;
+                }
+                this.stats = await statsRes.json();
+                await this.loadPendingProblems();
             },
 
             async loadStats() {

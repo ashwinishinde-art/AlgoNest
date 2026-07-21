@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../../config/jwt.php';
+require_once __DIR__ . '/../../config/database.php';
 
 class AuthMiddleware {
     public static function authenticate() {
@@ -58,11 +59,23 @@ class AuthMiddleware {
 
     public static function requireFacultyOrAdmin() {
         $user = self::authenticate();
-        if (!in_array($user['role'], ['admin', 'faculty'])) {
+
+        // Re-check role from DB — token may be stale if role was changed after issue
+        $database = new Database();
+        $conn = $database->getConnection();
+        $stmt = $conn->prepare("SELECT role FROM users WHERE id = :id");
+        $stmt->bindParam(':id', $user['id']);
+        $stmt->execute();
+        $row = $stmt->fetch();
+        $liveRole = $row ? $row['role'] : null;
+
+        if (!in_array($liveRole, ['admin', 'faculty'])) {
             http_response_code(403);
             echo json_encode(["message" => "Access denied. Faculty or Admin role required."]);
             exit;
         }
+
+        $user['role'] = $liveRole; // use live role for downstream logic
         return $user;
     }
 }

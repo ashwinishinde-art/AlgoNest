@@ -366,7 +366,7 @@
         </div><!-- end users tab -->
 
         <!-- Change Role Modal -->
-        <div x-show="roleModal.show" x-transition class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+        <div x-show="roleModal.show" x-cloak x-transition class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
             <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl p-6 w-full max-w-sm shadow-2xl">
                 <h3 class="font-bold text-lg text-slate-800 dark:text-slate-100 mb-1">Change Role</h3>
                 <p class="text-sm text-slate-500 mb-5">
@@ -877,7 +877,6 @@
                     } catch (e) { console.error(e); }
                 },
 
-                async loadFacultyRequests() {
                 async loadFacultyRequests() {
                     this.loadingFaculty = true;
                     try {
