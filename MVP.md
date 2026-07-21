@@ -26,11 +26,12 @@
     -Constraints
     -Examples
 
-5. C++ Code Editor
+5. Code Editor
     -Monaco Editor
-    -C++ Syntax Highlighting
+    -Syntax Highlighting
     -Dark Theme
     -Font Size Control
+    -Language Selector
 
 6. Code Execution
     -Run Code
@@ -93,7 +94,7 @@ Tech Stack
     
     Code Execution
     Docker
-    GCC (g++)
+    Server-side sandboxed runner
     PHP communicates with the runner through an internal API
     
     Web Server

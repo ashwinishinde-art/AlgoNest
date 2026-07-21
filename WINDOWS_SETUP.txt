@@ -53,24 +53,7 @@ Estimated time: 15-20 minutes.
 
 
 =====================================================
-  STEP 3 — Install g++ (via MSYS2)
-=====================================================
-
-1. Go to: https://www.msys2.org/
-2. Download and run the MSYS2 installer (msys2-x86_64-*.exe)
-3. Install to the default path: C:\msys64
-4. After install, MSYS2 opens automatically. Run:
-     pacman -S mingw-w64-ucrt-x86_64-gcc
-   Press Y to confirm. Wait for download and install.
-5. Add g++ to your System PATH (same steps as PHP):
-     Add: C:\msys64\ucrt64\bin
-6. Open a NEW Command Prompt and verify:
-     g++ --version
-   You should see: g++ (Rev...) ...
-
-
-=====================================================
-  STEP 4 — Get the Project
+  STEP 3 — Get the Project
 =====================================================
 
 Option A — Git clone (recommended):
@@ -86,7 +69,7 @@ Option B — Download ZIP:
 
 
 =====================================================
-  STEP 5 — Set Up the Database
+  STEP 4 — Set Up the Database
 =====================================================
 
 Open Command Prompt in the DSA-website folder and run:
@@ -110,7 +93,7 @@ update it in: backend\config\database.php
 
 
 =====================================================
-  STEP 6 — Start the Servers
+  STEP 5 — Start the Servers
 =====================================================
 
 Double-click start.bat in the DSA-website folder,
@@ -129,7 +112,7 @@ Access the site at: http://localhost:8081
 
 
 =====================================================
-  STEP 7 — Access from Other Devices (Optional)
+  STEP 6 — Access from Other Devices (Optional)
 =====================================================
 
 To let phones or other computers on the same Wi-Fi
@@ -178,10 +161,6 @@ Fix:     Make sure MySQL service is running.
          find "MySQL80" → right-click → Start.
          Also check backend\config\database.php credentials.
 
-Problem: "g++ not found" warning
-Fix:     Make sure C:\msys64\ucrt64\bin is in PATH.
-         Close and reopen CMD after changing PATH.
-
 Problem: Port already in use
 Fix:     start.bat auto-kills processes on 8080/8081.
          If it fails, manually run:
@@ -201,7 +180,6 @@ Fix:     Make sure you access via http://localhost:8081
 =====================================================
 
   Verify PHP:    php -v
-  Verify g++:    g++ --version
   Verify MySQL:  mysql -u root -p
 
   Start servers: start.bat  (from DSA-website folder)

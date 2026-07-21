@@ -1,13 +1,12 @@
 # AlgoNest
 
-A minimal, beautiful, and secure Online Judge system for C++ developers. Code is compiled and executed locally on the user's machine via a lightweight Python runner — only the results are sent back to the server. This eliminates cloud sandbox complexity, infrastructure cost, and execution security risks.
+A minimal, beautiful, and secure Online Judge system for competitive programmers. Problems are compiled and executed on the server — users simply write code in the browser and get instant verdicts.
 
 ## Architecture
 
 1. **Frontend**: HTML5, Tailwind CSS, Monaco Editor, Alpine.js / Vanilla JS.
 2. **Backend**: PHP 8.3 REST API — routing, JWT authentication, problem library, submission log, admin controls.
 3. **Database**: MySQL 8.
-4. **Local Runner**: Python 3 HTTP daemon on port 8000. Compiles `.cpp` source with the user's local `g++` and runs test cases natively.
 
 ---
 
@@ -45,13 +44,6 @@ cd frontend
 php -S 0.0.0.0:8081
 ```
 
-#### 4. Local Compiler Runner
-Run this on whichever machine will be writing and compiling code:
-```bash
-python3 local-runner/runner.py
-```
-This starts an HTTP server at `http://localhost:8000`. The frontend's browser tab connects to this to execute C++ locally.
-
 ---
 
 ## Multi-Device Access
@@ -63,7 +55,6 @@ To use AlgoNest from other devices on the same Wi-Fi/LAN:
    - Linux/macOS: `hostname -I` or `ip a`
    - Windows: `ipconfig` → IPv4 Address
 3. **Open in browser**: `http://<HOST-IP>:8081`
-4. **Compiling on a client device**: that device must run `python3 local-runner/runner.py` locally so its browser can reach `localhost:8000`. Devices that only browse problems, the leaderboard, or submissions do not need the runner.
 
 ---
 
@@ -112,23 +103,19 @@ AlgoNest/
 │   │       ├── auth.js             # JWT helpers & auth guard
 │   │       ├── compile-client.js   # Compilation pipeline client
 │   │       ├── editor.js           # Monaco editor setup
-│   │       └── runner-client.js    # Local runner & backend submission
+│   │       └── runner-client.js    # Backend submission client
 │   ├── admin.html                  # Admin console (problems + approvals)
 │   ├── index.html                  # User dashboard
+│   ├── landing.html                # Public landing page
 │   ├── leaderboard.html            # Global rankings
 │   ├── login.html                  # Sign in / Sign up
 │   ├── problem.html                # Problem workspace (editor + runner)
 │   ├── problems.html               # Problem bank
 │   ├── profile.html                # User profile & settings
 │   ├── public-profile.html         # Public view of another user's profile
-│   ├── router.php                  # Dev router for PHP built-in server
-│   └── tailwind.config.js
-├── local-runner/
-│   ├── runner.py                   # Python HTTP compilation daemon
-│   └── requirements.txt
+│   └── router.php                  # Dev router for PHP built-in server
 ├── start.sh                        # Linux/macOS server starter
 ├── start.bat                       # Windows server starter
-├── WINDOWS_SETUP.txt               # Windows setup guide
 └── MVP.md                          # Feature milestone tracker
 ```
 
@@ -148,7 +135,7 @@ All endpoints are prefixed with `/api`. Protected routes require `Authorization:
 | GET | `/api/problems` | — | List problems |
 | GET | `/api/problems/:id` | — | Problem detail |
 | GET | `/api/problems/:id/samples` | — | Sample test cases |
-| GET | `/api/problems/:id/testcases` | ✓ | All test cases (for runner) |
+| GET | `/api/problems/:id/testcases` | ✓ | All test cases (for judging) |
 | POST | `/api/problems` | ✓ | Submit a problem for approval |
 | POST | `/api/submissions` | ✓ | Log a submission result |
 | GET | `/api/submissions/history` | ✓ | Own submission history |
