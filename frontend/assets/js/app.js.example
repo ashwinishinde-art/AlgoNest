@@ -1,0 +1,12 @@
+// Copy this file to app.js and set the correct URLs for your environment.
+//
+// Local network (default):
+//   const API_BASE_URL = `http://${window.location.hostname || 'localhost'}:8080/api`;
+//   const RUNNER_URL   = `http://${window.location.hostname || 'localhost'}:8080/api/run`;
+//
+// Cloudflare tunnel / production:
+//   const API_BASE_URL = `https://your-backend-tunnel.trycloudflare.com/api`;
+//   const RUNNER_URL   = `https://your-backend-tunnel.trycloudflare.com/api/run`;
+
+const API_BASE_URL = `http://${window.location.hostname || 'localhost'}:8080/api`;
+const RUNNER_URL   = `http://${window.location.hostname || 'localhost'}:8080/api/run`;
