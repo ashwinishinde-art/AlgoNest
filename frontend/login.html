@@ -265,7 +265,7 @@
                     Email Address
                 </label>
                 <input type="email" x-model="formData.email" required placeholder="you@example.com"
-                       class="input-field w-full rounded-md py-2 px-3">
+                       class="input-field w-full rounded-md py-2 px-3" style="font-size:14px; line-height:1.5;">
             </div>
 
             <!-- Password -->
@@ -277,11 +277,13 @@
                     </svg>
                     Password
                 </label>
-                <div class="relative flex items-center">
+                <div class="relative">
                     <input :type="showPassword ? 'text' : 'password'" x-model="formData.password" required placeholder="••••••••"
-                           class="input-field w-full rounded-md py-2 pl-3 pr-9" style="line-height:1.5;">
+                           class="input-field w-full rounded-md py-2 px-3 pr-10" style="font-size:14px; line-height:1.5;">
+                    <!-- eye icon — vertically centred, separated by a faint left border -->
                     <button type="button" @click="showPassword = !showPassword"
-                            class="absolute right-0 top-0 bottom-0 w-9 flex items-center justify-center text-slate-500 hover:text-blue-400 transition-colors focus:outline-none"
+                            class="absolute inset-y-0 right-0 w-10 flex items-center justify-center text-slate-500 hover:text-blue-400 transition-colors focus:outline-none"
+                            style="border-left: 1px solid #30363d;"
                             :aria-label="showPassword ? 'Hide password' : 'Show password'">
                         <svg x-show="!showPassword" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
