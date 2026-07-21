@@ -101,42 +101,159 @@
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* Code rain canvas */
-        #codeCanvas {
+        /* Code background */
+        .code-bg {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            pointer-events: none;
+            inset: 0;
             z-index: 0;
-            opacity: 0.4;
+            overflow: hidden;
+            pointer-events: none;
+            background: #0d1117;
+        }
+        .code-bg pre {
+            position: absolute;
+            inset: -20px;
+            margin: 0;
+            padding: 32px;
+            font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+            font-size: 12.5px;
+            line-height: 1.7;
+            color: #3d444d;
+            white-space: pre-wrap;
+            word-break: break-all;
+            filter: blur(2.5px);
+            user-select: none;
+            opacity: 0.9;
         }
     </style>
 </head>
 <body class="text-slate-100 min-h-screen flex items-center justify-center p-4">
-    <!-- Code rain canvas -->
-    <canvas id="codeCanvas"></canvas>
+    <!-- Static blurred code background -->
+    <div class="code-bg">
+        <pre>
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int binarySearch(vector&lt;int&gt;&amp; arr, int target) {
+    int lo = 0, hi = arr.size() - 1;
+    while (lo &lt;= hi) {
+        int mid = lo + (hi - lo) / 2;
+        if (arr[mid] == target) return mid;
+        else if (arr[mid] &lt; target) lo = mid + 1;
+        else hi = mid - 1;
+    }
+    return -1;
+}
+
+struct ListNode {
+    int val;
+    ListNode* next;
+    ListNode(int x) : val(x), next(nullptr) {}
+};
+
+ListNode* reverseList(ListNode* head) {
+    ListNode* prev = nullptr;
+    ListNode* curr = head;
+    while (curr) {
+        ListNode* next = curr-&gt;next;
+        curr-&gt;next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+}
+
+int dp[1001][1001];
+int knapsack(int W, vector&lt;int&gt;&amp; wt, vector&lt;int&gt;&amp; val, int n) {
+    for (int i = 0; i &lt;= n; i++) {
+        for (int w = 0; w &lt;= W; w++) {
+            if (i == 0 || w == 0) dp[i][w] = 0;
+            else if (wt[i-1] &lt;= w)
+                dp[i][w] = max(val[i-1] + dp[i-1][w-wt[i-1]], dp[i-1][w]);
+            else dp[i][w] = dp[i-1][w];
+        }
+    }
+    return dp[n][W];
+}
+
+vector&lt;int&gt; dijkstra(int src, vector&lt;vector&lt;pair&lt;int,int&gt;&gt;&gt;&amp; adj, int V) {
+    vector&lt;int&gt; dist(V, INT_MAX);
+    priority_queue&lt;pair&lt;int,int&gt;, vector&lt;pair&lt;int,int&gt;&gt;, greater&lt;&gt;&gt; pq;
+    dist[src] = 0;
+    pq.push({0, src});
+    while (!pq.empty()) {
+        auto [d, u] = pq.top(); pq.pop();
+        for (auto [v, w] : adj[u]) {
+            if (dist[u] + w &lt; dist[v]) {
+                dist[v] = dist[u] + w;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+    return dist;
+}
+
+bool isBipartite(int node, vector&lt;vector&lt;int&gt;&gt;&amp; graph, vector&lt;int&gt;&amp; color) {
+    queue&lt;int&gt; q;
+    q.push(node);
+    color[node] = 0;
+    while (!q.empty()) {
+        int u = q.front(); q.pop();
+        for (int v : graph[u]) {
+            if (color[v] == -1) { color[v] = 1 - color[u]; q.push(v); }
+            else if (color[v] == color[u]) return false;
+        }
+    }
+    return true;
+}
+
+int lcs(string a, string b) {
+    int m = a.size(), n = b.size();
+    vector&lt;vector&lt;int&gt;&gt; dp(m+1, vector&lt;int&gt;(n+1, 0));
+    for (int i = 1; i &lt;= m; i++)
+        for (int j = 1; j &lt;= n; j++)
+            dp[i][j] = (a[i-1]==b[j-1]) ? dp[i-1][j-1]+1 : max(dp[i-1][j], dp[i][j-1]);
+    return dp[m][n];
+}
+
+class UnionFind {
+    vector&lt;int&gt; parent, rank;
+public:
+    UnionFind(int n) : parent(n), rank(n, 0) { iota(parent.begin(), parent.end(), 0); }
+    int find(int x) { return parent[x]==x ? x : parent[x]=find(parent[x]); }
+    bool unite(int x, int y) {
+        x = find(x); y = find(y);
+        if (x == y) return false;
+        if (rank[x] &lt; rank[y]) swap(x, y);
+        parent[y] = x;
+        if (rank[x] == rank[y]) rank[x]++;
+        return true;
+    }
+};
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t; cin &gt;&gt; t;
+    while (t--) {
+        int n; cin &gt;&gt; n;
+        vector&lt;int&gt; a(n);
+        for (auto&amp; x : a) cin &gt;&gt; x;
+        sort(a.begin(), a.end());
+        cout &lt;&lt; a[0] &lt;&lt; "\n";
+    }
+    return 0;
+}
+        </pre>
+    </div>
 
     <div x-data="loginForm()" class="glass-card w-full max-w-md rounded-2xl p-8 relative z-10">
 
-        <!-- Logo/Header -->
+        <!-- Header -->
         <div class="text-center mb-6">
-            <div class="flex items-center justify-center gap-2.5 mb-2">
-                <!-- Logo SVG - stylized A+N monogram -->
-                <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
-                    <path d="M12 28L20 12L28 28" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M15.5 22H24.5" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
-                    <defs>
-                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#1f6feb"/>
-                            <stop offset="1" stop-color="#388bfd"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <h1 class="text-2xl font-bold tracking-tight text-white" style="letter-spacing:-0.3px;">
-                    Algo<span style="color:#58a6ff;">Nest</span>
-                </h1>
-            </div>
+            <h1 class="text-2xl font-bold text-white mb-1" style="letter-spacing:-0.3px;">
+                Algo<span style="color:#58a6ff;">Nest</span>
+            </h1>
             <p class="text-slate-500 text-[13px]"
                x-text="mode === 'login' ? 'Welcome back, coder!' : mode === 'register' ? 'Create an account to start coding' : 'Apply for Faculty Access'">
             </p>
@@ -191,13 +308,13 @@
                     <input :type="showPassword ? 'text' : 'password'" x-model="formData.password" required placeholder="••••••••"
                            class="input-field w-full rounded-md py-2 pl-3 pr-10">
                     <button type="button" @click="showPassword = !showPassword"
-                            class="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-600 hover:text-slate-400 transition-colors"
+                            class="absolute inset-y-0 right-0 flex items-center px-3 text-slate-500 hover:text-blue-400 transition-colors"
                             :aria-label="showPassword ? 'Hide password' : 'Show password'">
-                        <svg x-show="!showPassword" class="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg x-show="!showPassword" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
                         </svg>
-                        <svg x-show="showPassword" class="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg x-show="showPassword" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7a9.956 9.956 0 012.293-3.95M6.228 6.228A9.956 9.956 0 0112 5c4.477 0 8.268 2.943 9.542 7a9.956 9.956 0 01-1.768 3.228M6.228 6.228L3 3m3.228 3.228l3.65 3.65M17.772 17.772L21 21m-3.228-3.228l-3.65-3.65"/>
                         </svg>
                     </button>
@@ -384,60 +501,6 @@
 
     <script src="assets/js/app.js"></script>
     <script src="assets/js/auth.js"></script>
-    <script>
-        // ── Code Rain Background ──
-        (function() {
-            const canvas = document.getElementById('codeCanvas');
-            const ctx = canvas.getContext('2d');
-
-            // Mix of C++, Python, JS snippets and symbols
-            const chars = 'int void bool return if else for while auto const std::vector push_back nullptr true false 01{}[]();=>+-%&&||!#include<bits/stdc++.h>defclassimportfrompasslambda';
-            const charArr = chars.split('');
-
-            let cols, drops;
-            const fontSize = 13;
-
-            function init() {
-                canvas.width  = window.innerWidth;
-                canvas.height = window.innerHeight;
-                cols  = Math.floor(canvas.width / fontSize);
-                drops = Array.from({ length: cols }, () => Math.random() * -50);
-            }
-
-            function draw() {
-                // Semi-transparent fade
-                ctx.fillStyle = 'rgba(13, 17, 23, 0.055)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                ctx.font = `${fontSize}px "Fira Code", monospace`;
-
-                for (let i = 0; i < drops.length; i++) {
-                    const ch = charArr[Math.floor(Math.random() * charArr.length)];
-                    const y  = drops[i] * fontSize;
-
-                    // Head of stream — bright blue
-                    if (drops[i] > 0 && drops[i] < canvas.height / fontSize) {
-                        ctx.fillStyle = '#58a6ff';
-                        ctx.fillText(ch, i * fontSize, y);
-                    }
-
-                    // Body — dimmer blue
-                    ctx.fillStyle = '#1f6feb';
-                    ctx.fillText(ch, i * fontSize, y - fontSize);
-
-                    // Random reset
-                    if (y > canvas.height && Math.random() > 0.975) {
-                        drops[i] = 0;
-                    }
-                    drops[i] += 0.4;
-                }
-            }
-
-            init();
-            window.addEventListener('resize', init);
-            setInterval(draw, 45);
-        })();
-    </script>
     <script>
         function loginForm() {
             return {
