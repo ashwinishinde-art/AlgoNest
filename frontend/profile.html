@@ -88,6 +88,9 @@
                         <button @click="editingUsername = true; editUsernameValue = user.username" class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none transition-colors" title="Edit username">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
                         </button>
+                        <button @click="showChangePasswordModal = true" class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none transition-colors" title="Change password">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </button>
                     </div>
                     <p class="text-slate-500 dark:text-slate-400 mt-1" x-text="user ? user.email : ''"></p>
                     <div class="flex items-center space-x-4 mt-4">
@@ -267,6 +270,56 @@
         </div>
     </div>
 
+    <!-- Change Password Modal -->
+    <div x-show="showChangePasswordModal" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" x-transition>
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl w-96 p-6 shadow-xl">
+            <h3 class="text-lg font-bold mb-4 text-slate-800 dark:text-slate-100">Change Password</h3>
+
+            <div class="space-y-4 mb-6">
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Current Password</label>
+                    <input
+                        x-model="passwordForm.current"
+                        type="password"
+                        placeholder="Enter current password"
+                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                        @keyup.escape="closePasswordModal()"
+                    >
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">New Password</label>
+                    <input
+                        x-model="passwordForm.newPass"
+                        type="password"
+                        placeholder="Enter new password"
+                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                        @keyup.escape="closePasswordModal()"
+                    >
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Minimum 6 characters</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Confirm New Password</label>
+                    <input
+                        x-model="passwordForm.confirm"
+                        type="password"
+                        placeholder="Confirm new password"
+                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                        @keyup.enter="changePassword()"
+                        @keyup.escape="closePasswordModal()"
+                    >
+                </div>
+                <template x-if="passwordError">
+                    <p class="text-sm text-red-500 dark:text-red-400" x-text="passwordError"></p>
+                </template>
+            </div>
+
+            <div class="flex justify-end space-x-3">
+                <button @click="closePasswordModal()" class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-semibold py-2 px-4 rounded-lg text-sm">Cancel</button>
+                <button @click="changePassword()" :disabled="changingPassword" class="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-400 text-white font-semibold py-2 px-4 rounded-lg text-sm transition-colors" x-text="changingPassword ? 'Saving...' : 'Change Password'"></button>
+            </div>
+        </div>
+    </div>
+
     <script src="assets/js/app.js"></script>
     <script src="assets/js/auth.js"></script>
     <script>
@@ -305,6 +358,10 @@
                 selectedImage: null,
                 editingUsername: false,
                 editUsernameValue: '',
+                showChangePasswordModal: false,
+                changingPassword: false,
+                passwordError: '',
+                passwordForm: { current: '', newPass: '', confirm: '' },
 
                 init() {
                     Auth.checkAuthGuard();
@@ -439,6 +496,56 @@
                     } catch (e) {
                         console.error('Error uploading image:', e);
                         alert('Error uploading image: ' + e.message);
+                    }
+                },
+
+                closePasswordModal() {
+                    this.showChangePasswordModal = false;
+                    this.passwordForm = { current: '', newPass: '', confirm: '' };
+                    this.passwordError = '';
+                },
+
+                async changePassword() {
+                    this.passwordError = '';
+
+                    if (!this.passwordForm.current || !this.passwordForm.newPass || !this.passwordForm.confirm) {
+                        this.passwordError = 'All fields are required.';
+                        return;
+                    }
+                    if (this.passwordForm.newPass.length < 6) {
+                        this.passwordError = 'New password must be at least 6 characters.';
+                        return;
+                    }
+                    if (this.passwordForm.newPass !== this.passwordForm.confirm) {
+                        this.passwordError = 'New passwords do not match.';
+                        return;
+                    }
+
+                    this.changingPassword = true;
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/auth/profile/password`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                ...Auth.getAuthHeader()
+                            },
+                            body: JSON.stringify({
+                                current_password: this.passwordForm.current,
+                                new_password: this.passwordForm.newPass
+                            })
+                        });
+
+                        const data = await response.json();
+                        if (response.ok) {
+                            this.closePasswordModal();
+                            alert('Password changed successfully!');
+                        } else {
+                            this.passwordError = data.message || 'Failed to change password.';
+                        }
+                    } catch (e) {
+                        this.passwordError = 'Network error. Please try again.';
+                    } finally {
+                        this.changingPassword = false;
                     }
                 },
 

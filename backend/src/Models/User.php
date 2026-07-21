@@ -147,4 +147,20 @@ class User {
         $stmt->bindParam(":id", $id);
         return $stmt->execute();
     }
+
+    public function changePassword($id, $newPassword) {
+        $password_hash = password_hash($newPassword, PASSWORD_BCRYPT);
+        $query = "UPDATE " . $this->table_name . " SET password_hash = :password_hash WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":password_hash", $password_hash);
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
+
+    public function resetStreak($id) {
+        $query = "UPDATE " . $this->table_name . " SET streak_count = 0 WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
 }

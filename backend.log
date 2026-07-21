@@ -2799,3 +2799,1103 @@
 [Tue Jul 21 14:15:30 2026] 127.0.0.1:55796 Closing
 [Tue Jul 21 14:15:30 2026] 127.0.0.1:55800 Accepted
 [Tue Jul 21 14:15:30 2026] 127.0.0.1:55800 Closing
+[Tue Jul 21 14:15:44 2026] 127.0.0.1:55831 Accepted
+[Tue Jul 21 14:15:44 2026] 127.0.0.1:55831 Closing
+[Tue Jul 21 14:15:45 2026] 127.0.0.1:55836 Accepted
+[Tue Jul 21 14:15:45 2026] 127.0.0.1:55836 Closing
+[Tue Jul 21 14:15:45 2026] 127.0.0.1:55839 Accepted
+[Tue Jul 21 14:15:45 2026] 127.0.0.1:55839 Closing
+[Tue Jul 21 14:15:45 2026] 127.0.0.1:55844 Accepted
+[Tue Jul 21 14:15:45 2026] 127.0.0.1:55844 Closing
+[Tue Jul 21 14:15:45 2026] 127.0.0.1:55848 Accepted
+[Tue Jul 21 14:15:45 2026] 127.0.0.1:55848 Closing
+[Tue Jul 21 14:15:46 2026] 127.0.0.1:55850 Accepted
+[Tue Jul 21 14:15:46 2026] 127.0.0.1:55850 Closing
+[Tue Jul 21 14:15:46 2026] 127.0.0.1:55854 Accepted
+[Tue Jul 21 14:15:46 2026] 127.0.0.1:55854 Closing
+[Tue Jul 21 14:15:47 2026] 127.0.0.1:55857 Accepted
+[Tue Jul 21 14:15:47 2026] 127.0.0.1:55857 Closing
+[Tue Jul 21 14:15:47 2026] 127.0.0.1:55860 Accepted
+[Tue Jul 21 14:15:47 2026] 127.0.0.1:55860 Closing
+[Tue Jul 21 14:15:49 2026] 127.0.0.1:55878 Accepted
+[Tue Jul 21 14:15:49 2026] 127.0.0.1:55879 Accepted
+[Tue Jul 21 14:15:49 2026] 127.0.0.1:55879 Closing
+[Tue Jul 21 14:15:49 2026] 127.0.0.1:55878 Closing
+[Tue Jul 21 14:15:53 2026] 127.0.0.1:55898 Accepted
+[Tue Jul 21 14:15:53 2026] 127.0.0.1:55897 Accepted
+[Tue Jul 21 14:15:53 2026] 127.0.0.1:55897 Closing
+[Tue Jul 21 14:15:53 2026] 127.0.0.1:55898 Closing
+[Tue Jul 21 14:15:55 2026] 127.0.0.1:55915 Accepted
+[Tue Jul 21 14:15:55 2026] 127.0.0.1:55916 Accepted
+[Tue Jul 21 14:15:55 2026] 127.0.0.1:55915 Closing
+[Tue Jul 21 14:15:55 2026] 127.0.0.1:55916 Closing
+[Tue Jul 21 14:16:02 2026] 127.0.0.1:55943 Accepted
+[Tue Jul 21 14:16:02 2026] 127.0.0.1:55943 Closing
+[Tue Jul 21 14:16:02 2026] 127.0.0.1:55947 Accepted
+[Tue Jul 21 14:16:02 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:16:02 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:16:02 2026] Problems found: 13
+[Tue Jul 21 14:16:02 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:16:02 2026] 127.0.0.1:55947 Closing
+[Tue Jul 21 14:16:02 2026] 127.0.0.1:55950 Accepted
+[Tue Jul 21 14:16:02 2026] 127.0.0.1:55950 Closing
+[Tue Jul 21 14:16:03 2026] 127.0.0.1:55956 Accepted
+[Tue Jul 21 14:16:03 2026] 127.0.0.1:55955 Accepted
+[Tue Jul 21 14:16:03 2026] 127.0.0.1:55957 Accepted
+[Tue Jul 21 14:16:03 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 14:16:03 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:16:03 2026] Problems found: 0
+[Tue Jul 21 14:16:03 2026] Problems: []
+[Tue Jul 21 14:16:03 2026] 127.0.0.1:55955 Closing
+[Tue Jul 21 14:16:03 2026] 127.0.0.1:55956 Closing
+[Tue Jul 21 14:16:03 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 14:16:03 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:16:03 2026] Problems found: 5
+[Tue Jul 21 14:16:03 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 14:16:03 2026] 127.0.0.1:55957 Closing
+[Tue Jul 21 14:16:03 2026] 127.0.0.1:55962 Accepted
+[Tue Jul 21 14:16:03 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 14:16:03 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:16:03 2026] Problems found: 0
+[Tue Jul 21 14:16:03 2026] Problems: []
+[Tue Jul 21 14:16:03 2026] 127.0.0.1:55962 Closing
+[Tue Jul 21 14:16:03 2026] 127.0.0.1:55966 Accepted
+[Tue Jul 21 14:16:03 2026] 127.0.0.1:55966 Closing
+[Tue Jul 21 14:16:21 2026] 127.0.0.1:56012 Accepted
+[Tue Jul 21 14:16:21 2026] 127.0.0.1:56012 Closing
+[Tue Jul 21 14:16:21 2026] 127.0.0.1:56016 Accepted
+[Tue Jul 21 14:16:21 2026] 127.0.0.1:56016 Closing
+[Tue Jul 21 14:16:21 2026] 127.0.0.1:56018 Accepted
+[Tue Jul 21 14:16:21 2026] 127.0.0.1:56018 Closing
+[Tue Jul 21 14:16:22 2026] 127.0.0.1:56021 Accepted
+[Tue Jul 21 14:16:22 2026] 127.0.0.1:56021 Closing
+[Tue Jul 21 14:16:22 2026] 127.0.0.1:56024 Accepted
+[Tue Jul 21 14:16:22 2026] 127.0.0.1:56024 Closing
+[Tue Jul 21 14:16:23 2026] 127.0.0.1:56027 Accepted
+[Tue Jul 21 14:16:23 2026] 127.0.0.1:56027 Closing
+[Tue Jul 21 14:16:23 2026] 127.0.0.1:56030 Accepted
+[Tue Jul 21 14:16:23 2026] 127.0.0.1:56030 Closing
+[Tue Jul 21 14:16:23 2026] 127.0.0.1:56033 Accepted
+[Tue Jul 21 14:16:23 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.parent_comment_id' in 'field list' in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php:23
+Stack trace:
+#0 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php(23): PDOStatement->execute()
+#1 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Controllers\CommentController.php(21): Comment->getByProblemId('14')
+#2 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\index.php(221): CommentController->getCommentsByProblem('14')
+#3 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\router.php(47): require_once('C:\\Users\\suvar....')
+#4 {main}
+  thrown in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php on line 23
+[Tue Jul 21 14:16:23 2026] 127.0.0.1:56033 Closing
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56047 Accepted
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56047 Closing
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56050 Accepted
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56050 Closing
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56053 Accepted
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56053 Closing
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56055 Accepted
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56055 Closing
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56057 Accepted
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56057 Closing
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56060 Accepted
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56060 Closing
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56062 Accepted
+[Tue Jul 21 14:16:25 2026] ProblemController::list called with filters: {"author_id":"1","approved":"1"}
+[Tue Jul 21 14:16:25 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:16:25 2026] Problems found: 2
+[Tue Jul 21 14:16:25 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"}]
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56062 Closing
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56065 Accepted
+[Tue Jul 21 14:16:25 2026] ProblemController::list called with filters: {"author_id":"1","approved":"0"}
+[Tue Jul 21 14:16:25 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:16:25 2026] Problems found: 0
+[Tue Jul 21 14:16:25 2026] Problems: []
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56065 Closing
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56068 Accepted
+[Tue Jul 21 14:16:25 2026] ProblemController::list called with filters: {"author_id":"1","approved":"2"}
+[Tue Jul 21 14:16:25 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:16:25 2026] Problems found: 0
+[Tue Jul 21 14:16:25 2026] Problems: []
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56068 Closing
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56072 Accepted
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56073 Accepted
+[Tue Jul 21 14:16:25 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:16:25 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:16:25 2026] Problems found: 13
+[Tue Jul 21 14:16:25 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56073 Closing
+[Tue Jul 21 14:16:25 2026] 127.0.0.1:56072 Closing
+[Tue Jul 21 14:16:26 2026] 127.0.0.1:56079 Accepted
+[Tue Jul 21 14:16:26 2026] 127.0.0.1:56079 Closing
+[Tue Jul 21 14:16:28 2026] 127.0.0.1:56096 Accepted
+[Tue Jul 21 14:16:28 2026] 127.0.0.1:56095 Accepted
+[Tue Jul 21 14:16:28 2026] 127.0.0.1:56096 Closing
+[Tue Jul 21 14:16:28 2026] 127.0.0.1:56095 Closing
+[Tue Jul 21 14:16:28 2026] 127.0.0.1:56099 Accepted
+[Tue Jul 21 14:16:28 2026] 127.0.0.1:56099 Closing
+[Tue Jul 21 14:16:28 2026] 127.0.0.1:56103 Accepted
+[Tue Jul 21 14:16:28 2026] 127.0.0.1:56104 Accepted
+[Tue Jul 21 14:16:28 2026] 127.0.0.1:56104 Closing
+[Tue Jul 21 14:16:28 2026] 127.0.0.1:56103 Closing
+[Tue Jul 21 14:16:32 2026] 127.0.0.1:56111 Accepted
+[Tue Jul 21 14:16:32 2026] 127.0.0.1:56111 Closing
+[Tue Jul 21 14:16:33 2026] 127.0.0.1:56117 Accepted
+[Tue Jul 21 14:16:33 2026] 127.0.0.1:56117 Closing
+[Tue Jul 21 14:16:34 2026] 127.0.0.1:56119 Accepted
+[Tue Jul 21 14:16:34 2026] 127.0.0.1:56119 Closing
+[Tue Jul 21 14:16:35 2026] 127.0.0.1:56137 Accepted
+[Tue Jul 21 14:16:35 2026] 127.0.0.1:56137 Closing
+[Tue Jul 21 14:16:35 2026] 127.0.0.1:56141 Accepted
+[Tue Jul 21 14:16:35 2026] 127.0.0.1:56141 Closing
+[Tue Jul 21 14:16:36 2026] 127.0.0.1:56143 Accepted
+[Tue Jul 21 14:16:36 2026] 127.0.0.1:56143 Closing
+[Tue Jul 21 14:16:36 2026] 127.0.0.1:56146 Accepted
+[Tue Jul 21 14:16:36 2026] 127.0.0.1:56146 Closing
+[Tue Jul 21 14:16:36 2026] 127.0.0.1:56149 Accepted
+[Tue Jul 21 14:16:36 2026] 127.0.0.1:56149 Closing
+[Tue Jul 21 14:16:37 2026] 127.0.0.1:56152 Accepted
+[Tue Jul 21 14:16:37 2026] 127.0.0.1:56152 Closing
+[Tue Jul 21 14:16:37 2026] 127.0.0.1:56154 Accepted
+[Tue Jul 21 14:16:37 2026] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.parent_comment_id' in 'field list' in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php:23
+Stack trace:
+#0 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php(23): PDOStatement->execute()
+#1 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Controllers\CommentController.php(21): Comment->getByProblemId('11')
+#2 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\index.php(221): CommentController->getCommentsByProblem('11')
+#3 C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\public\router.php(47): require_once('C:\\Users\\suvar....')
+#4 {main}
+  thrown in C:\Users\suvar.LAPPY\OneDrive\Desktop\algonest\AlgoNest\backend\src\Models\Comment.php on line 23
+[Tue Jul 21 14:16:37 2026] 127.0.0.1:56154 Closing
+[Tue Jul 21 14:16:43 2026] 127.0.0.1:56164 Accepted
+[Tue Jul 21 14:16:43 2026] 127.0.0.1:56164 Closing
+[Tue Jul 21 14:16:43 2026] 127.0.0.1:56166 Accepted
+[Tue Jul 21 14:16:43 2026] 127.0.0.1:56166 Closing
+[Tue Jul 21 14:17:03 2026] 127.0.0.1:56196 Accepted
+[Tue Jul 21 14:17:03 2026] 127.0.0.1:56194 Accepted
+[Tue Jul 21 14:17:03 2026] 127.0.0.1:56195 Accepted
+[Tue Jul 21 14:17:03 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 14:17:03 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:17:03 2026] Problems found: 0
+[Tue Jul 21 14:17:03 2026] Problems: []
+[Tue Jul 21 14:17:03 2026] 127.0.0.1:56194 Closing
+[Tue Jul 21 14:17:03 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 14:17:03 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:17:03 2026] Problems found: 5
+[Tue Jul 21 14:17:03 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 14:17:03 2026] 127.0.0.1:56196 Closing
+[Tue Jul 21 14:17:03 2026] 127.0.0.1:56195 Closing
+[Tue Jul 21 14:17:03 2026] 127.0.0.1:56201 Accepted
+[Tue Jul 21 14:17:03 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 14:17:03 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:17:03 2026] Problems found: 0
+[Tue Jul 21 14:17:03 2026] Problems: []
+[Tue Jul 21 14:17:03 2026] 127.0.0.1:56201 Closing
+[Tue Jul 21 14:17:04 2026] 127.0.0.1:56204 Accepted
+[Tue Jul 21 14:17:04 2026] 127.0.0.1:56204 Closing
+[Tue Jul 21 14:17:05 2026] 127.0.0.1:56209 Accepted
+[Tue Jul 21 14:17:05 2026] 127.0.0.1:56209 Closing
+[Tue Jul 21 14:17:05 2026] 127.0.0.1:56211 Accepted
+[Tue Jul 21 14:17:05 2026] 127.0.0.1:56211 Closing
+[Tue Jul 21 14:17:09 2026] 127.0.0.1:56219 Accepted
+[Tue Jul 21 14:17:09 2026] 127.0.0.1:56219 Closing
+[Tue Jul 21 14:17:09 2026] 127.0.0.1:56222 Accepted
+[Tue Jul 21 14:17:09 2026] 127.0.0.1:56222 Closing
+[Tue Jul 21 14:17:20 2026] 127.0.0.1:56235 Accepted
+[Tue Jul 21 14:17:20 2026] 127.0.0.1:56235 Closing
+[Tue Jul 21 14:17:20 2026] 127.0.0.1:56237 Accepted
+[Tue Jul 21 14:17:20 2026] 127.0.0.1:56237 Closing
+[Tue Jul 21 14:17:30 2026] 127.0.0.1:56274 Accepted
+[Tue Jul 21 14:17:30 2026] 127.0.0.1:56273 Accepted
+[Tue Jul 21 14:17:30 2026] 127.0.0.1:56272 Accepted
+[Tue Jul 21 14:17:30 2026] 127.0.0.1:56274 Closing
+[Tue Jul 21 14:17:30 2026] 127.0.0.1:56273 Closing
+[Tue Jul 21 14:17:30 2026] 127.0.0.1:56272 Closing
+[Tue Jul 21 14:17:30 2026] 127.0.0.1:56277 Accepted
+[Tue Jul 21 14:17:30 2026] 127.0.0.1:56277 Closing
+[Tue Jul 21 14:17:30 2026] 127.0.0.1:56280 Accepted
+[Tue Jul 21 14:17:30 2026] 127.0.0.1:56280 Closing
+[Tue Jul 21 14:17:40 2026] 127.0.0.1:56306 Accepted
+[Tue Jul 21 14:17:40 2026] 127.0.0.1:56307 Accepted
+[Tue Jul 21 14:17:40 2026] 127.0.0.1:56305 Accepted
+[Tue Jul 21 14:17:40 2026] 127.0.0.1:56307 Closing
+[Tue Jul 21 14:17:40 2026] 127.0.0.1:56310 Accepted
+[Tue Jul 21 14:17:40 2026] ProblemController::list called with filters: {"author_id":"1","approved":"0"}
+[Tue Jul 21 14:17:40 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:17:40 2026] Problems found: 0
+[Tue Jul 21 14:17:40 2026] Problems: []
+[Tue Jul 21 14:17:40 2026] 127.0.0.1:56306 Closing
+[Tue Jul 21 14:17:40 2026] ProblemController::list called with filters: {"author_id":"1","approved":"1"}
+[Tue Jul 21 14:17:40 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:17:40 2026] Problems found: 2
+[Tue Jul 21 14:17:40 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"}]
+[Tue Jul 21 14:17:40 2026] 127.0.0.1:56305 Closing
+[Tue Jul 21 14:17:40 2026] 127.0.0.1:56316 Accepted
+[Tue Jul 21 14:17:40 2026] 127.0.0.1:56310 Closing
+[Tue Jul 21 14:17:40 2026] 127.0.0.1:56315 Accepted
+[Tue Jul 21 14:17:40 2026] 127.0.0.1:56316 Closing
+[Tue Jul 21 14:17:40 2026] ProblemController::list called with filters: {"author_id":"1","approved":"2"}
+[Tue Jul 21 14:17:40 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:17:40 2026] Problems found: 0
+[Tue Jul 21 14:17:40 2026] Problems: []
+[Tue Jul 21 14:17:40 2026] 127.0.0.1:56315 Closing
+[Tue Jul 21 14:17:40 2026] 127.0.0.1:56322 Accepted
+[Tue Jul 21 14:17:40 2026] 127.0.0.1:56322 Closing
+[Tue Jul 21 14:17:41 2026] 127.0.0.1:56325 Accepted
+[Tue Jul 21 14:17:41 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:17:41 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:17:41 2026] Problems found: 13
+[Tue Jul 21 14:17:41 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:17:41 2026] 127.0.0.1:56325 Closing
+[Tue Jul 21 14:17:42 2026] 127.0.0.1:56334 Accepted
+[Tue Jul 21 14:17:42 2026] 127.0.0.1:56335 Accepted
+[Tue Jul 21 14:17:42 2026] 127.0.0.1:56333 Accepted
+[Tue Jul 21 14:17:42 2026] 127.0.0.1:56332 Accepted
+[Tue Jul 21 14:17:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 14:17:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:17:42 2026] Problems found: 5
+[Tue Jul 21 14:17:42 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 14:17:42 2026] 127.0.0.1:56335 Closing
+[Tue Jul 21 14:17:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 14:17:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:17:42 2026] Problems found: 0
+[Tue Jul 21 14:17:42 2026] Problems: []
+[Tue Jul 21 14:17:42 2026] 127.0.0.1:56334 Closing
+[Tue Jul 21 14:17:42 2026] 127.0.0.1:56333 Closing
+[Tue Jul 21 14:17:42 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 14:17:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:17:42 2026] Problems found: 0
+[Tue Jul 21 14:17:42 2026] Problems: []
+[Tue Jul 21 14:17:42 2026] 127.0.0.1:56332 Closing
+[Tue Jul 21 14:17:42 2026] 127.0.0.1:56342 Accepted
+[Tue Jul 21 14:17:42 2026] 127.0.0.1:56342 Closing
+[Tue Jul 21 14:17:45 2026] 127.0.0.1:56359 Accepted
+[Tue Jul 21 14:17:45 2026] 127.0.0.1:56360 Accepted
+[Tue Jul 21 14:17:45 2026] 127.0.0.1:56360 Closing
+[Tue Jul 21 14:17:45 2026] 127.0.0.1:56359 Closing
+[Tue Jul 21 14:18:00 2026] 127.0.0.1:56396 Accepted
+[Tue Jul 21 14:18:00 2026] 127.0.0.1:56395 Accepted
+[Tue Jul 21 14:18:00 2026] 127.0.0.1:56396 Closing
+[Tue Jul 21 14:18:00 2026] 127.0.0.1:56395 Closing
+[Tue Jul 21 14:18:11 2026] 127.0.0.1:56417 Accepted
+[Tue Jul 21 14:18:11 2026] 127.0.0.1:56418 Accepted
+[Tue Jul 21 14:18:11 2026] 127.0.0.1:56419 Accepted
+[Tue Jul 21 14:18:11 2026] 127.0.0.1:56420 Accepted
+[Tue Jul 21 14:18:11 2026] ProblemController::list called with filters: {"author_id":"1","approved":"1"}
+[Tue Jul 21 14:18:11 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:18:11 2026] Problems found: 2
+[Tue Jul 21 14:18:11 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"}]
+[Tue Jul 21 14:18:11 2026] 127.0.0.1:56420 Closing
+[Tue Jul 21 14:18:11 2026] ProblemController::list called with filters: {"author_id":"1","approved":"0"}
+[Tue Jul 21 14:18:11 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:18:11 2026] Problems found: 0
+[Tue Jul 21 14:18:11 2026] Problems: []
+[Tue Jul 21 14:18:11 2026] 127.0.0.1:56417 Closing
+[Tue Jul 21 14:18:11 2026] ProblemController::list called with filters: {"author_id":"1","approved":"2"}
+[Tue Jul 21 14:18:11 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:18:11 2026] Problems found: 0
+[Tue Jul 21 14:18:11 2026] Problems: []
+[Tue Jul 21 14:18:11 2026] 127.0.0.1:56418 Closing
+[Tue Jul 21 14:18:11 2026] 127.0.0.1:56419 Closing
+[Tue Jul 21 14:18:11 2026] 127.0.0.1:56426 Accepted
+[Tue Jul 21 14:18:11 2026] 127.0.0.1:56426 Closing
+[Tue Jul 21 14:18:37 2026] 127.0.0.1:55746 Accepted
+[Tue Jul 21 14:18:37 2026] 127.0.0.1:55747 Accepted
+[Tue Jul 21 14:18:37 2026] 127.0.0.1:55747 Closing
+[Tue Jul 21 14:18:37 2026] 127.0.0.1:55746 Closing
+[Tue Jul 21 14:18:48 2026] 127.0.0.1:55780 Accepted
+[Tue Jul 21 14:18:48 2026] 127.0.0.1:55779 Accepted
+[Tue Jul 21 14:18:48 2026] 127.0.0.1:55781 Accepted
+[Tue Jul 21 14:18:48 2026] 127.0.0.1:55783 Accepted
+[Tue Jul 21 14:18:48 2026] 127.0.0.1:55782 Accepted
+[Tue Jul 21 14:18:48 2026] ProblemController::list called with filters: {"author_id":"1","approved":"0"}
+[Tue Jul 21 14:18:48 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:18:48 2026] Problems found: 0
+[Tue Jul 21 14:18:48 2026] Problems: []
+[Tue Jul 21 14:18:48 2026] 127.0.0.1:55779 Closing
+[Tue Jul 21 14:18:48 2026] 127.0.0.1:55781 Closing
+[Tue Jul 21 14:18:48 2026] ProblemController::list called with filters: {"author_id":"1","approved":"1"}
+[Tue Jul 21 14:18:48 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:18:48 2026] Problems found: 2
+[Tue Jul 21 14:18:48 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"}]
+[Tue Jul 21 14:18:48 2026] 127.0.0.1:55783 Closing
+[Tue Jul 21 14:18:48 2026] 127.0.0.1:55784 Accepted
+[Tue Jul 21 14:18:48 2026] ProblemController::list called with filters: {"author_id":"1","approved":"2"}
+[Tue Jul 21 14:18:48 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:18:48 2026] Problems found: 0
+[Tue Jul 21 14:18:48 2026] Problems: []
+[Tue Jul 21 14:18:48 2026] 127.0.0.1:55780 Closing
+[Tue Jul 21 14:18:48 2026] 127.0.0.1:55782 Closing
+[Tue Jul 21 14:18:48 2026] 127.0.0.1:55784 Closing
+[Tue Jul 21 14:18:48 2026] 127.0.0.1:55793 Accepted
+[Tue Jul 21 14:18:48 2026] 127.0.0.1:55793 Closing
+[Tue Jul 21 14:18:49 2026] 127.0.0.1:55796 Accepted
+[Tue Jul 21 14:18:49 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:18:49 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:18:49 2026] Problems found: 13
+[Tue Jul 21 14:18:49 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:18:49 2026] 127.0.0.1:55796 Closing
+[Tue Jul 21 14:18:59 2026] 127.0.0.1:55825 Accepted
+[Tue Jul 21 14:18:59 2026] 127.0.0.1:55827 Accepted
+[Tue Jul 21 14:18:59 2026] 127.0.0.1:55826 Accepted
+[Tue Jul 21 14:18:59 2026] 127.0.0.1:55827 Closing
+[Tue Jul 21 14:18:59 2026] 127.0.0.1:55826 Closing
+[Tue Jul 21 14:18:59 2026] 127.0.0.1:55825 Closing
+[Tue Jul 21 14:19:19 2026] 127.0.0.1:55874 Accepted
+[Tue Jul 21 14:19:19 2026] 127.0.0.1:55873 Accepted
+[Tue Jul 21 14:19:19 2026] 127.0.0.1:55872 Accepted
+[Tue Jul 21 14:19:19 2026] ProblemController::list called with filters: {"author_id":"1","approved":"0"}
+[Tue Jul 21 14:19:19 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:19:19 2026] Problems found: 0
+[Tue Jul 21 14:19:19 2026] Problems: []
+[Tue Jul 21 14:19:19 2026] 127.0.0.1:55872 Closing
+[Tue Jul 21 14:19:19 2026] ProblemController::list called with filters: {"author_id":"1","approved":"2"}
+[Tue Jul 21 14:19:19 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:19:19 2026] Problems found: 0
+[Tue Jul 21 14:19:19 2026] Problems: []
+[Tue Jul 21 14:19:19 2026] 127.0.0.1:55874 Closing
+[Tue Jul 21 14:19:19 2026] ProblemController::list called with filters: {"author_id":"1","approved":"1"}
+[Tue Jul 21 14:19:19 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:19:19 2026] Problems found: 2
+[Tue Jul 21 14:19:19 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"}]
+[Tue Jul 21 14:19:19 2026] 127.0.0.1:55873 Closing
+[Tue Jul 21 14:19:19 2026] 127.0.0.1:55879 Accepted
+[Tue Jul 21 14:19:19 2026] 127.0.0.1:55879 Closing
+[Tue Jul 21 14:19:19 2026] 127.0.0.1:55882 Accepted
+[Tue Jul 21 14:19:19 2026] 127.0.0.1:55882 Closing
+[Tue Jul 21 14:19:23 2026] 127.0.0.1:55899 Accepted
+[Tue Jul 21 14:19:23 2026] 127.0.0.1:55899 Closing
+[Tue Jul 21 14:19:23 2026] 127.0.0.1:55903 Accepted
+[Tue Jul 21 14:19:23 2026] 127.0.0.1:55903 Closing
+[Tue Jul 21 14:19:23 2026] 127.0.0.1:55907 Accepted
+[Tue Jul 21 14:19:23 2026] 127.0.0.1:55907 Closing
+[Tue Jul 21 14:19:24 2026] 127.0.0.1:55914 Accepted
+[Tue Jul 21 14:19:24 2026] 127.0.0.1:55914 Closing
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55948 Accepted
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55946 Accepted
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55945 Accepted
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55947 Accepted
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55946 Closing
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55948 Closing
+[Tue Jul 21 14:19:30 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 14:19:30 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:19:30 2026] Problems found: 0
+[Tue Jul 21 14:19:30 2026] Problems: []
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55945 Closing
+[Tue Jul 21 14:19:30 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 14:19:30 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:19:30 2026] Problems found: 6
+[Tue Jul 21 14:19:30 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55947 Closing
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55956 Accepted
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55955 Accepted
+[Tue Jul 21 14:19:30 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 14:19:30 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:19:30 2026] Problems found: 0
+[Tue Jul 21 14:19:30 2026] Problems: []
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55956 Closing
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55955 Closing
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55960 Accepted
+[Tue Jul 21 14:19:30 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:19:30 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:19:30 2026] Problems found: 13
+[Tue Jul 21 14:19:30 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55960 Closing
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55963 Accepted
+[Tue Jul 21 14:19:30 2026] 127.0.0.1:55963 Closing
+[Tue Jul 21 14:19:49 2026] 127.0.0.1:56005 Accepted
+[Tue Jul 21 14:19:49 2026] 127.0.0.1:56004 Accepted
+[Tue Jul 21 14:19:49 2026] 127.0.0.1:56002 Accepted
+[Tue Jul 21 14:19:49 2026] 127.0.0.1:56003 Accepted
+[Tue Jul 21 14:19:49 2026] ProblemController::list called with filters: {"author_id":"1","approved":"2"}
+[Tue Jul 21 14:19:49 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:19:49 2026] Problems found: 0
+[Tue Jul 21 14:19:49 2026] Problems: []
+[Tue Jul 21 14:19:49 2026] 127.0.0.1:56005 Closing
+[Tue Jul 21 14:19:49 2026] 127.0.0.1:56004 Closing
+[Tue Jul 21 14:19:49 2026] ProblemController::list called with filters: {"author_id":"1","approved":"1"}
+[Tue Jul 21 14:19:49 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:19:49 2026] Problems found: 2
+[Tue Jul 21 14:19:49 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"}]
+[Tue Jul 21 14:19:49 2026] 127.0.0.1:56002 Closing
+[Tue Jul 21 14:19:49 2026] ProblemController::list called with filters: {"author_id":"1","approved":"0"}
+[Tue Jul 21 14:19:49 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:19:49 2026] Problems found: 0
+[Tue Jul 21 14:19:49 2026] Problems: []
+[Tue Jul 21 14:19:49 2026] 127.0.0.1:56003 Closing
+[Tue Jul 21 14:19:49 2026] 127.0.0.1:56012 Accepted
+[Tue Jul 21 14:19:49 2026] 127.0.0.1:56012 Closing
+[Tue Jul 21 14:19:52 2026] 127.0.0.1:56018 Accepted
+[Tue Jul 21 14:19:53 2026] 127.0.0.1:56018 Closing
+[Tue Jul 21 14:20:00 2026] 127.0.0.1:56035 Accepted
+[Tue Jul 21 14:20:00 2026] 127.0.0.1:56034 Accepted
+[Tue Jul 21 14:20:00 2026] 127.0.0.1:56033 Accepted
+[Tue Jul 21 14:20:00 2026] 127.0.0.1:56032 Accepted
+[Tue Jul 21 14:20:00 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 14:20:00 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:20:00 2026] Problems found: 0
+[Tue Jul 21 14:20:00 2026] Problems: []
+[Tue Jul 21 14:20:00 2026] 127.0.0.1:56035 Closing
+[Tue Jul 21 14:20:00 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 14:20:00 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:20:00 2026] Problems found: 6
+[Tue Jul 21 14:20:00 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:20:00 2026] 127.0.0.1:56034 Closing
+[Tue Jul 21 14:20:00 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 14:20:00 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:20:00 2026] Problems found: 0
+[Tue Jul 21 14:20:00 2026] Problems: []
+[Tue Jul 21 14:20:00 2026] 127.0.0.1:56033 Closing
+[Tue Jul 21 14:20:00 2026] 127.0.0.1:56032 Closing
+[Tue Jul 21 14:20:00 2026] 127.0.0.1:56041 Accepted
+[Tue Jul 21 14:20:00 2026] 127.0.0.1:56041 Closing
+[Tue Jul 21 14:20:11 2026] 127.0.0.1:56055 Accepted
+[Tue Jul 21 14:20:11 2026] 127.0.0.1:56055 Closing
+[Tue Jul 21 14:20:16 2026] 127.0.0.1:56065 Accepted
+[Tue Jul 21 14:20:16 2026] 127.0.0.1:56065 Closing
+[Tue Jul 21 14:20:17 2026] 127.0.0.1:54688 Accepted
+[Tue Jul 21 14:20:17 2026] 127.0.0.1:54690 Accepted
+[Tue Jul 21 14:20:17 2026] 127.0.0.1:54687 Accepted
+[Tue Jul 21 14:20:17 2026] 127.0.0.1:54688 Closing
+[Tue Jul 21 14:20:17 2026] 127.0.0.1:54689 Accepted
+[Tue Jul 21 14:20:17 2026] 127.0.0.1:54690 Closing
+[Tue Jul 21 14:20:17 2026] 127.0.0.1:54687 Closing
+[Tue Jul 21 14:20:17 2026] 127.0.0.1:54689 Closing
+[Tue Jul 21 14:20:17 2026] 127.0.0.1:54696 Accepted
+[Tue Jul 21 14:20:17 2026] 127.0.0.1:54695 Accepted
+[Tue Jul 21 14:20:17 2026] 127.0.0.1:54696 Closing
+[Tue Jul 21 14:20:17 2026] 127.0.0.1:54695 Closing
+[Tue Jul 21 14:20:18 2026] 127.0.0.1:54701 Accepted
+[Tue Jul 21 14:20:18 2026] 127.0.0.1:54700 Accepted
+[Tue Jul 21 14:20:18 2026] ProblemController::list called with filters: {"author_id":"32","approved":"1"}
+[Tue Jul 21 14:20:18 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:20:18 2026] Problems found: 0
+[Tue Jul 21 14:20:18 2026] Problems: []
+[Tue Jul 21 14:20:18 2026] 127.0.0.1:54700 Closing
+[Tue Jul 21 14:20:18 2026] ProblemController::list called with filters: {"author_id":"32","approved":"0"}
+[Tue Jul 21 14:20:18 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:20:18 2026] Problems found: 0
+[Tue Jul 21 14:20:18 2026] Problems: []
+[Tue Jul 21 14:20:18 2026] 127.0.0.1:54701 Closing
+[Tue Jul 21 14:20:18 2026] 127.0.0.1:54705 Accepted
+[Tue Jul 21 14:20:18 2026] ProblemController::list called with filters: {"author_id":"32","approved":"2"}
+[Tue Jul 21 14:20:18 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:20:18 2026] Problems found: 0
+[Tue Jul 21 14:20:18 2026] Problems: []
+[Tue Jul 21 14:20:18 2026] 127.0.0.1:54705 Closing
+[Tue Jul 21 14:20:18 2026] 127.0.0.1:54708 Accepted
+[Tue Jul 21 14:20:18 2026] 127.0.0.1:54708 Closing
+[Tue Jul 21 14:20:18 2026] 127.0.0.1:54711 Accepted
+[Tue Jul 21 14:20:18 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:20:18 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:20:18 2026] Problems found: 13
+[Tue Jul 21 14:20:18 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:20:18 2026] 127.0.0.1:54711 Closing
+[Tue Jul 21 14:20:19 2026] 127.0.0.1:54716 Accepted
+[Tue Jul 21 14:20:19 2026] 127.0.0.1:54716 Closing
+[Tue Jul 21 14:20:19 2026] 127.0.0.1:54723 Accepted
+[Tue Jul 21 14:20:19 2026] 127.0.0.1:54722 Accepted
+[Tue Jul 21 14:20:19 2026] 127.0.0.1:54721 Accepted
+[Tue Jul 21 14:20:19 2026] ProblemController::list called with filters: {"author_id":"1","approved":"1"}
+[Tue Jul 21 14:20:19 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:20:19 2026] Problems found: 2
+[Tue Jul 21 14:20:19 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"}]
+[Tue Jul 21 14:20:19 2026] 127.0.0.1:54723 Closing
+[Tue Jul 21 14:20:19 2026] ProblemController::list called with filters: {"author_id":"1","approved":"0"}
+[Tue Jul 21 14:20:19 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:20:19 2026] Problems found: 0
+[Tue Jul 21 14:20:19 2026] Problems: []
+[Tue Jul 21 14:20:19 2026] 127.0.0.1:54722 Closing
+[Tue Jul 21 14:20:19 2026] ProblemController::list called with filters: {"author_id":"1","approved":"2"}
+[Tue Jul 21 14:20:19 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:20:19 2026] Problems found: 0
+[Tue Jul 21 14:20:19 2026] Problems: []
+[Tue Jul 21 14:20:19 2026] 127.0.0.1:54721 Closing
+[Tue Jul 21 14:20:19 2026] 127.0.0.1:54728 Accepted
+[Tue Jul 21 14:20:19 2026] 127.0.0.1:54728 Closing
+[Tue Jul 21 14:20:25 2026] 127.0.0.1:54748 Accepted
+[Tue Jul 21 14:20:25 2026] 127.0.0.1:54748 Closing
+[Tue Jul 21 14:20:26 2026] 127.0.0.1:54752 Accepted
+[Tue Jul 21 14:20:26 2026] 127.0.0.1:54752 Closing
+[Tue Jul 21 14:20:26 2026] 127.0.0.1:54756 Accepted
+[Tue Jul 21 14:20:26 2026] 127.0.0.1:54756 Closing
+[Tue Jul 21 14:20:27 2026] 127.0.0.1:54763 Accepted
+[Tue Jul 21 14:20:27 2026] 127.0.0.1:54763 Closing
+[Tue Jul 21 14:20:27 2026] 127.0.0.1:54776 Accepted
+[Tue Jul 21 14:20:27 2026] 127.0.0.1:54776 Closing
+[Tue Jul 21 14:20:27 2026] 127.0.0.1:54779 Accepted
+[Tue Jul 21 14:20:27 2026] 127.0.0.1:54779 Closing
+[Tue Jul 21 14:20:29 2026] 127.0.0.1:54793 Accepted
+[Tue Jul 21 14:20:29 2026] 127.0.0.1:54793 Closing
+[Tue Jul 21 14:20:29 2026] 127.0.0.1:54796 Accepted
+[Tue Jul 21 14:20:29 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:20:29 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:20:29 2026] Problems found: 13
+[Tue Jul 21 14:20:29 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:20:29 2026] 127.0.0.1:54796 Closing
+[Tue Jul 21 14:20:29 2026] 127.0.0.1:54799 Accepted
+[Tue Jul 21 14:20:29 2026] 127.0.0.1:54799 Closing
+[Tue Jul 21 14:20:33 2026] 127.0.0.1:54819 Accepted
+[Tue Jul 21 14:20:33 2026] 127.0.0.1:54820 Accepted
+[Tue Jul 21 14:20:33 2026] 127.0.0.1:54819 Closing
+[Tue Jul 21 14:20:33 2026] 127.0.0.1:54820 Closing
+[Tue Jul 21 14:20:33 2026] 127.0.0.1:54833 Accepted
+[Tue Jul 21 14:20:33 2026] 127.0.0.1:54833 Closing
+[Tue Jul 21 14:20:33 2026] 127.0.0.1:54836 Accepted
+[Tue Jul 21 14:20:33 2026] 127.0.0.1:54836 Closing
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54855 Accepted
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54855 Closing
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54858 Accepted
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54859 Accepted
+[Tue Jul 21 14:20:37 2026] ProblemController::list called with filters: {"author_id":"1","approved":"1"}
+[Tue Jul 21 14:20:37 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:20:37 2026] Problems found: 2
+[Tue Jul 21 14:20:37 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"}]
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54858 Closing
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54862 Accepted
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54859 Closing
+[Tue Jul 21 14:20:37 2026] ProblemController::list called with filters: {"author_id":"1","approved":"0"}
+[Tue Jul 21 14:20:37 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:20:37 2026] Problems found: 0
+[Tue Jul 21 14:20:37 2026] Problems: []
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54862 Closing
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54867 Accepted
+[Tue Jul 21 14:20:37 2026] ProblemController::list called with filters: {"author_id":"1","approved":"2"}
+[Tue Jul 21 14:20:37 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:20:37 2026] Problems found: 0
+[Tue Jul 21 14:20:37 2026] Problems: []
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54867 Closing
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54870 Accepted
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54870 Closing
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54874 Accepted
+[Tue Jul 21 14:20:37 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:20:37 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:20:37 2026] Problems found: 13
+[Tue Jul 21 14:20:37 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54874 Closing
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54877 Accepted
+[Tue Jul 21 14:20:37 2026] 127.0.0.1:54877 Closing
+[Tue Jul 21 14:20:38 2026] 127.0.0.1:54893 Accepted
+[Tue Jul 21 14:20:38 2026] 127.0.0.1:54892 Accepted
+[Tue Jul 21 14:20:38 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:20:38 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:20:38 2026] Problems found: 13
+[Tue Jul 21 14:20:38 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:20:38 2026] 127.0.0.1:54893 Closing
+[Tue Jul 21 14:20:38 2026] 127.0.0.1:54892 Closing
+[Tue Jul 21 14:20:39 2026] 127.0.0.1:54898 Accepted
+[Tue Jul 21 14:20:39 2026] 127.0.0.1:54898 Closing
+[Tue Jul 21 14:20:40 2026] 127.0.0.1:54916 Accepted
+[Tue Jul 21 14:20:40 2026] 127.0.0.1:54914 Accepted
+[Tue Jul 21 14:20:40 2026] 127.0.0.1:54915 Accepted
+[Tue Jul 21 14:20:40 2026] 127.0.0.1:54916 Closing
+[Tue Jul 21 14:20:40 2026] 127.0.0.1:54914 Closing
+[Tue Jul 21 14:20:40 2026] 127.0.0.1:54915 Closing
+[Tue Jul 21 14:20:48 2026] 127.0.0.1:54933 Accepted
+[Tue Jul 21 14:20:48 2026] 127.0.0.1:54932 Accepted
+[Tue Jul 21 14:20:48 2026] 127.0.0.1:54931 Accepted
+[Tue Jul 21 14:20:48 2026] ProblemController::list called with filters: {"author_id":"32","approved":"2"}
+[Tue Jul 21 14:20:48 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:20:48 2026] Problems found: 0
+[Tue Jul 21 14:20:48 2026] Problems: []
+[Tue Jul 21 14:20:48 2026] 127.0.0.1:54932 Closing
+[Tue Jul 21 14:20:48 2026] 127.0.0.1:54933 Closing
+[Tue Jul 21 14:20:48 2026] ProblemController::list called with filters: {"author_id":"32","approved":"1"}
+[Tue Jul 21 14:20:48 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:20:48 2026] Problems found: 0
+[Tue Jul 21 14:20:48 2026] Problems: []
+[Tue Jul 21 14:20:48 2026] 127.0.0.1:54931 Closing
+[Tue Jul 21 14:20:48 2026] 127.0.0.1:54938 Accepted
+[Tue Jul 21 14:20:48 2026] ProblemController::list called with filters: {"author_id":"32","approved":"0"}
+[Tue Jul 21 14:20:48 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:20:48 2026] Problems found: 0
+[Tue Jul 21 14:20:48 2026] Problems: []
+[Tue Jul 21 14:20:48 2026] 127.0.0.1:54938 Closing
+[Tue Jul 21 14:20:48 2026] 127.0.0.1:54941 Accepted
+[Tue Jul 21 14:20:48 2026] 127.0.0.1:54941 Closing
+[Tue Jul 21 14:20:59 2026] 127.0.0.1:54970 Accepted
+[Tue Jul 21 14:20:59 2026] 127.0.0.1:54969 Accepted
+[Tue Jul 21 14:20:59 2026] 127.0.0.1:54969 Closing
+[Tue Jul 21 14:20:59 2026] 127.0.0.1:54970 Closing
+[Tue Jul 21 14:21:02 2026] 127.0.0.1:54989 Accepted
+[Tue Jul 21 14:21:02 2026] 127.0.0.1:54988 Accepted
+[Tue Jul 21 14:21:02 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:21:02 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:21:02 2026] Problems found: 13
+[Tue Jul 21 14:21:02 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:21:02 2026] 127.0.0.1:54989 Closing
+[Tue Jul 21 14:21:03 2026] 127.0.0.1:54988 Closing
+[Tue Jul 21 14:21:03 2026] 127.0.0.1:54994 Accepted
+[Tue Jul 21 14:21:03 2026] 127.0.0.1:54994 Closing
+[Tue Jul 21 14:21:08 2026] 127.0.0.1:55015 Accepted
+[Tue Jul 21 14:21:08 2026] 127.0.0.1:55017 Accepted
+[Tue Jul 21 14:21:08 2026] 127.0.0.1:55018 Accepted
+[Tue Jul 21 14:21:08 2026] 127.0.0.1:55016 Accepted
+[Tue Jul 21 14:21:08 2026] 127.0.0.1:55018 Closing
+[Tue Jul 21 14:21:08 2026] ProblemController::list called with filters: {"author_id":"1","approved":"1"}
+[Tue Jul 21 14:21:08 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:21:08 2026] Problems found: 2
+[Tue Jul 21 14:21:08 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"}]
+[Tue Jul 21 14:21:08 2026] 127.0.0.1:55016 Closing
+[Tue Jul 21 14:21:08 2026] 127.0.0.1:55015 Closing
+[Tue Jul 21 14:21:08 2026] ProblemController::list called with filters: {"author_id":"1","approved":"0"}
+[Tue Jul 21 14:21:08 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:21:08 2026] Problems found: 0
+[Tue Jul 21 14:21:08 2026] Problems: []
+[Tue Jul 21 14:21:08 2026] 127.0.0.1:55017 Closing
+[Tue Jul 21 14:21:08 2026] 127.0.0.1:55024 Accepted
+[Tue Jul 21 14:21:08 2026] 127.0.0.1:55024 Closing
+[Tue Jul 21 14:21:08 2026] 127.0.0.1:55027 Accepted
+[Tue Jul 21 14:21:09 2026] ProblemController::list called with filters: {"author_id":"1","approved":"2"}
+[Tue Jul 21 14:21:09 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:21:09 2026] Problems found: 0
+[Tue Jul 21 14:21:09 2026] Problems: []
+[Tue Jul 21 14:21:09 2026] 127.0.0.1:55027 Closing
+[Tue Jul 21 14:21:09 2026] 127.0.0.1:55030 Accepted
+[Tue Jul 21 14:21:09 2026] 127.0.0.1:55030 Closing
+[Tue Jul 21 14:21:09 2026] 127.0.0.1:55034 Accepted
+[Tue Jul 21 14:21:09 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:21:09 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:21:09 2026] Problems found: 13
+[Tue Jul 21 14:21:09 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:21:09 2026] 127.0.0.1:55034 Closing
+[Tue Jul 21 14:21:13 2026] 127.0.0.1:55053 Accepted
+[Tue Jul 21 14:21:13 2026] 127.0.0.1:55052 Accepted
+[Tue Jul 21 14:21:13 2026] 127.0.0.1:55052 Closing
+[Tue Jul 21 14:21:13 2026] 127.0.0.1:55053 Closing
+[Tue Jul 21 14:21:18 2026] 127.0.0.1:55067 Accepted
+[Tue Jul 21 14:21:18 2026] 127.0.0.1:55064 Accepted
+[Tue Jul 21 14:21:18 2026] 127.0.0.1:55066 Accepted
+[Tue Jul 21 14:21:18 2026] 127.0.0.1:55065 Accepted
+[Tue Jul 21 14:21:18 2026] ProblemController::list called with filters: {"author_id":"32","approved":"2"}
+[Tue Jul 21 14:21:18 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:21:18 2026] Problems found: 0
+[Tue Jul 21 14:21:18 2026] Problems: []
+[Tue Jul 21 14:21:18 2026] 127.0.0.1:55064 Closing
+[Tue Jul 21 14:21:18 2026] ProblemController::list called with filters: {"author_id":"32","approved":"1"}
+[Tue Jul 21 14:21:18 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:21:18 2026] Problems found: 0
+[Tue Jul 21 14:21:18 2026] Problems: []
+[Tue Jul 21 14:21:18 2026] 127.0.0.1:55067 Closing
+[Tue Jul 21 14:21:18 2026] ProblemController::list called with filters: {"author_id":"32","approved":"0"}
+[Tue Jul 21 14:21:18 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:21:18 2026] Problems found: 0
+[Tue Jul 21 14:21:18 2026] Problems: []
+[Tue Jul 21 14:21:18 2026] 127.0.0.1:55066 Closing
+[Tue Jul 21 14:21:18 2026] 127.0.0.1:55065 Closing
+[Tue Jul 21 14:21:18 2026] 127.0.0.1:55074 Accepted
+[Tue Jul 21 14:21:18 2026] 127.0.0.1:55074 Closing
+[Tue Jul 21 14:21:21 2026] 127.0.0.1:55093 Accepted
+[Tue Jul 21 14:21:21 2026] 127.0.0.1:55092 Accepted
+[Tue Jul 21 14:21:21 2026] 127.0.0.1:55092 Closing
+[Tue Jul 21 14:21:21 2026] 127.0.0.1:55093 Closing
+[Tue Jul 21 14:21:21 2026] 127.0.0.1:55097 Accepted
+[Tue Jul 21 14:21:21 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:21:21 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:21:21 2026] Problems found: 13
+[Tue Jul 21 14:21:21 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:21:21 2026] 127.0.0.1:55097 Closing
+[Tue Jul 21 14:21:30 2026] 127.0.0.1:55123 Accepted
+[Tue Jul 21 14:21:30 2026] 127.0.0.1:55124 Accepted
+[Tue Jul 21 14:21:30 2026] 127.0.0.1:55124 Closing
+[Tue Jul 21 14:21:30 2026] 127.0.0.1:55123 Closing
+[Tue Jul 21 14:21:30 2026] 127.0.0.1:55137 Accepted
+[Tue Jul 21 14:21:30 2026] 127.0.0.1:55137 Closing
+[Tue Jul 21 14:21:31 2026] 127.0.0.1:55143 Accepted
+[Tue Jul 21 14:21:31 2026] 127.0.0.1:55142 Accepted
+[Tue Jul 21 14:21:31 2026] 127.0.0.1:55142 Closing
+[Tue Jul 21 14:21:31 2026] 127.0.0.1:55143 Closing
+[Tue Jul 21 14:21:31 2026] 127.0.0.1:55150 Accepted
+[Tue Jul 21 14:21:31 2026] 127.0.0.1:55150 Closing
+[Tue Jul 21 14:21:32 2026] 127.0.0.1:55165 Accepted
+[Tue Jul 21 14:21:33 2026] getPublicProfile called with userId: 3
+[Tue Jul 21 14:21:33 2026] Profile result: {"id":3,"username":"neonerd","avatar_url":null,"streak_count":1,"created_at":"2026-07-20 11:15:20"}
+[Tue Jul 21 14:21:33 2026] 127.0.0.1:55165 Closing
+[Tue Jul 21 14:21:33 2026] 127.0.0.1:55169 Accepted
+[Tue Jul 21 14:21:33 2026] getPublicProfile called with userId: 3
+[Tue Jul 21 14:21:33 2026] Profile result: {"id":3,"username":"neonerd","avatar_url":null,"streak_count":1,"created_at":"2026-07-20 11:15:20"}
+[Tue Jul 21 14:21:33 2026] 127.0.0.1:55169 Closing
+[Tue Jul 21 14:21:33 2026] 127.0.0.1:55172 Accepted
+[Tue Jul 21 14:21:33 2026] 127.0.0.1:55172 Closing
+[Tue Jul 21 14:21:33 2026] 127.0.0.1:55178 Accepted
+[Tue Jul 21 14:21:33 2026] 127.0.0.1:55178 Closing
+[Tue Jul 21 14:21:33 2026] 127.0.0.1:55181 Accepted
+[Tue Jul 21 14:21:33 2026] 127.0.0.1:55181 Closing
+[Tue Jul 21 14:21:34 2026] 127.0.0.1:55186 Accepted
+[Tue Jul 21 14:21:34 2026] 127.0.0.1:55186 Closing
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55212 Accepted
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55213 Accepted
+[Tue Jul 21 14:21:42 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 14:21:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:21:42 2026] Problems found: 6
+[Tue Jul 21 14:21:42 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55212 Closing
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55213 Closing
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55219 Accepted
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55218 Accepted
+[Tue Jul 21 14:21:42 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 14:21:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:21:42 2026] Problems found: 0
+[Tue Jul 21 14:21:42 2026] Problems: []
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55219 Closing
+[Tue Jul 21 14:21:42 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 14:21:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:21:42 2026] Problems found: 0
+[Tue Jul 21 14:21:42 2026] Problems: []
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55218 Closing
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55225 Accepted
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55224 Accepted
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55225 Closing
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55224 Closing
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55229 Accepted
+[Tue Jul 21 14:21:42 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:21:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:21:42 2026] Problems found: 13
+[Tue Jul 21 14:21:42 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55229 Closing
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55232 Accepted
+[Tue Jul 21 14:21:42 2026] 127.0.0.1:55232 Closing
+[Tue Jul 21 14:21:48 2026] 127.0.0.1:55244 Accepted
+[Tue Jul 21 14:21:48 2026] 127.0.0.1:55243 Accepted
+[Tue Jul 21 14:21:48 2026] 127.0.0.1:55243 Closing
+[Tue Jul 21 14:21:48 2026] ProblemController::list called with filters: {"author_id":"32","approved":"1"}
+[Tue Jul 21 14:21:48 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:21:48 2026] Problems found: 0
+[Tue Jul 21 14:21:48 2026] Problems: []
+[Tue Jul 21 14:21:48 2026] 127.0.0.1:55244 Closing
+[Tue Jul 21 14:21:48 2026] 127.0.0.1:55248 Accepted
+[Tue Jul 21 14:21:48 2026] ProblemController::list called with filters: {"author_id":"32","approved":"0"}
+[Tue Jul 21 14:21:48 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:21:48 2026] Problems found: 0
+[Tue Jul 21 14:21:48 2026] Problems: []
+[Tue Jul 21 14:21:48 2026] 127.0.0.1:55248 Closing
+[Tue Jul 21 14:21:48 2026] 127.0.0.1:55251 Accepted
+[Tue Jul 21 14:21:48 2026] ProblemController::list called with filters: {"author_id":"32","approved":"2"}
+[Tue Jul 21 14:21:48 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:21:48 2026] Problems found: 0
+[Tue Jul 21 14:21:48 2026] Problems: []
+[Tue Jul 21 14:21:48 2026] 127.0.0.1:55251 Closing
+[Tue Jul 21 14:21:48 2026] 127.0.0.1:55254 Accepted
+[Tue Jul 21 14:21:48 2026] 127.0.0.1:55254 Closing
+[Tue Jul 21 14:22:12 2026] 127.0.0.1:55298 Accepted
+[Tue Jul 21 14:22:12 2026] 127.0.0.1:55297 Accepted
+[Tue Jul 21 14:22:12 2026] 127.0.0.1:55296 Accepted
+[Tue Jul 21 14:22:12 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 14:22:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:22:12 2026] Problems found: 6
+[Tue Jul 21 14:22:12 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:22:12 2026] 127.0.0.1:55298 Closing
+[Tue Jul 21 14:22:12 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 14:22:12 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:22:12 2026] Problems found: 0
+[Tue Jul 21 14:22:12 2026] Problems: []
+[Tue Jul 21 14:22:12 2026] 127.0.0.1:55297 Closing
+[Tue Jul 21 14:22:12 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 14:22:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:22:12 2026] Problems found: 0
+[Tue Jul 21 14:22:12 2026] Problems: []
+[Tue Jul 21 14:22:12 2026] 127.0.0.1:55296 Closing
+[Tue Jul 21 14:22:12 2026] 127.0.0.1:55304 Accepted
+[Tue Jul 21 14:22:12 2026] 127.0.0.1:55304 Closing
+[Tue Jul 21 14:22:12 2026] 127.0.0.1:55307 Accepted
+[Tue Jul 21 14:22:12 2026] getPublicProfile called with userId: 7
+[Tue Jul 21 14:22:12 2026] Profile result: {"id":7,"username":"Mayuriii","avatar_url":null,"streak_count":1,"created_at":"2026-07-20 11:37:01"}
+[Tue Jul 21 14:22:12 2026] 127.0.0.1:55307 Closing
+[Tue Jul 21 14:22:12 2026] 127.0.0.1:55311 Accepted
+[Tue Jul 21 14:22:12 2026] 127.0.0.1:55311 Closing
+[Tue Jul 21 14:22:13 2026] 127.0.0.1:55317 Accepted
+[Tue Jul 21 14:22:13 2026] 127.0.0.1:55316 Accepted
+[Tue Jul 21 14:22:13 2026] 127.0.0.1:55316 Closing
+[Tue Jul 21 14:22:13 2026] getPublicProfile called with userId: 7
+[Tue Jul 21 14:22:13 2026] Profile result: {"id":7,"username":"Mayuriii","avatar_url":null,"streak_count":1,"created_at":"2026-07-20 11:37:01"}
+[Tue Jul 21 14:22:13 2026] 127.0.0.1:55317 Closing
+[Tue Jul 21 14:22:14 2026] 127.0.0.1:55326 Accepted
+[Tue Jul 21 14:22:14 2026] 127.0.0.1:55325 Accepted
+[Tue Jul 21 14:22:14 2026] 127.0.0.1:55326 Closing
+[Tue Jul 21 14:22:14 2026] 127.0.0.1:55325 Closing
+[Tue Jul 21 14:22:14 2026] 127.0.0.1:55333 Accepted
+[Tue Jul 21 14:22:15 2026] 127.0.0.1:55333 Closing
+[Tue Jul 21 14:22:18 2026] 127.0.0.1:55344 Accepted
+[Tue Jul 21 14:22:18 2026] 127.0.0.1:55342 Accepted
+[Tue Jul 21 14:22:18 2026] 127.0.0.1:55343 Accepted
+[Tue Jul 21 14:22:18 2026] 127.0.0.1:55344 Closing
+[Tue Jul 21 14:22:18 2026] ProblemController::list called with filters: {"author_id":"32","approved":"0"}
+[Tue Jul 21 14:22:18 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:22:18 2026] Problems found: 0
+[Tue Jul 21 14:22:18 2026] Problems: []
+[Tue Jul 21 14:22:18 2026] 127.0.0.1:55342 Closing
+[Tue Jul 21 14:22:18 2026] ProblemController::list called with filters: {"author_id":"32","approved":"2"}
+[Tue Jul 21 14:22:18 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:22:18 2026] Problems found: 0
+[Tue Jul 21 14:22:18 2026] Problems: []
+[Tue Jul 21 14:22:18 2026] 127.0.0.1:55343 Closing
+[Tue Jul 21 14:22:18 2026] 127.0.0.1:55349 Accepted
+[Tue Jul 21 14:22:18 2026] ProblemController::list called with filters: {"author_id":"32","approved":"1"}
+[Tue Jul 21 14:22:18 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:22:18 2026] Problems found: 0
+[Tue Jul 21 14:22:18 2026] Problems: []
+[Tue Jul 21 14:22:18 2026] 127.0.0.1:55349 Closing
+[Tue Jul 21 14:22:18 2026] 127.0.0.1:55353 Accepted
+[Tue Jul 21 14:22:18 2026] 127.0.0.1:55353 Closing
+[Tue Jul 21 14:22:31 2026] 127.0.0.1:55380 Accepted
+[Tue Jul 21 14:22:31 2026] 127.0.0.1:55379 Accepted
+[Tue Jul 21 14:22:31 2026] 127.0.0.1:55380 Closing
+[Tue Jul 21 14:22:31 2026] 127.0.0.1:55379 Closing
+[Tue Jul 21 14:22:31 2026] 127.0.0.1:55385 Accepted
+[Tue Jul 21 14:22:31 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:22:31 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:22:31 2026] Problems found: 13
+[Tue Jul 21 14:22:31 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:22:31 2026] 127.0.0.1:55385 Closing
+[Tue Jul 21 14:22:42 2026] 127.0.0.1:55403 Accepted
+[Tue Jul 21 14:22:42 2026] 127.0.0.1:55404 Accepted
+[Tue Jul 21 14:22:42 2026] 127.0.0.1:55401 Accepted
+[Tue Jul 21 14:22:42 2026] 127.0.0.1:55402 Accepted
+[Tue Jul 21 14:22:42 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 14:22:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:22:42 2026] Problems found: 6
+[Tue Jul 21 14:22:42 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:22:42 2026] 127.0.0.1:55403 Closing
+[Tue Jul 21 14:22:42 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 14:22:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:22:42 2026] Problems found: 0
+[Tue Jul 21 14:22:42 2026] Problems: []
+[Tue Jul 21 14:22:42 2026] 127.0.0.1:55404 Closing
+[Tue Jul 21 14:22:42 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 14:22:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:22:42 2026] Problems found: 0
+[Tue Jul 21 14:22:42 2026] Problems: []
+[Tue Jul 21 14:22:42 2026] 127.0.0.1:55401 Closing
+[Tue Jul 21 14:22:42 2026] 127.0.0.1:55402 Closing
+[Tue Jul 21 14:22:42 2026] 127.0.0.1:55410 Accepted
+[Tue Jul 21 14:22:42 2026] 127.0.0.1:55410 Closing
+[Tue Jul 21 14:22:48 2026] 127.0.0.1:55425 Accepted
+[Tue Jul 21 14:22:48 2026] 127.0.0.1:55424 Accepted
+[Tue Jul 21 14:22:48 2026] 127.0.0.1:55422 Accepted
+[Tue Jul 21 14:22:48 2026] 127.0.0.1:55423 Accepted
+[Tue Jul 21 14:22:48 2026] 127.0.0.1:55425 Closing
+[Tue Jul 21 14:22:48 2026] ProblemController::list called with filters: {"author_id":"32","approved":"0"}
+[Tue Jul 21 14:22:48 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:22:48 2026] Problems found: 0
+[Tue Jul 21 14:22:48 2026] Problems: []
+[Tue Jul 21 14:22:48 2026] 127.0.0.1:55422 Closing
+[Tue Jul 21 14:22:48 2026] ProblemController::list called with filters: {"author_id":"32","approved":"2"}
+[Tue Jul 21 14:22:48 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:22:48 2026] Problems found: 0
+[Tue Jul 21 14:22:48 2026] Problems: []
+[Tue Jul 21 14:22:48 2026] 127.0.0.1:55424 Closing
+[Tue Jul 21 14:22:48 2026] ProblemController::list called with filters: {"author_id":"32","approved":"1"}
+[Tue Jul 21 14:22:48 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:22:48 2026] Problems found: 0
+[Tue Jul 21 14:22:48 2026] Problems: []
+[Tue Jul 21 14:22:48 2026] 127.0.0.1:55423 Closing
+[Tue Jul 21 14:22:48 2026] 127.0.0.1:55431 Accepted
+[Tue Jul 21 14:22:48 2026] 127.0.0.1:55431 Closing
+[Tue Jul 21 14:23:03 2026] 127.0.0.1:55281 Accepted
+[Tue Jul 21 14:23:03 2026] 127.0.0.1:55281 Closing
+[Tue Jul 21 14:23:03 2026] 127.0.0.1:55285 Accepted
+[Tue Jul 21 14:23:04 2026] 127.0.0.1:55285 Closing
+[Tue Jul 21 14:23:12 2026] 127.0.0.1:55314 Accepted
+[Tue Jul 21 14:23:12 2026] 127.0.0.1:55313 Accepted
+[Tue Jul 21 14:23:12 2026] 127.0.0.1:55311 Accepted
+[Tue Jul 21 14:23:12 2026] 127.0.0.1:55310 Accepted
+[Tue Jul 21 14:23:12 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 14:23:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:23:12 2026] Problems found: 0
+[Tue Jul 21 14:23:12 2026] Problems: []
+[Tue Jul 21 14:23:12 2026] 127.0.0.1:55313 Closing
+[Tue Jul 21 14:23:12 2026] 127.0.0.1:55314 Closing
+[Tue Jul 21 14:23:12 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 14:23:12 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:23:12 2026] Problems found: 0
+[Tue Jul 21 14:23:12 2026] Problems: []
+[Tue Jul 21 14:23:12 2026] 127.0.0.1:55311 Closing
+[Tue Jul 21 14:23:12 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 14:23:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:23:12 2026] Problems found: 6
+[Tue Jul 21 14:23:12 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:23:12 2026] 127.0.0.1:55310 Closing
+[Tue Jul 21 14:23:12 2026] 127.0.0.1:55324 Accepted
+[Tue Jul 21 14:23:12 2026] 127.0.0.1:55324 Closing
+[Tue Jul 21 14:23:18 2026] 127.0.0.1:52044 Accepted
+[Tue Jul 21 14:23:18 2026] 127.0.0.1:52042 Accepted
+[Tue Jul 21 14:23:18 2026] 127.0.0.1:52043 Accepted
+[Tue Jul 21 14:23:18 2026] ProblemController::list called with filters: {"author_id":"32","approved":"0"}
+[Tue Jul 21 14:23:18 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:23:18 2026] Problems found: 0
+[Tue Jul 21 14:23:18 2026] Problems: []
+[Tue Jul 21 14:23:18 2026] 127.0.0.1:52044 Closing
+[Tue Jul 21 14:23:18 2026] 127.0.0.1:52042 Closing
+[Tue Jul 21 14:23:18 2026] 127.0.0.1:52046 Accepted
+[Tue Jul 21 14:23:18 2026] ProblemController::list called with filters: {"author_id":"32","approved":"1"}
+[Tue Jul 21 14:23:18 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:23:18 2026] Problems found: 0
+[Tue Jul 21 14:23:18 2026] Problems: []
+[Tue Jul 21 14:23:18 2026] 127.0.0.1:52043 Closing
+[Tue Jul 21 14:23:18 2026] ProblemController::list called with filters: {"author_id":"32","approved":"2"}
+[Tue Jul 21 14:23:18 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:23:18 2026] Problems found: 0
+[Tue Jul 21 14:23:18 2026] Problems: []
+[Tue Jul 21 14:23:18 2026] 127.0.0.1:52046 Closing
+[Tue Jul 21 14:23:18 2026] 127.0.0.1:52052 Accepted
+[Tue Jul 21 14:23:18 2026] 127.0.0.1:52052 Closing
+[Tue Jul 21 14:23:27 2026] 127.0.0.1:52065 Accepted
+[Tue Jul 21 14:23:27 2026] 127.0.0.1:52065 Closing
+[Tue Jul 21 14:23:28 2026] 127.0.0.1:52079 Accepted
+[Tue Jul 21 14:23:28 2026] 127.0.0.1:52079 Closing
+[Tue Jul 21 14:23:28 2026] 127.0.0.1:52084 Accepted
+[Tue Jul 21 14:23:28 2026] 127.0.0.1:52083 Accepted
+[Tue Jul 21 14:23:28 2026] 127.0.0.1:52084 Closing
+[Tue Jul 21 14:23:28 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 14:23:28 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:23:28 2026] Problems found: 5
+[Tue Jul 21 14:23:28 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 14:23:28 2026] 127.0.0.1:52083 Closing
+[Tue Jul 21 14:23:28 2026] 127.0.0.1:52088 Accepted
+[Tue Jul 21 14:23:28 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 14:23:28 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:23:28 2026] Problems found: 0
+[Tue Jul 21 14:23:28 2026] Problems: []
+[Tue Jul 21 14:23:28 2026] 127.0.0.1:52088 Closing
+[Tue Jul 21 14:23:28 2026] 127.0.0.1:52091 Accepted
+[Tue Jul 21 14:23:28 2026] 127.0.0.1:52091 Closing
+[Tue Jul 21 14:23:28 2026] 127.0.0.1:52094 Accepted
+[Tue Jul 21 14:23:28 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 14:23:28 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:23:28 2026] Problems found: 0
+[Tue Jul 21 14:23:28 2026] Problems: []
+[Tue Jul 21 14:23:28 2026] 127.0.0.1:52094 Closing
+[Tue Jul 21 14:23:28 2026] 127.0.0.1:52097 Accepted
+[Tue Jul 21 14:23:28 2026] 127.0.0.1:52097 Closing
+[Tue Jul 21 14:23:29 2026] 127.0.0.1:52100 Accepted
+[Tue Jul 21 14:23:29 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:23:29 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:23:29 2026] Problems found: 13
+[Tue Jul 21 14:23:29 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:23:29 2026] 127.0.0.1:52100 Closing
+[Tue Jul 21 14:23:38 2026] 127.0.0.1:52124 Accepted
+[Tue Jul 21 14:23:38 2026] 127.0.0.1:52124 Closing
+[Tue Jul 21 14:23:38 2026] 127.0.0.1:52126 Accepted
+[Tue Jul 21 14:23:38 2026] 127.0.0.1:52126 Closing
+[Tue Jul 21 14:23:41 2026] 127.0.0.1:52145 Accepted
+[Tue Jul 21 14:23:41 2026] 127.0.0.1:52145 Closing
+[Tue Jul 21 14:23:41 2026] 127.0.0.1:52148 Accepted
+[Tue Jul 21 14:23:41 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 14:23:41 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:23:41 2026] Problems found: 0
+[Tue Jul 21 14:23:41 2026] Problems: []
+[Tue Jul 21 14:23:41 2026] 127.0.0.1:52148 Closing
+[Tue Jul 21 14:23:41 2026] 127.0.0.1:52152 Accepted
+[Tue Jul 21 14:23:41 2026] 127.0.0.1:52151 Accepted
+[Tue Jul 21 14:23:41 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 14:23:41 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:23:41 2026] Problems found: 0
+[Tue Jul 21 14:23:41 2026] Problems: []
+[Tue Jul 21 14:23:41 2026] 127.0.0.1:52152 Closing
+[Tue Jul 21 14:23:41 2026] 127.0.0.1:52151 Closing
+[Tue Jul 21 14:23:41 2026] 127.0.0.1:52157 Accepted
+[Tue Jul 21 14:23:41 2026] 127.0.0.1:52157 Closing
+[Tue Jul 21 14:23:41 2026] 127.0.0.1:52160 Accepted
+[Tue Jul 21 14:23:41 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 14:23:41 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:23:41 2026] Problems found: 5
+[Tue Jul 21 14:23:41 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 14:23:41 2026] 127.0.0.1:52160 Closing
+[Tue Jul 21 14:23:42 2026] 127.0.0.1:52163 Accepted
+[Tue Jul 21 14:23:42 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 14:23:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:23:42 2026] Problems found: 6
+[Tue Jul 21 14:23:42 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:23:42 2026] 127.0.0.1:52163 Closing
+[Tue Jul 21 14:23:42 2026] 127.0.0.1:52167 Accepted
+[Tue Jul 21 14:23:42 2026] 127.0.0.1:52168 Accepted
+[Tue Jul 21 14:23:42 2026] 127.0.0.1:52167 Closing
+[Tue Jul 21 14:23:42 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 14:23:42 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:23:42 2026] Problems found: 0
+[Tue Jul 21 14:23:42 2026] Problems: []
+[Tue Jul 21 14:23:42 2026] 127.0.0.1:52168 Closing
+[Tue Jul 21 14:23:42 2026] 127.0.0.1:52173 Accepted
+[Tue Jul 21 14:23:42 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 14:23:42 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:23:42 2026] Problems found: 0
+[Tue Jul 21 14:23:42 2026] Problems: []
+[Tue Jul 21 14:23:42 2026] 127.0.0.1:52173 Closing
+[Tue Jul 21 14:23:42 2026] 127.0.0.1:52178 Accepted
+[Tue Jul 21 14:23:42 2026] 127.0.0.1:52177 Accepted
+[Tue Jul 21 14:23:42 2026] ProblemController::list called with filters: []
+[Tue Jul 21 14:23:42 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:23:42 2026] Problems found: 13
+[Tue Jul 21 14:23:42 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:23:42 2026] 127.0.0.1:52177 Closing
+[Tue Jul 21 14:23:42 2026] 127.0.0.1:52178 Closing
+[Tue Jul 21 14:23:42 2026] 127.0.0.1:52182 Accepted
+[Tue Jul 21 14:23:42 2026] 127.0.0.1:52182 Closing
+[Tue Jul 21 14:23:48 2026] 127.0.0.1:52194 Accepted
+[Tue Jul 21 14:23:48 2026] ProblemController::list called with filters: {"author_id":"32","approved":"1"}
+[Tue Jul 21 14:23:48 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:23:48 2026] Problems found: 0
+[Tue Jul 21 14:23:48 2026] Problems: []
+[Tue Jul 21 14:23:48 2026] 127.0.0.1:52194 Closing
+[Tue Jul 21 14:23:48 2026] 127.0.0.1:52198 Accepted
+[Tue Jul 21 14:23:48 2026] 127.0.0.1:52199 Accepted
+[Tue Jul 21 14:23:48 2026] 127.0.0.1:52198 Closing
+[Tue Jul 21 14:23:48 2026] ProblemController::list called with filters: {"author_id":"32","approved":"2"}
+[Tue Jul 21 14:23:48 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:23:48 2026] Problems found: 0
+[Tue Jul 21 14:23:48 2026] Problems: []
+[Tue Jul 21 14:23:48 2026] 127.0.0.1:52199 Closing
+[Tue Jul 21 14:23:48 2026] 127.0.0.1:52203 Accepted
+[Tue Jul 21 14:23:48 2026] ProblemController::list called with filters: {"author_id":"32","approved":"0"}
+[Tue Jul 21 14:23:48 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:23:48 2026] Problems found: 0
+[Tue Jul 21 14:23:48 2026] Problems: []
+[Tue Jul 21 14:23:48 2026] 127.0.0.1:52203 Closing
+[Tue Jul 21 14:23:48 2026] 127.0.0.1:52207 Accepted
+[Tue Jul 21 14:23:48 2026] 127.0.0.1:52207 Closing
+[Tue Jul 21 14:23:51 2026] 127.0.0.1:52225 Accepted
+[Tue Jul 21 14:23:51 2026] 127.0.0.1:52225 Closing
+[Tue Jul 21 14:23:51 2026] 127.0.0.1:52232 Accepted
+[Tue Jul 21 14:23:51 2026] 127.0.0.1:52230 Accepted
+[Tue Jul 21 14:23:51 2026] 127.0.0.1:52232 Closing
+[Tue Jul 21 14:23:51 2026] 127.0.0.1:52230 Closing
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52280 Accepted
+[Tue Jul 21 14:24:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"1"}
+[Tue Jul 21 14:24:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:24:12 2026] Problems found: 5
+[Tue Jul 21 14:24:12 2026] Problems: [{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii"}]
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52280 Closing
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52283 Accepted
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52285 Accepted
+[Tue Jul 21 14:24:12 2026] ProblemController::list called with filters: {"author_id":"5","approved":"0"}
+[Tue Jul 21 14:24:12 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:24:12 2026] Problems found: 0
+[Tue Jul 21 14:24:12 2026] Problems: []
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52283 Closing
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52287 Accepted
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52285 Closing
+[Tue Jul 21 14:24:12 2026] ProblemController::list called with filters: {"author_id":"5","approved":"1"}
+[Tue Jul 21 14:24:12 2026] approvedOnly converted to: 1
+[Tue Jul 21 14:24:12 2026] Problems found: 6
+[Tue Jul 21 14:24:12 2026] Problems: [{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu"}]
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52287 Closing
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52292 Accepted
+[Tue Jul 21 14:24:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"2"}
+[Tue Jul 21 14:24:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:24:12 2026] Problems found: 0
+[Tue Jul 21 14:24:12 2026] Problems: []
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52292 Closing
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52295 Accepted
+[Tue Jul 21 14:24:12 2026] ProblemController::list called with filters: {"author_id":"29","approved":"0"}
+[Tue Jul 21 14:24:12 2026] approvedOnly converted to: 0
+[Tue Jul 21 14:24:12 2026] Problems found: 0
+[Tue Jul 21 14:24:12 2026] Problems: []
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52295 Closing
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52299 Accepted
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52300 Accepted
+[Tue Jul 21 14:24:12 2026] ProblemController::list called with filters: {"author_id":"5","approved":"2"}
+[Tue Jul 21 14:24:12 2026] approvedOnly converted to: 2
+[Tue Jul 21 14:24:12 2026] Problems found: 0
+[Tue Jul 21 14:24:12 2026] Problems: []
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52299 Closing
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52300 Closing
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52305 Accepted
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52305 Closing
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52308 Accepted
+[Tue Jul 21 14:24:12 2026] 127.0.0.1:52308 Closing

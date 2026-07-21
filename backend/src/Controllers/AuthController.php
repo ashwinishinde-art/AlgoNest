@@ -102,6 +102,17 @@ class AuthController {
     public function getProfile($userId) {
         $profile = $this->user->findById($userId);
         if ($profile) {
+            // Break streak if last_active_date is older than yesterday
+            $lastActive = $profile['last_active_date'];
+            if ($lastActive) {
+                $today     = date('Y-m-d');
+                $yesterday = date('Y-m-d', strtotime('-1 day'));
+                if ($lastActive !== $today && $lastActive !== $yesterday) {
+                    // Streak is stale — reset it
+                    $this->user->resetStreak($userId);
+                    $profile['streak_count'] = 0;
+                }
+            }
             http_response_code(200);
             echo json_encode($profile);
         } else {
@@ -258,6 +269,49 @@ class AuthController {
         } catch (PDOException $e) {
             http_response_code(500);
             echo json_encode(["message" => "Failed to submit faculty request."]);
+        }
+    }
+
+    public function changePassword($userId, $data) {
+        if (empty($data['current_password']) || empty($data['new_password'])) {
+            http_response_code(400);
+            echo json_encode(["message" => "Current password and new password are required."]);
+            return;
+        }
+
+        $newPassword = $data['new_password'];
+        if (strlen($newPassword) < 6) {
+            http_response_code(400);
+            echo json_encode(["message" => "New password must be at least 6 characters long."]);
+            return;
+        }
+
+        // Fetch user to verify current password
+        $userData = $this->user->findById($userId);
+        if (!$userData) {
+            http_response_code(404);
+            echo json_encode(["message" => "User not found."]);
+            return;
+        }
+
+        // Need password_hash field — findById excludes it, so query directly
+        $stmt = $this->db->prepare("SELECT password_hash FROM users WHERE id = :id");
+        $stmt->bindParam(":id", $userId);
+        $stmt->execute();
+        $row = $stmt->fetch();
+
+        if (!$row || !password_verify($data['current_password'], $row['password_hash'])) {
+            http_response_code(401);
+            echo json_encode(["message" => "Current password is incorrect."]);
+            return;
+        }
+
+        if ($this->user->changePassword($userId, $newPassword)) {
+            http_response_code(200);
+            echo json_encode(["message" => "Password changed successfully."]);
+        } else {
+            http_response_code(500);
+            echo json_encode(["message" => "Failed to update password."]);
         }
     }
 

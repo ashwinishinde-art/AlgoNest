@@ -60,6 +60,9 @@ switch ($resource) {
         } elseif ($method === 'PUT' && $resourceId === 'profile' && $subResource === 'username') {
             $user = AuthMiddleware::authenticate();
             $authController->updateUsername($user['id'], $body);
+        } elseif ($method === 'PUT' && $resourceId === 'profile' && $subResource === 'password') {
+            $user = AuthMiddleware::authenticate();
+            $authController->changePassword($user['id'], $body);
         } elseif ($method === 'POST' && $resourceId === 'faculty-register') {
             $user = AuthMiddleware::authenticate();
             $authController->registerFaculty($user['id'], $body);
