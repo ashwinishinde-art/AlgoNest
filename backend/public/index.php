@@ -57,6 +57,9 @@ switch ($resource) {
         } elseif ($method === 'POST' && $resourceId === 'profile' && $subResource === 'avatar') {
             $user = AuthMiddleware::authenticate();
             $authController->updateProfilePicture($user['id']);
+        } elseif ($method === 'DELETE' && $resourceId === 'profile' && $subResource === 'avatar') {
+            $user = AuthMiddleware::authenticate();
+            $authController->deleteProfilePicture($user['id']);
         } elseif ($method === 'PUT' && $resourceId === 'profile' && $subResource === 'username') {
             $user = AuthMiddleware::authenticate();
             $authController->updateUsername($user['id'], $body);

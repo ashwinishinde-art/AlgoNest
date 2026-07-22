@@ -115,6 +115,13 @@ class User {
         return $stmt->execute();
     }
 
+    public function deleteAvatar($id) {
+        $query = "UPDATE " . $this->table_name . " SET avatar_url = NULL WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
+
     public function getPublicProfile($id) {
         // Get public profile information for another user
         $query = "SELECT id, username, avatar_url, streak_count, created_at FROM " . $this->table_name . " WHERE id = :id LIMIT 0,1";

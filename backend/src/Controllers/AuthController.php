@@ -191,6 +191,36 @@ class AuthController {
         }
     }
 
+    public function deleteProfilePicture($userId) {
+        // Fetch current avatar path so we can delete the file
+        $profile = $this->user->findById($userId);
+        if (!$profile) {
+            http_response_code(404);
+            echo json_encode(["message" => "User not found."]);
+            return;
+        }
+
+        if (empty($profile['avatar_url'])) {
+            http_response_code(400);
+            echo json_encode(["message" => "No profile picture to delete."]);
+            return;
+        }
+
+        // Delete the file from disk (avatars live in public/avatars/)
+        $filePath = __DIR__ . '/../../public' . $profile['avatar_url'];
+        if (file_exists($filePath)) {
+            @unlink($filePath);
+        }
+
+        if ($this->user->deleteAvatar($userId)) {
+            http_response_code(200);
+            echo json_encode(["message" => "Profile picture deleted successfully."]);
+        } else {
+            http_response_code(500);
+            echo json_encode(["message" => "Failed to remove profile picture."]);
+        }
+    }
+
     public function getPublicProfile($userId) {
         error_log("getPublicProfile called with userId: " . $userId);
         $profile = $this->user->getPublicProfile($userId);
