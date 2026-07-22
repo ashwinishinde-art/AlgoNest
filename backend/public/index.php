@@ -144,6 +144,14 @@ switch ($resource) {
             } else {
                 $facultyController->listPendingProblems();
             }
+        } elseif ($method === 'PUT' && $resourceId === 'problems' && $subResource !== null) {
+            $action = isset($uriSegments[4]) ? $uriSegments[4] : null;
+            if ($action === 'edit') {
+                $facultyController->updateApprovedProblem($subResource, $body);
+            } else {
+                http_response_code(404);
+                echo json_encode(["message" => "Faculty action not found"]);
+            }
         } elseif ($method === 'POST' && $resourceId === 'problems' && $subResource !== null) {
             $action = isset($uriSegments[4]) ? $uriSegments[4] : null;
             if ($action === 'approve') {
@@ -201,7 +209,12 @@ switch ($resource) {
         } elseif ($method === 'GET' && $resourceId === 'problems') {
             $adminController->listProblems($params);
         } elseif ($method === 'PUT' && $resourceId === 'problems' && $subResource !== null) {
-            $adminController->updateProblem($subResource, $body);
+            $action = isset($uriSegments[4]) ? $uriSegments[4] : null;
+            if ($action === 'edit') {
+                $adminController->updateApprovedProblem($subResource, $body);
+            } else {
+                $adminController->updateProblem($subResource, $body);
+            }
         } elseif ($method === 'DELETE' && $resourceId === 'problems' && $subResource !== null) {
             $adminController->deleteProblem($subResource);
         } elseif ($method === 'POST' && $resourceId === 'testcases') {
