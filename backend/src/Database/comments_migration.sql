@@ -1,7 +1,7 @@
 -- Comments feature migration
 -- Run this to add the comments and comment_votes tables
 
-USE dsa_oj;
+USE algonest;
 
 CREATE TABLE IF NOT EXISTS comments (
     id INT AUTO_INCREMENT PRIMARY KEY,

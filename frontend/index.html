@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" crossorigin>
     <link rel="stylesheet" href="assets/css/tailwind.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css?v=3">
+    <link rel="stylesheet" href="assets/css/styles.css?v=4">
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -147,7 +147,7 @@
         
         <!-- Welcome Card & Streak -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            <div class="md:col-span-2 p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 flex flex-col justify-between">
+            <div class="md:col-span-2 p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 flex flex-col justify-between dash-card dash-card-welcome">
                 <div>
                     <h2 class="text-2xl font-bold mb-2">Welcome Back, <span class="text-blue-700 dark:text-blue-400" x-text="user ? user.username : 'Coder'"></span>!</h2>
                     <p class="text-slate-500 dark:text-slate-400">Evaluate code locally, keep your stats synchronized, and crush your goals.</p>
@@ -161,7 +161,7 @@
                 </div>
             </div>
             
-            <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 flex items-center justify-between">
+            <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 flex items-center justify-between dash-card dash-card-streak">
                 <div>
                     <h3 class="text-lg font-bold text-slate-500 dark:text-slate-400">Current Streak</h3>
                     <div class="flex items-baseline space-x-2 mt-2">
@@ -169,7 +169,7 @@
                         <span class="text-xl font-medium text-slate-500 dark:text-slate-400">days</span>
                     </div>
                 </div>
-                <div class="text-yellow-500 dark:text-yellow-400">
+                <div class="text-yellow-500 dark:text-yellow-400" :class="(profile.streak_count || 0) > 0 ? 'streak-glow' : ''">
                     <svg class="w-16 h-16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>
                 </div>
             </div>
@@ -178,7 +178,7 @@
         <!-- Problem Solving Stats & Quick Details -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             <!-- Stats -->
-            <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 col-span-1">
+            <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 col-span-1 dash-card dash-card-stats">
                 <h3 class="text-lg font-bold mb-6">Difficulty Breakdown</h3>
                 <div class="space-y-4">
                     <div>
@@ -212,7 +212,7 @@
             </div>
 
             <!-- Recent Submissions -->
-            <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 md:col-span-2">
+            <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 md:col-span-2 dash-card dash-card-submissions">
                 <h3 class="text-lg font-bold mb-6">My Recent Submissions</h3>
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
@@ -251,7 +251,7 @@
         </div>
 
         <!-- My Contributed Problems -->
-        <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 mb-10">
+        <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 mb-10 dash-card dash-card-contributions">
             <div class="flex items-center justify-between mb-6">
                 <h3 class="text-lg font-bold">My Contributed Problems</h3>
                 <span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-600 px-2.5 py-1 rounded font-semibold">Requires Admin Approval</span>

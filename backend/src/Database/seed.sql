@@ -1,4 +1,4 @@
-USE dsa_oj;
+USE algonest;
 
 -- Seed Admin and normal User
 -- password is 'password123' (hashed using bcrypt)

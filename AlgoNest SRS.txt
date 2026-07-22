@@ -6,13 +6,13 @@ AlgoNest — Software Requirements Specification (SRS)
 
 1.1 Purpose
 This document specifies the software requirements for AlgoNest, a minimal,
-beautiful, and secure Online Judge platform built for competitive programmers.
+beautiful, and secure coding practice platform built for programmers.
 The system provides server-side code compilation and execution, with
 authentication, problem management, community features, and global leaderboards
 managed centrally.
 
 1.2 System Overview
-AlgoNest is a web-based judge where users write code in the browser and submit
+AlgoNest is a web-based practice platform where users write code in the browser and submit
 it for server-side evaluation. The central server handles compilation, execution,
 and result storage, providing a seamless experience without any client-side
 setup.
@@ -28,7 +28,7 @@ setup.
 
 In-Scope Functionality
 - Server-Side Code Execution: the backend runner compiles and executes submitted
-  code in a sandboxed environment and returns verdicts to the client.
+  code in a sandboxed environment and returns results to the client.
 - Central Data Orchestration: a PHP REST API serving the problem bank, storing
   submission history, issuing JWTs, and managing user rankings.
 - Dynamic Client Dashboard: a browser-based UI with Monaco Editor, live test
@@ -52,14 +52,14 @@ Out of Scope
 - The frontend submits the user's source code and selected language to the
   backend runner via the /api/run endpoint.
 - The runner compiles and executes the code server-side against the problem's
-  test cases and returns per-test verdicts, runtimes, and output deltas.
-- The frontend displays results and submits the verdict metadata to the backend
+  test cases and returns per-test results, runtimes, and output deltas.
+- The frontend displays results and submits the result metadata to the backend
   for persistence.
 
 3.2 Problem Management
 - Problems carry: title, difficulty (Easy / Medium / Hard), topic tags,
   description, constraints, time limit, memory limit, sample test cases
-  (visible), and hidden test cases (used for judging only).
+  (visible), and hidden test cases (used for evaluation only).
 - Users can submit problems for approval from the problem bank page.
 - Admins can create, edit, approve (setting difficulty), reject (with reason),
   or delete problems from the Admin Console.
