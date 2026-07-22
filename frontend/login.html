@@ -36,7 +36,7 @@
         }
         .blob {
             position: fixed; border-radius: 50%;
-            filter: blur(80px); opacity: 0.3; pointer-events: none; z-index: 0;
+            filter: blur(80px); opacity: 0.18; pointer-events: none; z-index: 0;
         }
         .blob1 { width:520px; height:520px; background:radial-gradient(circle,#2563eb,transparent 70%); top:-120px; left:-100px; animation: drift1 14s ease-in-out infinite; }
         .blob2 { width:440px; height:440px; background:radial-gradient(circle,#7c3aed,transparent 70%); top:30%; right:-100px; animation: drift2 18s ease-in-out infinite; }
@@ -47,9 +47,9 @@
         /* blur overlay so bg doesn't compete with card */
         .bg-blur {
             position: fixed; inset: 0; z-index: 0; pointer-events: none;
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(3px);
-            background: rgba(6,13,31,0.45);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            background: rgba(6,13,31,0.08);
         }
 
         /* ── Card ── */
@@ -64,11 +64,11 @@
         /* ── Divider ── */
         .login-divider {
             display: flex; align-items: center; gap: 10px;
-            color: #374151; font-size: 12px;
+            color: #94a3b8; font-size: 12px; font-weight: 700;
         }
         .login-divider::before, .login-divider::after {
             content: ''; flex: 1; height: 1px;
-            background: rgba(99,130,200,0.12);
+            background: rgba(99,130,200,0.2);
         }
 
         /* ── Faculty button ── */
@@ -111,12 +111,22 @@
 
         /* ── Labels ── */
         .field-label {
-            font-size: 11px; font-weight: 600;
-            color: #6b7280;
+            font-size: 11px; font-weight: 700;
+            color: #cbd5e1;
             letter-spacing: 0.06em; text-transform: uppercase;
             display: flex; align-items: center; gap: 5px;
             margin-bottom: 5px;
         }
+
+        /* ── Global text weight boost ── */
+        .glass-card p, .glass-card span, .glass-card label,
+        .glass-card input, .glass-card textarea, .glass-card select,
+        .glass-card button { font-weight: 600; }
+        .glass-card h1 { font-weight: 800; }
+        .glass-card .text-slate-500 { color: #cbd5e1 !important; }
+        .glass-card .text-slate-400 { color: #e2e8f0 !important; }
+        .glass-card .text-slate-300 { color: #f1f5f9 !important; }
+        .glass-card .text-slate-200 { color: #ffffff !important; }
 
         /* ── Spinner ── */
         .spinner {
@@ -127,6 +137,11 @@
             display: inline-block;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ── Global text brightness boost ── */
+        .login-divider { color: #e2e8f0 !important; }
+        body .text-slate-300 { color: #f1f5f9 !important; }
+        body .text-slate-200 { color: #ffffff !important; }
     </style>
 </head>
 <body class="text-slate-100 min-h-screen flex items-center justify-center p-4">
@@ -144,7 +159,7 @@
             <h1 class="text-2xl font-bold text-white mb-1" style="letter-spacing:-0.3px;">
                 Algo<span style="color:#58a6ff;">Nest</span>
             </h1>
-            <p class="text-slate-500 text-[13px]"
+            <p class="text-slate-300 text-[13px] font-semibold"
                x-text="mode === 'login' ? 'Welcome back, coder!' : mode === 'register' ? 'Create an account to start coding' : 'Apply for Faculty Access'">
             </p>
         </div>
@@ -214,11 +229,11 @@
 
         <!-- ── FOOTER LINKS ── -->
         <div x-show="mode !== 'faculty'" class="space-y-3">
-            <button @click="setMode('faculty')" class="btn-faculty w-full py-2.5 rounded-md font-semibold">
+            <button @click="setMode('faculty')" class="btn-faculty w-full py-2.5 rounded-md font-bold">
                 Register as Faculty
             </button>
             <div class="text-center">
-                <button @click="toggleMode()" class="text-[13px] text-slate-500 hover:text-slate-300 transition-colors">
+                <button @click="toggleMode()" class="text-[13px] text-slate-200 hover:text-white font-bold transition-colors">
                     <span x-text="mode === 'register' ? 'Already have an account? Sign In' : 'New user? Sign Up'"></span>
                 </button>
             </div>
@@ -226,11 +241,10 @@
 
         <!-- Faculty back link -->
         <div x-show="mode === 'faculty'" class="mt-4">
-            <button @click="setMode('login')" class="text-[13px] text-slate-400 hover:text-slate-200 transition-colors inline-flex items-center gap-1.5">
-                <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <button @click="setMode('login')" class="text-[13px] text-white hover:text-white font-bold transition-colors inline-flex items-center gap-1 leading-none">
+                <svg class="w-3.5 h-3.5 shrink-0 translate-y-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
-                </svg>
-                Back to Login
+                </svg><span>Back to Login</span>
             </button>
         </div>
 
@@ -248,7 +262,7 @@
                     <div :class="facultyStep >= 3 ? 'bg-blue-600 text-white' : 'bg-slate-700/60 text-slate-500'"
                          class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-colors">3</div>
                 </div>
-                <span class="text-xs text-slate-500" x-text="'Step ' + facultyStep + ' of 3'"></span>
+                <span class="text-xs text-slate-200 font-bold" x-text="'Step ' + facultyStep + ' of 3'"></span>
             </div>
 
             <!-- Step 1: Account -->
@@ -345,9 +359,9 @@
                               placeholder="Briefly describe how you plan to use faculty access…"
                               class="input-field w-full rounded-md py-2 px-3 resize-none"></textarea>
                 </div>
-                <div class="p-3 rounded-lg flex items-start gap-2 text-xs text-blue-300/80 border border-blue-500/20 bg-blue-500/5">
-                    <svg class="w-4 h-4 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>
-                    Your request will be reviewed by an admin. You won't be able to log in until approved.
+                <div class="p-3 rounded-lg flex items-start gap-2 text-xs font-bold border" style="background:#ca8a04; border-color:#fde047; color:#ffffff;">
+                    <svg class="w-4 h-4 mt-0.5 shrink-0 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="#ff3b3b" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>
+                    <span>Your request will be reviewed by an admin. You won't be able to log in until approved.</span>
                 </div>
                 <div class="flex gap-3">
                     <button type="button" @click="facultyStep = 2"
