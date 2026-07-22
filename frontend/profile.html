@@ -76,9 +76,16 @@
                     <template x-if="!profile.avatar_url">
                         <div class="w-24 h-24 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-4xl font-bold" x-text="user ? user.username.charAt(0).toUpperCase() : '?'"></div>
                     </template>
-                    <button @click="openImageUploadModal()" class="absolute bottom-0 right-0 bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full border-2 border-white dark:border-slate-900 transition-colors">
+                    <!-- Upload button -->
+                    <button @click="openImageUploadModal()" class="absolute bottom-0 right-0 bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full border-2 border-white dark:border-slate-900 transition-colors" title="Upload profile picture">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
                     </button>
+                    <!-- Delete button — only shown when avatar exists -->
+                    <template x-if="profile.avatar_url">
+                        <button @click="deleteAvatar()" class="absolute top-0 right-0 bg-red-600 hover:bg-red-700 text-white p-1.5 rounded-full border-2 border-white dark:border-slate-900 transition-colors" title="Remove profile picture">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                    </template>
                 </div>
 
                 <!-- User Info -->
@@ -87,6 +94,9 @@
                         <h1 class="text-3xl font-bold text-slate-800 dark:text-slate-100" x-text="user ? user.username : 'User'"></h1>
                         <button @click="editingUsername = true; editUsernameValue = user.username" class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none transition-colors" title="Edit username">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                        </button>
+                        <button @click="showChangePasswordModal = true" class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none transition-colors" title="Change password">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                         </button>
                     </div>
                     <p class="text-slate-500 dark:text-slate-400 mt-1" x-text="user ? user.email : ''"></p>
@@ -267,6 +277,56 @@
         </div>
     </div>
 
+    <!-- Change Password Modal -->
+    <div x-show="showChangePasswordModal" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" x-transition>
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl w-96 p-6 shadow-xl">
+            <h3 class="text-lg font-bold mb-4 text-slate-800 dark:text-slate-100">Change Password</h3>
+
+            <div class="space-y-4 mb-6">
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Current Password</label>
+                    <input
+                        x-model="passwordForm.current"
+                        type="password"
+                        placeholder="Enter current password"
+                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                        @keyup.escape="closePasswordModal()"
+                    >
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">New Password</label>
+                    <input
+                        x-model="passwordForm.newPass"
+                        type="password"
+                        placeholder="Enter new password"
+                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                        @keyup.escape="closePasswordModal()"
+                    >
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Minimum 6 characters</p>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Confirm New Password</label>
+                    <input
+                        x-model="passwordForm.confirm"
+                        type="password"
+                        placeholder="Confirm new password"
+                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                        @keyup.enter="changePassword()"
+                        @keyup.escape="closePasswordModal()"
+                    >
+                </div>
+                <template x-if="passwordError">
+                    <p class="text-sm text-red-500 dark:text-red-400" x-text="passwordError"></p>
+                </template>
+            </div>
+
+            <div class="flex justify-end space-x-3">
+                <button @click="closePasswordModal()" class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-semibold py-2 px-4 rounded-lg text-sm">Cancel</button>
+                <button @click="changePassword()" :disabled="changingPassword" class="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-400 text-white font-semibold py-2 px-4 rounded-lg text-sm transition-colors" x-text="changingPassword ? 'Saving...' : 'Change Password'"></button>
+            </div>
+        </div>
+    </div>
+
     <script src="assets/js/app.js"></script>
     <script src="assets/js/auth.js"></script>
     <script>
@@ -305,6 +365,10 @@
                 selectedImage: null,
                 editingUsername: false,
                 editUsernameValue: '',
+                showChangePasswordModal: false,
+                changingPassword: false,
+                passwordError: '',
+                passwordForm: { current: '', newPass: '', confirm: '' },
 
                 init() {
                     Auth.checkAuthGuard();
@@ -404,34 +468,34 @@
                         alert('Please select an image');
                         return;
                     }
-                    
-                    const formData = new FormData();
-                    formData.append('avatar', this.selectedImage);
 
                     try {
-                        const authHeader = Auth.getAuthHeader();
-                        // Get only the Authorization header, don't set Content-Type (FormData will do it)
-                        const headers = {
-                            'Authorization': authHeader.Authorization
-                        };
+                        // Read file as base64
+                        const base64 = await new Promise((resolve, reject) => {
+                            const reader = new FileReader();
+                            reader.onload = e => resolve(e.target.result);
+                            reader.onerror = reject;
+                            reader.readAsDataURL(this.selectedImage);
+                        });
 
                         const response = await fetch(`${API_BASE_URL}/auth/profile/avatar`, {
                             method: 'POST',
-                            headers: headers,
-                            body: formData
+                            headers: {
+                                'Content-Type': 'application/json',
+                                ...Auth.getAuthHeader()
+                            },
+                            body: JSON.stringify({
+                                image_data: base64,
+                                file_type: this.selectedImage.type
+                            })
                         });
 
                         if (response.ok) {
                             const data = await response.json();
-                            console.log('Upload response:', data);
                             alert('Profile picture uploaded successfully!');
                             this.showImageUploadModal = false;
                             this.selectedImage = null;
-                            
-                            // Fetch fresh profile data
-                            console.log('Fetching profile after upload...');
                             await this.fetchProfile();
-                            console.log('Updated profile:', this.profile);
                         } else {
                             const error = await response.json();
                             alert('Error: ' + (error.message || 'Failed to upload image'));
@@ -439,6 +503,77 @@
                     } catch (e) {
                         console.error('Error uploading image:', e);
                         alert('Error uploading image: ' + e.message);
+                    }
+                },
+
+                async deleteAvatar() {
+                    if (!confirm('Remove your profile picture? This cannot be undone.')) return;
+
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/auth/profile/avatar`, {
+                            method: 'DELETE',
+                            headers: Auth.getAuthHeader()
+                        });
+
+                        if (response.ok) {
+                            await this.fetchProfile();
+                        } else {
+                            const error = await response.json();
+                            alert('Error: ' + (error.message || 'Failed to delete profile picture'));
+                        }
+                    } catch (e) {
+                        console.error('Error deleting avatar:', e);
+                        alert('Error deleting profile picture: ' + e.message);
+                    }
+                },
+
+                closePasswordModal() {
+                    this.showChangePasswordModal = false;
+                    this.passwordForm = { current: '', newPass: '', confirm: '' };
+                    this.passwordError = '';
+                },
+
+                async changePassword() {
+                    this.passwordError = '';
+
+                    if (!this.passwordForm.current || !this.passwordForm.newPass || !this.passwordForm.confirm) {
+                        this.passwordError = 'All fields are required.';
+                        return;
+                    }
+                    if (this.passwordForm.newPass.length < 6) {
+                        this.passwordError = 'New password must be at least 6 characters.';
+                        return;
+                    }
+                    if (this.passwordForm.newPass !== this.passwordForm.confirm) {
+                        this.passwordError = 'New passwords do not match.';
+                        return;
+                    }
+
+                    this.changingPassword = true;
+                    try {
+                        const response = await fetch(`${API_BASE_URL}/auth/profile/password`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                ...Auth.getAuthHeader()
+                            },
+                            body: JSON.stringify({
+                                current_password: this.passwordForm.current,
+                                new_password: this.passwordForm.newPass
+                            })
+                        });
+
+                        const data = await response.json();
+                        if (response.ok) {
+                            this.closePasswordModal();
+                            alert('Password changed successfully!');
+                        } else {
+                            this.passwordError = data.message || 'Failed to change password.';
+                        }
+                    } catch (e) {
+                        this.passwordError = 'Network error. Please try again.';
+                    } finally {
+                        this.changingPassword = false;
                     }
                 },
 

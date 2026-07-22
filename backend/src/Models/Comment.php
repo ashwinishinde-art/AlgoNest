@@ -11,7 +11,7 @@ class Comment {
     // Get all comments for a problem with nested replies
     public function getByProblemId($problem_id) {
         $query = "SELECT c.id, c.problem_id, c.user_id, c.parent_comment_id, c.content, 
-                         c.vote_score, c.created_at, c.updated_at, u.username,
+                         c.vote_score, c.created_at, c.updated_at, u.username, u.role, u.avatar_url,
                          (SELECT COUNT(*) FROM " . $this->comments_table . " replies WHERE replies.parent_comment_id = c.id) as reply_count
                   FROM " . $this->comments_table . " c
                   JOIN users u ON c.user_id = u.id 
@@ -166,7 +166,7 @@ class Comment {
 
     // Get comment by ID (for validation)
     public function getById($comment_id) {
-        $query = "SELECT c.*, u.username FROM " . $this->comments_table . " c
+        $query = "SELECT c.*, u.username, u.role, u.avatar_url FROM " . $this->comments_table . " c
                   JOIN users u ON c.user_id = u.id 
                   WHERE c.id = :comment_id";
         
