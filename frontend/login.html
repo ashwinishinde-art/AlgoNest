@@ -168,9 +168,10 @@
         <!-- Alert -->
         <div x-show="alert.show" x-transition class="mb-5 p-3 rounded-xl text-sm font-medium flex items-start gap-2"
              :class="alert.type === 'error'
-                ? 'bg-red-500/10 text-red-400 border border-red-500/30'
-                : 'bg-green-500/10 text-green-400 border border-green-500/30'">
-            <svg x-show="alert.type === 'error'" class="w-4 h-4 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>
+                ? 'border'
+                : 'bg-green-500/10 text-green-400 border border-green-500/30'"
+             :style="alert.type === 'error' ? 'background:#ca8a04; border-color:#fde047; color:#ffffff;' : ''">
+            <svg x-show="alert.type === 'error'" class="w-4 h-4 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="#ff3b3b" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>
             <svg x-show="alert.type !== 'error'" class="w-4 h-4 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
             <span x-text="alert.message"></span>
         </div>
