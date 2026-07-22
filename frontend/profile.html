@@ -461,34 +461,34 @@
                         alert('Please select an image');
                         return;
                     }
-                    
-                    const formData = new FormData();
-                    formData.append('avatar', this.selectedImage);
 
                     try {
-                        const authHeader = Auth.getAuthHeader();
-                        // Get only the Authorization header, don't set Content-Type (FormData will do it)
-                        const headers = {
-                            'Authorization': authHeader.Authorization
-                        };
+                        // Read file as base64
+                        const base64 = await new Promise((resolve, reject) => {
+                            const reader = new FileReader();
+                            reader.onload = e => resolve(e.target.result);
+                            reader.onerror = reject;
+                            reader.readAsDataURL(this.selectedImage);
+                        });
 
                         const response = await fetch(`${API_BASE_URL}/auth/profile/avatar`, {
                             method: 'POST',
-                            headers: headers,
-                            body: formData
+                            headers: {
+                                'Content-Type': 'application/json',
+                                ...Auth.getAuthHeader()
+                            },
+                            body: JSON.stringify({
+                                image_data: base64,
+                                file_type: this.selectedImage.type
+                            })
                         });
 
                         if (response.ok) {
                             const data = await response.json();
-                            console.log('Upload response:', data);
                             alert('Profile picture uploaded successfully!');
                             this.showImageUploadModal = false;
                             this.selectedImage = null;
-                            
-                            // Fetch fresh profile data
-                            console.log('Fetching profile after upload...');
                             await this.fetchProfile();
-                            console.log('Updated profile:', this.profile);
                         } else {
                             const error = await response.json();
                             alert('Error: ' + (error.message || 'Failed to upload image'));

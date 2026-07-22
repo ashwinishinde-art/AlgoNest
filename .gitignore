@@ -10,6 +10,10 @@ backend/config/jwt.php
 # Frontend API URL config — set locally per environment
 frontend/assets/js/app.js
 
+# Uploaded avatars
+backend/public/avatars/*
+!backend/public/avatars/.gitkeep
+
 # OS
 .DS_Store
 Thumbs.db
