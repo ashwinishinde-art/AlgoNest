@@ -21,10 +21,10 @@
         .mesh-bg {
             position: fixed; inset: 0; z-index: 0; pointer-events: none;
             background:
-                radial-gradient(ellipse 70% 45% at 50% 0%,   rgba(37,99,235,0.32)  0%, transparent 60%),
-                radial-gradient(ellipse 45% 35% at 0%   40%, rgba(109,40,217,0.22) 0%, transparent 55%),
-                radial-gradient(ellipse 40% 30% at 100% 55%, rgba(6,182,212,0.16)  0%, transparent 50%),
-                radial-gradient(ellipse 50% 35% at 20%  90%, rgba(139,92,246,0.18) 0%, transparent 55%),
+                radial-gradient(ellipse 70% 45% at 50% 0%,   rgba(37,99,235,0.18)  0%, transparent 60%),
+                radial-gradient(ellipse 45% 35% at 0%   40%, rgba(109,40,217,0.12) 0%, transparent 55%),
+                radial-gradient(ellipse 40% 30% at 100% 55%, rgba(6,182,212,0.09)  0%, transparent 50%),
+                radial-gradient(ellipse 50% 35% at 20%  90%, rgba(139,92,246,0.10) 0%, transparent 55%),
                 #060d1f;
         }
         .grid-overlay {
@@ -36,7 +36,7 @@
         }
         .blob {
             position: fixed; border-radius: 50%;
-            filter: blur(80px); opacity: 0.18; pointer-events: none; z-index: 0;
+            filter: blur(110px); opacity: 0.11; pointer-events: none; z-index: 0;
         }
         .blob1 { width:520px; height:520px; background:radial-gradient(circle,#2563eb,transparent 70%); top:-120px; left:-100px; animation: drift1 14s ease-in-out infinite; }
         .blob2 { width:440px; height:440px; background:radial-gradient(circle,#7c3aed,transparent 70%); top:30%; right:-100px; animation: drift2 18s ease-in-out infinite; }
@@ -103,6 +103,7 @@
             transition: border-color 0.15s, box-shadow 0.15s;
         }
         .input-field::placeholder { color: #374151; }
+        textarea.input-field::placeholder { color: #6b7280; }
         .input-field:focus {
             outline: none;
             border-color: #3b82f6;
@@ -232,8 +233,8 @@
             <button @click="setMode('faculty')" class="btn-faculty w-full py-2.5 rounded-md font-bold">
                 Register as Faculty
             </button>
-            <div class="text-center">
-                <button @click="toggleMode()" class="text-[13px] text-slate-200 hover:text-white font-bold transition-colors">
+            <div class="text-center pt-1">
+                <button @click="toggleMode()" class="text-[12px] text-slate-500 hover:text-slate-300 font-medium transition-colors">
                     <span x-text="mode === 'register' ? 'Already have an account? Sign In' : 'New user? Sign Up'"></span>
                 </button>
             </div>
@@ -241,10 +242,8 @@
 
         <!-- Faculty back link -->
         <div x-show="mode === 'faculty'" class="mt-4">
-            <button @click="setMode('login')" class="text-[13px] text-white hover:text-white font-bold transition-colors inline-flex items-center gap-1 leading-none">
-                <svg class="w-3.5 h-3.5 shrink-0 translate-y-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
-                </svg><span>Back to Login</span>
+            <button @click="setMode('login')" class="text-[13px] text-slate-400 hover:text-slate-200 font-semibold transition-colors inline-flex items-center gap-1 leading-none">
+                <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg><span>Back to Login</span>
             </button>
         </div>
 
