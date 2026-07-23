@@ -1,6 +1,6 @@
 # AlgoNest
 
-A minimal, beautiful, and secure Online Judge system for competitive programmers. Problems are compiled and executed on the server — users simply write code in the browser and get instant verdicts.
+A minimal, beautiful, and secure coding practice platform for programmers. Problems are compiled and executed on the server — users simply write code in the browser and get instant results.
 
 ## Architecture
 
@@ -135,7 +135,7 @@ All endpoints are prefixed with `/api`. Protected routes require `Authorization:
 | GET | `/api/problems` | — | List problems |
 | GET | `/api/problems/:id` | — | Problem detail |
 | GET | `/api/problems/:id/samples` | — | Sample test cases |
-| GET | `/api/problems/:id/testcases` | ✓ | All test cases (for judging) |
+| GET | `/api/problems/:id/testcases` | ✓ | All test cases (for evaluation) |
 | POST | `/api/problems` | ✓ | Submit a problem for approval |
 | POST | `/api/submissions` | ✓ | Log a submission result |
 | GET | `/api/submissions/history` | ✓ | Own submission history |

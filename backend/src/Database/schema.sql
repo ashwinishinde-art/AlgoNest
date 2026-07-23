@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS dsa_oj;
-USE dsa_oj;
+CREATE DATABASE IF NOT EXISTS algonest;
+USE algonest;
 
 -- Users table
 CREATE TABLE IF NOT EXISTS users (

@@ -108,3 +108,143 @@ code, pre, .monaco-editor {
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(156, 163, 175, 0.5);
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Dashboard Cards — dynamic hover / glow / shadow effects
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* Base card */
+.dash-card {
+    position: relative;
+    border-radius: 0.875rem;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    background: #ffffff;
+    transition: transform 0.22s cubic-bezier(.22,.68,0,1.2),
+                box-shadow 0.22s ease,
+                border-color 0.22s ease;
+    overflow: hidden;
+}
+.dark .dash-card {
+    background: #08102b;
+    border-color: rgba(60,100,200,0.22);
+}
+
+/* Subtle lift + soft shadow on hover */
+.dash-card:hover {
+    transform: translateY(-3px) scale(1.005);
+    box-shadow: 0 12px 32px rgba(59,130,246,0.10),
+                0 4px 12px rgba(0,0,0,0.08);
+    border-color: rgba(99,102,241,0.35);
+}
+.dark .dash-card:hover {
+    box-shadow: 0 12px 40px rgba(59,130,246,0.20),
+                0 4px 16px rgba(0,0,0,0.35);
+    border-color: rgba(99,102,241,0.5);
+}
+
+/* Ambient glow pseudo-element (hidden by default, slides in on hover) */
+.dash-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(99,102,241,0.10));
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+.dash-card:hover::before { opacity: 1; }
+
+/* Ensure card content sits above glow layer */
+.dash-card > * { position: relative; z-index: 1; }
+
+/* ── Welcome card — slightly more vivid blue tint ─────────────── */
+.dash-card-welcome:hover {
+    box-shadow: 0 14px 40px rgba(59,130,246,0.18),
+                0 4px 14px rgba(0,0,0,0.08);
+    border-color: rgba(59,130,246,0.45);
+}
+.dark .dash-card-welcome:hover {
+    box-shadow: 0 14px 48px rgba(59,130,246,0.28),
+                0 4px 18px rgba(0,0,0,0.40);
+    border-color: rgba(59,130,246,0.60);
+}
+
+/* ── Streak card — warm amber glow ────────────────────────────── */
+.dash-card-streak:hover {
+    box-shadow: 0 12px 36px rgba(245,158,11,0.18),
+                0 4px 12px rgba(0,0,0,0.08);
+    border-color: rgba(245,158,11,0.45);
+}
+.dark .dash-card-streak:hover {
+    box-shadow: 0 12px 44px rgba(245,158,11,0.28),
+                0 4px 16px rgba(0,0,0,0.35);
+    border-color: rgba(245,158,11,0.55);
+}
+.dash-card-streak::before {
+    background: linear-gradient(135deg, rgba(245,158,11,0.10), rgba(251,191,36,0.08));
+}
+
+/* ── Stats card — green/emerald tint ──────────────────────────── */
+.dash-card-stats:hover {
+    box-shadow: 0 12px 36px rgba(16,185,129,0.14),
+                0 4px 12px rgba(0,0,0,0.08);
+    border-color: rgba(16,185,129,0.40);
+}
+.dark .dash-card-stats:hover {
+    box-shadow: 0 12px 44px rgba(16,185,129,0.22),
+                0 4px 16px rgba(0,0,0,0.35);
+    border-color: rgba(16,185,129,0.50);
+}
+.dash-card-stats::before {
+    background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(52,211,153,0.07));
+}
+
+/* ── Submissions card — indigo tint ───────────────────────────── */
+.dash-card-submissions:hover {
+    box-shadow: 0 12px 36px rgba(99,102,241,0.14),
+                0 4px 12px rgba(0,0,0,0.08);
+    border-color: rgba(99,102,241,0.40);
+}
+.dark .dash-card-submissions:hover {
+    box-shadow: 0 12px 44px rgba(99,102,241,0.24),
+                0 4px 16px rgba(0,0,0,0.35);
+    border-color: rgba(99,102,241,0.55);
+}
+
+/* ── Contributions card — violet tint ─────────────────────────── */
+.dash-card-contributions:hover {
+    box-shadow: 0 12px 36px rgba(139,92,246,0.14),
+                0 4px 12px rgba(0,0,0,0.08);
+    border-color: rgba(139,92,246,0.40);
+}
+.dark .dash-card-contributions:hover {
+    box-shadow: 0 12px 44px rgba(139,92,246,0.24),
+                0 4px 16px rgba(0,0,0,0.35);
+    border-color: rgba(139,92,246,0.55);
+}
+.dash-card-contributions::before {
+    background: linear-gradient(135deg, rgba(139,92,246,0.10), rgba(167,139,250,0.07));
+}
+
+/* ── Streak icon pulse (only when streak > 0) ─────────────────── */
+.streak-glow {
+    filter: drop-shadow(0 0 8px rgba(245,158,11,0.55));
+    animation: streak-pulse 2.4s ease-in-out infinite;
+}
+@keyframes streak-pulse {
+    0%, 100% { filter: drop-shadow(0 0 6px rgba(245,158,11,0.45)); }
+    50%       { filter: drop-shadow(0 0 18px rgba(245,158,11,0.85)); }
+}
+
+/* ── Submission table rows — hover highlight ──────────────────── */
+.dash-card tbody tr {
+    transition: background 0.15s ease;
+}
+.dash-card tbody tr:hover {
+    background: rgba(59,130,246,0.04);
+}
+.dark .dash-card tbody tr:hover {
+    background: rgba(59,130,246,0.08);
+}

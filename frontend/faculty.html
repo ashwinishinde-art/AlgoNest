@@ -172,7 +172,15 @@
                             </div>
                             <p class="text-xs text-slate-500 mt-1" x-text="formatDate(problem.created_at)"></p>
                         </div>
-                        <a :href="'problem.html?id=' + problem.id" class="text-sm text-blue-600 dark:text-blue-400 hover:underline font-medium">View →</a>
+                        <div class="flex items-center gap-2 shrink-0">
+                            <template x-if="problem.approved == 1">
+                                <button @click="openEditModal(problem)"
+                                        class="text-sm bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1.5 rounded-lg font-medium transition-colors">
+                                    Edit
+                                </button>
+                            </template>
+                            <a :href="'problem.html?id=' + problem.id" class="text-sm text-blue-600 dark:text-blue-400 hover:underline font-medium">View →</a>
+                        </div>
                     </div>
                 </template>
             </div>
@@ -233,6 +241,139 @@
         </div>
     </div>
 
+    <!-- Edit Approved Problem Modal -->
+    <div x-show="editModal.show" x-cloak x-transition class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 overflow-y-auto">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl max-w-2xl w-full p-8 shadow-xl overflow-y-auto max-h-[90vh]">
+            <h2 class="text-2xl font-bold mb-1 text-slate-800 dark:text-slate-100">Edit Problem</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">Problem stays approved. Changes apply immediately.</p>
+
+            <form @submit.prevent="submitEdit()">
+                <!-- Title -->
+                <div class="mb-4">
+                    <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Title</label>
+                    <input type="text" x-model="editModal.title" required
+                           class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+
+                <!-- Difficulty + Tags -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Difficulty</label>
+                        <select x-model="editModal.difficulty" required
+                                class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Topic Tags <span class="normal-case font-normal">(comma-separated)</span></label>
+                        <input type="text" x-model="editModal.topic_tags" required
+                               class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-4">
+                    <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Description</label>
+                    <textarea x-model="editModal.description" rows="5" required
+                              class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 font-mono"></textarea>
+                </div>
+
+                <!-- Constraints -->
+                <div class="mb-4">
+                    <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Constraints</label>
+                    <textarea x-model="editModal.constraints" rows="3" required
+                              class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg py-2 px-3 text-sm text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 font-mono"></textarea>
+                </div>
+
+                <!-- Test Cases -->
+                <div class="mb-6 border-t border-slate-200 dark:border-slate-700 pt-4">
+                    <!-- Sample TCs -->
+                    <div class="mb-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Sample Test Cases</h4>
+                            <button type="button" @click="editModal.sampleTCs.push({input:'',expected:''})"
+                                    class="text-xs bg-blue-600 hover:bg-blue-700 text-white px-2.5 py-1 rounded font-semibold flex items-center gap-1 transition-all">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                                Add
+                            </button>
+                        </div>
+                        <div class="space-y-3">
+                            <template x-for="(tc, i) in editModal.sampleTCs" :key="'fs'+i">
+                                <div class="p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-xs font-semibold text-slate-500" x-text="`Sample #${i+1}`"></span>
+                                        <button type="button" @click="editModal.sampleTCs.splice(i,1)" x-show="editModal.sampleTCs.length > 1" class="text-red-500 hover:text-red-700">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                                        </button>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <div>
+                                            <label class="block text-[10px] font-semibold text-slate-500 mb-1">Input</label>
+                                            <textarea x-model="tc.input" rows="2" required class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded p-2 text-xs font-mono text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-indigo-500"></textarea>
+                                        </div>
+                                        <div>
+                                            <label class="block text-[10px] font-semibold text-slate-500 mb-1">Expected Output</label>
+                                            <textarea x-model="tc.expected" rows="2" required class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded p-2 text-xs font-mono text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-indigo-500"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Hidden TCs -->
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Hidden Test Cases</h4>
+                            <button type="button" @click="editModal.hiddenTCs.push({input:'',expected:''})"
+                                    class="text-xs bg-slate-600 hover:bg-slate-700 text-white px-2.5 py-1 rounded font-semibold flex items-center gap-1 transition-all">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                                Add
+                            </button>
+                        </div>
+                        <div class="space-y-3">
+                            <template x-for="(tc, i) in editModal.hiddenTCs" :key="'fh'+i">
+                                <div class="p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-xs font-semibold text-slate-500" x-text="`Hidden #${i+1}`"></span>
+                                        <button type="button" @click="editModal.hiddenTCs.splice(i,1)" x-show="editModal.hiddenTCs.length > 1" class="text-red-500 hover:text-red-700">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                                        </button>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <div>
+                                            <label class="block text-[10px] font-semibold text-slate-500 mb-1">Input</label>
+                                            <textarea x-model="tc.input" rows="2" required class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded p-2 text-xs font-mono text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-indigo-500"></textarea>
+                                        </div>
+                                        <div>
+                                            <label class="block text-[10px] font-semibold text-slate-500 mb-1">Expected Output</label>
+                                            <textarea x-model="tc.expected" rows="2" required class="w-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded p-2 text-xs font-mono text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-indigo-500"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex justify-end space-x-3 border-t border-slate-200 dark:border-slate-700 pt-4">
+                    <button type="button" @click="editModal.show = false"
+                            class="bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-semibold py-2 px-5 rounded-lg text-sm transition-all">
+                        Cancel
+                    </button>
+                    <button type="submit" :disabled="editModal.saving"
+                            class="bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-400 text-white font-semibold py-2 px-5 rounded-lg text-sm transition-all">
+                        <span x-show="!editModal.saving">Save Changes</span>
+                        <span x-show="editModal.saving">Saving…</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script src="assets/js/app.js"></script>
     <script src="assets/js/auth.js"></script>
     <script>
@@ -245,8 +386,16 @@
             allProblems: [],
             loadingProblems: true,
             loadingAll: false,
+            forceReloadAll: false,
             approveModal: { show: false, problem: null, difficulty: '', comment: '', loading: false },
             rejectModal: { show: false, problem: null, reason: '', loading: false },
+            editModal: {
+                show: false, problemId: null,
+                title: '', difficulty: 'Easy', topic_tags: '', description: '', constraints: '',
+                sampleTCs: [{ input: '', expected: '' }],
+                hiddenTCs:  [{ input: '', expected: '' }],
+                saving: false
+            },
 
             async init() {
                 const u = Auth.getUser();
@@ -285,7 +434,8 @@
             },
 
             async loadAllProblems() {
-                if (this.allProblems.length) return;
+                if (this.allProblems.length && !this.forceReloadAll) return;
+                this.forceReloadAll = false;
                 this.loadingAll = true;
                 try {
                     const res = await fetch(`${API_BASE_URL}/faculty/problems/all`, { headers: Auth.getAuthHeader() });
@@ -332,6 +482,82 @@
                         await this.loadStats();
                     }
                 } finally { this.rejectModal.loading = false; }
+            },
+
+            async openEditModal(problem) {
+                this.editModal = {
+                    show: false, problemId: problem.id,
+                    title:       problem.title,
+                    difficulty:  problem.difficulty || 'Easy',
+                    topic_tags:  problem.topic_tags  || '',
+                    description: '',
+                    constraints: '',
+                    sampleTCs: [{ input: '', expected: '' }],
+                    hiddenTCs:  [{ input: '', expected: '' }],
+                    saving: false
+                };
+
+                try {
+                    const [detailRes, tcRes] = await Promise.all([
+                        fetch(`${API_BASE_URL}/problems/${problem.id}`, { headers: Auth.getAuthHeader() }),
+                        fetch(`${API_BASE_URL}/problems/${problem.id}/testcases`, { headers: Auth.getAuthHeader() })
+                    ]);
+
+                    if (detailRes.ok) {
+                        const d = await detailRes.json();
+                        this.editModal.description = d.description || '';
+                        this.editModal.constraints = d.constraints || '';
+                    }
+
+                    if (tcRes.ok) {
+                        const tcs = await tcRes.json();
+                        const samples = tcs.filter(t => t.is_sample == 1 || t.is_sample === true);
+                        const hidden  = tcs.filter(t => t.is_sample == 0 || t.is_sample === false);
+                        this.editModal.sampleTCs = samples.length ? samples.map(t => ({ input: t.input, expected: t.expected })) : [{ input: '', expected: '' }];
+                        this.editModal.hiddenTCs  = hidden.length  ? hidden.map(t => ({ input: t.input, expected: t.expected }))  : [{ input: '', expected: '' }];
+                    }
+                } catch (e) {
+                    console.error('Error loading problem for edit:', e);
+                }
+
+                this.editModal.show = true;
+            },
+
+            async submitEdit() {
+                this.editModal.saving = true;
+                const testCases = [
+                    ...this.editModal.sampleTCs.map(tc => ({ input: tc.input, expected: tc.expected, is_sample: 1 })),
+                    ...this.editModal.hiddenTCs.map(tc => ({ input: tc.input, expected: tc.expected, is_sample: 0 }))
+                ];
+
+                try {
+                    const res = await fetch(`${API_BASE_URL}/faculty/problems/${this.editModal.problemId}/edit`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json', ...Auth.getAuthHeader() },
+                        body: JSON.stringify({
+                            title:       this.editModal.title,
+                            difficulty:  this.editModal.difficulty,
+                            topic_tags:  this.editModal.topic_tags,
+                            description: this.editModal.description,
+                            constraints: this.editModal.constraints,
+                            test_cases:  testCases
+                        })
+                    });
+                    const data = await res.json();
+                    if (res.ok) {
+                        this.editModal.show = false;
+                        // Refresh the all-problems list
+                        this.allProblems = [];
+                        this.forceReloadAll = true;
+                        await this.loadAllProblems();
+                    } else {
+                        alert(data.message || 'Failed to save changes.');
+                    }
+                } catch (e) {
+                    alert('Error saving: ' + e.message);
+                } finally {
+                    this.editModal.saving = false;
+                }
             },
 
             formatDate(d) {

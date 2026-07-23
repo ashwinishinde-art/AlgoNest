@@ -102,6 +102,17 @@ class AuthController {
     public function getProfile($userId) {
         $profile = $this->user->findById($userId);
         if ($profile) {
+            // Break streak if last_active_date is older than yesterday
+            $lastActive = $profile['last_active_date'];
+            if ($lastActive) {
+                $today     = date('Y-m-d');
+                $yesterday = date('Y-m-d', strtotime('-1 day'));
+                if ($lastActive !== $today && $lastActive !== $yesterday) {
+                    // Streak is stale — reset it
+                    $this->user->resetStreak($userId);
+                    $profile['streak_count'] = 0;
+                }
+            }
             http_response_code(200);
             echo json_encode($profile);
         } else {
@@ -111,83 +122,102 @@ class AuthController {
     }
 
     public function updateProfilePicture($userId) {
-        error_log("Avatar upload attempt");
-        error_log("User ID: " . $userId);
-        error_log("FILES: " . print_r($_FILES, true));
-        
-        // Check if files array is empty
-        if (empty($_FILES)) {
-            http_response_code(400);
-            error_log("No FILES array received");
-            echo json_encode(["message" => "No file uploaded. FILES array is empty."]);
-            return;
-        }
-        
-        if (!isset($_FILES['avatar'])) {
-            http_response_code(400);
-            error_log("Avatar key not in FILES");
-            echo json_encode(["message" => "No avatar file in upload."]);
-            return;
-        }
+        $body = json_decode(file_get_contents('php://input'), true);
 
-        $file = $_FILES['avatar'];
-        error_log("File error code: " . $file['error']);
-        
-        if ($file['error'] !== UPLOAD_ERR_OK) {
+        if (empty($body['image_data']) || empty($body['file_type'])) {
             http_response_code(400);
-            $error_messages = [
-                UPLOAD_ERR_INI_SIZE => 'File exceeds php.ini upload_max_filesize',
-                UPLOAD_ERR_FORM_SIZE => 'File exceeds form MAX_FILE_SIZE',
-                UPLOAD_ERR_PARTIAL => 'File upload incomplete',
-                UPLOAD_ERR_NO_FILE => 'No file uploaded',
-                UPLOAD_ERR_NO_TMP_DIR => 'Missing temporary folder',
-                UPLOAD_ERR_CANT_WRITE => 'Failed to write file',
-                UPLOAD_ERR_EXTENSION => 'Upload stopped by extension'
-            ];
-            $error_msg = $error_messages[$file['error']] ?? 'Unknown error';
-            echo json_encode(["message" => "Upload error: " . $error_msg]);
+            echo json_encode(["message" => "Missing image_data or file_type."]);
             return;
         }
 
         $allowed_types = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
-        
-        if (!in_array($file['type'], $allowed_types)) {
+        $mime = $body['file_type'];
+
+        if (!in_array($mime, $allowed_types)) {
             http_response_code(400);
             echo json_encode(["message" => "Invalid file type. Only JPG, PNG, GIF, and WebP are allowed."]);
             return;
         }
 
-        if ($file['size'] > 2 * 1024 * 1024) { // 2MB limit (PHP ini limit)
+        // Strip the data URI prefix if present (data:image/png;base64,...)
+        $base64 = $body['image_data'];
+        if (str_contains($base64, ',')) {
+            $base64 = explode(',', $base64, 2)[1];
+        }
+
+        $imageData = base64_decode($base64);
+        if ($imageData === false) {
+            http_response_code(400);
+            echo json_encode(["message" => "Invalid base64 image data."]);
+            return;
+        }
+
+        if (strlen($imageData) > 2 * 1024 * 1024) {
             http_response_code(400);
             echo json_encode(["message" => "File size exceeds 2MB limit."]);
             return;
         }
 
-        // Create upload directory if it doesn't exist
+        $ext_map = [
+            'image/jpeg' => 'jpg',
+            'image/png'  => 'png',
+            'image/gif'  => 'gif',
+            'image/webp' => 'webp',
+        ];
+        $ext = $ext_map[$mime];
+
         $upload_dir = __DIR__ . '/../../public/avatars/';
         if (!is_dir($upload_dir)) {
             mkdir($upload_dir, 0755, true);
         }
 
-        // Generate unique filename
-        $file_ext = pathinfo($file['name'], PATHINFO_EXTENSION);
-        $filename = 'avatar_' . $userId . '_' . time() . '.' . $file_ext;
+        $filename  = 'avatar_' . $userId . '_' . time() . '.' . $ext;
         $file_path = $upload_dir . $filename;
-        
-        if (move_uploaded_file($file['tmp_name'], $file_path)) {
-            // Save the relative path to the database
-            $avatar_url = '/avatars/' . $filename;
-            
-            if ($this->user->updateAvatar($userId, $avatar_url)) {
-                http_response_code(200);
-                echo json_encode(["message" => "Profile picture updated successfully.", "avatar_url" => $avatar_url]);
-            } else {
-                http_response_code(500);
-                echo json_encode(["message" => "Failed to update profile picture in database."]);
-            }
+
+        if (file_put_contents($file_path, $imageData) === false) {
+            http_response_code(500);
+            echo json_encode(["message" => "Failed to save image file."]);
+            return;
+        }
+
+        $avatar_url = '/avatars/' . $filename;
+
+        if ($this->user->updateAvatar($userId, $avatar_url)) {
+            http_response_code(200);
+            echo json_encode(["message" => "Profile picture updated successfully.", "avatar_url" => $avatar_url]);
         } else {
             http_response_code(500);
-            echo json_encode(["message" => "Failed to upload file."]);
+            echo json_encode(["message" => "Failed to update profile picture in database."]);
+        }
+    }
+
+    public function deleteProfilePicture($userId) {
+        // Fetch current avatar path so we can delete the file
+        $profile = $this->user->findById($userId);
+        if (!$profile) {
+            http_response_code(404);
+            echo json_encode(["message" => "User not found."]);
+            return;
+        }
+
+        if (empty($profile['avatar_url'])) {
+            http_response_code(400);
+            echo json_encode(["message" => "No profile picture to delete."]);
+            return;
+        }
+
+        // Delete the file from disk (avatars live in public/avatars/)
+        $filePath = __DIR__ . '/../../public' . $profile['avatar_url'];
+        if (file_exists($filePath)) {
+            @unlink($filePath);
+        }
+
+        if ($this->user->deleteAvatar($userId)) {
+            http_response_code(200);
+            echo json_encode(["message" => "Profile picture deleted successfully."]);
+        } else {
+            http_response_code(500);
+            echo json_encode(["message" => "Failed to remove profile picture."]);
         }
     }
 
@@ -258,6 +288,49 @@ class AuthController {
         } catch (PDOException $e) {
             http_response_code(500);
             echo json_encode(["message" => "Failed to submit faculty request."]);
+        }
+    }
+
+    public function changePassword($userId, $data) {
+        if (empty($data['current_password']) || empty($data['new_password'])) {
+            http_response_code(400);
+            echo json_encode(["message" => "Current password and new password are required."]);
+            return;
+        }
+
+        $newPassword = $data['new_password'];
+        if (strlen($newPassword) < 6) {
+            http_response_code(400);
+            echo json_encode(["message" => "New password must be at least 6 characters long."]);
+            return;
+        }
+
+        // Fetch user to verify current password
+        $userData = $this->user->findById($userId);
+        if (!$userData) {
+            http_response_code(404);
+            echo json_encode(["message" => "User not found."]);
+            return;
+        }
+
+        // Need password_hash field — findById excludes it, so query directly
+        $stmt = $this->db->prepare("SELECT password_hash FROM users WHERE id = :id");
+        $stmt->bindParam(":id", $userId);
+        $stmt->execute();
+        $row = $stmt->fetch();
+
+        if (!$row || !password_verify($data['current_password'], $row['password_hash'])) {
+            http_response_code(401);
+            echo json_encode(["message" => "Current password is incorrect."]);
+            return;
+        }
+
+        if ($this->user->changePassword($userId, $newPassword)) {
+            http_response_code(200);
+            echo json_encode(["message" => "Password changed successfully."]);
+        } else {
+            http_response_code(500);
+            echo json_encode(["message" => "Failed to update password."]);
         }
     }
 

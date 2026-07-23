@@ -152,6 +152,26 @@ class Problem {
         return $stmt->execute();
     }
 
+    /**
+     * Delete all test cases for a problem and re-insert the provided set.
+     * Used by the edit-approved-problem feature.
+     */
+    public function replaceTestCases($problem_id, array $test_cases) {
+        $del = $this->conn->prepare("DELETE FROM test_cases WHERE problem_id = :pid");
+        $del->bindParam(":pid", $problem_id, PDO::PARAM_INT);
+        $del->execute();
+
+        foreach ($test_cases as $tc) {
+            $this->addTestCase(
+                $problem_id,
+                $tc['input'],
+                $tc['expected'],
+                isset($tc['is_sample']) ? (int)$tc['is_sample'] : 0
+            );
+        }
+        return true;
+    }
+
     public function approve($id, $difficulty, $comment = null) {
         $query = "UPDATE " . $this->table_name . " SET approved = 1, difficulty = :difficulty, rejection_reason = NULL, approval_comment = :comment WHERE id = :id";
         $stmt = $this->conn->prepare($query);

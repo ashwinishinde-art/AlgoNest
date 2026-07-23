@@ -1,4 +1,7 @@
 <?php
+// Skip ngrok browser warning for API calls
+header("ngrok-skip-browser-warning: true");
+
 // CORS Headers
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
@@ -54,9 +57,15 @@ switch ($resource) {
         } elseif ($method === 'POST' && $resourceId === 'profile' && $subResource === 'avatar') {
             $user = AuthMiddleware::authenticate();
             $authController->updateProfilePicture($user['id']);
+        } elseif ($method === 'DELETE' && $resourceId === 'profile' && $subResource === 'avatar') {
+            $user = AuthMiddleware::authenticate();
+            $authController->deleteProfilePicture($user['id']);
         } elseif ($method === 'PUT' && $resourceId === 'profile' && $subResource === 'username') {
             $user = AuthMiddleware::authenticate();
             $authController->updateUsername($user['id'], $body);
+        } elseif ($method === 'PUT' && $resourceId === 'profile' && $subResource === 'password') {
+            $user = AuthMiddleware::authenticate();
+            $authController->changePassword($user['id'], $body);
         } elseif ($method === 'POST' && $resourceId === 'faculty-register') {
             $user = AuthMiddleware::authenticate();
             $authController->registerFaculty($user['id'], $body);
@@ -135,6 +144,14 @@ switch ($resource) {
             } else {
                 $facultyController->listPendingProblems();
             }
+        } elseif ($method === 'PUT' && $resourceId === 'problems' && $subResource !== null) {
+            $action = isset($uriSegments[4]) ? $uriSegments[4] : null;
+            if ($action === 'edit') {
+                $facultyController->updateApprovedProblem($subResource, $body);
+            } else {
+                http_response_code(404);
+                echo json_encode(["message" => "Faculty action not found"]);
+            }
         } elseif ($method === 'POST' && $resourceId === 'problems' && $subResource !== null) {
             $action = isset($uriSegments[4]) ? $uriSegments[4] : null;
             if ($action === 'approve') {
@@ -192,7 +209,12 @@ switch ($resource) {
         } elseif ($method === 'GET' && $resourceId === 'problems') {
             $adminController->listProblems($params);
         } elseif ($method === 'PUT' && $resourceId === 'problems' && $subResource !== null) {
-            $adminController->updateProblem($subResource, $body);
+            $action = isset($uriSegments[4]) ? $uriSegments[4] : null;
+            if ($action === 'edit') {
+                $adminController->updateApprovedProblem($subResource, $body);
+            } else {
+                $adminController->updateProblem($subResource, $body);
+            }
         } elseif ($method === 'DELETE' && $resourceId === 'problems' && $subResource !== null) {
             $adminController->deleteProblem($subResource);
         } elseif ($method === 'POST' && $resourceId === 'testcases') {
@@ -209,14 +231,15 @@ switch ($resource) {
         $commentController = new CommentController();
         
         if ($method === 'GET' && $resourceId === 'problem' && $subResource !== null) {
-            // GET /api/comments/problem/{problem_id}
-            try {
-                $user = AuthMiddleware::authenticate();
-                $commentController->getCommentsByProblem($subResource, $user['id']);
-            } catch (Exception $e) {
-                // Allow unauthenticated users to view comments
-                $commentController->getCommentsByProblem($subResource);
+            // GET /api/comments/problem/{problem_id} — public, but attach user_id if token present
+            $authHeader = $_SERVER['HTTP_AUTHORIZATION'] ?? (getallheaders()['Authorization'] ?? null);
+            if ($authHeader && preg_match('/Bearer\s(\S+)/', $authHeader, $m)) {
+                $decoded = JWT::decode($m[1]);
+                $authedUser = $decoded ? $decoded['user'] : null;
+            } else {
+                $authedUser = null;
             }
+            $commentController->getCommentsByProblem($subResource, $authedUser ? $authedUser['id'] : null);
         } elseif ($method === 'POST' && $resourceId !== null && $subResource === 'vote') {
             // POST /api/comments/{comment_id}/vote - Vote on comment
             $user = AuthMiddleware::authenticate();

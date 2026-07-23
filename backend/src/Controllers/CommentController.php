@@ -70,18 +70,36 @@ class CommentController {
         $comment_id = $this->comment->create($data['problem_id'], $user_id, $content, $parent_comment_id);
 
         if ($comment_id) {
-            // If this is a reply, notify the original commenter
             if ($parent_comment_id) {
                 $parentComment = $this->comment->getById($parent_comment_id);
+
+                // Notify the direct parent comment author (if not the replier)
                 if ($parentComment && $parentComment['user_id'] != $user_id) {
-                    // Create notification for the parent commenter
                     $this->notification->create(
                         $parentComment['user_id'],
-                        $data['problem_id'],
                         'reply',
                         'New Reply to Your Comment',
-                        'Someone replied to your comment on this problem.'
+                        'Someone replied to your comment.',
+                        $data['problem_id']
                     );
+                }
+
+                // If the parent is itself a reply, also notify the top-level comment author
+                // (only if they're different from the direct parent author and the replier)
+                if ($parentComment && $parentComment['parent_comment_id'] !== null) {
+                    $topComment = $this->comment->getById($parentComment['parent_comment_id']);
+                    if ($topComment
+                        && $topComment['user_id'] != $user_id
+                        && $topComment['user_id'] != $parentComment['user_id']
+                    ) {
+                        $this->notification->create(
+                            $topComment['user_id'],
+                            'reply',
+                            'New Reply in Your Thread',
+                            'Someone replied in a thread you started.',
+                            $data['problem_id']
+                        );
+                    }
                 }
             }
 
@@ -189,31 +207,35 @@ class CommentController {
     }
 
     // Organize flat comments into threaded structure
+    // All replies (regardless of depth) are attached flat under the top-level comment.
+    // The frontend uses @mention to show who a reply is directed at.
     private function organizeComments($comments) {
+        $map = [];
         $threaded = [];
-        $replies = [];
 
-        // Separate top-level comments from replies
+        // Index all comments by id
         foreach ($comments as $comment) {
-            if ($comment['parent_comment_id'] === null) {
-                $comment['replies'] = [];
-                $threaded[] = $comment;
-            } else {
-                $replies[] = $comment;
-            }
+            $comment['replies'] = [];
+            $map[$comment['id']] = $comment;
         }
 
-        // Add replies to their parent comments
-        foreach ($replies as $reply) {
-            for ($i = 0; $i < count($threaded); $i++) {
-                if ($threaded[$i]['id'] == $reply['parent_comment_id']) {
-                    $threaded[$i]['replies'][] = $reply;
-                    break;
+        // Build tree — replies always nest under the top-level ancestor
+        foreach ($map as $id => $comment) {
+            if ($comment['parent_comment_id'] === null) {
+                $threaded[] = &$map[$id];
+            } else {
+                // Walk up to find the top-level ancestor
+                $parentId = $comment['parent_comment_id'];
+                while (isset($map[$parentId]) && $map[$parentId]['parent_comment_id'] !== null) {
+                    $parentId = $map[$parentId]['parent_comment_id'];
+                }
+                if (isset($map[$parentId])) {
+                    $map[$parentId]['replies'][] = &$map[$id];
                 }
             }
         }
 
-        return $threaded;
+        return array_values($threaded);
     }
 }
 ?>

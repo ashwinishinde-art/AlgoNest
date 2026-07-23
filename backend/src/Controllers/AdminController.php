@@ -89,6 +89,62 @@ class AdminController {
         }
     }
 
+    /**
+     * Edit an already-approved problem.
+     * Keeps approved = 1; updates metadata fields and replaces all test cases.
+     */
+    public function updateApprovedProblem($id, $data) {
+        $required = ['title', 'difficulty', 'topic_tags', 'description', 'constraints'];
+        foreach ($required as $field) {
+            if (empty($data[$field])) {
+                http_response_code(400);
+                echo json_encode(["message" => "Missing required field: $field"]);
+                return;
+            }
+        }
+
+        $existing = $this->problem->getById($id);
+        if (!$existing) {
+            http_response_code(404);
+            echo json_encode(["message" => "Problem not found."]);
+            return;
+        }
+        if ((int)$existing['approved'] !== 1) {
+            http_response_code(400);
+            echo json_encode(["message" => "Only approved problems can be edited via this endpoint."]);
+            return;
+        }
+
+        $time_limit   = isset($data['time_limit_sec'])   ? (float)$data['time_limit_sec']   : (float)$existing['time_limit_sec'];
+        $memory_limit = isset($data['memory_limit_mb'])  ? (int)$data['memory_limit_mb']    : (int)$existing['memory_limit_mb'];
+
+        $result = $this->problem->update(
+            $id,
+            $data['title'],
+            $data['difficulty'],
+            $data['topic_tags'],
+            $data['description'],
+            $data['constraints'],
+            $time_limit,
+            $memory_limit,
+            1   // keep approved
+        );
+
+        if (!$result) {
+            http_response_code(500);
+            echo json_encode(["message" => "Failed to update problem."]);
+            return;
+        }
+
+        // Replace test cases if provided
+        if (!empty($data['test_cases']) && is_array($data['test_cases'])) {
+            $this->problem->replaceTestCases($id, $data['test_cases']);
+        }
+
+        http_response_code(200);
+        echo json_encode(["message" => "Problem updated successfully."]);
+    }
+
     public function deleteProblem($id) {
         if ($this->problem->delete($id)) {
             http_response_code(200);

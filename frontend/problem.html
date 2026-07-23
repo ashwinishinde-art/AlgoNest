@@ -192,10 +192,23 @@
                             <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-4">
                                 <!-- Main Comment -->
                                 <div class="flex items-start space-x-3">
-                                    <div class="w-8 h-8 bg-slate-600 rounded-full flex items-center justify-center text-white text-sm font-semibold" x-text="comment.username.charAt(0).toUpperCase()"></div>
+                                    <a :href="'public-profile.html?id=' + comment.user_id" class="shrink-0">
+                                        <template x-if="comment.avatar_url">
+                                            <img :src="API_BASE_URL.replace('/api', '') + comment.avatar_url" class="w-8 h-8 rounded-full object-cover" :alt="comment.username">
+                                        </template>
+                                        <template x-if="!comment.avatar_url">
+                                            <div class="w-8 h-8 bg-slate-600 rounded-full flex items-center justify-center text-white text-sm font-semibold" x-text="comment.username.charAt(0).toUpperCase()"></div>
+                                        </template>
+                                    </a>
                                     <div class="flex-1 min-w-0">
                                         <div class="flex items-center space-x-2 mb-2">
                                             <a :href="'public-profile.html?id=' + comment.user_id" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline" x-text="comment.username"></a>
+                                            <template x-if="comment.role === 'faculty'">
+                                                <span class="px-1.5 py-0.5 rounded text-xs font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">Faculty</span>
+                                            </template>
+                                            <template x-if="comment.role === 'admin'">
+                                                <span class="px-1.5 py-0.5 rounded text-xs font-bold bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400">Admin</span>
+                                            </template>
                                             <span class="text-xs text-slate-500" x-text="formatDate(comment.created_at)"></span>
                                             <template x-if="comment.updated_at !== comment.created_at">
                                                 <span class="text-xs text-slate-400">(edited)</span>
@@ -225,19 +238,19 @@
                                             <div class="flex items-center space-x-1">
                                                 <button 
                                                     @click="voteComment(comment.id, 'upvote')"
-                                                    :class="comment.user_vote === 'upvote' ? 'text-green-600' : 'text-slate-400 hover:text-green-600'"
+                                                    :class="comment.user_vote === 'upvote' ? 'text-green-500' : 'text-slate-400 hover:text-green-500'"
                                                     class="p-1 transition-colors">
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L10 4.414 4.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M2 20h2a1 1 0 001-1v-8a1 1 0 00-1-1H2v10zm19.394-9.447A2 2 0 0019.5 10H14V6a3 3 0 00-3-3 1 1 0 00-.894.553L7 10H5v10h12.5a2 2 0 001.964-1.625l1.5-7A2 2 0 0019.394 10.553z"/>
                                                     </svg>
                                                 </button>
-                                                <span class="text-sm font-medium text-slate-600 dark:text-slate-400" x-text="comment.vote_score"></span>
+                                                <span class="text-sm font-semibold text-slate-600 dark:text-slate-400 min-w-[1.25rem] text-center" x-text="comment.vote_score"></span>
                                                 <button 
                                                     @click="voteComment(comment.id, 'downvote')"
-                                                    :class="comment.user_vote === 'downvote' ? 'text-red-600' : 'text-slate-400 hover:text-red-600'"
+                                                    :class="comment.user_vote === 'downvote' ? 'text-red-500' : 'text-slate-400 hover:text-red-500'"
                                                     class="p-1 transition-colors">
-                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                                        <path fill-rule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L10 15.586l5.293-5.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M22 4h-2a1 1 0 00-1 1v8a1 1 0 001 1h2V4zM2.606 13.447A2 2 0 004.5 14H10v4a3 3 0 003 3 1 1 0 00.894-.553L17 14h2V4H4.5a2 2 0 00-1.964 1.625l-1.5 7a2 2 0 00.57 1.822z"/>
                                                     </svg>
                                                 </button>
                                             </div>
@@ -278,7 +291,7 @@
                                                         rows="2"></textarea>
                                                     <div class="flex space-x-2 mt-2">
                                                         <button 
-                                                            @click="postReply(comment.id)" 
+                                                            @click="postReply()" 
                                                             :disabled="!replyContent.trim()"
                                                             class="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-400 text-white px-3 py-1 rounded text-xs">
                                                             Reply
@@ -298,10 +311,23 @@
                                             <div class="mt-4 ml-4 border-l-2 border-slate-200 dark:border-slate-700 pl-4 space-y-4">
                                                 <template x-for="reply in comment.replies" :key="reply.id">
                                                     <div class="flex items-start space-x-3">
-                                                        <div class="w-6 h-6 bg-slate-500 rounded-full flex items-center justify-center text-white text-xs font-semibold" x-text="reply.username.charAt(0).toUpperCase()"></div>
+                                                        <a :href="'public-profile.html?id=' + reply.user_id" class="shrink-0">
+                                                            <template x-if="reply.avatar_url">
+                                                                <img :src="API_BASE_URL.replace('/api', '') + reply.avatar_url" class="w-6 h-6 rounded-full object-cover" :alt="reply.username">
+                                                            </template>
+                                                            <template x-if="!reply.avatar_url">
+                                                                <div class="w-6 h-6 bg-slate-500 rounded-full flex items-center justify-center text-white text-xs font-semibold" x-text="reply.username.charAt(0).toUpperCase()"></div>
+                                                            </template>
+                                                        </a>
                                                         <div class="flex-1 min-w-0">
                                                             <div class="flex items-center space-x-2 mb-1">
                                                                 <a :href="'public-profile.html?id=' + reply.user_id" class="font-medium text-blue-600 dark:text-blue-400 hover:underline text-sm" x-text="reply.username"></a>
+                                                                <template x-if="reply.role === 'faculty'">
+                                                                    <span class="px-1.5 py-0.5 rounded text-xs font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">Faculty</span>
+                                                                </template>
+                                                                <template x-if="reply.role === 'admin'">
+                                                                    <span class="px-1.5 py-0.5 rounded text-xs font-bold bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400">Admin</span>
+                                                                </template>
                                                                 <span class="text-xs text-slate-500" x-text="formatDate(reply.created_at)"></span>
                                                             </div>
                                                             <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed whitespace-pre-wrap" x-text="reply.content"></p>
@@ -328,6 +354,13 @@
                                                                     </button>
                                                                 </div>
 
+                                                                <!-- Reply to reply button -->
+                                                                <button
+                                                                    @click="toggleReply(reply.id, reply.username, comment.id)"
+                                                                    class="text-slate-500 hover:text-blue-600 text-xs font-medium transition-colors">
+                                                                    Reply
+                                                                </button>
+
                                                                 <!-- Reply Edit/Delete (for reply author) -->
                                                                 <template x-if="user && reply.user_id === user.id">
                                                                     <button 
@@ -336,6 +369,31 @@
                                                                         Delete
                                                                     </button>
                                                                 </template>
+                                                            </div>
+
+                                                            <!-- Inline reply-to-reply form -->
+                                                            <div x-show="replyingTo === reply.id" class="mt-3 flex items-start space-x-2">
+                                                                <div class="w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center text-white text-xs font-semibold shrink-0" x-text="user ? user.username.charAt(0).toUpperCase() : '?'"></div>
+                                                                <div class="flex-1">
+                                                                    <textarea
+                                                                        x-model="replyContent"
+                                                                        placeholder="Write a reply..."
+                                                                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded p-2 text-xs resize-none focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                                                        rows="2"></textarea>
+                                                                    <div class="flex space-x-2 mt-1">
+                                                                        <button
+                                                                            @click="postReply()"
+                                                                            :disabled="!replyContent.trim()"
+                                                                            class="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-400 text-white px-3 py-1 rounded text-xs">
+                                                                            Post
+                                                                        </button>
+                                                                        <button
+                                                                            @click="cancelReply()"
+                                                                            class="bg-slate-500 text-white px-3 py-1 rounded text-xs">
+                                                                            Cancel
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -429,6 +487,7 @@
                 newComment: '',
                 postingComment: false,
                 replyingTo: null,
+                replyParentId: null,
                 replyContent: '',
                 editingComment: null,
                 editContent: '',
@@ -695,8 +754,8 @@
                     }
                 },
 
-                async postReply(parentId) {
-                    if (!this.replyContent.trim()) return;
+                async postReply() {
+                    if (!this.replyContent.trim() || !this.replyParentId) return;
                     
                     try {
                         const response = await fetch(`${API_BASE_URL}/comments`, {
@@ -708,13 +767,12 @@
                             body: JSON.stringify({
                                 problem_id: this.problemId,
                                 content: this.replyContent.trim(),
-                                parent_comment_id: parentId
+                                parent_comment_id: this.replyParentId
                             })
                         });
 
                         if (response.ok) {
-                            this.replyContent = '';
-                            this.replyingTo = null;
+                            this.cancelReply();
                             await this.fetchComments();
                         } else {
                             const error = await response.json();
@@ -808,17 +866,20 @@
                     this.editContent = '';
                 },
 
-                toggleReply(commentId) {
-                    if (this.replyingTo === commentId) {
+                toggleReply(commentId, mentionUsername = null, topLevelId = null) {
+                    const key = commentId;
+                    if (this.replyingTo === key) {
                         this.cancelReply();
                     } else {
-                        this.replyingTo = commentId;
-                        this.replyContent = '';
+                        this.replyingTo = key;
+                        this.replyParentId = topLevelId || commentId;
+                        this.replyContent = mentionUsername ? `@${mentionUsername} ` : '';
                     }
                 },
 
                 cancelReply() {
                     this.replyingTo = null;
+                    this.replyParentId = null;
                     this.replyContent = '';
                 }
             }

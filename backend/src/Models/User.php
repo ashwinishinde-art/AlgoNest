@@ -98,7 +98,7 @@ class User {
         $query = "SELECT u.id, u.username, u.role, u.streak_count, COUNT(DISTINCT s.problem_id) as solved_count 
                   FROM " . $this->table_name . " u
                   LEFT JOIN submissions s ON u.id = s.user_id AND s.status = 'Accepted'
-                  WHERE u.role NOT IN ('admin', 'faculty')
+                  WHERE u.role NOT IN ('admin', 'faculty', 'pending_faculty', 'declined_faculty')
                   GROUP BY u.id
                   ORDER BY solved_count DESC, u.streak_count DESC
                   LIMIT 50";
@@ -111,6 +111,13 @@ class User {
         $query = "UPDATE " . $this->table_name . " SET avatar_url = :avatar_url WHERE id = :id";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":avatar_url", $avatar_url);
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
+
+    public function deleteAvatar($id) {
+        $query = "UPDATE " . $this->table_name . " SET avatar_url = NULL WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":id", $id);
         return $stmt->execute();
     }
@@ -144,6 +151,22 @@ class User {
         $query = "UPDATE " . $this->table_name . " SET role = :role WHERE id = :id";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":role", $role);
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
+
+    public function changePassword($id, $newPassword) {
+        $password_hash = password_hash($newPassword, PASSWORD_BCRYPT);
+        $query = "UPDATE " . $this->table_name . " SET password_hash = :password_hash WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":password_hash", $password_hash);
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
+
+    public function resetStreak($id) {
+        $query = "UPDATE " . $this->table_name . " SET streak_count = 0 WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":id", $id);
         return $stmt->execute();
     }
