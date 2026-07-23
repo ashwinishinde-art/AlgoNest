@@ -20,6 +20,29 @@ class AuthController {
             return;
         }
 
+        // Password strength validation
+        $password = $data['password'];
+        if (strlen($password) < 8) {
+            http_response_code(400);
+            echo json_encode(["message" => "Password must be at least 8 characters long."]);
+            return;
+        }
+        if (!preg_match('/[A-Z]/', $password)) {
+            http_response_code(400);
+            echo json_encode(["message" => "Password must contain at least one uppercase letter."]);
+            return;
+        }
+        if (!preg_match('/[0-9]/', $password)) {
+            http_response_code(400);
+            echo json_encode(["message" => "Password must contain at least one number."]);
+            return;
+        }
+        if (!preg_match('/[^A-Za-z0-9]/', $password)) {
+            http_response_code(400);
+            echo json_encode(["message" => "Password must contain at least one special character (symbol)."]);
+            return;
+        }
+
         $userId = $this->user->create($data['username'], $data['email'], $data['password']);
 
         if ($userId) {
