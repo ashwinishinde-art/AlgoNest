@@ -248,3 +248,111 @@ code, pre, .monaco-editor {
 .dark .dash-card tbody tr:hover {
     background: rgba(59,130,246,0.08);
 }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   EMBER THEME — black background · orange highlights · white text
+   Applied when <html> has class="ember"
+   Mirrors the same Tailwind dark:* utility overrides used by the dark theme
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Body background ────────────────────────────────────────────────────── */
+html.ember body {
+    background-color: #0a0500 !important;
+    background-image:
+        radial-gradient(ellipse 65% 40% at 10%  0%,   rgba(234,88,12,0.18)  0%, transparent 60%),
+        radial-gradient(ellipse 50% 35% at 90%  20%,  rgba(180,50,0,0.14)   0%, transparent 55%),
+        radial-gradient(ellipse 40% 30% at 70%  80%,  rgba(251,146,60,0.09) 0%, transparent 50%),
+        radial-gradient(ellipse 45% 30% at 5%   75%,  rgba(194,65,12,0.10)  0%, transparent 55%) !important;
+    background-attachment: fixed;
+    color: #f8f4f0 !important;
+}
+
+/* ── Navbar ─────────────────────────────────────────────────────────────── */
+html.ember nav.sticky,
+html.ember nav.h-14 {
+    background-color: rgba(8, 3, 0, 0.90) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom-color: rgba(234,88,12,0.20) !important;
+}
+
+/* ── Surface levels (mirror dark: Tailwind classes) ─────────────────────── */
+html.ember .dark\:bg-slate-900 { background-color: #0f0600 !important; }
+html.ember .dark\:bg-slate-800 { background-color: #1a0900 !important; }
+html.ember .dark\:bg-slate-700 { background-color: #251200 !important; }
+html.ember .dark\:bg-slate-600 { background-color: #331800 !important; }
+
+/* ── Text ────────────────────────────────────────────────────────────────── */
+html.ember .dark\:text-slate-100 { color: #fdf8f4 !important; }
+html.ember .dark\:text-slate-200 { color: #f5ede4 !important; }
+html.ember .dark\:text-slate-300 { color: #e8d5c4 !important; }
+html.ember .dark\:text-slate-400 { color: #c4a882 !important; }
+html.ember .dark\:text-white     { color: #ffffff  !important; }
+
+/* ── Borders ─────────────────────────────────────────────────────────────── */
+html.ember .dark\:border-slate-700 { border-color: rgba(234,88,12,0.22) !important; }
+html.ember .dark\:border-slate-600 { border-color: rgba(234,88,12,0.32) !important; }
+
+/* ── Accent / highlight colours (blue → orange) ─────────────────────────── */
+html.ember .dark\:text-blue-400   { color: #fb923c !important; }
+html.ember .dark\:text-blue-500   { color: #f97316 !important; }
+html.ember .dark\:text-blue-600   { color: #ea580c !important; }
+html.ember .dark\:bg-blue-600     { background-color: #ea580c !important; }
+html.ember .dark\:bg-blue-700     { background-color: #c2410c !important; }
+
+/* Also remap plain (non-dark-prefixed) blue used inside ember surfaces */
+html.ember .text-blue-500  { color: #f97316 !important; }
+html.ember .text-blue-600  { color: #ea580c !important; }
+html.ember .bg-blue-600    { background-color: #ea580c !important; }
+html.ember .bg-blue-700,
+html.ember .hover\:bg-blue-700:hover { background-color: #c2410c !important; }
+html.ember .ring-blue-500,
+html.ember .focus\:ring-blue-600:focus { --tw-ring-color: rgba(234,88,12,0.5) !important; }
+html.ember .border-blue-600 { border-color: #ea580c !important; }
+
+/* ── Hover states ────────────────────────────────────────────────────────── */
+html.ember .dark\:hover\:bg-slate-800:hover { background-color: #251200 !important; }
+html.ember .dark\:hover\:bg-slate-700:hover { background-color: #331800 !important; }
+html.ember .dark\:hover\:text-white:hover   { color: #ffffff !important; }
+
+/* ── Input / textarea ────────────────────────────────────────────────────── */
+html.ember .dark\:bg-slate-800.border { background-color: #1a0900 !important; }
+
+/* ── Overlay panels (modals, dropdowns) ──────────────────────────────────── */
+html.ember .dark\:bg-slate-900.border,
+html.ember .dark\:bg-slate-900.shadow-lg,
+html.ember .dark\:bg-slate-900.shadow-xl { background-color: #0f0600 !important; }
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────── */
+html.ember ::-webkit-scrollbar-thumb         { background: rgba(234,88,12,0.35); }
+html.ember ::-webkit-scrollbar-thumb:hover   { background: rgba(234,88,12,0.60); }
+
+/* ── Logo gradient (navbar brand icon) ───────────────────────────────────── */
+html.ember .ember-logo-gradient {
+    background: linear-gradient(135deg, #ea580c, #f97316) !important;
+    box-shadow: 0 3px 10px rgba(234,88,12,0.5) !important;
+}
+
+/* ── dash-card overrides ─────────────────────────────────────────────────── */
+html.ember .dash-card {
+    background: #0f0600;
+    border-color: rgba(234,88,12,0.20);
+}
+html.ember .dash-card:hover {
+    box-shadow: 0 12px 40px rgba(234,88,12,0.22), 0 4px 16px rgba(0,0,0,0.50);
+    border-color: rgba(234,88,12,0.55);
+}
+html.ember .dash-card::before {
+    background: linear-gradient(135deg, rgba(234,88,12,0.12), rgba(251,146,60,0.08));
+}
+
+/* ── glass-panel overrides ───────────────────────────────────────────────── */
+html.ember .glass-panel,
+html.ember .glass-panel-dark {
+    background-color: #1a0900;
+    border-color: rgba(234,88,12,0.22);
+}
+
+/* ── Active/selected indicator in theme dropdown ─────────────────────────── */
+html.ember .theme-active-ember { color: #f97316 !important; font-weight: 600; }
