@@ -25,6 +25,7 @@ require_once __DIR__ . '/../src/Controllers/CommentController.php';
 require_once __DIR__ . '/../src/Controllers/NotificationController.php';
 require_once __DIR__ . '/../src/Controllers/RunnerController.php';
 require_once __DIR__ . '/../src/Controllers/FacultyController.php';
+require_once __DIR__ . '/../src/Controllers/ContactController.php';
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uriSegments = explode('/', trim($uri, '/'));
@@ -221,6 +222,35 @@ switch ($resource) {
             $adminController->addTestCase($body);
         } elseif ($method === 'DELETE' && $resourceId === 'testcases' && $subResource !== null) {
             $adminController->deleteTestCase($subResource);
+        } elseif ($method === 'GET' && $resourceId === 'contact') {
+            // GET /api/admin/contact — list all messages (optional ?status=)
+            $contactController2 = new ContactController();
+            if ($subResource === 'count') {
+                // GET /api/admin/contact/count — open message badge count
+                $contactController2->adminOpenCount();
+            } else {
+                $contactController2->adminList($params);
+            }
+        } elseif ($method === 'POST' && $resourceId === 'contact' && $subResource !== null) {
+            $action4 = isset($uriSegments[4]) ? $uriSegments[4] : null;
+            if ($action4 === 'reply') {
+                // POST /api/admin/contact/{id}/reply
+                $contactController2 = new ContactController();
+                $contactController2->adminReply($subResource, $user['id'], $body);
+            } else {
+                http_response_code(404);
+                echo json_encode(["message" => "Admin contact action not found"]);
+            }
+        } elseif ($method === 'PUT' && $resourceId === 'contact' && $subResource !== null) {
+            $action4 = isset($uriSegments[4]) ? $uriSegments[4] : null;
+            if ($action4 === 'status') {
+                // PUT /api/admin/contact/{id}/status
+                $contactController2 = new ContactController();
+                $contactController2->adminUpdateStatus($subResource, $body);
+            } else {
+                http_response_code(404);
+                echo json_encode(["message" => "Admin contact action not found"]);
+            }
         } else {
             http_response_code(404);
             echo json_encode(["message" => "Admin Action Not Found"]);
@@ -326,6 +356,23 @@ switch ($resource) {
         } else {
             http_response_code(405);
             echo json_encode(["message" => "Method Not Allowed"]);
+        }
+        break;
+
+    case 'contact':
+        $contactController = new ContactController();
+
+        if ($method === 'POST' && $resourceId === null) {
+            // POST /api/contact — submit a message (auth required)
+            $user = AuthMiddleware::authenticate();
+            $contactController->submit($user['id'], $body);
+        } elseif ($method === 'GET' && $resourceId === 'my') {
+            // GET /api/contact/my — user's own messages
+            $user = AuthMiddleware::authenticate();
+            $contactController->myMessages($user['id']);
+        } else {
+            http_response_code(404);
+            echo json_encode(["message" => "Contact endpoint not found"]);
         }
         break;
 
