@@ -551,7 +551,7 @@
         .field-group {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 4px;
         }
 
         .login-divider {
@@ -971,7 +971,7 @@
                 </div>
 
                 <!-- LOGIN / REGISTER FORM -->
-                <form x-show="mode!=='faculty'" @submit.prevent="submitForm" style="display:flex;flex-direction:column;gap:22px;">
+                <form x-show="mode!=='faculty'" @submit.prevent="submitForm" style="display:flex;flex-direction:column;gap:28px;">
 
                     <!-- Username (register only) -->
                     <div x-show="mode==='register'" x-transition class="field-group">
@@ -1060,7 +1060,7 @@
                     </div>
 
                     <!-- Step 1 -->
-                    <div x-show="facultyStep===1" style="display:flex;flex-direction:column;gap:20px;">
+                    <div x-show="facultyStep===1" style="display:flex;flex-direction:column;gap:28px;">
                         <p style="font-size:13px;font-weight:700;color:#94a3b8;letter-spacing:0.04em;text-transform:uppercase;">Account Details</p>
                         <div class="field-group">
                             <label class="login-label">Username</label>
@@ -1089,7 +1089,7 @@
                     </div>
 
                     <!-- Step 2 -->
-                    <div x-show="facultyStep===2" style="display:flex;flex-direction:column;gap:20px;">
+                    <div x-show="facultyStep===2" style="display:flex;flex-direction:column;gap:28px;">
                         <p style="font-size:13px;font-weight:700;color:#94a3b8;letter-spacing:0.04em;text-transform:uppercase;">Institution Details</p>
                         <div class="field-group">
                             <label class="login-label">Full Name</label>
@@ -1128,7 +1128,7 @@
                     </div>
 
                     <!-- Step 3 -->
-                    <div x-show="facultyStep===3" style="display:flex;flex-direction:column;gap:20px;">
+                    <div x-show="facultyStep===3" style="display:flex;flex-direction:column;gap:28px;">
                         <p style="font-size:13px;font-weight:700;color:#94a3b8;letter-spacing:0.04em;text-transform:uppercase;">Why do you need faculty access?</p>
                         <div class="field-group">
                             <label class="login-label">Reason / Motivation</label>
