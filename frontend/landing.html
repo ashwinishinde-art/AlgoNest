@@ -981,8 +981,10 @@
                      :style="alert.type==='error'
                          ?'background:rgba(253,224,71,0.1);border:1px solid rgba(253,224,71,0.3);color:#fef08a;'
                          :'background:rgba(16,185,129,0.09);border:1px solid rgba(16,185,129,0.28);color:#34d399;'">
-                    <svg x-show="alert.type==='error'" style="width:15px;height:15px;flex-shrink:0;display:inline-block;" fill="none" viewBox="0 0 24 24" stroke="#fbbf24" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>
-                    <svg x-show="alert.type!=='error'" style="width:15px;height:15px;flex-shrink:0;display:inline-block;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    <span style="display:inline-flex;align-items:center;flex-shrink:0;width:15px;height:15px;">
+                        <svg x-show="alert.type==='error'" style="width:15px;height:15px;position:absolute;" fill="none" viewBox="0 0 24 24" stroke="#fbbf24" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>
+                        <svg x-show="alert.type!=='error'" style="width:15px;height:15px;position:absolute;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    </span>
                     <span x-text="alert.message" style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>
                 </div>
 
