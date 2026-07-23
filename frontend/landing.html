@@ -961,13 +961,14 @@
 
                 <!-- Alert -->
                 <div x-show="alert.show" x-transition
-                     style="margin-bottom:24px;padding:12px 14px;border-radius:12px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;line-height:1;white-space:nowrap;overflow:hidden;"
+                     style="margin-bottom:24px;padding:12px 14px;border-radius:12px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;"
                      :style="alert.type==='error'
                          ?'background:rgba(253,224,71,0.1);border:1px solid rgba(253,224,71,0.3);color:#fef08a;'
                          :'background:rgba(16,185,129,0.09);border:1px solid rgba(16,185,129,0.28);color:#34d399;'">
                     <svg x-show="alert.type==='error'" style="width:15px;height:15px;flex-shrink:0;" fill="none" viewBox="0 0 24 24" stroke="#fbbf24" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>
                     <svg x-show="alert.type!=='error'" style="width:15px;height:15px;flex-shrink:0;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    <span x-text="alert.message" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"></span>
+                    <span x-text="alert.message"></span>
+                </div>
                 </div>
 
                 <!-- LOGIN / REGISTER FORM -->
@@ -1044,7 +1045,7 @@
                 </div>
 
                 <!-- FACULTY FORM -->
-                <form x-show="mode==='faculty'" @submit.prevent="submitFacultyForm" style="display:flex;flex-direction:column;gap:22px;">
+                <form x-show="mode==='faculty'" @submit.prevent="submitFacultyForm" style="display:flex;flex-direction:column;gap:28px;">
                     <!-- Step indicator -->
                     <div class="step-indicator">
                         <div style="display:flex;align-items:center;gap:0;">
