@@ -251,108 +251,360 @@ code, pre, .monaco-editor {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   EMBER THEME — black background · orange highlights · white text
+   EMBER THEME — pure black · orange accents · white text
+   Colour palette inspired by PornHub: #0a0a0a bg, #ff9000 orange accent.
+   No glows, no radial tints, no ambient gradients anywhere.
    Applied when <html> has class="ember"
-   Mirrors the same Tailwind dark:* utility overrides used by the dark theme
+
+   Layer stack (deliberate contrast between each level):
+     page        #0a0a0a   body / root background  (near-pure black)
+     surface1    #1c1c1c   cards, panels, dropdowns (+18 steps from page)
+     surface2    #242424   table headers, sub-panels, editor pane
+     surface3    #2e2e2e   inputs, active hover states
+     surface4    #383838   chips, secondary active
+     border      #303030   default border
+     border-hi   #484848   elevated / focused border
+     accent      #ff9000   primary orange
+     accent-dk   #cc7400   pressed orange
+     text-hi     #ffffff   headings, labels, primary copy
+     text-md     #e8e8e8   body copy
+     text-lo     #b0b0b0   secondary / meta text
+     text-mute   #707070   placeholders, disabled
 ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ── Body background ────────────────────────────────────────────────────── */
+/* ── Body ───────────────────────────────────────────────────────────────── */
 html.ember body {
-    background-color: #0a0500 !important;
-    background-image:
-        radial-gradient(ellipse 65% 40% at 10%  0%,   rgba(234,88,12,0.18)  0%, transparent 60%),
-        radial-gradient(ellipse 50% 35% at 90%  20%,  rgba(180,50,0,0.14)   0%, transparent 55%),
-        radial-gradient(ellipse 40% 30% at 70%  80%,  rgba(251,146,60,0.09) 0%, transparent 50%),
-        radial-gradient(ellipse 45% 30% at 5%   75%,  rgba(194,65,12,0.10)  0%, transparent 55%) !important;
-    background-attachment: fixed;
-    color: #f8f4f0 !important;
+    background-color: #0a0a0a !important;
+    background-image: none !important;
+    color: #e8e8e8 !important;
 }
+
+/* bg-slate-100 / bg-slate-800 are the body bg classes — override to near-pure black */
+html.ember .bg-slate-100 { background-color: #0a0a0a !important; }
+/* Also catch dark:bg-slate-800 on <body> */
+html.ember body.bg-slate-100,
+html.ember body.dark\:bg-slate-800,
+html.ember body.dark\:bg-slate-900 { background-color: #0a0a0a !important; }
 
 /* ── Navbar ─────────────────────────────────────────────────────────────── */
 html.ember nav.sticky,
 html.ember nav.h-14 {
-    background-color: rgba(8, 3, 0, 0.90) !important;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom-color: rgba(234,88,12,0.20) !important;
+    background-color: #050505 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom-color: #303030 !important;
 }
 
-/* ── Surface levels (mirror dark: Tailwind classes) ─────────────────────── */
-html.ember .dark\:bg-slate-900 { background-color: #0f0600 !important; }
-html.ember .dark\:bg-slate-800 { background-color: #1a0900 !important; }
-html.ember .dark\:bg-slate-700 { background-color: #251200 !important; }
-html.ember .dark\:bg-slate-600 { background-color: #331800 !important; }
+/* ════════════════════════════════════════════════════════════════════════════
+   SURFACE / BACKGROUND OVERRIDES
+   Covers both dark:-prefixed and plain classes (used in JS-injected HTML)
+═══════════════════════════════════════════════════════════════════════════ */
 
-/* ── Text ────────────────────────────────────────────────────────────────── */
-html.ember .dark\:text-slate-100 { color: #fdf8f4 !important; }
-html.ember .dark\:text-slate-200 { color: #f5ede4 !important; }
-html.ember .dark\:text-slate-300 { color: #e8d5c4 !important; }
-html.ember .dark\:text-slate-400 { color: #c4a882 !important; }
-html.ember .dark\:text-white     { color: #ffffff  !important; }
+/* slate surfaces — wider gaps between layers for clear visual depth */
+html.ember .dark\:bg-slate-900,
+html.ember .bg-slate-900  { background-color: #1c1c1c !important; }
 
-/* ── Borders ─────────────────────────────────────────────────────────────── */
-html.ember .dark\:border-slate-700 { border-color: rgba(234,88,12,0.22) !important; }
-html.ember .dark\:border-slate-600 { border-color: rgba(234,88,12,0.32) !important; }
+html.ember .dark\:bg-slate-800,
+html.ember .bg-slate-800  { background-color: #242424 !important; }
 
-/* ── Accent / highlight colours (blue → orange) ─────────────────────────── */
-html.ember .dark\:text-blue-400   { color: #fb923c !important; }
-html.ember .dark\:text-blue-500   { color: #f97316 !important; }
-html.ember .dark\:text-blue-600   { color: #ea580c !important; }
-html.ember .dark\:bg-blue-600     { background-color: #ea580c !important; }
-html.ember .dark\:bg-blue-700     { background-color: #c2410c !important; }
+html.ember .dark\:bg-slate-700,
+html.ember .bg-slate-700  { background-color: #2e2e2e !important; }
 
-/* Also remap plain (non-dark-prefixed) blue used inside ember surfaces */
-html.ember .text-blue-500  { color: #f97316 !important; }
-html.ember .text-blue-600  { color: #ea580c !important; }
-html.ember .bg-blue-600    { background-color: #ea580c !important; }
-html.ember .bg-blue-700,
-html.ember .hover\:bg-blue-700:hover { background-color: #c2410c !important; }
+html.ember .dark\:bg-slate-600,
+html.ember .bg-slate-600  { background-color: #383838 !important; }
+
+html.ember .bg-slate-500  { background-color: #444444 !important; }
+html.ember .bg-slate-400  { background-color: #505050 !important; }
+
+/* Light slate surfaces (used in light-mode badges / cards that appear in ember) */
+html.ember .bg-slate-50   { background-color: #1c1c1c !important; }
+html.ember .bg-slate-200  { background-color: #2e2e2e !important; }
+html.ember .bg-slate-300  { background-color: #383838 !important; }
+
+/* ── Status / difficulty badge backgrounds ──────────────────────────────── */
+/* These *-100 / *-900 pairs are used for light vs dark badge variants.
+   In ember we always want dark-style badges with the accent as the tint. */
+
+/* blue → orange tint */
+html.ember .bg-blue-50,
+html.ember .bg-blue-100   { background-color: rgba(255,144,0,0.12) !important; }
+html.ember .bg-blue-900   { background-color: rgba(255,144,0,0.18) !important; }
+html.ember .bg-blue-600   { background-color: #ff9000 !important; }
+html.ember .bg-blue-700   { background-color: #cc7400 !important; }
+
+/* green (Accepted / Easy) */
+html.ember .bg-green-100  { background-color: rgba(34,197,94,0.12) !important; }
+html.ember .bg-green-900  { background-color: rgba(34,197,94,0.18) !important; }
+html.ember .bg-green-600  { background-color: #16a34a !important; }
+html.ember .bg-green-700  { background-color: #15803d !important; }
+
+/* red (Wrong Answer / Hard) */
+html.ember .bg-red-50,
+html.ember .bg-red-100    { background-color: rgba(239,68,68,0.12) !important; }
+html.ember .bg-red-900    { background-color: rgba(239,68,68,0.18) !important; }
+html.ember .bg-red-600    { background-color: #dc2626 !important; }
+html.ember .bg-red-700    { background-color: #b91c1c !important; }
+
+/* yellow / amber (Medium / warnings) */
+html.ember .bg-yellow-100 { background-color: rgba(234,179,8,0.12) !important; }
+html.ember .bg-yellow-900 { background-color: rgba(234,179,8,0.18) !important; }
+html.ember .bg-yellow-500 { background-color: #ca8a04 !important; }
+
+html.ember .bg-amber-50,
+html.ember .bg-amber-900  { background-color: rgba(245,158,11,0.15) !important; }
+
+/* orange */
+html.ember .bg-orange-100 { background-color: rgba(249,115,22,0.12) !important; }
+html.ember .bg-orange-500 { background-color: #ea580c !important; }
+html.ember .bg-orange-600 { background-color: #c2410c !important; }
+html.ember .bg-orange-900 { background-color: rgba(249,115,22,0.18) !important; }
+
+/* purple */
+html.ember .bg-purple-50,
+html.ember .bg-purple-100 { background-color: rgba(168,85,247,0.12) !important; }
+html.ember .bg-purple-600 { background-color: #9333ea !important; }
+html.ember .bg-purple-900 { background-color: rgba(168,85,247,0.18) !important; }
+
+/* indigo (maps to orange in ember) */
+html.ember .bg-indigo-600 { background-color: #ff9000 !important; }
+html.ember .bg-indigo-700 { background-color: #cc7400 !important; }
+
+/* sky */
+html.ember .bg-sky-100    { background-color: rgba(14,165,233,0.12) !important; }
+html.ember .bg-sky-900    { background-color: rgba(14,165,233,0.18) !important; }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   TEXT OVERRIDES
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* slate text — dark: prefixed */
+html.ember .dark\:text-white     { color: #ffffff !important; }
+html.ember .dark\:text-slate-100 { color: #ffffff !important; }
+html.ember .dark\:text-slate-200 { color: #f5f5f5 !important; }
+html.ember .dark\:text-slate-300 { color: #e8e8e8 !important; }
+html.ember .dark\:text-slate-400 { color: #c0c0c0 !important; }
+html.ember .dark\:text-slate-500 { color: #909090 !important; }
+html.ember .dark\:text-slate-600 { color: #707070 !important; }
+
+/* slate text — plain (used in JS-injected markup)
+   On a black bg, the Tailwind dark-scale is inverted:
+   slate-900 = darkest → we map to near-white, slate-100 = lightest → pure white */
+html.ember .text-slate-100 { color: #ffffff !important; }
+html.ember .text-slate-200 { color: #f5f5f5 !important; }
+html.ember .text-slate-300 { color: #e8e8e8 !important; }
+html.ember .text-slate-400 { color: #c0c0c0 !important; }
+html.ember .text-slate-500 { color: #909090 !important; }
+html.ember .text-slate-600 { color: #707070 !important; }
+html.ember .text-slate-700 { color: #c8c8c8 !important; } /* light-mode mid → bright on dark */
+html.ember .text-slate-800 { color: #e0e0e0 !important; } /* light-mode dark → very bright */
+html.ember .text-slate-900 { color: #f5f5f5 !important; } /* light-mode darkest → near-white */
+
+/* blue text → orange (primary accent) */
+html.ember .dark\:text-blue-300,
+html.ember .text-blue-300  { color: #ffb347 !important; }
+html.ember .dark\:text-blue-400,
+html.ember .text-blue-400  { color: #ff9000 !important; }
+html.ember .text-blue-500  { color: #ff9000 !important; }
+html.ember .text-blue-600  { color: #cc7400 !important; }
+html.ember .text-blue-700  { color: #a35c00 !important; }
+
+/* green (Accepted / Easy / success) — keep green, just brighten */
+html.ember .dark\:text-green-300,
+html.ember .text-green-300 { color: #86efac !important; }
+html.ember .dark\:text-green-400,
+html.ember .text-green-400 { color: #4ade80 !important; }
+html.ember .dark\:text-green-500,
+html.ember .text-green-500 { color: #22c55e !important; }
+html.ember .text-green-600 { color: #16a34a !important; }
+html.ember .text-green-700 { color: #15803d !important; }
+
+/* red (Wrong Answer / Hard / error) */
+html.ember .dark\:text-red-300,
+html.ember .text-red-300   { color: #fca5a5 !important; }
+html.ember .dark\:text-red-400,
+html.ember .text-red-400   { color: #f87171 !important; }
+html.ember .text-red-500   { color: #ef4444 !important; }
+html.ember .text-red-600   { color: #dc2626 !important; }
+html.ember .text-red-700   { color: #b91c1c !important; }
+
+/* yellow (Medium / warning) */
+html.ember .dark\:text-yellow-300,
+html.ember .text-yellow-300 { color: #fde047 !important; }
+html.ember .dark\:text-yellow-400,
+html.ember .text-yellow-400 { color: #facc15 !important; }
+html.ember .dark\:text-yellow-500,
+html.ember .text-yellow-500 { color: #eab308 !important; }
+html.ember .text-yellow-600 { color: #ca8a04 !important; }
+html.ember .text-yellow-700 { color: #a16207 !important; }
+
+/* amber */
+html.ember .dark\:text-amber-200,
+html.ember .text-amber-200 { color: #fde68a !important; }
+html.ember .dark\:text-amber-300,
+html.ember .text-amber-300 { color: #fcd34d !important; }
+html.ember .dark\:text-amber-400,
+html.ember .text-amber-400 { color: #fbbf24 !important; }
+html.ember .text-amber-500 { color: #f59e0b !important; }
+html.ember .text-amber-600 { color: #d97706 !important; }
+html.ember .text-amber-700 { color: #b45309 !important; }
+html.ember .text-amber-800 { color: #92400e !important; }
+html.ember .text-amber-900 { color: #78350f !important; }
+
+/* orange */
+html.ember .dark\:text-orange-400,
+html.ember .text-orange-400 { color: #fb923c !important; }
+html.ember .text-orange-500  { color: #f97316 !important; }
+html.ember .text-orange-600  { color: #ea580c !important; }
+
+/* purple */
+html.ember .dark\:text-purple-300,
+html.ember .text-purple-300 { color: #d8b4fe !important; }
+html.ember .dark\:text-purple-400,
+html.ember .text-purple-400 { color: #c084fc !important; }
+html.ember .text-purple-600 { color: #9333ea !important; }
+html.ember .text-purple-700 { color: #7e22ce !important; }
+
+/* sky */
+html.ember .dark\:text-sky-400,
+html.ember .text-sky-400    { color: #38bdf8 !important; }
+html.ember .text-sky-600    { color: #0284c7 !important; }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   BORDER OVERRIDES
+═══════════════════════════════════════════════════════════════════════════ */
+
+html.ember .dark\:border-slate-900,
+html.ember .border-slate-900 { border-color: #1c1c1c !important; }
+html.ember .dark\:border-slate-700,
+html.ember .border-slate-700 { border-color: #303030 !important; }
+html.ember .dark\:border-slate-600,
+html.ember .border-slate-600 { border-color: #484848 !important; }
+html.ember .border-slate-300 { border-color: #484848 !important; }
+html.ember .border-slate-200 { border-color: #303030 !important; }
+
+html.ember .dark\:border-blue-800,
+html.ember .border-blue-600,
+html.ember .border-blue-800  { border-color: #ff9000 !important; }
+html.ember .border-blue-200  { border-color: rgba(255,144,0,0.30) !important; }
+
+html.ember .dark\:border-red-700,
+html.ember .dark\:border-red-800,
+html.ember .border-red-700,
+html.ember .border-red-800   { border-color: #dc2626 !important; }
+html.ember .border-red-200   { border-color: rgba(239,68,68,0.30) !important; }
+
+html.ember .dark\:border-amber-700,
+html.ember .border-amber-300,
+html.ember .border-amber-700 { border-color: #d97706 !important; }
+
+/* ── Dividers ────────────────────────────────────────────────────────────── */
+html.ember .dark\:divide-slate-700 > * + * { border-color: #303030 !important; }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   HOVER OVERRIDES
+═══════════════════════════════════════════════════════════════════════════ */
+
+html.ember .dark\:hover\:bg-slate-800:hover  { background-color: #2e2e2e !important; }
+html.ember .dark\:hover\:bg-slate-700:hover  { background-color: #383838 !important; }
+html.ember .dark\:hover\:bg-slate-600:hover  { background-color: #444444 !important; }
+html.ember .dark\:hover\:bg-purple-900:hover { background-color: rgba(168,85,247,0.18) !important; }
+html.ember .dark\:hover\:text-white:hover    { color: #ffffff !important; }
+html.ember .dark\:hover\:text-blue-300:hover,
+html.ember .dark\:hover\:text-blue-400:hover { color: #ffb347 !important; }
+html.ember .dark\:hover\:text-slate-300:hover { color: #e8e8e8 !important; }
+
+html.ember .hover\:bg-blue-700:hover  { background-color: #cc7400 !important; }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   RING / FOCUS OVERRIDES
+═══════════════════════════════════════════════════════════════════════════ */
+
 html.ember .ring-blue-500,
-html.ember .focus\:ring-blue-600:focus { --tw-ring-color: rgba(234,88,12,0.5) !important; }
-html.ember .border-blue-600 { border-color: #ea580c !important; }
+html.ember .ring-blue-600,
+html.ember .focus\:ring-blue-600:focus,
+html.ember .focus\:ring-blue-500:focus  { --tw-ring-color: rgba(255,144,0,0.50) !important; }
+html.ember .ring-indigo-500             { --tw-ring-color: rgba(255,144,0,0.50) !important; }
+html.ember .ring-green-500              { --tw-ring-color: rgba(34,197,94,0.50) !important; }
+html.ember .ring-red-500                { --tw-ring-color: rgba(239,68,68,0.50) !important; }
 
-/* ── Hover states ────────────────────────────────────────────────────────── */
-html.ember .dark\:hover\:bg-slate-800:hover { background-color: #251200 !important; }
-html.ember .dark\:hover\:bg-slate-700:hover { background-color: #331800 !important; }
-html.ember .dark\:hover\:text-white:hover   { color: #ffffff !important; }
+/* ════════════════════════════════════════════════════════════════════════════
+   INPUT / TEXTAREA
+═══════════════════════════════════════════════════════════════════════════ */
 
-/* ── Input / textarea ────────────────────────────────────────────────────── */
-html.ember .dark\:bg-slate-800.border { background-color: #1a0900 !important; }
+html.ember .dark\:bg-slate-800.border  { background-color: #242424 !important; }
+html.ember input, html.ember textarea, html.ember select {
+    color-scheme: dark;
+}
 
-/* ── Overlay panels (modals, dropdowns) ──────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════════════════════
+   OVERLAY PANELS (modals, dropdowns, notifications)
+═══════════════════════════════════════════════════════════════════════════ */
+
 html.ember .dark\:bg-slate-900.border,
 html.ember .dark\:bg-slate-900.shadow-lg,
-html.ember .dark\:bg-slate-900.shadow-xl { background-color: #0f0600 !important; }
+html.ember .dark\:bg-slate-900.shadow-xl { background-color: #1c1c1c !important; }
 
-/* ── Scrollbar ───────────────────────────────────────────────────────────── */
-html.ember ::-webkit-scrollbar-thumb         { background: rgba(234,88,12,0.35); }
-html.ember ::-webkit-scrollbar-thumb:hover   { background: rgba(234,88,12,0.60); }
+/* ════════════════════════════════════════════════════════════════════════════
+   SCROLLBAR
+═══════════════════════════════════════════════════════════════════════════ */
 
-/* ── Logo gradient (navbar brand icon) ───────────────────────────────────── */
+html.ember ::-webkit-scrollbar-thumb         { background: #484848; }
+html.ember ::-webkit-scrollbar-thumb:hover   { background: #ff9000; }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   LOGO / BRAND ICON
+═══════════════════════════════════════════════════════════════════════════ */
+
 html.ember .ember-logo-gradient {
-    background: linear-gradient(135deg, #ea580c, #f97316) !important;
-    box-shadow: 0 3px 10px rgba(234,88,12,0.5) !important;
+    background: #ff9000 !important;
+    box-shadow: none !important;
 }
 
-/* ── dash-card overrides ─────────────────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════════════════════
+   DASH CARDS
+═══════════════════════════════════════════════════════════════════════════ */
+
 html.ember .dash-card {
-    background: #0f0600;
-    border-color: rgba(234,88,12,0.20);
+    background: #1c1c1c;
+    border-color: #303030;
 }
 html.ember .dash-card:hover {
-    box-shadow: 0 12px 40px rgba(234,88,12,0.22), 0 4px 16px rgba(0,0,0,0.50);
-    border-color: rgba(234,88,12,0.55);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.70);
+    border-color: #ff9000;
 }
+/* Disable all ambient glow pseudo-elements */
 html.ember .dash-card::before {
-    background: linear-gradient(135deg, rgba(234,88,12,0.12), rgba(251,146,60,0.08));
+    display: none !important;
 }
 
-/* ── glass-panel overrides ───────────────────────────────────────────────── */
+/* Submission table row hover */
+html.ember .dash-card tbody tr:hover {
+    background: rgba(255,144,0,0.07);
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   GLASS PANELS
+═══════════════════════════════════════════════════════════════════════════ */
+
 html.ember .glass-panel,
 html.ember .glass-panel-dark {
-    background-color: #1a0900;
-    border-color: rgba(234,88,12,0.22);
+    background-color: #1c1c1c;
+    border-color: #303030;
 }
 
-/* ── Active/selected indicator in theme dropdown ─────────────────────────── */
-html.ember .theme-active-ember { color: #f97316 !important; font-weight: 600; }
+/* ════════════════════════════════════════════════════════════════════════════
+   STREAK ICON — no animation, no glow
+═══════════════════════════════════════════════════════════════════════════ */
+
+html.ember .streak-glow {
+    filter: none !important;
+    animation: none !important;
+    color: #ff9000;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   THEME DROPDOWN ACTIVE STATE
+═══════════════════════════════════════════════════════════════════════════ */
+
+html.ember .theme-active-ember { color: #ff9000 !important; font-weight: 600; }
