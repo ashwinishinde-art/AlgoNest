@@ -274,10 +274,17 @@ code, pre, .monaco-editor {
 
 /* ── Body ───────────────────────────────────────────────────────────────── */
 html.ember body {
-    background-color: #141414 !important;
+    background-color: #111111 !important;
     background-image: none !important;
     color: #f0f0f0 !important;
 }
+
+/* bg-slate-100 / bg-slate-800 are the body bg classes — override to near-black */
+html.ember .bg-slate-100 { background-color: #111111 !important; }
+/* Also catch dark:bg-slate-800 on <body> — it resolves as .bg-slate-800 under .ember */
+html.ember body.bg-slate-100,
+html.ember body.dark\:bg-slate-800,
+html.ember body.dark\:bg-slate-900 { background-color: #111111 !important; }
 
 /* ── Navbar ─────────────────────────────────────────────────────────────── */
 html.ember nav.sticky,
