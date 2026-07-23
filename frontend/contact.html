@@ -60,6 +60,12 @@
                     <!-- User / logout -->
                     <template x-if="user">
                         <div class="flex items-center space-x-3 pl-4 border-l border-slate-200 dark:border-slate-700">
+                            <template x-if="profile && profile.avatar_url">
+                                <img :src="API_BASE_URL.replace('/api', '') + profile.avatar_url" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+                            </template>
+                            <template x-if="!profile || !profile.avatar_url">
+                                <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm" x-text="user.username.charAt(0).toUpperCase()"></div>
+                            </template>
                             <a href="profile.html" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" x-text="user.username"></a>
                             <button @click="Auth.logout()" class="text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg font-semibold transition-colors">Logout</button>
                         </div>
@@ -218,6 +224,7 @@
         function contactApp() {
             return {
                 user: null,
+                profile: null,
                 form: {
                     sender_name: '',
                     sender_email: '',
@@ -255,6 +262,7 @@
                         const res = await fetch(`${API_BASE_URL}/auth/profile`, { headers: Auth.getAuthHeader() });
                         if (res.ok) {
                             const p = await res.json();
+                            this.profile = p;
                             this.form.sender_name  = p.username || '';
                             this.form.sender_email = p.email    || '';
                         }

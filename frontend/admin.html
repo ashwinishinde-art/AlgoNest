@@ -33,7 +33,6 @@
                         <a href="index.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Dashboard</a>
                         <a href="problems.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Problems</a>
                         <a href="leaderboard.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Leaderboard</a>
-                        <a href="contact.html" class="text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact Us</a>
                         <a href="admin.html" class="bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white px-3 py-2 rounded-md text-sm font-medium">Admin</a>
                     </div>
                 </div>
@@ -139,8 +138,13 @@
                             <td class="px-6 py-4 text-sm font-bold text-slate-800 dark:text-slate-100" x-text="prob.title"></td>
                             <td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">
                                 <div class="flex items-center space-x-2">
-                                    <div class="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs flex-shrink-0"
-                                         x-text="prob.author ? prob.author.charAt(0).toUpperCase() : '?'"></div>
+                                    <template x-if="prob.author_avatar">
+                                        <img :src="API_BASE_URL.replace('/api', '') + prob.author_avatar" class="w-7 h-7 rounded-full object-cover flex-shrink-0">
+                                    </template>
+                                    <template x-if="!prob.author_avatar">
+                                        <div class="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs flex-shrink-0"
+                                             x-text="prob.author ? prob.author.charAt(0).toUpperCase() : '?'"></div>
+                                    </template>
                                     <span x-text="prob.author || '—'"></span>
                                 </div>
                             </td>
@@ -437,8 +441,13 @@
                         <button class="w-full flex items-center justify-between gap-4 px-6 py-4 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-left"
                                 @click="toggleSupportMsg(msg.id)">
                             <div class="flex items-center gap-3 min-w-0 flex-1">
-                                <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs shrink-0"
-                                     x-text="msg.sender_name.charAt(0).toUpperCase()"></div>
+                                <template x-if="msg.sender_avatar_url">
+                                    <img :src="API_BASE_URL.replace('/api', '') + msg.sender_avatar_url" class="w-8 h-8 rounded-full object-cover shrink-0">
+                                </template>
+                                <template x-if="!msg.sender_avatar_url">
+                                    <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs shrink-0"
+                                         x-text="msg.sender_name.charAt(0).toUpperCase()"></div>
+                                </template>
                                 <div class="min-w-0">
                                     <p class="font-semibold text-slate-800 dark:text-slate-100 truncate" x-text="msg.subject"></p>
                                     <p class="text-xs text-slate-400 truncate" x-text="msg.sender_name + ' · ' + msg.sender_email"></p>
