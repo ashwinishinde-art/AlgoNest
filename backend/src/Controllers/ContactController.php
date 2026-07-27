@@ -95,9 +95,11 @@ class ContactController {
                         cm.id, cm.user_id, cm.sender_name, cm.sender_email,
                         cm.subject, cm.category, cm.message,
                         cm.status, cm.admin_reply, cm.replied_at, cm.created_at,
-                        u.username AS replied_by_username
+                        u.username AS replied_by_username,
+                        su.avatar_url AS sender_avatar_url
                     FROM contact_messages cm
-                    LEFT JOIN users u ON u.id = cm.replied_by
+                    LEFT JOIN users u  ON u.id  = cm.replied_by
+                    LEFT JOIN users su ON su.id = cm.user_id
                     WHERE cm.status = :status
                     ORDER BY cm.created_at DESC
                 ");
@@ -108,9 +110,11 @@ class ContactController {
                         cm.id, cm.user_id, cm.sender_name, cm.sender_email,
                         cm.subject, cm.category, cm.message,
                         cm.status, cm.admin_reply, cm.replied_at, cm.created_at,
-                        u.username AS replied_by_username
+                        u.username AS replied_by_username,
+                        su.avatar_url AS sender_avatar_url
                     FROM contact_messages cm
-                    LEFT JOIN users u ON u.id = cm.replied_by
+                    LEFT JOIN users u  ON u.id  = cm.replied_by
+                    LEFT JOIN users su ON su.id = cm.user_id
                     ORDER BY cm.created_at DESC
                 ");
                 $stmt->execute();

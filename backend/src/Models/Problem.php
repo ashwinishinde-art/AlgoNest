@@ -8,7 +8,7 @@ class Problem {
     }
 
     public function getAll($filters = []) {
-        $query = "SELECT p.id, p.title, p.difficulty, p.topic_tags, p.approved, p.rejection_reason, p.approval_comment, u.username as author 
+        $query = "SELECT p.id, p.title, p.difficulty, p.topic_tags, p.approved, p.rejection_reason, p.approval_comment, u.username as author, u.avatar_url as author_avatar
                   FROM " . $this->table_name . " p
                   JOIN users u ON p.author_id = u.id 
                   WHERE 1=1";
