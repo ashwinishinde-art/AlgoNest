@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../../config/database.php';
 require_once __DIR__ . '/../../config/jwt.php';
 require_once __DIR__ . '/../Models/User.php';
+require_once __DIR__ . '/../Services/OtpService.php';
 
 class AuthController {
     private $db;
@@ -368,6 +369,184 @@ class AuthController {
         } else {
             http_response_code(500);
             echo json_encode(["message" => "Failed to update username."]);
+        }
+    }
+
+    // ─────────────────────────────────────────────────────────────
+    // OTP — Registration flow
+    // ─────────────────────────────────────────────────────────────
+
+    /**
+     * POST /api/auth/send-otp
+     * Body: { email, type: 'register'|'reset' }
+     * Sends a 6-digit OTP to the given email address.
+     * For 'register': rejects if email is already registered.
+     * For 'reset':    rejects if email is NOT registered.
+     */
+    public function sendOtp($data) {
+        $email = trim($data['email'] ?? '');
+        $type  = $data['type'] ?? '';
+
+        if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            http_response_code(400);
+            echo json_encode(["message" => "A valid email address is required."]);
+            return;
+        }
+
+        if (!in_array($type, ['register', 'reset'])) {
+            http_response_code(400);
+            echo json_encode(["message" => "Invalid OTP type. Must be 'register' or 'reset'."]);
+            return;
+        }
+
+        $existing = $this->user->findByEmail($email);
+
+        if ($type === 'register' && $existing) {
+            http_response_code(409);
+            echo json_encode(["message" => "This email is already registered. Please sign in instead."]);
+            return;
+        }
+
+        if ($type === 'reset' && !$existing) {
+            http_response_code(404);
+            echo json_encode(["message" => "No account found with that email address."]);
+            return;
+        }
+
+        $otp    = new OtpService();
+        $result = $otp->sendOtp($email, $type);
+
+        http_response_code($result['success'] ? 200 : 429);
+        echo json_encode(["message" => $result['message']]);
+    }
+
+    /**
+     * POST /api/auth/verify-register-otp
+     * Body: { username, email, password, otp }
+     * Verifies the OTP then creates the user account.
+     */
+    public function verifyRegisterOtp($data) {
+        $email    = trim($data['email']    ?? '');
+        $username = trim($data['username'] ?? '');
+        $password = $data['password'] ?? '';
+        $otp      = trim($data['otp']      ?? '');
+
+        if (empty($email) || empty($username) || empty($password) || empty($otp)) {
+            http_response_code(400);
+            echo json_encode(["message" => "email, username, password, and otp are all required."]);
+            return;
+        }
+
+        // Verify OTP first
+        $otpSvc = new OtpService();
+        $result = $otpSvc->verifyOtp($email, $otp, 'register');
+
+        if (!$result['success']) {
+            http_response_code(400);
+            echo json_encode(["message" => $result['message']]);
+            return;
+        }
+
+        // OTP valid — create the account
+        $userId = $this->user->create($username, $email, $password);
+
+        if ($userId) {
+            http_response_code(201);
+            echo json_encode(["message" => "Account created successfully! You can now sign in.", "user_id" => $userId]);
+        } else {
+            http_response_code(500);
+            echo json_encode(["message" => "Unable to create account. Username or email may already be in use."]);
+        }
+    }
+
+    // ─────────────────────────────────────────────────────────────
+    // OTP — Forgot / Reset password flow
+    // ─────────────────────────────────────────────────────────────
+
+    /**
+     * POST /api/auth/forgot-password
+     * Body: { email }
+     * Sends a password-reset OTP to the email address.
+     */
+    public function forgotPassword($data) {
+        $data['type'] = 'reset';
+        $this->sendOtp($data);
+    }
+
+    /**
+     * POST /api/auth/check-reset-otp
+     * Body: { email, otp }
+     * Validates OTP without consuming it — used before showing the new-password screen.
+     */
+    public function checkResetOtp($data) {
+        $email = trim($data['email'] ?? '');
+        $otp   = trim($data['otp']   ?? '');
+
+        if (empty($email) || empty($otp)) {
+            http_response_code(400);
+            echo json_encode(["message" => "email and otp are required."]);
+            return;
+        }
+
+        $otpSvc = new OtpService();
+        $result = $otpSvc->checkOtp($email, $otp, 'reset');
+        http_response_code($result['success'] ? 200 : 400);
+        echo json_encode(["message" => $result['message']]);
+    }
+
+    /**
+     * POST /api/auth/reset-password
+     * Body: { email, otp, new_password }
+     * Verifies OTP then updates the user's password.
+     */
+    public function resetPassword($data) {
+        $email       = trim($data['email']        ?? '');
+        $otp         = trim($data['otp']          ?? '');
+        $newPassword = $data['new_password'] ?? '';
+
+        if (empty($email) || empty($otp) || empty($newPassword)) {
+            http_response_code(400);
+            echo json_encode(["message" => "email, otp, and new_password are all required."]);
+            return;
+        }
+
+        if (strlen($newPassword) < 6) {
+            http_response_code(400);
+            echo json_encode(["message" => "New password must be at least 6 characters."]);
+            return;
+        }
+
+        // Verify OTP
+        $otpSvc = new OtpService();
+        $result = $otpSvc->verifyOtp($email, $otp, 'reset');
+
+        if (!$result['success']) {
+            http_response_code(400);
+            echo json_encode(["message" => $result['message']]);
+            return;
+        }
+
+        // Find user and update password
+        $userData = $this->user->findByEmail($email);
+        if (!$userData) {
+            http_response_code(404);
+            echo json_encode(["message" => "User not found."]);
+            return;
+        }
+
+        // Check if new password is same as old password
+        if (password_verify($newPassword, $userData['password_hash'])) {
+            http_response_code(400);
+            echo json_encode(["message" => "New password cannot be the same as your current password."]);
+            return;
+        }
+
+        if ($this->user->changePassword($userData['id'], $newPassword)) {
+            http_response_code(200);
+            echo json_encode(["message" => "Password reset successfully. You can now sign in with your new password."]);
+        } else {
+            http_response_code(500);
+            echo json_encode(["message" => "Failed to reset password. Please try again."]);
         }
     }
 }

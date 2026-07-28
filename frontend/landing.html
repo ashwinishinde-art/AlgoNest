@@ -522,6 +522,7 @@
             background: rgba(4,8,20,0.55);
             display: flex; align-items: center; justify-content: center;
             padding: 16px;
+            box-sizing: border-box;
         }
         .modal-card {
             background: rgba(8,15,36,0.98);
@@ -531,6 +532,11 @@
             padding: 40px 40px 36px;
             width: 100%; max-width: 440px;
             position: relative; z-index: 201;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        @media (max-width: 500px) {
+            .modal-card { padding: 28px 20px 24px; border-radius: 16px; }
         }
         .modal-header {
             text-align: center;
@@ -696,6 +702,14 @@
             letter-spacing: 0.04em;
         }
         .step-label.active { color: #93c5fd; }
+
+        /* OTP box focus */
+        #otp-0:focus, #otp-1:focus, #otp-2:focus,
+        #otp-3:focus, #otp-4:focus, #otp-5:focus {
+            border-color: rgba(59,130,246,0.7) !important;
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.15) !important;
+            outline: none;
+        }
     </style>
 </head>
 
@@ -977,24 +991,24 @@
                 <!-- Header -->
                 <div class="modal-header">
                     <h1>Algo<span style="color:#58a6ff;">Nest</span></h1>
-                    <p x-text="mode==='login'?'Welcome back, coder!':mode==='register'?'Create an account to start coding':'Apply for Faculty Access'"></p>
-                </div>
-
-                <!-- Alert -->
-                <div x-show="alert.show" x-transition
-                     style="padding:13px 16px;border-radius:20px;font-size:13px;font-weight:600;display:flex;flex-direction:row;align-items:center;flex-wrap:nowrap;gap:9px;line-height:1.4;margin:0 0 28px 0;"
-                     :style="alert.type==='error'
-                         ?'background:rgba(253,224,71,0.1);border:1px solid rgba(253,224,71,0.3);color:#fef08a;border-radius:20px;margin:0 0 28px 0;'
-                         :'background:rgba(16,185,129,0.09);border:1px solid rgba(16,185,129,0.28);color:#34d399;border-radius:20px;margin:0 0 28px 0;'">
-                    <span style="display:inline-flex;align-items:center;flex-shrink:0;width:15px;height:15px;">
-                        <svg x-show="alert.type==='error'" style="width:15px;height:15px;position:absolute;" fill="none" viewBox="0 0 24 24" stroke="#fbbf24" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>
-                        <svg x-show="alert.type!=='error'" style="width:15px;height:15px;position:absolute;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                    </span>
-                    <span x-text="alert.message" style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></span>
+                    <p x-text="mode==='login'?'Welcome back, coder!':mode==='register'?'Create an account to start coding':mode==='register-otp'?'Check your email for a code':mode==='forgot'?'Reset your password':mode==='forgot-otp'?'Enter the code we sent you':mode==='reset-password'?'Choose a new password':'Apply for Faculty Access'"></p>
                 </div>
 
                 <!-- LOGIN / REGISTER FORM -->
-                <form x-show="mode!=='faculty'" @submit.prevent="submitForm" style="display:flex;flex-direction:column;gap:26px;">
+                <form x-show="mode==='login'||mode==='register'" @submit.prevent="submitForm" style="display:flex;flex-direction:column;gap:26px;padding-top:8px;">
+
+                    <!-- Alert -->
+                    <div x-show="alert.show" x-transition
+                         style="padding:13px 16px 16px 16px;border-radius:10px;font-size:13px;font-weight:600;display:flex;flex-direction:row;align-items:flex-start;flex-wrap:nowrap;gap:9px;line-height:1.4;margin-bottom:10px;"
+                         :style="alert.type==='error'
+                             ?'background:rgba(253,224,71,0.1);border:1px solid rgba(253,224,71,0.3);color:#fef08a;'
+                             :'background:rgba(16,185,129,0.09);border:1px solid rgba(16,185,129,0.28);color:#34d399;'">
+                        <span style="display:inline-flex;align-items:center;flex-shrink:0;margin-top:1px;">
+                            <svg x-show="alert.type==='error'" style="width:15px;height:15px;" fill="none" viewBox="0 0 24 24" stroke="#fbbf24" stroke-width="2"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>
+                            <svg x-show="alert.type!=='error'" style="width:15px;height:15px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span x-text="alert.message" style="flex:1;min-width:0;"></span>
+                    </div>
 
                     <!-- Username (register only) -->
                     <div x-show="mode==='register'" x-transition class="field-group">
@@ -1027,13 +1041,18 @@
                                 <svg x-show="showPassword" style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7a9.97 9.97 0 012.525-4.025M6.343 6.343A9.97 9.97 0 0112 5c4.477 0 8.268 2.943 9.542 7a9.97 9.97 0 01-1.357 2.635M6.343 6.343L3 3m3.343 3.343l11.314 11.314M17.657 17.657L21 21"/></svg>
                             </button>
                         </div>
+                        <p x-show="mode==='register'" style="font-size:11px;color:#475569;margin:0;line-height:1.5;">Min 8 chars · uppercase · number · special character (!@#$…)</p>
+                        <!-- Forgot password (login mode only) -->
+                        <div x-show="mode==='login'" style="text-align:right;margin-top:4px;">
+                            <button type="button" @click="setMode('forgot')" style="font-size:12px;color:#475569;font-weight:600;background:none;border:none;cursor:pointer;transition:color 0.15s;" onmouseover="this.style.color='#93c5fd'" onmouseout="this.style.color='#475569'">Forgot password?</button>
+                        </div>
                     </div>
 
                     <!-- Submit button -->
-                    <div style="padding-top:18px;">
+                    <div style="padding-top:4px;">
                         <button type="submit" class="btn-login-primary" :disabled="loading">
                             <span class="login-spinner" x-show="loading"></span>
-                            <span x-show="!loading" x-text="mode==='register'?'Create Account':'Sign In'"></span>
+                            <span x-show="!loading" x-text="mode==='register'?'Continue — Verify Email':'Sign In'"></span>
                             <span x-show="loading">Processing…</span>
                         </button>
                     </div>
@@ -1041,12 +1060,12 @@
                 </form>
 
                 <!-- DIVIDER -->
-                <div x-show="mode!=='faculty'" class="login-divider" style="margin:16px 0 14px;">
+                <div x-show="mode==='login'||mode==='register'" class="login-divider" style="margin:16px 0 14px;">
                     <span>or</span>
                 </div>
 
                 <!-- FOOTER LINKS -->
-                <div x-show="mode!=='faculty'" style="display:flex;flex-direction:column;gap:16px;">
+                <div x-show="mode==='login'||mode==='register'" style="display:flex;flex-direction:column;gap:16px;">
                     <button @click="setMode('faculty')" class="btn-faculty">Register as Faculty</button>
                     <div style="text-align:center;padding-top:4px;">
                         <button @click="toggleMode()"
@@ -1056,6 +1075,108 @@
                             <span x-text="mode==='register'?'Already have an account? Sign In':'New to AlgoNest? Sign Up'"></span>
                         </button>
                     </div>
+                </div>
+
+                <!-- ── OTP VERIFICATION SCREEN (register & forgot) ── -->
+                <div x-show="mode==='register-otp'||mode==='forgot-otp'" style="display:flex;flex-direction:column;gap:24px;padding-top:8px;">
+                    <!-- back link -->
+                    <button type="button" @click="setMode(mode==='register-otp'?'register':'forgot')" style="font-size:13px;color:#64748b;font-weight:600;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:color 0.15s;width:fit-content;" onmouseover="this.style.color='#cbd5e1'" onmouseout="this.style.color='#64748b'">
+                        <svg style="width:14px;height:14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                        Back
+                    </button>
+                    <!-- email hint -->
+                    <p style="font-size:13px;color:#64748b;line-height:1.6;margin:0;">
+                        We sent a 6-digit code to <strong style="color:#cbd5e1;" x-text="otpEmail"></strong>. Enter it below.
+                    </p>
+                    <!-- OTP input -->
+                    <div class="field-group">
+                        <label class="login-label">6-digit code</label>
+                        <input
+                            id="otp-single"
+                            type="text" inputmode="numeric" maxlength="6"
+                            x-model="otpSingle"
+                            @input="otpSingle = otpSingle.replace(/\D/g,'').slice(0,6)"
+                            @keydown.enter="submitOtp()"
+                            placeholder="Enter 6-digit code"
+                            class="login-input"
+                            autocomplete="one-time-code"
+                        >
+                    </div>
+                    <!-- error message -->
+                    <p x-show="otpError" x-text="otpError" style="font-size:13px;color:#fca5a5;font-weight:500;margin:0;text-align:center;"></p>
+                    <!-- attempts remaining hint -->
+                    <p x-show="otpAttemptsLeft < 3 && otpAttemptsLeft > 0" style="font-size:12px;color:#f59e0b;font-weight:600;margin:0;text-align:center;">
+                        <span x-text="otpAttemptsLeft"></span> attempt(s) remaining
+                    </p>
+                    <!-- verify button -->
+                    <button type="button" @click="submitOtp()" class="btn-login-primary" :disabled="loading||otpSingle.length<6">
+                        <span class="login-spinner" x-show="loading"></span>
+                        <span x-show="!loading">Verify Code</span>
+                        <span x-show="loading">Verifying…</span>
+                    </button>
+                    <!-- resend -->
+                    <div style="text-align:center;">
+                        <button type="button" @click="resendOtp()" :disabled="resendCooldown>0||loading"
+                            style="font-size:13px;font-weight:600;background:none;border:none;cursor:pointer;transition:color 0.15s;"
+                            :style="resendCooldown>0?'color:#334155;cursor:not-allowed;':'color:#475569;'"
+                            onmouseover="if(!this.disabled)this.style.color='#94a3b8'" onmouseout="this.style.color=resendCooldown>0?'#334155':'#475569'">
+                            <span x-show="resendCooldown>0">Resend code in <span x-text="resendCooldown"></span>s</span>
+                            <span x-show="resendCooldown===0">Resend code</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ── FORGOT PASSWORD — email entry screen ── -->
+                <div x-show="mode==='forgot'" style="display:flex;flex-direction:column;gap:24px;padding-top:8px;">
+                    <button type="button" @click="setMode('login')" style="font-size:13px;color:#64748b;font-weight:600;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:color 0.15s;width:fit-content;" onmouseover="this.style.color='#cbd5e1'" onmouseout="this.style.color='#64748b'">
+                        <svg style="width:14px;height:14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                        Back to Sign In
+                    </button>
+                    <div class="field-group">
+                        <label class="login-label">
+                            <svg style="width:12px;height:12px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            Your Account Email
+                        </label>
+                        <input type="email" x-model="forgotEmail" placeholder="you@example.com" class="login-input">
+                    </div>
+                    <button type="button" @click="submitForgotPassword()" class="btn-login-primary" :disabled="loading">
+                        <span class="login-spinner" x-show="loading"></span>
+                        <span x-show="!loading">Send Reset Code</span>
+                        <span x-show="loading">Sending…</span>
+                    </button>
+                </div>
+
+                <!-- ── RESET PASSWORD — new password entry ── -->
+                <div x-show="mode==='reset-password'" style="display:flex;flex-direction:column;gap:20px;padding-top:8px;">
+                    <p style="font-size:13px;color:#64748b;line-height:1.6;margin:0;">
+                        Enter a new password for <strong style="color:#cbd5e1;" x-text="otpEmail"></strong>.
+                    </p>
+                    <div class="field-group">
+                        <label class="login-label">New Password</label>
+                        <div class="pw-wrap">
+                            <input :type="showResetPassword?'text':'password'" x-model="resetNewPassword" placeholder="At least 8 characters" class="login-input">
+                            <button type="button" class="pw-toggle" @click="showResetPassword=!showResetPassword" tabindex="-1">
+                                <svg x-show="!showResetPassword" style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                <svg x-show="showResetPassword" style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7a9.97 9.97 0 012.525-4.025M6.343 6.343A9.97 9.97 0 0112 5c4.477 0 8.268 2.943 9.542 7a9.97 9.97 0 01-1.357 2.635M6.343 6.343L3 3m3.343 3.343l11.314 11.314M17.657 17.657L21 21"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label class="login-label">Confirm New Password</label>
+                        <div class="pw-wrap">
+                            <input :type="showResetConfirmPassword?'text':'password'" x-model="resetConfirmPassword" placeholder="Re-enter password" class="login-input">
+                            <button type="button" class="pw-toggle" @click="showResetConfirmPassword=!showResetConfirmPassword" tabindex="-1">
+                                <svg x-show="!showResetConfirmPassword" style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                <svg x-show="showResetConfirmPassword" style="width:16px;height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7a9.97 9.97 0 012.525-4.025M6.343 6.343A9.97 9.97 0 0112 5c4.477 0 8.268 2.943 9.542 7a9.97 9.97 0 01-1.357 2.635M6.343 6.343L3 3m3.343 3.343l11.314 11.314M17.657 17.657L21 21"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <p x-show="otpError" x-text="otpError" style="font-size:13px;color:#fca5a5;font-weight:500;margin:0;"></p>
+                    <button type="button" @click="submitResetPassword()" class="btn-login-primary" :disabled="loading">
+                        <span class="login-spinner" x-show="loading"></span>
+                        <span x-show="!loading">Set New Password</span>
+                        <span x-show="loading">Saving…</span>
+                    </button>
                 </div>
 
                 <!-- BACK TO LOGIN (faculty mode) -->
@@ -1184,34 +1305,319 @@
         function loginModal() {
             return {
                 open: false,
+                // modes: 'login' | 'register' | 'register-otp' | 'faculty' | 'forgot' | 'forgot-otp' | 'reset-password'
                 mode: 'login',
                 facultyStep: 1,
                 loading: false,
                 showPassword: false,
                 showFacultyPassword: false,
+                showNewPassword: false,
+                showResetPassword: false,
+                showResetConfirmPassword: false,
                 formData: { username: '', email: '', password: '' },
                 facultyData: { username:'', email:'', password:'', full_name:'', institution:'', department:'', designation:'', reason:'' },
                 alert: { show: false, type: 'error', message: '' },
 
+                // OTP state
+                otp: ['', '', '', '', '', ''],
+                otpSingle: '',
+                otpError: '',
+                otpAttemptsLeft: 3,
+                otpExpired: false,
+                resendCooldown: 0,
+                resendTimer: null,
+                otpEmail: '',          // email for which OTP was sent
+                forgotEmail: '',       // dedicated field for forgot password screen
+                resetNewPassword: '',  // for the reset-password step
+                resetConfirmPassword: '',
+                verifiedResetOtp: '',  // stores verified OTP code for password reset
+                showResetPassword: false,
+
                 init() {
-                    // Check if URL has ?login param to auto-open
                     if (window.location.search.includes('login')) this.open = true;
-                    // Check existing session
                     if (typeof Auth !== 'undefined') {
                         const user = Auth.getUser();
                         if (user && user.role !== 'pending_faculty' && user.role !== 'declined_faculty' && Auth.isAuthenticated()) {
                             window.location.href = 'index.html';
                         }
                     }
-                    // Listen for open-login event from navbar button
                     window.addEventListener('open-login', () => { this.open = true; this.mode = 'login'; });
                 },
 
                 close() { this.open = false; },
 
-                setMode(m) { this.mode = m; this.alert.show = false; this.facultyStep = 1; this.showPassword = false; this.showFacultyPassword = false; },
-                toggleMode() { this.mode = this.mode === 'login' ? 'register' : 'login'; this.alert.show = false; this.showPassword = false; },
+                setMode(m) {
+                    this.mode = m;
+                    this.alert.show = false;
+                    this.otpError = '';
+                    this.facultyStep = 1;
+                    this.showPassword = false;
+                    this.showFacultyPassword = false;
+                    this.otp = ['', '', '', '', '', '']; this.otpSingle = '';
+                    if (m === 'forgot') this.forgotEmail = '';
+                },
+                toggleMode() {
+                    this.mode = this.mode === 'login' ? 'register' : 'login';
+                    this.alert.show = false;
+                    this.showPassword = false;
+                },
 
+                // ── OTP input helpers ──────────────────────────────
+                otpValue() { return this.otpSingle; },
+
+                handleOtpInput(index, event) {
+                    const val = event.target.value.replace(/\D/g, '').slice(-1);
+                    this.otp[index] = val;
+                    this.otp = [...this.otp]; // trigger reactivity
+                    if (val && index < 5) {
+                        this.$nextTick(() => {
+                            const next = document.getElementById('otp-' + (index + 1));
+                            if (next) next.focus();
+                        });
+                    }
+                },
+
+                handleOtpKeydown(index, event) {
+                    if (event.key === 'Backspace' && !this.otp[index] && index > 0) {
+                        this.$nextTick(() => {
+                            const prev = document.getElementById('otp-' + (index - 1));
+                            if (prev) prev.focus();
+                        });
+                    }
+                    if (event.key === 'Enter') { this.submitOtp(); }
+                },
+
+                handleOtpPaste(event) {
+                    event.preventDefault();
+                    const text = (event.clipboardData || window.clipboardData).getData('text').replace(/\D/g, '').slice(0, 6);
+                    for (let i = 0; i < 6; i++) { this.otp[i] = text[i] || ''; }
+                    this.otp = [...this.otp];
+                    this.$nextTick(() => {
+                        const lastFilled = Math.min(text.length, 5);
+                        const el = document.getElementById('otp-' + lastFilled);
+                        if (el) el.focus();
+                    });
+                },
+
+                startResendCooldown(seconds = 60) {
+                    this.resendCooldown = seconds;
+                    clearInterval(this.resendTimer);
+                    this.resendTimer = setInterval(() => {
+                        this.resendCooldown--;
+                        if (this.resendCooldown <= 0) { clearInterval(this.resendTimer); this.resendCooldown = 0; }
+                    }, 1000);
+                },
+
+                // ── Register: send OTP ─────────────────────────────
+                async submitForm() {
+                    if (this.loading) return;
+                    this.loading = true;
+                    this.alert.show = false;
+
+                    if (this.mode === 'register') {
+                        // Validate locally first
+                        if (!this.formData.username || !this.formData.email || !this.formData.password) {
+                            this.showAlert('error', 'Please fill in all fields.');
+                            this.loading = false; return;
+                        }
+                        const pwd = this.formData.password;
+                        if (pwd.length < 8) {
+                            this.showAlert('error', 'Password must be at least 8 characters.');
+                            this.loading = false; return;
+                        }
+                        if (!/[A-Z]/.test(pwd)) {
+                            this.showAlert('error', 'Password must contain at least one uppercase letter.');
+                            this.loading = false; return;
+                        }
+                        if (!/[0-9]/.test(pwd)) {
+                            this.showAlert('error', 'Password must contain at least one number.');
+                            this.loading = false; return;
+                        }
+                        if (!/[^A-Za-z0-9]/.test(pwd)) {
+                            this.showAlert('error', 'Password must contain at least one special character (!@#$%…).');
+                            this.loading = false; return;
+                        }
+                        try {
+                            const res  = await fetch(`${API_BASE_URL}/auth/send-otp`, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ email: this.formData.email, type: 'register' })
+                            });
+                            const data = await res.json();
+                            if (!res.ok) throw new Error(data.message || 'Failed to send OTP');
+                            this.otpEmail = this.formData.email;
+                            this.otp = ['', '', '', '', '', '']; this.otpSingle = '';
+                            this.otpError = '';
+                            this.otpAttemptsLeft = 3;
+                            this.otpExpired = false;
+                            this.startResendCooldown(60);
+                            this.mode = 'register-otp';
+                        } catch(err) { this.showAlert('error', err.message); }
+                        this.loading = false; return;
+                    }
+
+                    // Login
+                    try {
+                        const res  = await fetch(`${API_BASE_URL}/auth/login`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ email: this.formData.email, password: this.formData.password })
+                        });
+                        const data = await res.json();
+                        if (!res.ok) throw new Error(data.message || 'Authentication failed');
+                        Auth.setToken(data.token);
+                        window.location.href = 'index.html';
+                    } catch(err) { this.showAlert('error', err.message); }
+                    finally { this.loading = false; }
+                },
+
+                // ── Register OTP: verify & create account ──────────
+                async submitOtp() {
+                    const code = this.otpValue();
+                    if (code.length < 6) { this.otpError = 'Please enter all 6 digits.'; return; }
+                    if (this.loading) return;
+                    this.loading = true;
+                    this.otpError = '';
+
+                    if (this.mode === 'register-otp') {
+                        try {
+                            const res  = await fetch(`${API_BASE_URL}/auth/verify-register-otp`, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    email:    this.otpEmail,
+                                    username: this.formData.username,
+                                    password: this.formData.password,
+                                    otp:      code
+                                })
+                            });
+                            const data = await res.json();
+                            if (!res.ok) {
+                                this.otpAttemptsLeft = Math.max(0, this.otpAttemptsLeft - 1);
+                                this.otpError = data.message || 'Incorrect code.';
+                                this.loading = false; return;
+                            }
+                            // Success — go to login with a success message
+                            this.otp = ['', '', '', '', '', '']; this.otpSingle = '';
+                            this.mode = 'login';
+                            this.showAlert('success', 'Account created! You can now sign in.');
+                            this.formData.username = '';
+                            this.formData.password = '';
+                        } catch(err) { this.otpError = err.message; }
+                        this.loading = false; return;
+                    }
+
+                    if (this.mode === 'forgot-otp') {
+                        try {
+                            const res  = await fetch(`${API_BASE_URL}/auth/check-reset-otp`, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ email: this.otpEmail, otp: code })
+                            });
+                            const data = await res.json();
+                            if (!res.ok) {
+                                this.otpError = data.message || 'Incorrect code.';
+                                this.loading = false; return;
+                            }
+                            this.verifiedResetOtp = code;
+                            this.otp = ['', '', '', '', '', '']; this.otpSingle = '';
+                            this.mode = 'reset-password';
+                            this.otpError = '';
+                        } catch(err) { this.otpError = 'Something went wrong. Please try again.'; }
+                        this.loading = false; return;
+                    }
+                },
+
+                // ── Forgot password: send OTP ──────────────────────
+                async submitForgotPassword() {
+                    const email = this.forgotEmail.trim();
+                    if (!email || !email.includes('@')) { this.showAlert('error', 'Please enter a valid email address.'); return; }
+                    if (this.loading) return;
+                    this.loading = true; this.alert.show = false;
+                    try {
+                        const res  = await fetch(`${API_BASE_URL}/auth/forgot-password`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ email })
+                        });
+                        const data = await res.json();
+                        if (!res.ok) throw new Error(data.message || 'Failed to send reset code');
+                        this.otpEmail = email;
+                        this.otp = ['', '', '', '', '', '']; this.otpSingle = '';
+                        this.otpError = '';
+                        this.otpAttemptsLeft = 3;
+                        this.otpExpired = false;
+                        this.startResendCooldown(60);
+                        this.mode = 'forgot-otp';
+                    } catch(err) { this.showAlert('error', err.message); }
+                    finally { this.loading = false; }
+                },
+
+                // ── Reset password: submit new password ────────────
+                async submitResetPassword() {
+                    if (!this.resetNewPassword || this.resetNewPassword.length < 6) {
+                        this.otpError = 'Password must be at least 6 characters.'; return;
+                    }
+                    if (this.resetNewPassword !== this.resetConfirmPassword) {
+                        this.otpError = 'Passwords do not match.'; return;
+                    }
+                    if (this.loading) return;
+                    this.loading = true; this.otpError = '';
+                    try {
+                        const res  = await fetch(`${API_BASE_URL}/auth/reset-password`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                email:        this.otpEmail,
+                                otp:          this.verifiedResetOtp,
+                                new_password: this.resetNewPassword
+                            })
+                        });
+                        const data = await res.json();
+                        if (!res.ok) {
+                            this.otpError = data.message || 'Reset failed.';
+                            // Only go back to OTP entry if it's an OTP-related error
+                            if (res.status === 400 && data.message && (data.message.includes('OTP') || data.message.includes('code'))) {
+                                this.mode = 'forgot-otp'; 
+                                this.otp = ['', '', '', '', '', '']; 
+                                this.otpSingle = '';
+                            }
+                            // For password errors (same password, etc), stay on this screen
+                            this.loading = false; return;
+                        }
+                        this.mode = 'login';
+                        this.resetNewPassword = '';
+                        this.resetConfirmPassword = '';
+                        this.verifiedResetOtp = '';
+                        this.otp = ['', '', '', '', '', '']; this.otpSingle = '';
+                        this.showAlert('success', 'Password reset! You can now sign in.');
+                    } catch(err) { this.otpError = err.message; }
+                    finally { this.loading = false; }
+                },
+
+                // ── Resend OTP ─────────────────────────────────────
+                async resendOtp() {
+                    if (this.resendCooldown > 0 || this.loading) return;
+                    const type = this.mode === 'register-otp' ? 'register' : 'reset';
+                    this.loading = true; this.otpError = '';
+                    try {
+                        const res  = await fetch(`${API_BASE_URL}/auth/send-otp`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ email: this.otpEmail, type })
+                        });
+                        const data = await res.json();
+                        if (!res.ok) throw new Error(data.message || 'Failed to resend code');
+                        this.otp = ['', '', '', '', '', '']; this.otpSingle = '';
+                        this.otpAttemptsLeft = 3;
+                        this.otpExpired = false;
+                        this.startResendCooldown(60);
+                        this.otpError = '';
+                    } catch(err) { this.otpError = err.message; }
+                    finally { this.loading = false; }
+                },
+
+                // ── Faculty form ───────────────────────────────────
                 facultyNextStep() {
                     if (this.facultyStep === 1) {
                         if (!this.facultyData.username || !this.facultyData.email || !this.facultyData.password) { this.showAlert('error','Please fill in all account fields.'); return; }
@@ -1219,24 +1625,6 @@
                         if (!this.facultyData.full_name || !this.facultyData.institution || !this.facultyData.department || !this.facultyData.designation) { this.showAlert('error','Please fill in all institution fields.'); return; }
                     }
                     this.alert.show = false; this.facultyStep++;
-                },
-
-                showAlert(type, message) { this.alert = { show: true, type, message }; },
-
-                async submitForm() {
-                    if (this.loading) return;
-                    this.loading = true; this.alert.show = false;
-                    const isReg = this.mode === 'register';
-                    const endpoint = isReg ? '/auth/register' : '/auth/login';
-                    const payload = isReg ? this.formData : { email: this.formData.email, password: this.formData.password };
-                    try {
-                        const res = await fetch(`${API_BASE_URL}${endpoint}`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
-                        const data = await res.json();
-                        if (!res.ok) throw new Error(data.message || 'Authentication failed');
-                        if (isReg) { this.showAlert('success','Registration successful! You can now sign in.'); this.mode = 'login'; this.formData.username = ''; this.formData.password = ''; }
-                        else { Auth.setToken(data.token); window.location.href = 'index.html'; }
-                    } catch(err) { this.showAlert('error', err.message); }
-                    finally { this.loading = false; }
                 },
 
                 async submitFacultyForm() {
@@ -1257,7 +1645,9 @@
                         this.setMode('login');
                     } catch(err) { this.showAlert('error', err.message); }
                     finally { this.loading = false; }
-                }
+                },
+
+                showAlert(type, message) { this.alert = { show: true, type, message }; }
             }
         }
     </script>

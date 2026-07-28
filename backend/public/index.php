@@ -70,6 +70,16 @@ switch ($resource) {
         } elseif ($method === 'POST' && $resourceId === 'faculty-register') {
             $user = AuthMiddleware::authenticate();
             $authController->registerFaculty($user['id'], $body);
+        } elseif ($method === 'POST' && $resourceId === 'send-otp') {
+            $authController->sendOtp($body);
+        } elseif ($method === 'POST' && $resourceId === 'verify-register-otp') {
+            $authController->verifyRegisterOtp($body);
+        } elseif ($method === 'POST' && $resourceId === 'check-reset-otp') {
+            $authController->checkResetOtp($body);
+        } elseif ($method === 'POST' && $resourceId === 'forgot-password') {
+            $authController->forgotPassword($body);
+        } elseif ($method === 'POST' && $resourceId === 'reset-password') {
+            $authController->resetPassword($body);
         } else {
             http_response_code(404);
             echo json_encode(["message" => "Auth Endpoint Not Found"]);

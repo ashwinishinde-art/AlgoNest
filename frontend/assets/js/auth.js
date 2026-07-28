@@ -42,7 +42,7 @@ const Auth = {
 
     logout() {
         this.clearToken();
-        window.location.href = 'login.html';
+        window.location.href = 'landing.html?login';
     },
 
     checkAuthGuard() {

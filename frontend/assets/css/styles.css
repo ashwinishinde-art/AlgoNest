@@ -250,3 +250,223 @@ code, pre, .monaco-editor {
 }
 
 
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Premium Light Theme — Apple-inspired minimal design
+═══════════════════════════════════════════════════════════════════════════ */
+
+.light-premium {
+    --bg-primary: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --color-primary: #3B82F6;
+    --color-secondary: #60A5FA;
+    --text-primary: #111827;
+    --text-secondary: #6B7280;
+    --border-color: #E5E7EB;
+}
+
+/* Body background */
+.light-premium body,
+html.light-premium body {
+    background-color: var(--bg-primary) !important;
+    background-image: none !important;
+    color: var(--text-primary) !important;
+}
+
+/* Navbar glassmorphism */
+.light-premium nav.sticky,
+html.light-premium nav.sticky,
+.light-premium nav.h-14,
+html.light-premium nav.h-14 {
+    background-color: rgba(255, 255, 255, 0.80) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--border-color) !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Cards and surfaces */
+html.light-premium .dark\:bg-slate-900,
+html.light-premium .bg-white {
+    background-color: var(--bg-surface) !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 
+                0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 16px !important;
+}
+
+html.light-premium .dark\:bg-slate-800 {
+    background-color: #F9FAFB !important;
+}
+
+html.light-premium .dark\:bg-slate-700 {
+    background-color: #F3F4F6 !important;
+}
+
+/* Borders */
+html.light-premium .dark\:border-slate-700,
+html.light-premium .border-slate-200,
+html.light-premium .border-gray-200 {
+    border-color: var(--border-color) !important;
+}
+
+/* Text colors */
+html.light-premium .dark\:text-white,
+html.light-premium .text-gray-900 {
+    color: var(--text-primary) !important;
+}
+
+html.light-premium .dark\:text-slate-300,
+html.light-premium .text-gray-600,
+html.light-premium .text-gray-500 {
+    color: var(--text-secondary) !important;
+}
+
+/* Primary buttons */
+html.light-premium button.bg-blue-600,
+html.light-premium a.bg-blue-600,
+html.light-premium .bg-blue-600 {
+    background: linear-gradient(135deg, #3B82F6, #60A5FA) !important;
+    box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39) !important;
+    border: none !important;
+    transition: all 0.2s ease !important;
+}
+
+html.light-premium button.bg-blue-600:hover,
+html.light-premium a.bg-blue-600:hover {
+    box-shadow: 0 6px 20px 0 rgba(59, 130, 246, 0.45) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Cards hover effect */
+html.light-premium .dash-card,
+html.light-premium .glass-panel {
+    background-color: var(--bg-surface) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+html.light-premium .dash-card:hover {
+    transform: translateY(-4px) scale(1.01) !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+    border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Input fields */
+html.light-premium input,
+html.light-premium textarea,
+html.light-premium select {
+    background-color: var(--bg-surface) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px !important;
+    transition: all 0.2s ease !important;
+}
+
+html.light-premium input:focus,
+html.light-premium textarea:focus,
+html.light-premium select:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+    outline: none !important;
+}
+
+/* Tables */
+html.light-premium table {
+    background-color: var(--bg-surface) !important;
+}
+
+html.light-premium tbody tr {
+    border-bottom: 1px solid var(--border-color) !important;
+    transition: background-color 0.15s ease !important;
+}
+
+html.light-premium tbody tr:hover {
+    background-color: rgba(59, 130, 246, 0.05) !important;
+}
+
+html.light-premium thead th {
+    color: var(--text-secondary) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* Tags and badges */
+html.light-premium .bg-blue-500,
+html.light-premium .bg-blue-600 {
+    background-color: var(--color-primary) !important;
+    color: white !important;
+}
+
+html.light-premium .bg-green-500,
+html.light-premium .bg-green-600 {
+    background-color: #10B981 !important;
+}
+
+html.light-premium .bg-yellow-500,
+html.light-premium .bg-yellow-600 {
+    background-color: #F59E0B !important;
+}
+
+html.light-premium .bg-red-500,
+html.light-premium .bg-red-600 {
+    background-color: #EF4444 !important;
+}
+
+/* Monaco Editor */
+html.light-premium .monaco-editor {
+    background-color: var(--bg-surface) !important;
+}
+
+/* Scrollbar */
+html.light-premium ::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.3) !important;
+}
+
+html.light-premium ::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.5) !important;
+}
+
+/* Floating shapes animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+html.light-premium body::before,
+html.light-premium body::after {
+    content: '';
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+}
+
+html.light-premium body::before {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #3B82F6, transparent);
+    top: -250px;
+    right: -250px;
+    animation: float 8s ease-in-out infinite;
+}
+
+html.light-premium body::after {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #60A5FA, transparent);
+    bottom: -200px;
+    left: -200px;
+    animation: float 10s ease-in-out infinite reverse;
+}
+
+/* Ensure content sits above floating shapes */
+html.light-premium body > *:not(::before):not(::after) {
+    position: relative;
+    z-index: 1;
+}
