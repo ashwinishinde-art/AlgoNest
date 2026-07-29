@@ -58,8 +58,10 @@
                         </div>
                     </div>
                     <div class="flex items-center space-x-3 pl-4 border-l border-slate-200 dark:border-slate-700">
-                        <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold text-sm" x-text="user ? user.username.charAt(0).toUpperCase() : '?'"></div>
-                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-300" x-text="user ? user.username : ''"></span>
+                        <a href="profile.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                            <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold text-sm" x-text="user ? user.username.charAt(0).toUpperCase() : '?'"></div>
+                            <span class="text-sm font-semibold text-slate-600 dark:text-slate-300" x-text="user ? user.username : ''"></span>
+                        </a>
                         <span class="text-xs bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded font-semibold">Faculty</span>
                     </div>
                     <button @click="Auth.logout()" class="text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg font-semibold transition-colors">Logout</button>
@@ -134,7 +136,7 @@
                                     <span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-600 px-2 py-0.5 rounded font-semibold">Pending Review</span>
                                 </div>
                                 <p class="text-sm text-slate-500 mt-1">
-                                    Submitted by <span class="font-semibold text-blue-600 dark:text-blue-400" x-text="problem.author_username"></span>
+                                    Submitted by <a :href="'public-profile.html?id=' + problem.author_id" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline" x-text="problem.author_username"></a>
                                     · <span x-text="formatDate(problem.created_at)"></span>
                                 </p>
                                 <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2" x-text="problem.description"></p>
