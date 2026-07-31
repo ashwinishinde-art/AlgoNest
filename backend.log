@@ -1,3 +1,77 @@
 [Fri Jul 31 09:59:37 2026] PHP 8.5.8 Development Server (http://0.0.0.0:8080) started
 [Fri Jul 31 09:59:39 2026] 127.0.0.1:61504 Accepted
 [Fri Jul 31 09:59:39 2026] 127.0.0.1:61504 Closing
+[Fri Jul 31 10:06:20 2026] 127.0.0.1:56038 Accepted
+[Fri Jul 31 10:06:20 2026] 127.0.0.1:56038 Closing
+[Fri Jul 31 10:06:21 2026] 127.0.0.1:56040 Accepted
+[Fri Jul 31 10:06:21 2026] 127.0.0.1:56040 Closing
+[Fri Jul 31 10:06:24 2026] 127.0.0.1:56058 Accepted
+[Fri Jul 31 10:06:24 2026] 127.0.0.1:56058 Closing
+[Fri Jul 31 10:06:24 2026] 127.0.0.1:56060 Accepted
+[Fri Jul 31 10:06:24 2026] 127.0.0.1:56060 Closing
+[Fri Jul 31 10:06:24 2026] 127.0.0.1:56062 Accepted
+[Fri Jul 31 10:06:24 2026] 127.0.0.1:56062 Closing
+[Fri Jul 31 10:06:24 2026] 127.0.0.1:56066 Accepted
+[Fri Jul 31 10:06:24 2026] 127.0.0.1:56065 Accepted
+[Fri Jul 31 10:06:24 2026] 127.0.0.1:56065 Closing
+[Fri Jul 31 10:06:24 2026] 127.0.0.1:56066 Closing
+[Fri Jul 31 10:06:24 2026] 127.0.0.1:56068 Accepted
+[Fri Jul 31 10:06:24 2026] 127.0.0.1:56068 Closing
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56071 Accepted
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56072 Accepted
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56071 Closing
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56077 Accepted
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56072 Closing
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56078 Accepted
+[Fri Jul 31 10:06:25 2026] ProblemController::list called with filters: {"author_id":"7","approved":"1"}
+[Fri Jul 31 10:06:25 2026] approvedOnly converted to: 1
+[Fri Jul 31 10:06:25 2026] Problems found: 0
+[Fri Jul 31 10:06:25 2026] Problems: []
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56077 Closing
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56079 Accepted
+[Fri Jul 31 10:06:25 2026] ProblemController::list called with filters: {"author_id":"7","approved":"2"}
+[Fri Jul 31 10:06:25 2026] approvedOnly converted to: 2
+[Fri Jul 31 10:06:25 2026] Problems found: 0
+[Fri Jul 31 10:06:25 2026] Problems: []
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56078 Closing
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56081 Accepted
+[Fri Jul 31 10:06:25 2026] ProblemController::list called with filters: {"author_id":"7","approved":"0"}
+[Fri Jul 31 10:06:25 2026] approvedOnly converted to: 0
+[Fri Jul 31 10:06:25 2026] Problems found: 1
+[Fri Jul 31 10:06:25 2026] Problems: [{"id":25,"title":"Two multiplication problem","difficulty":"Medium","topic_tags":"Arrays","approved":0,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii","author_avatar":null}]
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56079 Closing
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56081 Closing
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56089 Accepted
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56089 Closing
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56091 Accepted
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56091 Closing
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56093 Accepted
+[Fri Jul 31 10:06:25 2026] ProblemController::list called with filters: []
+[Fri Jul 31 10:06:25 2026] approvedOnly converted to: 1
+[Fri Jul 31 10:06:25 2026] Problems found: 14
+[Fri Jul 31 10:06:25 2026] Problems: [{"id":1,"title":"Two Sum","difficulty":"Easy","topic_tags":"Arrays, Hash Map","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin","author_avatar":"\/avatars\/avatar_1_1784626269.png"},{"id":2,"title":"Reverse String","difficulty":"Easy","topic_tags":"Two Pointers, String","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Admin","author_avatar":"\/avatars\/avatar_1_1784626269.png"},{"id":11,"title":"Watermelon","difficulty":"Easy","topic_tags":"Math, Number Theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu","author_avatar":null},{"id":12,"title":"Way Too Long Words","difficulty":"Easy","topic_tags":"String ","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii","author_avatar":"\/avatars\/avatar_29_1784694798.jpg"},{"id":14,"title":"Word Capitalization","difficulty":"Easy","topic_tags":"implementation,strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii","author_avatar":"\/avatars\/avatar_29_1784694798.jpg"},{"id":15,"title":"Bit++","difficulty":"Easy","topic_tags":"Implementation, Simulation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu","author_avatar":null},{"id":16,"title":"Domino piling","difficulty":"Easy","topic_tags":"greedy, math","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu","author_avatar":null},{"id":17,"title":" Beautiful Matrix","difficulty":"Easy","topic_tags":"implementation","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii","author_avatar":"\/avatars\/avatar_29_1784694798.jpg"},{"id":18,"title":"Stones on the Table","difficulty":"Easy","topic_tags":"implementation\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu","author_avatar":null},{"id":19,"title":"Maximum GCD","difficulty":"Easy","topic_tags":"greedy, implementation, math, number theory","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii","author_avatar":"\/avatars\/avatar_29_1784694798.jpg"},{"id":20,"title":"Two Digit Strings","difficulty":"Medium","topic_tags":"strings","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii","author_avatar":"\/avatars\/avatar_29_1784694798.jpg"},{"id":21,"title":"Unstable Elements","difficulty":"Medium","topic_tags":"Arrays, Sorting, Dynamic Programming, Combinatorics","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu","author_avatar":null},{"id":22,"title":"An Alternative Way","difficulty":"Medium","topic_tags":"dp, greedy, math\t","approved":1,"rejection_reason":null,"approval_comment":null,"author":"tanu","author_avatar":null},{"id":24,"title":"BinaryStringForces","difficulty":"Hard","topic_tags":"constructive algorithms, data structures, dp","approved":1,"rejection_reason":null,"approval_comment":null,"author":"Mansii","author_avatar":"\/avatars\/avatar_29_1784694798.jpg"}]
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56093 Closing
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56096 Accepted
+[Fri Jul 31 10:06:25 2026] 127.0.0.1:56096 Closing
+[Fri Jul 31 10:06:54 2026] 127.0.0.1:56132 Accepted
+[Fri Jul 31 10:06:54 2026] 127.0.0.1:56133 Accepted
+[Fri Jul 31 10:06:54 2026] 127.0.0.1:56130 Accepted
+[Fri Jul 31 10:06:54 2026] 127.0.0.1:56131 Accepted
+[Fri Jul 31 10:06:54 2026] 127.0.0.1:56133 Closing
+[Fri Jul 31 10:06:54 2026] ProblemController::list called with filters: {"author_id":"7","approved":"1"}
+[Fri Jul 31 10:06:54 2026] approvedOnly converted to: 1
+[Fri Jul 31 10:06:54 2026] Problems found: 0
+[Fri Jul 31 10:06:54 2026] Problems: []
+[Fri Jul 31 10:06:54 2026] 127.0.0.1:56132 Closing
+[Fri Jul 31 10:06:54 2026] ProblemController::list called with filters: {"author_id":"7","approved":"0"}
+[Fri Jul 31 10:06:54 2026] approvedOnly converted to: 0
+[Fri Jul 31 10:06:54 2026] Problems found: 1
+[Fri Jul 31 10:06:54 2026] Problems: [{"id":25,"title":"Two multiplication problem","difficulty":"Medium","topic_tags":"Arrays","approved":0,"rejection_reason":null,"approval_comment":null,"author":"Mayuriii","author_avatar":null}]
+[Fri Jul 31 10:06:54 2026] 127.0.0.1:56130 Closing
+[Fri Jul 31 10:06:55 2026] ProblemController::list called with filters: {"author_id":"7","approved":"2"}
+[Fri Jul 31 10:06:55 2026] approvedOnly converted to: 2
+[Fri Jul 31 10:06:55 2026] Problems found: 0
+[Fri Jul 31 10:06:55 2026] Problems: []
+[Fri Jul 31 10:06:55 2026] 127.0.0.1:56131 Closing
+[Fri Jul 31 10:06:55 2026] 127.0.0.1:56140 Accepted
+[Fri Jul 31 10:06:55 2026] 127.0.0.1:56140 Closing
